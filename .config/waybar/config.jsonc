@@ -1,0 +1,33 @@
+{
+    "layer": "bottom",
+    "position": "top",
+    "margin": "0px 500px 4px 500px",
+    "fixed-center": true,
+    "reload_style_on_change": true,
+    "name": "overlay",
+    "passtrough": true,
+
+    "include": ["~/.config/waybar/purple/modules.jsonc"],
+
+    "modules-left": [
+      "hyprland/window",
+      "group/apps"
+      
+    ],
+    
+    "modules-center": [
+      "group/info",
+      "hyprland/workspaces",
+      "group/utils"
+      
+    ],
+  
+    "modules-right": [
+      //"group/control-center",
+      "group/video",
+      "clock",
+      "group/power"
+    ]
+  }
+  
+  // testW
