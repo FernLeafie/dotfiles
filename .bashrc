@@ -5,9 +5,25 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# --------------------------------------
+# Alias's
+# --------------------------------------
+
+alias bottom='btm'
+
 alias ls='lsd'
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
+
 alias cat='bat'
+
+
+
 alias grep='grep --color=auto'
+
+
 PS1='[\u@\h \W]\$ '
 
 ble-import -d integration/fzf-completion
@@ -25,9 +41,9 @@ export FZF_DEFAULT_OPTS=" \
 --color=selected-bg:#45475A \
 --color=border:#313244,label:#CDD6F4"
 
-#----------------------------------
+# --------------------------------------
 # catppuccin mocha theme for ble.sh
-#----------------------------------
+# --------------------------------------
 
 # catppuccin mocha
 ble-face -s argument_error bg=#f38ba8,fg=#11111b  # Red background, Crust foreground for better contrast
@@ -82,8 +98,6 @@ ble-face -s varname_readonly fg=#fab387  # Peach
 ble-face -s varname_transform fg=#fab387  # Peach
 ble-face -s varname_unset bg=#f38ba8,fg=#11111b  # Red background, Crust foreground for better contrast
 ble-face -s vbell_erase bg=#45475a  # Surface1
-
-alias bottom=btm
 
 eval "$(zoxide init --cmd cd bash)"
 
