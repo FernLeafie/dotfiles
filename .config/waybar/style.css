@@ -7,7 +7,10 @@
 
  /* =======  Estilo global  ======= */
  * {
-   font: bold 13px "JetBrainsMono Nerd Font Propo";
+   /*font: bold 13px "JetBrainsMono Nerd Font Propo";*/
+   font-family:"Fira Code", "JetBrainsMono Nerd Font Propo";
+   font-weight: bold;   
+   font-size: 13px;
    border: none;
    border-radius: 0px;
    box-shadow: none;

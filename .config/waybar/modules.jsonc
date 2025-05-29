@@ -8,14 +8,24 @@
     "max-length": 80,
     "separate-outputs": false,
     "rewrite": {
-      "^.*( — Zen Browser|Zen Browser)$":       "󰈹 Zen",
-      "^.*( — Firefox|Firefox)$":              "󰈹 Firefox",
+      "^.*( — Zen Browser|Zen Browser)$":      " 󰈹 Zen",
+      "^.*( — Firefox|Firefox)$":              " 󰈹 Firefox",
+      "^.*( — Thunderbird|Thunderbird)$":      "  Thunderbird",
       "^.*( — Brave|Brave)$":                  " Brave",
       "^.*( — Chromium|Chromium)$":            "󰈹 Chromium",
-      "^.*v( .*|$)":                           " Neovim",
-      "^.*~$":                                 "󰄛 Kitty",
-      "^.*(- Spotify|Spotify)$":               "󰏤 Spotify",
-      "^.*(- Code|Code)$":                     "󰈹 VSCode",
+      "^.*v( .*|$)":                           "  Neovim",
+      "^.*(nvim).*$":                          "  Neovim",
+      "^.*~$":                                 " 󰄛 Kitty",
+      "^.*(- Spotify|Spotify)$":               "  Spotify",
+      "^.*(- Code|Code)$":                     "  VSCode",
+      " (.*) - Thunar":                       "  Thunar - $1",
+      " (.*) - Discord":                      "  Discord - $1", 
+      " (rmpc).*":                            "  rmpc",
+      " (cava).*":                            "  cava",
+      " (waybar)":                            "  waybar",
+      " (btop)":                              " 󰓅 btop",
+      "( Steam)":                             "  Steam",
+      " (yazi).*":                            "  yazi",
       "^.*(- Cursor|Cursor)$":                 "󰈹 Cursor"
       /*"^.+ $":                                 " Empty"   // evita títulos vacíos*/
     }
@@ -72,11 +82,11 @@
       "mode": "month",
       "on-scroll": 1,
       "format": {
-        "months":   "<span color='#ffead3'><b>{}</b></span>",
-        "days":     "<span color='#ecc6d9'><b>{}</b></span>",
-        "weeks":    "<span color='#99ffdd'><b>W{}</b></span>",
-        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-        "today":    "<span color='#ff6699'><b><u>{}</u></b></span>"
+        "months":   "<span color='#f9e2af'><b>{}</b></span>",
+        "days":     "<span color='#cdd6f4'><b>{}</b></span>",
+        "weeks":    "<span color='#94e2d5'><b>W{}</b></span>",
+        "weekdays": "<span color='#fab387'><b>{}</b></span>",
+        "today":    "<span color='#f38ba8'><b><u>{}</u></b></span>"
       }
     },
     "actions": {
@@ -261,6 +271,7 @@
     "format": "{}",
     "return-type": "json",
     "max-length": 50,
+    //"exec": "~/.config/hypr/scripts/playerinfo.sh",
     "exec": "playerctl -p spotify metadata --format '{\"text\": \"{{artist}} : {{markup_escape(title)}}\", \"tooltip\": \"Spotify : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
     "on-click":        "bash -c 'player=$(playerctl -l | grep -E \"spotify|cider\" | head -n 1); playerctl -p \"$player\" previous'",
     "on-click-middle": "bash -c 'player=$(playerctl -l | grep -E \"spotify|cider\" | head -n 1); playerctl -p \"$player\" play-pause'",
