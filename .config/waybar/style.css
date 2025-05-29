@@ -20,7 +20,7 @@
  /* =======  Contenedor principal  ======= */
  window#waybar {
    background: alpha(@surface_container_lowest, 1);
-   border: 2px solid alpha(@on_secondary_container, 0.25);
+   border: 2px solid #313244;
    border-radius: 10px;                     /* contorno ligeramente menor */
  }
  
