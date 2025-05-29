@@ -4,7 +4,7 @@
   "hyprland/window": {
     "format": "",
 
-    "format-alt": "{title}",
+    "format-alt": " {title}",
     "max-length": 80,
     "separate-outputs": false,
     "rewrite": {
@@ -17,6 +17,7 @@
       "^.*(- Spotify|Spotify)$":               "󰏤 Spotify",
       "^.*(- Code|Code)$":                     "󰈹 VSCode",
       "^.*(- Cursor|Cursor)$":                 "󰈹 Cursor",
+      "^.*( — Discord|Discord)$":              " Discord",
       "^.+ $":                                 " Empty"   // evita títulos vacíos
     }
   },
