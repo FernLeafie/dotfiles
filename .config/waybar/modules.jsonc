@@ -268,14 +268,19 @@
   },
 
   "custom/playerlabel": {
-    "format": "{}",
-    "return-type": "json",
+    "format": " {}",
     "max-length": 50,
-    //"exec": "~/.config/hypr/scripts/playerinfo.sh",
-    "exec": "playerctl -p spotify metadata --format '{\"text\": \"{{artist}} : {{markup_escape(title)}}\", \"tooltip\": \"Spotify : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-    "on-click":        "bash -c 'player=$(playerctl -l | grep -E \"spotify|cider\" | head -n 1); playerctl -p \"$player\" previous'",
-    "on-click-middle": "bash -c 'player=$(playerctl -l | grep -E \"spotify|cider\" | head -n 1); playerctl -p \"$player\" play-pause'",
-    "on-click-right":  "bash -c 'player=$(playerctl -l | grep -E \"spotify|cider\" | head -n 1); playerctl -p \"$player\" next'",
+    "interval": 5,
+    "exec": "playerctl metadata --format='{{ title }}'",
+    "on-click": "playerctl play-pause",
+    // "on-scroll-up":     "playerctld shift",
+    // "on-scroll-down":   "playerctld unshift",
+    // "return-type": "json",
+    // "exec": "~/.config/hypr/scripts/playerinfo.sh",
+    // "exec": "playerctl metadata --format '{\"text\": \"{{artist}} : {{markup_escape(title)}}\", \"tooltip\": \"Spotify : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    // "on-click":        "bash -c 'player=$(playerctl -l | grep -E \"spotify|cider\" | head -n 1); playerctl -p \"$player\" previous'",
+    // "on-click-middle": "bash -c 'player=$(playerctl -l | grep -E \"spotify|cider\" | head -n 1); playerctl -p \"$player\" play-pause'",
+    // "on-click-right":  "bash -c 'player=$(playerctl -l | grep -E \"spotify|cider\" | head -n 1); playerctl -p \"$player\" next'",
     "tooltip": false
   },
 
