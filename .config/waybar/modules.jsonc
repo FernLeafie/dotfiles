@@ -141,7 +141,7 @@
   "group/audio": {
     "orientation": "inherit",
     "drawer": { "transition-duration": 300, "transition-left-to-right": false },
-    "modules": ["pulseaudio"] // "pulseaudio/slider"
+    "modules": ["pulseaudio", "backlight"] // "custom/backlight", "pulseaudio/slider"
   },
 
   "group/connection": {
@@ -229,6 +229,12 @@
     "format": "{bandwidthDownBits} ",
     "interval": 5,
     "tooltip": false
+  },
+
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon}",
+    "format-icons": ["", "", "", "", "", "", "", "", ""]
   },
 
   "bluetooth": {
@@ -328,8 +334,19 @@
     "format": "{}",
     "tooltip": true,
     "interval": 3600,
-    "exec": "wttrbar --custom-indicator '{ICON}{temp_C}°C'",
+    "exec": "wttrbar --hide-conditions --nerd --custom-indicator '{ICON} {temp_C}°C'",
     "return-type": "json"
+  },
+
+  "custom/backlight": {
+    "format": "{}% {icon}",
+    "exec": "ddcutil getvcp 10 --brief",
+    "rewrite": {
+      "VCP 10 C (.2) 100": "$1"
+    },
+    "on-scroll-up": "ddcutil setvcp 10 + 10 --dis=1 && ddcutil setvcp 10 + 10 --dis=2 &",
+    "on-scroll-down": "ddcutil setvcp 10 - 10 --dis=1 && ddcutil setvcp 10 - 10 --dis=2 &",
+    "format-icons": ["", "", "", "", "", "", "", "", ""]
   },
 
   "custom/theme-switcher": {
