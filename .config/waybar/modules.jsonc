@@ -19,13 +19,17 @@
       "^.*(- Spotify|Spotify)$":               "  Spotify",
       "^.*(- Code|Code)$":                     "  VSCode",
       " (.*) - Thunar":                       "  Thunar - $1",
+      " (.*) — Dolphin":                      "  Dolphin - $1",
       " (.*) - Discord":                      "  Discord - $1", 
       " (rmpc).*":                            "  rmpc",
       " (cava).*":                            "  cava",
       " (waybar)":                            "  waybar",
       " (btop)":                              " 󰓅 btop",
       "( Steam)":                             "  Steam",
+      "( Minecraft).*":                       " 󰍳 Minecraft",
+      " (Prism Launcher).*":                  " 󰆧 Prism",
       " (yazi).*":                            "  yazi",
+      " Gitkraken Desktop":                   "  GitKraken",
       "^.*(- Cursor|Cursor)$":                 "󰈹 Cursor"
       /*"^.+ $":                                 " Empty"   // evita títulos vacíos*/
     }
@@ -70,17 +74,30 @@
       "8":  "8", 
       "9":  "9", 
       "10": "0"
-
+      
+      /*
+      "1":  "一",  
+      "2":  "二", 
+      "3":  "三", 
+      "4":  "四", 
+      "5":  "五",
+      "6":  "六", 
+      "7":  "七", 
+      "8":  "八", 
+      "9":  "九",
+      "10": "十"
+      */
     }
   },
 
   "clock": {
     "format": "{:%H:%M}",
+    "timezones": [ "", "Asia/Tokyo" ],
     "format-alt": "{:%A %d.%m}",
     "tooltip-format": "<tt><big>{calendar}</big></tt>",
     "calendar": {
       "mode": "month",
-      "on-scroll": 1,
+      // "on-scroll": 1,
       "format": {
         "months":   "<span color='#f9e2af'><b>{}</b></span>",
         "days":     "<span color='#cdd6f4'><b>{}</b></span>",
@@ -88,12 +105,12 @@
         "weekdays": "<span color='#fab387'><b>{}</b></span>",
         "today":    "<span color='#f38ba8'><b><u>{}</u></b></span>"
       }
-    },
+    }/*,
     "actions": {
       "on-click-right": "mode",
       "on-scroll-up":   "shift_up",
       "on-scroll-down": "shift_down"
-    }
+    }*/
   },
 
 /* ─────────────── GRUPOS PRINCIPALES ──────────────────────────────────────── */
@@ -277,7 +294,7 @@
     "format": " {}",
     "max-length": 50,
     "interval": 5,
-    "exec": "playerctl metadata --format='{{ title }}'",
+    "exec": "playerctl metadata --format='{{ title }}' -s",
     "on-click": "playerctl play-pause",
     // "on-scroll-up":     "playerctld shift",
     // "on-scroll-down":   "playerctld unshift",
