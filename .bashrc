@@ -29,7 +29,12 @@ PS1='[\u@\h \W]\$ '
 ble-import -d integration/fzf-completion
 ble-import -d integration/fzf-key-bindings
 
-fastfetch
+fastfetch --logo-color-1 blue --logo-color-2 blue
+
+# --------------------------------------
+# oh-my-posh configs
+# --------------------------------------
+
 eval "$(oh-my-posh init bash --config https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/catppuccin_mocha.omp.json)"
 bleopt prompt_ps1_transient=">"
 bleopt prompt_ps1_final="  "

@@ -1,11 +1,11 @@
 /* -------------------------------------------------------
  *  Waybar – Hyprland
- *  Limpieza y ajustes de simetría/píxeles
+ *  Symmetry/Pixel Cleanup and Adjustments
  * ----------------------------------------------------- */
 
  @import "matugen-waybar.css";
 
- /* =======  Estilo global  ======= */
+ /* =======  Global style  ======= */
  * {
    /*font: bold 13px "JetBrainsMono Nerd Font Propo";*/
    font-family:"Fira Code", "JetBrainsMono Nerd Font Propo", "Source Han Sans JP";
@@ -17,11 +17,11 @@
    text-shadow: none;
  }
  
- /* =======  Contenedor principal  ======= */
+ /* =======  Main container  ======= */
  window#waybar {
    background: alpha(@surface_container_lowest, 1);
    border: 2px solid #313244;
-   border-radius: 10px;                     /* contorno ligeramente menor */
+   border-radius: 10px;                     /* slightly smaller outline */
  }
  
  /* =======  Tooltip  ======= */
@@ -33,7 +33,7 @@
  }
  tooltip label { color: @foreground; }
  
- /* =======  Ventana activa  ======= */
+ /* =======  Active window  ======= */
  #window {
    margin: 0px 4px 2px 4px;               
    padding: 2px 0px 2px 10px;
@@ -42,19 +42,20 @@
    color: @foreground;
  }
  
- /* =======  Flechas decorativas  ======= */
+ /* =======  Decorative arrows  ======= */
  #custom-arrow-right,
  #custom-arrow-left {
    margin: 0px 4px 2px 4px;               
    color: alpha(@on_secondary_container, .3);
  }
  
- /* =======  Grupos estándar (CPU, RAM, etc.)  ======= */
+ /* =======  Standard groups (CPU, RAM, etc.)  ======= */
  #cpu,
  #memory,
  #disk,
  #custom-updates,
  #custom-playerlabel,
+ #mpris,
  #custom-cava,
  #custom-notifications,
  #tray,
@@ -78,7 +79,7 @@
  border-radius: 10px;
 }
  
- /* combinaciones de radios especiales */
+ /* special border radius combinations */
  #custom-section  { border-radius: 0 0 0 0; }
  #custom-stop     { border-radius: 0 10px 10px 0; }
  #custom-record   { border-radius: 10px 0 0 10px; }
@@ -124,7 +125,7 @@
    border-radius: 10px;
  }
  
- /* slider de volumen */
+ /* volume slider */
  #pulseaudio-slider {
    margin: 10px;
  }
@@ -136,7 +137,7 @@
    border-radius: 8px;
  }
  
- /* =======  Reloj  ======= */
+ /* =======  Clock  ======= */
  #clock {
    margin: 0px 4px 2px 4px;               
    padding: 0;
@@ -145,7 +146,7 @@
    color: @foreground;
  }
  
- /* =======  Poder & batería  ======= */
+ /* =======  Power and battery  ======= */
  #power {
   margin: 0px 4px 2px 4px;   
   background: transparent;
@@ -174,9 +175,9 @@
    background: transparent;
  }
  
- /* =======  Módulos singulares  ======= */
- #custom-weather { padding: 0 4px; }      /* sin fondo para icono/temperatura */
+ /* =======  Singular modules  ======= */
+ #custom-weather { padding: 0 4px; }      /* no background for icon/temperature */
  
- /* Ajuste puntual para evitar separación excesiva */
- #bluetooth { margin-left: 7px; }          /* mantiene la distancia original */
+ /* Punctual adjustment to avoid excessive separation */
+ #bluetooth { margin-left: 7px; }          /* maintains the original distance */
  
