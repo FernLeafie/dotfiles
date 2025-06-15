@@ -101,6 +101,105 @@
     }
   },
 
+  "sway/window": {
+    "format": "",
+    "all-outputs": true,
+    "format-alt": " {title}",
+    "max-length": 80,
+    "separate-outputs": false,
+    "rewrite": {
+      "^.*( — Zen Browser|Zen Browser)$":      " 󰈹 Zen",
+      "^.*( — Firefox|Firefox)$":              " 󰈹 Firefox",
+      "^.*( — Thunderbird|Thunderbird)$":      "  Thunderbird",
+      "^.*( — Brave|Brave)$":                  " Brave",
+      "^.*( — Chromium|Chromium)$":            "󰈹 Chromium",
+      "^.*v( .*|$)":                           "  Neovim",
+      "^.*(nvim).*$":                          "  Neovim",
+      "^.*~$":                                 " 󰄛 Kitty",
+      "^.*(- Spotify|Spotify)$":               "  Spotify",
+      "^.*(- Code|Code)$":                     "  VSCode",
+      " (.*) - Thunar":                       "  Thunar - $1",
+      " (.*) — Dolphin":                      "  Dolphin - $1",
+      " (.*) - Discord":                      "  Discord - $1",
+      " .* - (.*) - Obsidian.*":              " 󱉽 Obsidian - $1", 
+      " (btop)":                              " 󰓅 btop",
+      " (rmpc).*":                            "  rmpc",
+      " (cava).*":                            "  cava",
+      " (waybar)":                            "  waybar",
+      " (yazi).*":                            " 󰇥 yazi",
+      " Gitkraken Desktop":                   "  GitKraken",
+      " .*(Manga Reader)":                    " 󰂺 Manga Reader",
+      " (Krita)":                             "  Krita",
+      " (.*) - Inkscape":                     "  Inkscape - $1",
+      " (.*) - Aseprite .*":                  "  Aseprite - $1",
+      " (.*) — LibreOffice Writer":           "  LibreOffice Writer - $1",
+
+      // Games
+      "( Steam)":                             "  Steam",
+      "( Minecraft).*":                       " 󰍳 Minecraft",
+      " (Prism Launcher).*":                  " 󰆧 Prism",
+      " (Stardew Valley).*":                  "  Stardew Valley",
+      " (SMAPI).*":                           "  SMAPI",
+      " (Lutris)":                            "  Lutris",
+      "^.*(- Cursor|Cursor)$":                 "󰈹 Cursor"
+      /*"^.+ $":                                 " Empty"   // avoid empty titles*/
+    }
+  },
+  "sway/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "all-outputs": true,
+    "format-icons": {
+      /*
+      "1":  "",  
+      "2":  "󰖟", 
+      "3":  "󰅩", 
+      "4":  "󰞶", 
+      "5":  "",
+      "6":  "󰓇", 
+      "7":  "", 
+      "8":  "󰕧", 
+      "9":  "", 
+      "10": "󰙯"
+      
+      "1":  "󰊠",  
+      "2":  "󰊠", 
+      "3":  "󰊠", 
+      "4":  "󰊠", 
+      "5":  "󰊠",
+      "6":  "󰊠", 
+      "7":  "󰊠", 
+      "8":  "󰊠", 
+      "9":  "󰊠", 
+      "10": "󰊠"
+      */
+
+      "1":  "1",  
+      "2":  "2", 
+      "3":  "3", 
+      "4":  "4", 
+      "5":  "5",
+      "6":  "6", 
+      "7":  "7", 
+      "8":  "8", 
+      "9":  "9", 
+      "10": "0"
+      
+      /*
+      "1":  "一",  
+      "2":  "二", 
+      "3":  "三", 
+      "4":  "四", 
+      "5":  "五",
+      "6":  "六", 
+      "7":  "七", 
+      "8":  "八", 
+      "9":  "九",
+      "10": "十"
+      */
+    }
+  },
+
   "clock": {
     "format": "{:%H:%M}",
     "timezones": [ "", "Asia/Tokyo" ],

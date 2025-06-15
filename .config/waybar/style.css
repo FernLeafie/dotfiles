@@ -100,7 +100,8 @@
    border-radius: 10px;
  }
  
- #workspaces button.active {
+ #workspaces button.active,
+ #workspaces button.focused {
   margin: 0 4px;
   background: alpha(@primary, 0);
   color: alpha(@primary, 1);
