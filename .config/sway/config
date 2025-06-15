@@ -4,6 +4,13 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+### Autostarts
+
+exec playerctld daemon # launches playerctl daemon to keep track of last used player
+exec mpdris2-rs # launches mpd to MPRIS2 integration
+exec fcitx5 # starts the IMF
+exec kbuildsycoca6 # fixes the dolphin open with issues
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -23,12 +30,13 @@ set $browser firefox
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# output DP-2 bg fill
 #
 # Example configuration:
 #
-output DP-1 resolution 1920x1080@75.00Hz position 0, 0
-output DP-2 resolution 1920x1080@75.00Hz position 1920, 0
+output DP-1 resolution 1920x1080@74.998Hz position 0 0 bg ~/Documents/t-5-1-1.png fill
+output DP-2 resolution 1920x1080@74.998Hz position 1920 0 bg ~/Documents/t-5-1-2.png fill
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
@@ -47,6 +55,13 @@ output DP-2 resolution 1920x1080@75.00Hz position 1920, 0
 
 ### Input configuration
 #
+
+input * {
+    xkb_layout "se"
+    xkb_variant "nodeadkeys"
+    # xkb_options "grp:win_space_toggle"
+}
+
 # Example configuration:
 #
 #   input "2:14:SynPS/2_Synaptics_TouchPad" {
@@ -62,13 +77,13 @@ output DP-2 resolution 1920x1080@75.00Hz position 1920, 0
 ### Styling
 
 # gaps
-gaps inner 8px
+gaps inner 4px
 gaps outer 8px
 
 # borders
 default_border pixel 2px
 default_floating_border pixel 2px
-corner_radius pixel 5px
+corner_radius 5
 
 # border colour
 client.focused          #cba6f7 #000000 #cdd6f4 #cba6f7 #cba6f7
@@ -84,7 +99,6 @@ client.placeholder      #313244 #000000 #cdd6f4 #313244 #313244
 #
     # Start a terminal
     bindsym $mod+Return exec $term
-    bindsym 1 exec $term
     # Kill focused window
     bindsym $mod+q kill
 
@@ -229,13 +243,21 @@ bindsym $mod+r mode "resize"
     # Special keys to adjust brightness via brightnessctl
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+    # Special keys to control media via playerctl
+    bindsym XF86AudioPlay exec playerctl play-pause
+    bindsym XF86AudioPause exec playerctl play-pause
+    bindsym XF86AudioNext exec playerctl next
+    bindsym XF86AudioPrev exec playerctl previous
+    bindsym XF86AudioStop exec playerctl stop
     # Special key to take a screenshot with grim
-    bindsym Print exec grim
+    bindsym Print exec hyprshot -z -m region --clipboard-only
 
 #
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
+layer_effects "waybar" corner_radius 10
+
 bar {
   swaybar_command waybar
 }
