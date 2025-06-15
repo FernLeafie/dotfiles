@@ -4,9 +4,9 @@
 * {
     background:     #0B0A10;
     background-alt: #0B0A10;
-    foreground:     #e0def4;
+    foreground:     #cba6f7;
     selected:       #C699BB;
     active:         #C699BB;
-    urgent:         #e0def4;
+    urgent:         #cba6f7;
 }
 
