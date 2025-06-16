@@ -12,7 +12,7 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import                          "./matugen/matugen-rofi.rasi"
+@import                          "./colors.rasi"
 @import                          "./fonts.rasi"
 
 /*
@@ -21,7 +21,7 @@ USE_BUTTONS=YES
 
 /*****----- Main Window -----*****/
 window {
-    /* propiedades de la ventana */
+    /* properties for window widget */
     transparency:       "real";
     location:           center;
     anchor:             center;
@@ -30,12 +30,12 @@ window {
     x-offset:           0px;
     y-offset:           0px;
 
-    /* propiedades para todos los widgets */
+    /* properties for all widgets */
     enabled:            true;
     margin:             0px;
     padding:            0px;
     border:             2px solid;
-    border-radius:      0px;
+    border-radius:      10px;
     border-color:       @selected;
     cursor:             "default";
     background-color:   @background;
@@ -128,8 +128,8 @@ error-message {
 /*****----- Listview -----*****/
 listview {
     enabled:            true;
-    columns:            1; /* Para que salgan en lista vertical */
-    lines:              3; /* Una opción por línea */
+    columns:            1; /* So that they appear in a vertical list */
+    lines:              3; /* One option per line */
     cycle:              true;
     dynamic:            true;
     scrollbar:          false;
@@ -163,7 +163,6 @@ element {
     cursor:             pointer;
 }
 element-text {
-    font:               "Symbols Nerd Font 16";
     background-color:   transparent;
     text-color:         inherit;
     cursor:             inherit;

@@ -33,5 +33,6 @@ The waybar configuration is based on https://github.com/notdanna/hypr.dots
   - for multiple screens, setup the command to run once per bus with `&&` between
 
 ## To-Do's
-- Configure Rofi
 - Get logout menu
+- Get idler
+- Configure my own nvim

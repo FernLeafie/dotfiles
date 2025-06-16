@@ -21,6 +21,9 @@
 divider="─────────────────────────────────────────────────────────"
 goback=" Back"
 theme=~/.config/rofi/bluetooth/style.rasi
+# Icons
+on="" # 
+off="" # 
 
 # Checks if bluetooth controller is powered on
 power_on() {
@@ -139,10 +142,10 @@ toggle_connection() {
 device_paired() {
     device_info=$(bluetoothctl info "$1")
     if echo "$device_info" | grep -q "Paired: yes"; then
-        echo "Paired: "
+        echo "Paired: $on"
         return 0
     else
-        echo "Paired: "
+        echo "Paired: $off"
         return 1
     fi
 }
@@ -162,10 +165,10 @@ toggle_paired() {
 device_trusted() {
     device_info=$(bluetoothctl info "$1")
     if echo "$device_info" | grep -q "Trusted: yes"; then
-        echo "Trusted: "
+        echo "Trusted: $on"
         return 0
     else
-        echo "Trusted: "
+        echo "Trusted: $off"
         return 1
     fi
 }
@@ -219,9 +222,9 @@ device_menu() {
 
     # Build options
     if device_connected $mac; then
-        connected="Connected: "
+        connected="Connected: $on"
     else
-        connected="Connected: "
+        connected="Connected: $off"
     fi
     paired=$(device_paired $mac)
     trusted=$(device_trusted $mac)

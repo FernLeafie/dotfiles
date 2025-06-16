@@ -1,39 +1,39 @@
 #!/usr/bin/env bash
 #
-# Menu con Rofi para controlar grabaciones (fullscreen, region, stop).
-# Invoca internamente a "record.sh".
+# Menu with Rofi to control recordings (full screen, region, stop).
+# Internally calls "record.sh".
 #
-# Ajusta las rutas según tus preferencias.
+# Adjust the paths according to your preferences.
 
-# Ruta a tu script de grabación
+# Path to your recording script
 RECORD_SCRIPT="$HOME/.config/hypr/scripts/record.sh"
 
-# Ruta a tu tema para Rofi (archivo .rasi)
+# Path to your theme for Rofi (.rasi file)
 ROFI_THEME="$HOME/.config/rofi/record/config.rasi"
 
-# Opciones que se mostrarán en el menú
-# Puedes cambiar los iconos por otros de tu preferencia (Nerd Fonts, FontAwesome, etc.)
-options="  Pantalla Completa\n  Seleccionar Región\n  Detener Grabación"
+# Options to display in the menu
+# You can change the icons to others of your choice (Nerd Fonts, FontAwesome, etc.)
+options="󰍹  Full screen\n󰆞  Select Region\n  Stop Recording"
 
-# Llamamos a rofi para que muestre el menú
-# -dmenu = menú desplegable
-# -p = prompt (texto a la izquierda)
-# -theme = cargamos el .rasi personalizado
-choice="$(echo -e "$options" | rofi -dmenu -p "Grabación" -theme "$ROFI_THEME" -selected-row 0)"
+# Call rofi to display the menu
+# -dmenu = drop-down menu
+# -p = prompt (text on the left)
+# -theme = load the custom .rasi
+choice="$(echo -e "$options" | rofi -dmenu -p "Recording" -theme "$ROFI_THEME" -selected-row 0)"
 
-# Actuamos según la elección del usuario
+# We act according to the user's choice
 case "$choice" in
-    "  Pantalla Completa")
+    "󰍹  Full screen")
         "$RECORD_SCRIPT" fullscreen
         ;;
-    "  Seleccionar Región")
+    "󰆞  Select Region")
         "$RECORD_SCRIPT" section
         ;;
-    "  Detener Grabación")
+    "  Stop Recording")
         "$RECORD_SCRIPT" stop
         ;;
     *)
-        # Si se cierra el menú o se escoge algo no previsto
+        # If the menu is closed or something unexpected is chosen
         exit 0
         ;;
 esac
