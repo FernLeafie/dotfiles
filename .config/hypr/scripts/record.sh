@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 ################################################################################
-# Script para grabar pantalla con wf-recorder, detectando monitores con hyprctl
-# o xrandr. Prefiere "HDMI-A-1" si está activo; si no, usa "eDP-1".
+# Script to record screen with wf-recorder, detecting monitors with hyprctl
+# or xrandr. Prefers "HDMI-A-1" if enabled; otherwise, uses "eDP-1".
 #
-# Uso:
-#   record.sh fullscreen  -> Grabar pantalla completa
-#   record.sh section     -> Grabar una región con slurp
-#   record.sh stop        -> Detener la grabación
+# Usage:
+# record.sh fullscreen -> Record full screen
+# record.sh section -> Record a region with slurp
+# record.sh stop -> Stop recording
 ################################################################################
 
 SAVEDIR="$HOME/Videos/record"
@@ -17,12 +17,12 @@ PIDFILE="/tmp/wf-recorder.pid"
 VIDFILE="/tmp/wf-recorder-video.txt"
 
 ###############################################################################
-# Función para detectar el monitor que usaremos
+# Function to detect the monitor we will use
 ###############################################################################
 detect_output() {
   local ACTIVE_MONITORS=""
 
-  # 1) Detectar herramienta disponible
+  # 1) Detect available tools
   if command -v hyprctl &> /dev/null; then
     # hyprctl
     ACTIVE_MONITORS=$(hyprctl monitors | grep "Monitor" | awk '{print $2}')
@@ -30,24 +30,24 @@ detect_output() {
     # xrandr
     ACTIVE_MONITORS=$(xrandr --listactivemonitors | tail -n +2 | awk '{print $NF}')
   else
-    # No se encontró hyprctl ni xrandr
-    echo "Error: No se detectó hyprctl ni xrandr." >&2
+    # Neither hyprctl nor xrandr was found.
+    echo "Error: No hyprctl or xrandr detected." >&2
     exit 1
   fi
 
-  # 2) Verificar cuál de los monitores nos interesa
+  # 2) Check which of the monitors interests us
   if echo "$ACTIVE_MONITORS" | grep -q "HDMI-A-1"; then
     OUTPUT="HDMI-A-1"
   elif echo "$ACTIVE_MONITORS" | grep -q "eDP-1"; then
     OUTPUT="eDP-1"
   else
-    # Si no detectamos nada, forzamos eDP-1 como fallback
+    # If we don't detect anything, we force eDP-1 as fallback
     OUTPUT="eDP-1"
   fi
 }
 
 ###############################################################################
-# Función para generar el siguiente nombre de archivo: Video1.mp4, Video2.mp4, etc.
+# Function to generate the following file name: Video1.mp4, Video2.mp4, etc.
 ###############################################################################
 get_next_filename() {
   local file_num=1
@@ -58,10 +58,10 @@ get_next_filename() {
 }
 
 ###############################################################################
-# Grabación de pantalla completa
+# Full screen recording
 ###############################################################################
 start_fullscreen() {
-  detect_output  # Determina cuál de los dos monitores usar
+  detect_output  # Determine which of the two monitors to use
 
   local FILENAME
   FILENAME="$(get_next_filename)"
@@ -81,20 +81,20 @@ start_fullscreen() {
 }
 
 ###############################################################################
-# Grabación de una sección seleccionada
+# Recording a selected section
 ###############################################################################
 start_section() {
   detect_output
 
   if ! command -v slurp &>/dev/null; then
-    notify-send "Error" "No se encontró 'slurp' para seleccionar una región."
+    notify-send "Error" "No 'slurp' found to select a region."
     exit 1
   fi
 
   local GEOMETRY
   GEOMETRY="$(slurp)"
   if [ -z "$GEOMETRY" ]; then
-    notify-send "Grabación cancelada" "No se seleccionó ninguna región."
+    notify-send "Recording Cancelled" "No region selected."
     exit 0
   fi
 
@@ -112,12 +112,12 @@ start_section() {
   echo "$PID" > "$PIDFILE"
   echo "$FILENAME" > "$VIDFILE"
 
-  notify-send "Grabación iniciada" \
-              "Grabando región: $GEOMETRY en $OUTPUT\nArchivo: $(basename "$FILENAME")"
+  notify-send "Recording started" \
+              "Writing region: $GEOMETRY to $OUTPUT\nFile: $(basename "$FILENAME")"
 }
 
 ###############################################################################
-# Detener la grabación
+# Stop recording
 ###############################################################################
 stop_recording() {
   if [ -f "$PIDFILE" ]; then
@@ -126,21 +126,21 @@ stop_recording() {
     kill "$PID" 2>/dev/null
     rm "$PIDFILE"
 
-    local FILE_RECORDED="(desconocido)"
+    local FILE_RECORDED="(unknown)"
     if [ -f "$VIDFILE" ]; then
       FILE_RECORDED="$(cat "$VIDFILE")"
       rm "$VIDFILE"
     fi
 
-    notify-send "Grabación detenida" \
-                "Archivo guardado: $(basename "$FILE_RECORDED")"
+    notify-send "Recording stopped" \
+                "Saved file: $(basename "$FILE_RECORDED")"
   else
-    notify-send "Error" "No se encontró una grabación en curso."
+    notify-send "Error" "No recording in progress was found."
   fi
 }
 
 ###############################################################################
-# Lógica principal según el parámetro
+# Main logic according to the parameter
 ###############################################################################
 case "$1" in
   fullscreen)
@@ -153,7 +153,7 @@ case "$1" in
     stop_recording
     ;;
   *)
-    echo "Uso: $0 {fullscreen|section|stop}"
+    echo "Use: $0 {fullscreen|section|stop}"
     exit 1
     ;;
 esac
