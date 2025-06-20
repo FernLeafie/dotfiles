@@ -10,6 +10,7 @@
     "include": ["~/.config/waybar/modules.jsonc"],
 
     "modules-left": [
+      "niri/window",
       "sway/window",
       "hyprland/window",
       "group/apps"
@@ -18,6 +19,7 @@
     
     "modules-center": [
       "group/info",
+      "niri/workspaces",
       "sway/workspaces",
       "hyprland/workspaces",
       "group/utils"

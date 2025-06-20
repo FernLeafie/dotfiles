@@ -41,6 +41,7 @@
       " (Prism Launcher).*":                  " 󰆧 Prism",
       " (Stardew Valley).*":                  "  Stardew Valley",
       " (SMAPI).*":                           "  SMAPI",
+      " (Steins;Gate)":                       "  Steins;Gate",
       " (Lutris)":                            "  Lutris",
       "^.*(- Cursor|Cursor)$":                 "󰈹 Cursor"
       /*"^.+ $":                                 " Empty"   // avoid empty titles*/
@@ -99,6 +100,53 @@
       "9":  "九",
       "10": "十"
       */
+    }
+  },
+
+  "niri/window": {
+    "format": "",
+
+    "format-alt": " {title}",
+    "max-length": 80,
+    "separate-outputs": false,
+    "on-click-right": "bash ~/.config/rofi/powermenu/powermenu.sh",
+    "rewrite": {
+      "^.*( — Zen Browser|Zen Browser)$":      " 󰈹 Zen",
+      "^.*( — Firefox|Firefox)$":              " 󰈹 Firefox",
+      "^.*( — Thunderbird|Thunderbird)$":      "  Thunderbird",
+      "^.*( — Brave|Brave)$":                  " Brave",
+      "^.*( — Chromium|Chromium)$":            "󰈹 Chromium",
+      "^.*v( .*|$)":                           "  Neovim",
+      "^.*(nvim).*$":                          "  Neovim",
+      "^.*~$":                                 " 󰄛 Kitty",
+      "^.*(- Spotify|Spotify)$":               "  Spotify",
+      "^.*(- Code|Code)$":                     "  VSCode",
+      " (.*) - Thunar":                       "  Thunar - $1",
+      " (.*) — Dolphin":                      "  Dolphin - $1",
+      " (.*) - Discord":                      "  Discord - $1",
+      " .* - (.*) - Obsidian.*":              " 󱉽 Obsidian - $1", 
+      " (btop)":                              " 󰓅 btop",
+      " (rmpc).*":                            "  rmpc",
+      " (cava).*":                            "  cava",
+      " (waybar)":                            "  waybar",
+      " (yazi).*":                            " 󰇥 yazi",
+      " Gitkraken Desktop":                   "  GitKraken",
+      " .*(Manga Reader)":                    " 󰂺 Manga Reader",
+      " (Krita)":                             "  Krita",
+      " (.*) - Inkscape":                     "  Inkscape - $1",
+      " (.*) - Aseprite .*":                  "  Aseprite - $1",
+      " (.*) — LibreOffice Writer":           "  LibreOffice Writer - $1",
+
+      // Games
+      "( Steam)":                             "  Steam",
+      "( Minecraft).*":                       " 󰍳 Minecraft",
+      " (Prism Launcher).*":                  " 󰆧 Prism",
+      " (Stardew Valley).*":                  "  Stardew Valley",
+      " (SMAPI).*":                           "  SMAPI",
+      " (Steins;Gate)":                       "  Steins;Gate",
+      " (Lutris)":                            "  Lutris",
+      "^.*(- Cursor|Cursor)$":                 "󰈹 Cursor"
+      /*"^.+ $":                                 " Empty"   // avoid empty titles*/
     }
   },
 
