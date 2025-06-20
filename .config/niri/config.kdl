@@ -408,7 +408,10 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn "sh" "-c" "pgrep >/dev/null 2>&1 && killall rofi || rofi -show drun -show-icons"; }
+    // Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn "sh" "-c" "pgrep >/dev/null 2>&1 && killall rofi || rofi -show drun -show-icons"; }
+    Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn "bash" "/home/fern-snow/.config/rofi/rofi.sh"; }
+    // Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn "bash" "-c" "pgrep >/dev/null 2>&1 && killall rofi || rofi -show drun -show-icons"; }
+    // Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn "pgrep" ">/dev/null" "2>&1" "&&" "killall" "rofi" "||" "rofi" "-show" "drun" "-show-icons"; }
     Mod+E hotkey-overlay-title="Open a Filemanager: dolphin" { spawn "dolphin"; }
     Mod+B hotkey-overlay-title="Open a Browser: firefox" { spawn "firefox"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
