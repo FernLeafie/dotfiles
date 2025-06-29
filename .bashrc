@@ -19,7 +19,7 @@ alias lt='ls --tree'
 
 alias cat='bat'
 
-
+alias vencord='sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"'
 
 alias grep='grep --color=auto'
 
@@ -29,13 +29,15 @@ PS1='[\u@\h \W]\$ '
 ble-import -d integration/fzf-completion
 ble-import -d integration/fzf-key-bindings
 
-fastfetch --logo-color-1 blue --logo-color-2 blue
+alias fastfetch='fastfetch --logo-color-1 blue --logo-color-2 blue'
+catnap
 
 # --------------------------------------
 # oh-my-posh configs
 # --------------------------------------
 
-eval "$(oh-my-posh init bash --config https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/catppuccin_mocha.omp.json)"
+# eval "$(oh-my-posh init bash --config https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/catppuccin_mocha.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/catppuccin_mocha.omp.json)"
 bleopt prompt_ps1_transient=">"
 bleopt prompt_ps1_final="  "
 
