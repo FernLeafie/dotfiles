@@ -178,5 +178,27 @@
     ],
     lyrics: (
         timestamp: false
+    ),
+    cava: (
+        bar_symbols: ['▁', '▂', '▃', '▄', '▅', '▆', '▇', '█'],
+        bar_color: Gradient({
+            0: "#94e2d5",
+            14: "#89dceb",
+            29: "#74c7ec",
+            43: "#89b4fa",
+            57: "#cba6f7",
+            71: "#f5c2e7",
+            86: "#eba0ac",
+            100: "#f38ba8",
+        })
+// gradient_color_1 = ''
+// gradient_color_2 = '#89dceb'
+// gradient_color_3 = '#74c7ec'
+// gradient_color_4 = '#89b4fa'
+// gradient_color_5 = '#cba6f7'
+// gradient_color_6 = '#f5c2e7'
+// gradient_color_7 = '#eba0ac'
+// gradient_color_8 = '#f38ba8'
+
     )
 )
