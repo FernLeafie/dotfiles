@@ -291,6 +291,7 @@ layout {
 spawn-at-startup "swaybg" "-o" "DP-1" "-i" "/home/fern-snow/Documents/t-5-1-1.png"
 spawn-at-startup "swaybg" "-o" "DP-2" "-i" "/home/fern-snow/Documents/t-5-1-2.png"
 spawn-at-startup "swaybg" "-o" "winit" "-i" "/home/fern-snow/Documents/t-5-1.jpg" "-m" "fit" "-c" "#000000"
+spawn-at-startup "playerctld daemon"
 spawn-at-startup "waybar"
 spawn-at-startup "mpdris2-rs"
 spawn-at-startup "fcitx5"
