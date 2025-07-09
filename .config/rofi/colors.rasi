@@ -2,8 +2,8 @@
 
 
 * {
-    background:     rgba(0,0,0,0.8); //#000000
-    background-alt: #0B0A10;
+    background:     #000000; // #000000 rgba(0,0,0,0.8)
+    background-alt: #11111b; // #0B0A10
     foreground:     #cdd6f4;
     selected:       #cba6f7;
     active:         #C699BB;
