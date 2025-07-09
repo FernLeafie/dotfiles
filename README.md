@@ -1,7 +1,7 @@
 # Fern Snowleafie's Dotfiles
 Dotfiles made for both plasma and hyprland, with an amoled theme based on catppuccin mocha
 ## Theme
-A customised version of catppuccin mocha that's made darker combined with the Fira Code font
+A customised version of catppuccin mocha focused on a more amoled aestetic, combined with the Fira Code font
 
 Generally just a mess
  - Colours - [Catppuccin mocha](https://catppuccin.com/)
@@ -139,3 +139,6 @@ Not necessarily needed, but scripts that rely on them wont work as expected with
 - The rofi configuration is based on the one found in https://github.com/notdanna/hypr.dots
 - Catppuccin
 - My lovely wife [Kyoko](https://github.com/CodedKyoko) for the fastfetch and oh-my-posh config - and lots more <3
+
+### Backgrounds
+- The amazing anime backgrounds comes from [T5](https://x.com/thornsdance) who i highly recommend
