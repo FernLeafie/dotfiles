@@ -16,6 +16,7 @@
       "^.*( — Chromium|Chromium)$":            "󰈹 Chromium",
       "^.*v( .*|$)":                           "  Neovim",
       "^.*(nvim).*$":                          "  Neovim",
+      "^ (vim).*$":                           "  Vim",
       "^.*~$":                                 " 󰄛 Kitty",
       "^.*(- Spotify|Spotify)$":               "  Spotify",
       "^.*(- Code|Code)$":                     "  VSCode",
@@ -37,13 +38,21 @@
 
       // Games
       "( Steam)":                             "  Steam",
+      "( Steam Big Picture Mode)":            "  Big Picture",
       "( Minecraft).*":                       " 󰍳 Minecraft",
       " (Prism Launcher).*":                  " 󰆧 Prism",
       " (Stardew Valley).*":                  "  Stardew Valley",
       " (SMAPI).*":                           "  SMAPI",
       " (Steins;Gate)":                       "  Steins;Gate",
+      " (Spiritfarer)":                       " 󰻈 Spiritfarer",
+      " (Potion Craft)":                      " 󰙛 Potion Craft",
+      ". (Portal - ).*":                       " 󰃫 Portal",
+      ". (PORTAL 2 - ).*":                     " 󰃫 Portal 2",
+      ". (Portal Stories: Mel - ).*":          " 󰃫 Portal Stories: Mel",
+      ". (Celeste)":                           " 󰋵 Celeste",
       " (Lutris)":                            "  Lutris",
       "^.*(- Cursor|Cursor)$":                 "󰈹 Cursor"
+      // Raft 󱙳 , Portal 󰃫 , Half-Life 󰂩 , Star Citizen 󰫢 󰫣 , Overcooked 󰿞 , Firewatch 󰚂 , Celeste  󰋵 , 󰹛 Astroneer?
       /*"^.+ $":                                 " Empty"   // avoid empty titles*/
     }
   },
@@ -118,6 +127,7 @@
       "^.*( — Chromium|Chromium)$":            "󰈹 Chromium",
       "^.*v( .*|$)":                           "  Neovim",
       "^.*(nvim).*$":                          "  Neovim",
+      "^ (vim).*$":                           "  Vim",
       "^.*~$":                                 " 󰄛 Kitty",
       "^.*(- Spotify|Spotify)$":               "  Spotify",
       "^.*(- Code|Code)$":                     "  VSCode",
@@ -139,11 +149,18 @@
 
       // Games
       "( Steam)":                             "  Steam",
+      "( Steam Big Picture Mode)":            "  Big Picture",
       "( Minecraft).*":                       " 󰍳 Minecraft",
       " (Prism Launcher).*":                  " 󰆧 Prism",
       " (Stardew Valley).*":                  "  Stardew Valley",
       " (SMAPI).*":                           "  SMAPI",
       " (Steins;Gate)":                       "  Steins;Gate",
+      " (Spiritfarer)":                       " 󰻈 Spiritfarer",
+      " (Potion Craft)":                      " 󰙛 Potion Craft",
+      ". (Portal - ).*":                       " 󰃫 Portal",
+      ". (PORTAL 2 - ).*":                     " 󰃫 Portal 2",
+      ". (Portal Stories: Mel - ).*":          " 󰃫 Portal Stories: Mel",
+      ". (Celeste)":                           " 󰋵 Celeste",
       " (Lutris)":                            "  Lutris",
       "^.*(- Cursor|Cursor)$":                 "󰈹 Cursor"
       /*"^.+ $":                                 " Empty"   // avoid empty titles*/
@@ -555,6 +572,7 @@
     "on-click": "ddcutil --noverify --bus 5 setvcp 10 0 && ddcutil --noverify --bus 6 setvcp 10 0",
     "on-click-right": "ddcutil --noverify --bus 5 setvcp 10 100 && ddcutil --noverify --bus 6 setvcp 10 100",
     "interval": 1,
+    "smooth-scrolling-threshold": 1,
     "tooltip": false
   },
 
