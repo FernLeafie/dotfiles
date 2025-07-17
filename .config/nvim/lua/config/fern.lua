@@ -1,0 +1,2 @@
+-- let g:fern#renderer = "nerdfont"
+-- require("fern").setup
