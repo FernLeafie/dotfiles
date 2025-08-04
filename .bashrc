@@ -17,12 +17,17 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 
+alias :q='exit'
+
 alias cat='bat'
 
 alias vencord='sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"'
 
 alias grep='grep --color=auto'
 
+alias sysups='bash ~/Documents/scripts/update.sh'
+
+alias transfetch="fastfetch -l ~/.config/fastfetch/fastfetch_logo2.txt --logo-color-1 '38;5;117' --logo-color-2 '38;5;219' --logo-color-3 '38;5;231' --logo-color-4 '38;5;203' --logo-color-5 '38;5;215' --logo-color-6 '38;5;211' --logo-color-7 '38;5;199'"
 
 PS1='[\u@\h \W]\$ '
 
