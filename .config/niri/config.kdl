@@ -298,7 +298,7 @@ spawn-at-startup "fcitx5"
 spawn-at-startup "kbuildsycoca6"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
-spawn-at-startup "swayidle" "-w" "timeout" "300" "'hyprlock'" "timeout" "600" "'systemctl suspend'"
+spawn-at-startup "swayidle" "-w" "timeout" "300" "'hyprlock --grace 10'" "timeout" "600" "'systemctl suspend'"
 
 
 environment {
