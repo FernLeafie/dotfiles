@@ -35,8 +35,14 @@ require("catppuccin").setup({
     default_integrations = true,
     integrations = {
         alpha = true,
+        barbar = true,
         cmp = true,
         gitsigns = true,
+        indent_blankline = {
+            enabled = true,
+            scope_color = "mauve", -- catppuccin color (eg. `lavender`) Default: text
+            colored_indent_levels = false,
+        },
         nvimtree = true,
         treesitter = true,
         notify = false,
