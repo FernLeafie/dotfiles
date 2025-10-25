@@ -18,7 +18,8 @@ host=`hostnamectl hostname`
 
 # Options
 shutdown='󰤁'
-reboot='󰜉'
+softreboot='󰶕'
+reboot='󱄌'
 lock=''
 suspend='󰤄'
 logout='󰍃'
@@ -54,7 +55,7 @@ confirm_exit() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-    echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
+    echo -e "$lock\n$suspend\n$logout\n$softreboot\n$reboot\n$shutdown" | rofi_cmd
 }
 
 # Execute Command
@@ -65,6 +66,8 @@ run_cmd() {
             systemctl poweroff
         elif [[ $1 == '--reboot' ]]; then
             systemctl reboot
+        elif [[ $1 == '--softreboot' ]]; then
+            systemctl soft-reboot
         elif [[ $1 == '--suspend' ]]; then
             mpc -q pause
             hyprlock & disown
@@ -97,6 +100,9 @@ case ${chosen} in
         ;;
     $reboot)
         run_cmd --reboot
+        ;;
+    $softreboot)
+        run_cmd --softreboot
         ;;
     $lock)
         hyprlock

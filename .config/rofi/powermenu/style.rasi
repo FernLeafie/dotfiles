@@ -27,7 +27,7 @@ window {
     location:                    northwest;
     anchor:                      northwest;
     fullscreen:                  false;
-    width:                       450px;
+    width:                       500px;
     x-offset:                    19px;   /* Ajusta x-offset según necesites para una separación */
     y-offset:                    54px;
 
@@ -129,7 +129,7 @@ error-message {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     5;
+    columns:                     6;
     lines:                       1;
     cycle:                       true;
     dynamic:                     true;
