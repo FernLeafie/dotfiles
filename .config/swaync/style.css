@@ -45,7 +45,7 @@
 @define-color bg2       #504945;
 
 * {
-    font-family: FiraCode Nerd Font;
+    font-family: Maple Mono NF CN; /*FiraCode Nerd Font;*/
     /* color: @text-color; */
     /* font-weight: bolder; */
     font-size: 18px;
