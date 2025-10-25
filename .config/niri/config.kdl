@@ -282,6 +282,10 @@ layout {
     }
 }
 
+overview {
+    zoom 0.25
+}
+
 // Add lines like this to spawn processes at startup.
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
@@ -296,21 +300,24 @@ spawn-at-startup "waybar"
 spawn-at-startup "mpdris2-rs"
 spawn-at-startup "fcitx5"
 spawn-at-startup "kbuildsycoca6"
+spawn-at-startup "kwalletd6"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 spawn-at-startup "swayidle" "-w" "timeout" "300" "'hyprlock --grace 10'" "timeout" "600" "'systemctl suspend'"
+spawn-at-startup "sunsetr"
 
 
 environment {
     XCURSOR_SIZE "24"
     XCURSOR_THEME "breeze_cursors"
     XDG_MENU_PREFIX "arch-"
-    DISPLAY ":1"
+    // DISPLAY ":1"
     QT_QPA_PLATFORM "wayland"
     QT_QPA_PLATFORMTHEME "qt5ct"
+    GTK_USE_PORTAL "1"
 }
 
-spawn-at-startup "xwayland-satellite"
+// spawn-at-startup "xwayland-satellite"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -366,6 +373,14 @@ window-rule {
     open-focused true
     default-column-width { fixed 640; }
     default-window-height { fixed 480; }
+}
+window-rule {
+    match app-id="krunner" title="krunner"
+    open-focused true
+}
+window-rule {
+    match app-id="discord"
+    open-on-output "DP-2"
 }
 
 // Example: block out two password managers from screen capture.
