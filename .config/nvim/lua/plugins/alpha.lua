@@ -1,12 +1,12 @@
 -- Startpage
-    return {
+return {
     "goolord/alpha-nvim",
     config = function()
-    -- require("alpha").setup(require("alpha.themes.dashboard").config)
-    local alpha = require("alpha")
-    local dashboard = require("alpha.themes.dashboard")
+        -- require("alpha").setup(require("alpha.themes.dashboard").config)
+        local alpha = require("alpha")
+        local dashboard = require("alpha.themes.dashboard")
 
-    --[[ local function greeting()
+        --[[ local function greeting()
             local hour = tonumber(vim.fn.strftime("%H"))
             -- [02:00, 10:00) - morning, [10:00, 18:00) - day, [18:00, 02:00) - evening
             local part_id = math.floor((hour + 6) / 8) + 1
@@ -15,52 +15,52 @@
             return ("Good %s, %s"):format(day_part, username)
         end ]]
 
-    local function greeting()
-        local tableTime = os.date("*t")
-        local hour = tableTime.hour
-        local greetingsTable = {
-            [1] = "  Sleep well",
-            [2] = "  Good morning",
-            [3] = "  Good afternoon",
-            [4] = "  Good evening",
-            [5] = "望 Good night",
-        }
-        local greetingIndex = 0
-        if hour == 23 or hour < 7 then
-            greetingIndex = 1
-        elseif hour < 12 then
-            greetingIndex = 2
-        elseif hour >= 12 and hour < 18 then
-            greetingIndex = 3
-        elseif hour >= 18 and hour < 21 then
-            greetingIndex = 4
-        elseif hour >= 21 then
-            greetingIndex = 5
+        local function greeting()
+            local tableTime = os.date("*t")
+            local hour = tableTime.hour
+            local greetingsTable = {
+                [1] = "  Sleep well",
+                [2] = "  Good morning",   -- 󰖜   
+                [3] = "  Good afternoon", -- 󰖙   
+                [4] = "  Good evening",   -- 󰖛   
+                [5] = "󱡇  Good night",
+            }
+            local greetingIndex = 0
+            if hour == 23 or hour < 7 then
+                greetingIndex = 1
+            elseif hour < 12 then
+                greetingIndex = 2
+            elseif hour >= 12 and hour < 18 then
+                greetingIndex = 3
+            elseif hour >= 18 and hour < 21 then
+                greetingIndex = 4
+            elseif hour >= 21 then
+                greetingIndex = 5
+            end
+            local username = os.getenv("USER") or os.getenv("USERNAME") or "user"
+            return greetingsTable[greetingIndex] .. ", " .. username
         end
-        local username = os.getenv("USER") or os.getenv("USERNAME") or "user"
-        return greetingsTable[greetingIndex] .. ", " .. username
-    end
 
-    -- local greeting = greeting()
+        -- local greeting = greeting()
 
-    local greetHeading = {
-        type = "text",
-        val = greeting,
-        opts = {
-            position = "center",
-            hl = "String",
-        },
-    }
+        local greetHeading = {
+            type = "text",
+            val = greeting,
+            opts = {
+                position = "center",
+                hl = "String",
+            },
+        }
 
-    dashboard.section.header.val = {
-        "      ████ ██████           █████      ██                    ",
-        "     ███████████             █████                            ",
-        "     █████████ ███████████████████ ███   ███████████  ",
-        "    █████████  ███    █████████████ █████ ██████████████  ",
-        "   █████████ ██████████ █████████ █████ █████ ████ █████  ",
-        " ███████████ ███    ███ █████████ █████ █████ ████ █████ ",
-        "██████  █████████████████████ ████ █████ █████ ████ ██████",
-        "",
+        dashboard.section.header.val = {
+            "      ████ ██████           █████      ██                    ",
+            "     ███████████             █████                            ",
+            "     █████████ ███████████████████ ███   ███████████  ",
+            "    █████████  ███    █████████████ █████ ██████████████  ",
+            "   █████████ ██████████ █████████ █████ █████ ████ █████  ",
+            " ███████████ ███    ███ █████████ █████ █████ ████ █████ ",
+            "██████  █████████████████████ ████ █████ █████ ████ ██████",
+            "",
             greeting(),
         }
         dashboard.section.buttons.val = {
