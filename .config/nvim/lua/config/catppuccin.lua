@@ -44,6 +44,7 @@ require("catppuccin").setup({
             colored_indent_levels = false,
         },
         nvimtree = true,
+        treesitter_context = true,
         treesitter = true,
         notify = false,
         markview = true,
