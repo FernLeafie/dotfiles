@@ -37,7 +37,11 @@ return {
         local api = require("nvim-tree.api")
         require"nvim-tree".setup {
             on_attach = function (bufnr)
-                local opts = { buffer = bufnr }
+                -- description and options for keybinds
+                local function opts(desc)
+                    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+                end
+                -- get all default keybinds
                 api.config.mappings.default_on_attach(bufnr)
                 -- function for left to assign to keybindings
                 local lefty = function ()
@@ -62,21 +66,16 @@ return {
                         api.node.open.edit()
                     end
                 end
-                vim.keymap.set("n", "h", lefty , opts )
-                vim.keymap.set("n", "<Left>", lefty , opts )
-                vim.keymap.set("n", "<Right>", righty , opts )
-                vim.keymap.set("n", "l", righty , opts )
+                vim.keymap.set("n", "h", lefty , opts("Close directory or jump to parent") )
+                vim.keymap.set("n", "<Left>", lefty , opts("Close directory or jump to parent") )
+                vim.keymap.set("n", "<Right>", righty , opts("Open") )
+                vim.keymap.set("n", "l", righty , opts("Open") )
+                -- remove default keybinds
+                vim.keymap.del("n", "<C-t>", { buffer = bufnr })
+                -- overwrite default keybinds
+                vim.keymap.set("n", "<C-¨>", api.tree.change_root_to_node, opts(" CD"))
             end,
 
-            -- actions, view, etc.
-            --[[ view = {
-                mappings = {
-                    list = {
-                        { key = "<C-t>", action = "" },
-                        { key = "C-¨", action = "cd" },
-                    }
-                }
-            },]]
             renderer = {
                 icons = {
                     glyphs = {
