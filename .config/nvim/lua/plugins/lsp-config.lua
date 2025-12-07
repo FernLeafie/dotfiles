@@ -42,6 +42,7 @@ return {
             --[[ lspconfig.rust_analyser.setup({
                 capabilities = capabilities,
                 on_attach = on_attach,
+            vim.lsp.config('harper_ls', {
                 settings = {
                     ["rust-analyzer"] = {
                         imports = {
@@ -57,11 +58,33 @@ return {
                         },
                         procMacro = {
                             enable = true
+                    ["harper-ls"] = {
+
+                        linters = {
+                            SpellCheck = true,
+                            SpelledNumbers = false,
+                            AnA = true,
+                            SentenceCapitalization = false, -- changed
+                            UnclosedQuotes = true,
+                            WrongQuotes = false,
+                            LongSentences = true,
+                            RepeatedWords = true,
+                            Spaces = true,
+                            Matcher = true,
+                            CorrectNumberSuffix = true
                         },
+                        diagnosticSeverity = "hint",
+                        isolateEnglish = false,
+                        dialect = "British",
+                        maxFileLength = 120000,
+                        ignoredLintsPath = "",
+                        excludePatterns = {}
                     }
                 }
             })]]
 
+            })
+            vim.lsp.enable('harper_ls')
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
             vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
