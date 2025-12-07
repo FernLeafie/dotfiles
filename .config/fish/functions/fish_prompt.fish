@@ -81,6 +81,17 @@ function fish_prompt --description 'Write out the prompt'
             set pwd $parent '/..  ../' $base
         end
     end
+    
+    set -l prompt_time  
+    set -l duration $CMD_DURATION
+    # convert command duration to human readable time
+    if test $duration -lt 60000 # 1 min
+        set prompt_time (math $duration / 1000) 's'
+    else if test $duration -lt 3600000 # 1 hour
+        set prompt_time (math floor\($duration / 60000\)) 'm ' (math \($duration % 60000\) / 1000) 's'
+    else # more than 1h
+        set prompt_time (math floor\($duration / 3600000\)) 'h ' (math floor\(\($duration % 3600000\) / 60000\)) 'm ' (math \(\($duration % 3600000\) % 60000\) / 1000) 's'
+    end
 
     set -l prompt
     # decides look if transient, or current
@@ -93,6 +104,9 @@ function fish_prompt --description 'Write out the prompt'
     end
 
     # Final print
+    if test $CMD_DURATION -gt 30000
+        echo -s '[elapsed: ' $prompt_time ']'
+    end
     if string length -q -- $prompt_status
         echo -s $prompt_status # prints exit status if on line before if available
     end
