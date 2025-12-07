@@ -1,0 +1,82 @@
+function fish_prompt --description 'Write out the prompt'
+    set -l last_pipestatus $pipestatus
+    set -lx __fish_last_status $status # Export for __fish_print_pipestatus.
+    set -l normal (set_color normal)
+    set -q fish_color_status
+    or set -g fish_color_status red
+    set -l os
+
+    # Color the prompt differently when we're root
+    set -l color_cwd $fish_color_cwd
+    set -l suffix ''
+    if functions -q fish_is_root_user; and fish_is_root_user
+        if set -q fish_color_cwd_root
+            set color_cwd $fish_color_cwd_root
+        end
+        set suffix ''
+    end
+
+    # Write pipestatus
+    # If the status was carried over (if no command is issued or if `set` leaves the status untouched), don't bold it.
+    set -l bold_flag --bold
+    set -q __fish_prompt_status_generation; or set -g __fish_prompt_status_generation $status_generation
+    if test $__fish_prompt_status_generation = $status_generation
+        set bold_flag
+    end
+    set __fish_prompt_status_generation $status_generation
+    set -l status_color (set_color $fish_color_status)
+    set -l statusb_color (set_color $bold_flag $fish_color_status)
+    set -l prompt_status (__fish_print_pipestatus "[exit: " "]" "|" "$status_color" "$statusb_color" $last_pipestatus)
+    
+    # os icon
+    switch (uname -n)
+    case archlinux
+        set os ""
+    case nixos
+        set os ""
+    end
+    set os $os " " # adds the spacer
+
+    # version control system, sed to remove parenthesis
+    set -l vcs " "(fish_vcs_prompt | sed 's/(//g;s/)//g')
+    
+    # rewriting pwd
+    set -l pwd
+    set -l base (path basename $PWD)
+    set -l parent (string split / $PWD)[2]
+    if string match -q '~*' (prompt_pwd)                        # all paths beginning in ~
+        if  string match -q '~' (prompt_pwd)                                # paths only ~
+            set pwd '~'
+        else if string match -q (string join '' '~/' $base) (prompt_pwd)    # paths ~/base
+            set pwd '~/' $base
+        else                                                                # paths ~/../base
+            set pwd '~/.. ../' $base
+        end
+    else                                                        # all system paths
+        if  string match -q '/' (prompt_pwd)                                # paths only /
+            set pwd '/'
+        else if string match -q (string join '' '/' $base) (prompt_pwd)     # paths /base
+            set pwd $base
+        else if string match -q (string join '' '/' $parent '/' $base) $PWD # paths /parent/base
+            set pwd $parent '/' $base
+        else                                                                # paths /parent/../base
+            set pwd $parent '/..  ../' $base
+        end
+    end
+
+    set -l prompt
+    # decides look if transient, or current
+    if contains -- --final-rendering $argv
+        # transient
+        set prompt $os $suffix " "
+    else
+        # current
+        set prompt $os (prompt_login)' ' (set_color $color_cwd) $pwd $normal $vcs $normal " "$prompt_status " "$suffix " "
+    end
+
+    # Final print
+    if string length -q -- $prompt_status
+        echo -s $prompt_status # prints exit status if on line before if available
+    end
+    echo -n -s $prompt
+end

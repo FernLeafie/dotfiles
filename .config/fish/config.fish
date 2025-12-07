@@ -11,6 +11,7 @@ if status is-interactive
 
     # Fish setting variables
     set -g fish_greeting
+    set -g fish_transient_prompt 1
 
     # Alias
     if command -sq lsd
