@@ -1,184 +1,186 @@
 /* -------------------------------------------------------
- *  Waybar – Hyprland
- *  Symmetry/Pixel Cleanup and Adjustments
- * ----------------------------------------------------- */
+*  Waybar – Hyprland
+*  Symmetry/Pixel Cleanup and Adjustments
+* ----------------------------------------------------- */
 
- @import "matugen-waybar.css";
+@import "matugen-waybar.css";
 
- /* =======  Global style  ======= */
- * {
-   /*font: bold 13px "JetBrainsMono Nerd Font Propo";*/
-   font-family: "Maple Mono NF CN", "FiraCode Nerd Font Propo", "JetBrainsMono Nerd Font Propo", "Source Han Sans JP";
-   font-weight: bold;   
-   font-size: 13px;
-   border: none;
-   border-radius: 0px;
-   box-shadow: none;
-   text-shadow: none;
- }
- 
- /* =======  Main container  ======= */
- window#waybar {
-   background: alpha(@surface_container_lowest, 1);
-   border: 2px solid #313244;
-   border-radius: 10px;                     /* slightly smaller outline */
- }
- 
- /* =======  Tooltip  ======= */
- tooltip {
-   background: alpha(@surface_container_lowest, 0.8);
-   border: 2px solid alpha(@primary_fixed_dim, 1);
-   border-radius: 10px;
-   color: @on_tertiary_container;
- }
- tooltip label { color: @foreground; }
- 
- /* =======  Active window  ======= */
- #window {
-   margin: 0px 4px 2px 4px;               
-   padding: 2px 0px 2px 10px;
-   background: transparent;
-   border-radius: 10px;
-   color: @foreground;
- }
- 
- /* =======  Decorative arrows  ======= */
- #custom-arrow-right,
- #custom-arrow-left {
-   margin: 0px 4px 2px 4px;               
-   color: alpha(@on_secondary_container, .3);
- }
- 
- /* =======  Standard groups (CPU, RAM, etc.)  ======= */
- #cpu,
- #memory,
- #disk,
- #custom-updates,
- #custom-playerlabel,
- #mpris,
- #custom-cava,
- #custom-notifications,
- #tray,
- #custom-theme-switcher,
- #power-profiles-daemon, 
- #weather,
- #control-center {
-   margin: 6px 4px;                       /* 6 vertical, 4 horizontal  */
-   padding: 0px 8px;
-   background: alpha(@tertiary_container, 0.8);
-   color: @on_tertiary_container;
-   border-radius: 10px;
- }
+/* =======  Global style  ======= */
+* {
+    /*font: bold 13px "JetBrainsMono Nerd Font Propo";*/
+    font-family: "Maple Mono NF CN", "FiraCode Nerd Font Propo", "JetBrainsMono Nerd Font Propo", "Source Han Sans JP";
+    font-weight: bold;   
+    font-size: 13px;
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
+    text-shadow: none;
+    background: transparent;
+}
+
+/* =======  Main container  ======= */
+window#waybar {
+    background: alpha(@surface_container_lowest, 1);
+    border: 2px solid #313244;
+    border-radius: 10px;                     /* slightly smaller outline */
+}
+
+/* =======  Tooltip  ======= */
+tooltip {
+    background: alpha(@surface_container_lowest, 0.8);
+    border: 2px solid alpha(@primary_fixed_dim, 1);
+    border-radius: 10px;
+    color: @on_tertiary_container;
+}
+tooltip label { color: @foreground; }
+
+/* =======  Active window  ======= */
+#window {
+    margin: 0px 4px 2px 4px;               
+    padding: 2px 0px 2px 10px;
+    background: transparent;
+    border-radius: 10px;
+    color: @foreground;
+}
+
+/* =======  Decorative arrows  ======= */
+#custom-arrow-right,
+#custom-arrow-left {
+    margin: 0px 4px 2px 4px;
+    color: alpha(@on_secondary_container, .3);
+}
+
+/* =======  Standard groups (CPU, RAM, etc.)  ======= */
+#cpu,
+#memory,
+#disk,
+#custom-updates,
+#custom-playerlabel,
+#mpris,
+#custom-cava,
+#custom-notifications,
+#tray,
+#custom-theme-switcher,
+#power-profiles-daemon, 
+#weather,
+#control-center {
+    margin: 6px 4px;                       /* 6 vertical, 4 horizontal  */
+    padding: 0px 8px;
+    background: alpha(@tertiary_container, 0.8);
+    color: @on_tertiary_container;
+    border-radius: 10px;
+}
 #custom-section,
 #custom-stop,
 #custom-record {
- margin: 6px 0px;                       /* 6 vertical, 4 horizontal  */
- padding: 0px 8px;
- background: alpha(@tertiary_container, 0.8);
- color: @on_tertiary_container;
- border-radius: 10px;
+    margin: 6px 0px;                       /* 6 vertical, 4 horizontal  */
+    padding: 0px 8px;
+    background: alpha(@tertiary_container, 0.8);
+    color: @on_tertiary_container;
+    border-radius: 10px;
 }
- 
- /* special border radius combinations */
- #custom-section  { border-radius: 0 0 0 0; }
- #custom-stop     { border-radius: 0 10px 10px 0; }
- #custom-record   { border-radius: 10px 0 0 10px; }
- 
- /* =======  Workspaces  ======= */
- #workspaces {
-   margin: 0px 4px 0px 4px;   
-   background: transparent;
-   color: alpha(@on_secondary_container, 1);
-   border-radius: 10px;
- }
- 
- #workspaces button {
-   font-size: 20px;
-   margin: 0 4px;
-   padding: 0 0px;
-   color: alpha(@on_secondary_container, 0.25);
-   border-radius: 10px;
- }
- 
- #workspaces button.active,
- #workspaces button.focused {
-  margin: 0 4px;
-  background: alpha(@primary, 0);
-  color: alpha(@primary, 1);
+
+/* special border radius combinations */
+#custom-section  { border-radius: 0 0 0 0; }
+#custom-stop     { border-radius: 0 10px 10px 0; }
+#custom-record   { border-radius: 10px 0 0 10px; }
+
+/* =======  Workspaces  ======= */
+#workspaces {
+    margin: 0px 4px 0px 4px;   
+    background: transparent;
+    color: alpha(@on_secondary_container, 1);
+    border-radius: 10px;
+}
+
+#workspaces button {
+    font-size: 20px;
+    margin: 0 4px;
+    padding: 0 0px;
+    color: alpha(@on_secondary_container, 0.25);
+    border-radius: 10px;
+}
+
+#workspaces button.active,
+#workspaces button.focused {
+    margin: 0 4px;
+    background: alpha(@primary, 0);
+    color: alpha(@primary, 1);
 }
 
 
- 
- #workspaces button:hover,
- #workspaces button.urgent {
-   background: alpha(@background, 0.5);
-   color: alpha(@primary, 1);
- }
- 
- /* =======  Audio  ======= */
- #pulseaudio,
- #network,
- #bluetooth {
-   margin: 0 2px;
-   padding: 0 4px;
-   background: alpha(@surface_container_highest, 0);
-   color: @on_tertiary_container;
-   border-radius: 10px;
- }
- 
- /* volume slider */
- #pulseaudio-slider {
-   margin: 10px;
- }
- #pulseaudio-slider slider,
- #pulseaudio-slider highlight {
-   background: transparent;
-   border: none;
-   box-shadow: none;
-   border-radius: 8px;
- }
- 
- /* =======  Clock  ======= */
- #clock {
-   margin: 0px 4px 2px 4px;               
-   padding: 0;
-   background: alpha(@background, 0);
-   border-radius: 10px;
-   color: @foreground;
- }
- 
- /* =======  Power and battery  ======= */
- #power {
-  margin: 0px 4px 2px 4px;   
-  background: transparent;
-   color: @on_surface;
-   border-radius: 10px;
- }
- 
- #battery {
-  margin: 0px 4px 0px 4px;   
-  padding: 0 8px;
- }
- 
- /* =======  Taskbar  ======= */
- #taskbar {
-   margin: 0 4px;
-   padding: 0 8px;
-   border-radius: 10px;
-   background: transparent;
-   color: @on_tertiary_container;
- }
- 
- #taskbar button:hover {
-   background: alpha(@tertiary_container, 0.8);
- }
- #taskbar button.active {
-   background: transparent;
- }
- 
- /* =======  Singular modules  ======= */
- #custom-weather { padding: 0 4px; }      /* no background for icon/temperature */
- 
- /* Punctual adjustment to avoid excessive separation */
- #bluetooth { margin-left: 7px; }          /* maintains the original distance */
- 
+
+#workspaces button:hover,
+#workspaces button.urgent {
+    background: alpha(@background, 0.5);
+    color: alpha(@primary, 1);
+}
+
+/* =======  Audio  ======= */
+#pulseaudio,
+#network,
+#bluetooth,
+#custom-brightness {
+    margin: 0 2px;
+    padding: 0 4px;
+    background: alpha(@surface_container_highest, 0);
+    color: @on_tertiary_container;
+    border-radius: 10px;
+}
+
+/* volume slider */
+#pulseaudio-slider {
+    margin: 10px;
+}
+#pulseaudio-slider slider,
+#pulseaudio-slider highlight {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 8px;
+}
+
+/* =======  Clock  ======= */
+#clock {
+    margin: 0px 4px 2px 4px;               
+    padding: 0;
+    background: alpha(@background, 0);
+    border-radius: 10px;
+    color: @foreground;
+}
+
+/* =======  Power and battery  ======= */
+#power {
+    margin: 0px 4px 2px 4px;   
+    background: transparent;
+    color: @on_surface;
+    border-radius: 10px;
+}
+
+#battery {
+    margin: 0px 4px 0px 4px;   
+    padding: 0 8px;
+}
+
+/* =======  Taskbar  ======= */
+#taskbar {
+    margin: 0 4px;
+    padding: 0 8px;
+    border-radius: 10px;
+    background: transparent;
+    color: @on_tertiary_container;
+}
+
+#taskbar button:hover {
+    background: alpha(@tertiary_container, 0.8);
+}
+#taskbar button.active {
+    background: transparent;
+}
+
+/* =======  Singular modules  ======= */
+#custom-weather { padding: 0 4px; }      /* no background for icon/temperature */
+
+/* Punctual adjustment to avoid excessive separation */
+#bluetooth { margin-left: 7px; }          /* maintains the original distance */
+
