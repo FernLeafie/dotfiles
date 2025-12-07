@@ -32,6 +32,9 @@ if status is-interactive
     if command -sq zoxide
         zoxide init --cmd cd fish | source
     end
+
+    set -gx PATH $PATH "$HOME/.cargo/bin"
+
     if command -sq catnap
         catnap
     else 
