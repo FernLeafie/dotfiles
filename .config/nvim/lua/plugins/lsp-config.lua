@@ -88,9 +88,8 @@ return {
             --         }
             --     }
             -- })
+            vim.keymap.set("n", "<leader>de", "<cmd>lua vim.diagnostic.enable(not vim.diagnostic.is_enabled())<cr>")
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-            vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
-            vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
             vim.keymap.set({ "n", "x" }, "<leader>ca", function()
                 require("tiny-code-action").code_action()
             end, { noremap = true, silent = true })

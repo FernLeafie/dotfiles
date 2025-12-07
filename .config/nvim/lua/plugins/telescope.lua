@@ -4,7 +4,6 @@ return {
     },
     {
         "nvim-telescope/telescope.nvim",
-        tag = "0.1.5",
         dependencies = { "nvim-lua/plenary.nvim" },
         config = function()
             require("telescope").setup({
@@ -19,6 +18,10 @@ return {
             vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
             vim.keymap.set("n", "<leader><leader>", builtin.oldfiles, {})
 
+            -- lsp thingies
+            vim.keymap.set("n", "<leader>gd", builtin.lsp_definitions, {})
+            vim.keymap.set("n", "<leader>gr", builtin.lsp_references, {})
+            vim.keymap.set("n", "<leader>ds", builtin.diagnostics, {})
             require("telescope").load_extension("ui-select")
         end,
     },
