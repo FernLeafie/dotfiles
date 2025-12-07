@@ -52,12 +52,16 @@ return {
                         symbols = { modified = ' ', readonly = ' ', unnamed = ' ', newfile = ' '}
                     }
                 },
-                lualine_c = {'branch', 
+                lualine_c = {
+                    {
+                        'branch',
+                        icon = '',
+                    },
                     {
                         "diff",
                         colored = true,
                         symbols = { added = " ", modified = " ", removed = " " },
-                    }, 
+                    },
                 },
                 lualine_x = {--[[ 'encoding', 'fileformat',]]
                     {

@@ -6,14 +6,14 @@ return {
         local alpha = require("alpha")
         local dashboard = require("alpha.themes.dashboard")
 
-        --[[ local function greeting()
-            local hour = tonumber(vim.fn.strftime("%H"))
-            -- [02:00, 10:00) - morning, [10:00, 18:00) - day, [18:00, 02:00) - evening
-            local part_id = math.floor((hour + 6) / 8) + 1
-            local day_part = ({ "evening", "morning", "afternoon", "evening" })[part_id]
-            local username = os.getenv("USER") or os.getenv("USERNAME") or "user"
-            return ("Good %s, %s"):format(day_part, username)
-        end ]]
+        -- local function greeting()
+        --     local hour = tonumber(vim.fn.strftime("%H"))
+        --     -- [02:00, 10:00) - morning, [10:00, 18:00) - day, [18:00, 02:00) - evening
+        --     local part_id = math.floor((hour + 6) / 8) + 1
+        --     local day_part = ({ "evening", "morning", "afternoon", "evening" })[part_id]
+        --     local username = os.getenv("USER") or os.getenv("USERNAME") or "user"
+        --     return ("Good %s, %s"):format(day_part, username)
+        -- end
 
         local function greeting()
             local tableTime = os.date("*t")
@@ -21,9 +21,9 @@ return {
             local greetingsTable = {
                 [1] = "  Sleep well",
                 [2] = "  Good morning",   -- 󰖜   
-                [3] = "   Good day",
-                [4] = "  Good afternoon", -- 󰖙   
-                [5] = "  Good evening",   -- 󰖛   
+                [3] = "  Good day",       -- 󰖙   
+                [4] = "  Good afternoon", -- 󰖛  
+                [5] = "  Good evening",   -- 
                 [6] = "󱡇  Good night",
             }
             local greetingIndex = 0
@@ -67,15 +67,15 @@ return {
             greeting(),
         }
         dashboard.section.buttons.val = {
-            dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
-            dashboard.button("f", "󰍉  Find file", ":Telescope find_files<CR>"),
-            dashboard.button("t", "  Browse cwd", ":NvimTreeOpen<CR>"),
+            dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"), -- 󰝒 
+            dashboard.button("f", "  Find file", ":Telescope find_files<CR>"),
+            dashboard.button("t", "  Browse cwd", ":NvimTreeOpen<CR>"), --    
             -- dashboard.button("r", "  Browse src", ":e ~/.local/src/<CR>"),
             -- dashboard.button("s", "󰯂  Browse scripts", ":e ~/scripts/<CR>"),
-            dashboard.button("c", "  Config", ":e ~/.config/nvim/<CR>"),
+            dashboard.button("c", "  Config", ":e ~/.config/nvim/<CR>"), --    
             -- dashboard.button("m", "  Mappings", ":e ~/.config/nvim/lua/config/mappings.lua<CR>"),
             dashboard.button("l", "󰒲  Lazy", ":Lazy<CR>"),
-            dashboard.button("q", "󰅙  Quit", ":q!<CR>"),
+            dashboard.button("q", "  Quit", ":q!<CR>"), --    
         }
         -- dashboard.section.footer.val =
         alpha.setup(dashboard.opts)
