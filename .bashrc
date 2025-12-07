@@ -115,4 +115,6 @@ eval "$(zoxide init --cmd cd bash)"
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# export BAT_THEME="Catppuccin Mocha"
+
 [[ ! ${BLE_VERSION-} ]] || ble-attach
