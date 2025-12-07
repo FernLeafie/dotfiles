@@ -46,7 +46,7 @@ require("catppuccin").setup({
         nvimtree = true,
         treesitter_context = true,
         treesitter = true,
-        notify = false,
+        notify = true,
         markview = true,
         render_markdown = true,
         mini = {
