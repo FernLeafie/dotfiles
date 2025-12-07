@@ -29,11 +29,29 @@ function fish_prompt --description 'Write out the prompt'
     set -l prompt_status (__fish_print_pipestatus "[exit: " "]" "|" "$status_color" "$statusb_color" $last_pipestatus)
     
     # os icon
-    switch (uname -n)
-    case archlinux
+    switch (string split '=' (grep "^NAME=" /etc/os-release) | sed 's/"//g')[2]
+    case "Arch Linux"
         set os ""
-    case nixos
+    case "NixOS"
         set os ""
+    case "Debian GNU/Linux"
+        set os ""
+    case "Fedora Linux"
+        set os ""
+    case "Gentoo"
+        set os ""
+    case "Pop!_OS"
+        set os ""
+    case "postmarketOS"
+        set os ""
+    case "SteamOS"
+        set os ""
+    case "Ubuntu"
+        set os ""
+    case "Void"
+        set os ""
+    case "Zorin OS"
+        set os ""
     end
     set os $os " " # adds the spacer
 
