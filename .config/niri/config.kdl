@@ -102,14 +102,11 @@ input {
 }
 output "DP-1" {
     mode "1920x1080@74.998"
-    background-color "#00000000"
 }
 output "DP-2" {
     mode "1920x1080@74.998"
-    background-color "#00000000"
 }
 output "winit" {
-    background-color "#00000000"
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -126,6 +123,7 @@ layout {
     // - "on-overflow", focusing a column will center it if it doesn't fit
     //   together with the previously focused column.
     center-focused-column "never"
+    background-color "transparent"
 
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
@@ -303,7 +301,7 @@ spawn-at-startup "kbuildsycoca6"
 spawn-at-startup "kwalletd6"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
-spawn-at-startup "swayidle" "-w" "timeout" "300" "'hyprlock --grace 10'" "timeout" "600" "'systemctl suspend'"
+spawn-sh-at-startup "swayidle -w timeout 300 'hyprlock --grace 10 & disown' timeout 600 'systemctl suspend'"
 spawn-at-startup "sunsetr"
 
 
@@ -311,13 +309,11 @@ environment {
     XCURSOR_SIZE "24"
     XCURSOR_THEME "breeze_cursors"
     XDG_MENU_PREFIX "arch-"
-    // DISPLAY ":1"
     QT_QPA_PLATFORM "wayland"
     QT_QPA_PLATFORMTHEME "qt5ct"
     GTK_USE_PORTAL "1"
+    ELECTRON_OZONE_PLATFORM_HINT "auto" // should cause electron 28 applications and above to prefer wayland
 }
-
-// spawn-at-startup "xwayland-satellite"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
