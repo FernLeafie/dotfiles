@@ -71,7 +71,7 @@ function fish_prompt --description 'Write out the prompt'
         set prompt $os $suffix " "
     else
         # current
-        set prompt $os (prompt_login)' ' (set_color $color_cwd) $pwd $normal $vcs $normal " "$prompt_status " "$suffix " "
+        set prompt $os (prompt_login)' ' (set_color $color_cwd) $pwd $normal $vcs $normal " "$suffix " "
     end
 
     # Final print
