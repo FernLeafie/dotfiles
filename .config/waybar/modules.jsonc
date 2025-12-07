@@ -31,6 +31,7 @@
       " (yazi).*":                            " 󰇥 yazi",
       " Gitkraken Desktop":                   "  GitKraken",
       " .*(Manga Reader)":                    " 󰂺 Manga Reader",
+      " Hayase":                              " 󰎁 Hayase",
       " (Krita)":                             "  Krita",
       " (.*) - Inkscape":                     "  Inkscape - $1",
       " (.*) - Aseprite .*":                  "  Aseprite - $1",
@@ -50,9 +51,12 @@
       ". (PORTAL 2 - ).*":                     " 󰃫 Portal 2",
       ". (Portal Stories: Mel - ).*":          " 󰃫 Portal Stories: Mel",
       ". (Celeste)":                           " 󰋵 Celeste",
+      " (Raft)":                              " 󱙳 Raft",
+      " (ASTRONEER  )":                       " 󰹛 Astroneer",
+      " (SIGNALIS)":                          " 󰔷 Signalis",
       " (Lutris)":                            "  Lutris",
       "^.*(- Cursor|Cursor)$":                 "󰈹 Cursor"
-      // Raft 󱙳 , Portal 󰃫 , Half-Life 󰂩 , Star Citizen 󰫢 󰫣 , Overcooked 󰿞 , Firewatch 󰚂 , Celeste  󰋵 , 󰹛 Astroneer?
+      //Half-Life 󰂩 , Star Citizen 󰫢 󰫣 , Overcooked 󰿞 , Firewatch 󰚂 , Nier  ?, 
       /*"^.+ $":                                 " Empty"   // avoid empty titles*/
     }
   },
@@ -142,6 +146,7 @@
       " (yazi).*":                            " 󰇥 yazi",
       " Gitkraken Desktop":                   "  GitKraken",
       " .*(Manga Reader)":                    " 󰂺 Manga Reader",
+      " Hayase":                              " 󰎁 Hayase",
       " (Krita)":                             "  Krita",
       " (.*) - Inkscape":                     "  Inkscape - $1",
       " (.*) - Aseprite .*":                  "  Aseprite - $1",
@@ -161,9 +166,67 @@
       ". (PORTAL 2 - ).*":                     " 󰃫 Portal 2",
       ". (Portal Stories: Mel - ).*":          " 󰃫 Portal Stories: Mel",
       ". (Celeste)":                           " 󰋵 Celeste",
+      " (Raft)":                              " 󱙳 Raft",
+      " (ASTRONEER  )":                       " 󰹛 Astroneer",
+      " (SIGNALIS)":                          " 󰔷 Signalis",
       " (Lutris)":                            "  Lutris",
       "^.*(- Cursor|Cursor)$":                 "󰈹 Cursor"
       /*"^.+ $":                                 " Empty"   // avoid empty titles*/
+    }
+  },
+
+  "niri/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    // "all-outputs": true,
+    "format-icons": {
+      /*
+      "1":  "",  
+      "2":  "󰖟", 
+      "3":  "󰅩", 
+      "4":  "󰞶", 
+      "5":  "",
+      "6":  "󰓇", 
+      "7":  "", 
+      "8":  "󰕧", 
+      "9":  "", 
+      "10": "󰙯"
+      
+      "1":  "󰊠",  
+      "2":  "󰊠", 
+      "3":  "󰊠", 
+      "4":  "󰊠", 
+      "5":  "󰊠",
+      "6":  "󰊠", 
+      "7":  "󰊠", 
+      "8":  "󰊠", 
+      "9":  "󰊠", 
+      "10": "󰊠"
+      */
+      
+      "1":  "1",  
+      "2":  "2", 
+      "3":  "3", 
+      "4":  "4", 
+      "5":  "5",
+      "6":  "6", 
+      "7":  "7", 
+      "8":  "8", 
+      "9":  "9", 
+      "10": "0"
+      
+      /*
+      "1":  "一",  
+      "2":  "二", 
+      "3":  "三", 
+      "4":  "四", 
+      "5":  "五",
+      "6":  "六", 
+      "7":  "七", 
+      "8":  "八", 
+      "9":  "九",
+      "10": "十"
+      */
     }
   },
 
@@ -329,7 +392,12 @@
 
   "group/control-center": {
     "orientation": "inherit",
-    "modules": [ "backlight", "custom/brightness", "group/audio", "group/connection"]
+    "modules": ["group/brightness", "group/audio", "group/connection"]
+  },
+
+  "group/brightness": {
+    "orientation": "inherit",
+    "modules": ["custom/brightness"] // "backlight"
   },
 
   "group/audio": {
@@ -340,7 +408,7 @@
 
   "group/connection": {
     "orientation": "inherit",
-    "modules": ["group/network"]
+    "modules": ["group/network"] // "group/bluetooth"
   },
 
   "group/network": {
@@ -566,11 +634,11 @@
     "format": "{icon} {percentage}%",
     "format-icons": ["󰃞", "󰃟", "󰃠"], //["\uDB80\uDCDE", "\uDB80\uDCDF", "\uDB80\uDCE0"], ["󰃞", "󰃟", "󰃠"], ["", "", "", "", "", "", "", "", ""]
     "return-type": "json",
-    "exec": "ddcutil --bus 5 getvcp 10 | grep -oP 'current.*?=\\s*\\K[0-9]+' | { read x; echo '{\"percentage\":'${x}'}'; }",
-    "on-scroll-up": "ddcutil --noverify --bus 5 setvcp 10 + 10 && ddcutil --noverify --bus 6 setvcp 10 + 10",
-    "on-scroll-down": "ddcutil --noverify --bus 5 setvcp 10 - 10 && ddcutil --noverify --bus 6 setvcp 10 - 10",
-    "on-click": "ddcutil --noverify --bus 5 setvcp 10 0 && ddcutil --noverify --bus 6 setvcp 10 0",
-    "on-click-right": "ddcutil --noverify --bus 5 setvcp 10 100 && ddcutil --noverify --bus 6 setvcp 10 100",
+    "exec": "ddcutil --bus 6 getvcp 10 | grep -oP 'current.*?=\\s*\\K[0-9]+' | { read x; echo '{\"percentage\":'${x}'}'; }",
+    "on-scroll-up": "ddcutil --noverify --bus 6 setvcp 10 + 10 && ddcutil --noverify --bus 7 setvcp 10 + 10",
+    "on-scroll-down": "ddcutil --noverify --bus 6 setvcp 10 - 10 && ddcutil --noverify --bus 7 setvcp 10 - 10",
+    "on-click": "ddcutil --noverify --bus 6 setvcp 10 0 && ddcutil --noverify --bus 7 setvcp 10 0",
+    "on-click-right": "ddcutil --noverify --bus 6 setvcp 10 100 && ddcutil --noverify --bus 7 setvcp 10 100",
     "interval": 1,
     "smooth-scrolling-threshold": 1,
     "tooltip": false
