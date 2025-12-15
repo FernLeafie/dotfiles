@@ -295,7 +295,8 @@ spawn-at-startup "swaybg" "-o" "DP-2" "-i" "/home/fern-snow/Documents/Background
 spawn-at-startup "swaybg" "-o" "winit" "-i" "/home/fern-snow/Documents/Backgrounds/Coloured/t-5-1.jpg" "-m" "fit" "-c" "#000000"
 spawn-at-startup "playerctld daemon"
 spawn-at-startup "waybar"
-spawn-at-startup "mpdris2-rs"
+// for some goddesses forsaken reason the service fails the first time around
+spawn-sh-at-startup "systemctl --user restart mpdris-rs.service"
 spawn-at-startup "fcitx5"
 spawn-at-startup "kbuildsycoca6"
 spawn-at-startup "kwalletd6"
