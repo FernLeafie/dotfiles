@@ -44,6 +44,12 @@ if status is-interactive
         end
     end
 
+    # Abbriviations
+    if command -sq bat
+        abbr -a --position anywhere -- --help '--help | bat -Pplhelp'
+        abbr -a --position anywhere -- -h '-h | bat -Pplhelp'
+    end
+    
     # Initialisations
     if command -sq zoxide
         zoxide init --cmd cd fish | source
