@@ -9,6 +9,8 @@ if status is-interactive
     --color=selected-bg:#45475A \
     --color=border:#313244,label:#CDD6F4"
 
+    set -gx EDITOR "nvim"
+
     # Fish setting variables
     set -g fish_greeting
     set -g fish_transient_prompt 1
@@ -21,14 +23,28 @@ if status is-interactive
         alias lla='ls -la'
         alias lt='ls --tree'
     end
+
     if command -sq bat
         alias cat='bat'
+        alias fzf='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}" --style=full'
+    end
+    if command -sq batman
+        alias man='batman'
     end
 
     alias grep='grep --color=auto'
 
     alias sysups='bash ~/Documents/scripts/update.sh'
     
+    # The stupid alias's
+    alias vencord='sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"'
+    if command -sq gamescope
+        if command -sq steam
+            alias bigpicture='gamescope -W 1920 -H 1080 -w 1920 -h 1080 -f -- steam steam://open/bigpicture'
+        end
+    end
+
+    # Initialisations
     if command -sq zoxide
         zoxide init --cmd cd fish | source
     end
