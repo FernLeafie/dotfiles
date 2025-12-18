@@ -290,9 +290,10 @@ overview {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "swaybg" "-o" "DP-1" "-i" "/home/fern-snow/Documents/Backgrounds/Coloured/t-5-1-1.png"
-spawn-at-startup "swaybg" "-o" "DP-2" "-i" "/home/fern-snow/Documents/Backgrounds/Coloured/t-5-1-2.png"
-spawn-at-startup "swaybg" "-o" "winit" "-i" "/home/fern-snow/Documents/Backgrounds/Coloured/t-5-1.jpg" "-m" "fit" "-c" "#000000"
+// spawn-at-startup "swaybg" "-o" "DP-1" "-i" "/home/fern-snow/Documents/Backgrounds/Coloured/t-5-1-1.png"
+// spawn-at-startup "swaybg" "-o" "DP-2" "-i" "/home/fern-snow/Documents/Backgrounds/Coloured/t-5-1-2.png"
+// spawn-at-startup "swaybg" "-o" "winit" "-i" "/home/fern-snow/Documents/Backgrounds/Coloured/t-5-1.jpg" "-m" "fit" "-c" "#000000"
+spawn-at-startup "swww-daemon" // background with swww
 spawn-at-startup "playerctld daemon"
 spawn-at-startup "waybar"
 // for some goddesses forsaken reason the service fails the first time around
@@ -314,6 +315,7 @@ environment {
     QT_QPA_PLATFORMTHEME "qt5ct"
     GTK_USE_PORTAL "1"
     ELECTRON_OZONE_PLATFORM_HINT "auto" // should cause electron 28 applications and above to prefer wayland
+    SWWW_TRANSITION "wipe" // sets swww transition type
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -403,6 +405,11 @@ window-rule {
 layer-rule {
     match namespace="^wallpaper$"
 
+    place-within-backdrop true
+}
+
+layer-rule {
+    match namespace="^swww-daemon$"
     place-within-backdrop true
 }
 
