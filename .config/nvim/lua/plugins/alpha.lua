@@ -54,16 +54,22 @@ return {
                 hl = "String",
             },
         }
+        dashboard.section.terminal.command = "chafa --size=69x20 -f symbols " .. os.getenv("HOME") .. "/.config/nvim/lua/plugins/dashboard-img/NeovimLogo.png"
+        dashboard.section.terminal.width = 69
+        dashboard.section.terminal.height = 19
 
+        -- dashboard.section.header.val = {
+        --     dashboard.section.terminal,
+        -- }
         dashboard.section.header.val = {
-            "      ████ ██████           █████      ██                    ",
-            "     ███████████             █████                            ",
-            "     █████████ ███████████████████ ███   ███████████  ",
-            "    █████████  ███    █████████████ █████ ██████████████  ",
-            "   █████████ ██████████ █████████ █████ █████ ████ █████  ",
-            " ███████████ ███    ███ █████████ █████ █████ ████ █████ ",
-            "██████  █████████████████████ ████ █████ █████ ████ ██████",
-            "",
+        --     "      ████ ██████           █████      ██                    ",
+        --     "     ███████████             █████                            ",
+        --     "     █████████ ███████████████████ ███   ███████████  ",
+        --     "    █████████  ███    █████████████ █████ ██████████████  ",
+        --     "   █████████ ██████████ █████████ █████ █████ ████ █████  ",
+        --     " ███████████ ███    ███ █████████ █████ █████ ████ █████ ",
+        --     "██████  █████████████████████ ████ █████ █████ ████ ██████",
+        --     "",
             greeting(),
         }
         dashboard.section.buttons.val = {
@@ -77,7 +83,18 @@ return {
             dashboard.button("l", "󰒲  Lazy", ":Lazy<CR>"),
             dashboard.button("q", "  Quit", ":q!<CR>"), --    
         }
+
+          -- Layout
+        dashboard.config.layout = {
+            { type = "padding", val = 1 },
+            dashboard.section.terminal,
+            -- { type = "padding", val = 1 },
+            dashboard.section.header,
+            { type = "padding", val = 1 },
+            dashboard.section.buttons,
+        }
         -- dashboard.section.footer.val =
         alpha.setup(dashboard.opts)
+        require'alpha.term'
     end,
 }
