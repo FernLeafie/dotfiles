@@ -141,4 +141,8 @@ Not necessarily needed, but scripts that rely on them wont work as expected with
 - My lovely wife [Kyoko](https://github.com/CodedKyoko) for the fastfetch and oh-my-posh config - and lots more <3
 
 ### Backgrounds
-- The amazing anime backgrounds comes from [T5](https://x.com/thornsdance) who i highly recommend
+All amazing artists with lots of beautiful background material (if any of these credits are incorrect, please correct me)
+- T5 [Twitter](https://x.com/thornsdance) [pixiv](https://www.pixiv.net/en/users/4819066) [artstation](https://www.artstation.com/thornsdance)
+- Cogecha [Twitter](https://x.com/BARD713) [pixiv](https://www.pixiv.net/en/users/12845810) (Rest in peace)
+- Shapoko [Twitter](https://x.com/shapoco) [pixiv](https://www.pixiv.net/en/users/24431887) [Bluesky](https://bsky.app/profile/shapoco.net) [website](https://www.shapoco.net/)
+- Neko [Twitter](https://x.com/Neko_4cfantasy) [pixiv](https://www.pixiv.net/en/users/2600911)
