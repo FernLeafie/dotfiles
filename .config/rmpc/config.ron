@@ -118,22 +118,16 @@
             name: "Queue",
             pane: Split(
                 direction: Horizontal,
-                panes: [(size: "40%", pane: Pane(AlbumArt)), (size: "60%", pane: Pane(Queue))],
-            ),
-        ),
-        (
-            name: "Lyrics",
-            pane: Split(
-                direction: Horizontal,
                 panes: [
-                    (size: "40%", pane: Pane(AlbumArt)), 
-                    (
-                        size: "60%",  
-                        pane: Split(
+                    (size: "40%", pane: Pane(AlbumArt)),
+                    (size: "60%", borders: "LEFT", pane: Split(
                         direction: Vertical,
                         panes: [
-                            (size: "25%", pane: Pane(Lyrics)), (size: "75%", pane: Pane(Cava))],
-            ),)],
+                            (size: "60%", pane: Pane(Queue)),
+                            (size: "40%", borders: "TOP", pane: Pane(Cava)),
+                        ]),
+                    )
+                ],
             ),
         ),
         (
