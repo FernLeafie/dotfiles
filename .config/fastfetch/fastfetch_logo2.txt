@@ -1,0 +1,19 @@
+$1                  -$4`                      
+$1                 .o$4+`                     
+$1                `oo$4o/                     
+$1               `+oo$4oo:                    
+$2              `+ooo$5ooo:                   
+$2              -+ooo$5ooo+:                  
+$2            `/:-:++$5oooo+:                 
+$2           `/++++/+$5++++++:                
+$3          `/+++++++$3+++++++:               
+$3         `/+++ooooo$3oooooooo/`             
+$3        ./ooosssso+$3+osssssso+`            
+$3       .oossssso-``$3``/ossssss+`           
+$2      -osssssso.   $6   :ssssssso.          
+$2     :osssssss/    $6    osssso+++.         
+$2    /ossssssss/    $6    +ssssooo/-         
+$2  `/ossssso+/:-    $6    -:/+osssso+-       
+$1 `+sso+:-`         $7        `.-/+oso:      
+$1`++:.              $7             `-/+/     
+$1.`                 $7                `/      

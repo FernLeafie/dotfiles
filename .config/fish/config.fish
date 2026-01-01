@@ -43,6 +43,12 @@ if status is-interactive
             alias bigpicture='gamescope -W 1920 -H 1080 -w 1920 -h 1080 -f -- steam steam://open/bigpicture'
         end
     end
+    
+    function fastfetch
+        cat ~/.config/fastfetch/distros.json | jq (string join '' '.' (grep "^NAME=" /etc/os-release | grep "=.*" -o | sed 's/\"//g' | sed 's/=//g' | sed 's/ //g' | sed "s#\/##g") '[]') -r | env fastfetch --file /dev/stdin $argv
+    end
+        # equivalent function in bash
+        # cat ~/.config/fastfetch/distros.json | jq ".$(grep "^NAME=" /etc/os-release | grep "=.*" -o | sed 's/\"//g' | sed 's/=//g' | sed 's/ //g' | sed "s#\/##g")[]" -r | env fastfetch --file /dev/stdin  $argv
 
     # Abbriviations
     if command -sq bat
@@ -57,9 +63,10 @@ if status is-interactive
 
     set -gx PATH $PATH "$HOME/.cargo/bin"
 
-    if command -sq catnap
-        catnap
-    else 
-        fastfetch
-    end
+    # if command -sq catnap
+    #     catnap
+    # else 
+    #     fastfetch
+    # end
+    fastfetch
 end

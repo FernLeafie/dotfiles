@@ -1,154 +1,134 @@
-// Load with --load-config examples/2.jsonc
-// Note that you must replace the image path to an existing image to display it.
-
+// Inspired by Catnap
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
     "logo": {
-	"source":"~/.config/fastfetch/logo.text",
-	"type":"file",
-	"padding": {
-		"top": 3
+        "type": "small",
+        "padding": {
+            "top": 3,
+            "left": 3,
+        },
+        "color": {
+            "1": "blue",
+            "2": "black",
+            "3": "cyan",
+            "4": "green",
+            "5": "magenta",
+            "6": "red",
+            "7": "white",
+            "8": "yellow"
         }
     },
     "display": {
-        "separator": " 󰑃  "
+        "separator": " ",
+        "color": {
+            "keys": "white"
+        },
     },
     "modules": [
         {
-            "type": "custom",
-            "format": "\u001b[90m┌────────────────────────────────────────────────────────────┐"
+            "key": " ",
+            "type": "custom"
         },
         {
+            "key": "╭────────────╮",
+            "type": "custom"
+        },
+        {
+            "key": "│ {#31} user     {#keys}│",
             "type": "title",
-            "keyWidth": 10,
-			"format": "                          {6}{7}{8}"
+            "format": "{full-user-name}"
         },
         {
-            "type": "custom",
-            "format": "\u001b[90m└────────────────────────────────────────────────────────────┘"
+            "key": "│ {#32} hostname {#keys}│",
+            "type": "title",
+            "format": "{host-name}"
         },
         {
-            "type": "custom",
-            "format": "\u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m  \u001b[38m  \u001b[39m        \u001b[38m  \u001b[37m  \u001b[36m  \u001b[35m  \u001b[34m  \u001b[33m  \u001b[32m  \u001b[31m  \u001b[90m "
+            "key": "│ {#33}󰅐 uptime   {#keys}│",
+            "type": "uptime" 
+            // "format": "{days}d {hours}h {minutes}m"
         },
         {
-            "type": "custom",
-            "format": "\u001b[90m┌────────────────────────────────────────────────────────────┐"
-        },
-        {
+            "key": "│ {#34}{icon} distro   {#keys}│",
             "type": "os",
-            "key": " DISTRO",
-            "keyColor": "yellow"
+            "format": "{name} {arch}"
         },
         {
+            "key": "│ {#35} kernel   {#keys}│",
             "type": "kernel",
-            "key": "│ ├",
-            "keyColor": "yellow"
+            "format": "{release}"
         },
         {
-            "type": "packages",
-            "key": "│ ├󰏖",
-            "keyColor": "yellow"
-        },
-        {
-            "type": "shell",
-            "key": "│ └",
-            "keyColor": "yellow"
-        },
-        {
-            "type": "de",
-            "key": " DESKTOP",
-            "keyColor": "blue"
-        },
-        {
+            "key": "│ {#36} desktop  {#keys}│",
             "type": "wm",
-            "key": "│ ├",
-            "keyColor": "blue"
+            "format": "{pretty-name}"
         },
         {
-            "type": "wmtheme",
-            "key": "│ ├󰉼",
-            "keyColor": "blue"
-        },
-        {
-            "type": "icons",
-            "key": "│ ├󰀻",
-            "keyColor": "blue"
-        },
-        {
+            "key": "│ {#31} term     {#keys}│",
             "type": "terminal",
-            "key": "│ ├",
-            "keyColor": "blue"
+            "format": "{pretty-name}"     
         },
         {
-            "type": "wallpaper",
-            "key": "│ └󰸉",
-            "keyColor": "blue"
+            "key": "│ {#32} shell    {#keys}│",
+            "type": "shell",
+            "format": "{pretty-name}"
         },
         {
-            "type": "host",
-            "key": "󰌢 SYSTEM",
-            "keyColor": "green"
+            "key": "│ {#35}󰏖 pkgs     {#keys}│",
+            "type": "packages",
+            "format": "{#34}{pacman} 󰮯 {#keys}, {#36}{nix-all}  "
+        },
+        // {
+        //     "key": "├────────────┤",
+        //     "type": "custom"
+        // },
+        // {
+        //     "key": "│ {#33}󰍛 cpu      {#keys}│",
+        //     "type": "cpu",
+        //     "showPeCoreCount": true
+        // },
+        // {
+        //     "type": "gpu",
+        //     "key": "│ {#32}󰍛 gpu      {#keys}│",
+        // },
+        // {
+        //     "key": "│ {#34} disk     {#keys}│",
+        //     "type": "disk",
+        //     "folders": "/"
+        // },
+        // {
+        //     "key": "│ {#35} memory   {#keys}│",
+        //     "type": "memory"
+        // },
+        // {
+        //     "key": "│ {#36}󰓡 swap     {#keys}│",
+        //     "type": "swap",
+        // },
+        // {
+        //     "key": "│ {#36}󰤨 network  {#keys}│",
+        //     "type": "localip",
+        //     "format": "{ipv4} ({ifname})"
+        // },
+        {
+            "key": "├────────────┤",
+            "type": "custom"
+        },
+        // {
+        //     "key": "│ {#39} colors   {#keys}│",
+        //     "type": "colors",
+        //     "symbol": "circle"
+        // },
+        {
+            "key": "│ {#39} colors   {#keys}│ \u001b[37m \u001b[31m \u001b[33m \u001b[32m \u001b[36m \u001b[34m \u001b[35m \u001b[90m",
+            "type": "custom"
         },
         {
-            "type": "cpu",
-            "key": "│ ├󰻠",
-            "keyColor": "green"
+            "key": "╰────────────╯",
+            "type": "custom"
         },
         {
-            "type": "gpu",
-            "key": "│ ├󰻑",
-            "keyColor": "green"
-        },
-		{
-			"type": "display",
-            "key": "│ ├󰍹",
-            "keyColor": "green",
-            "compactType": "original-with-refresh-rate"
-        },
-        {
-            "type": "memory",
-            "key": "│ ├󰾆",
-            "keyColor": "green"
-        },
-        {
-            "type": "swap",
-            "key": "│ ├󰓡",
-            "keyColor": "green"
-        },
-        {
-            "type": "uptime",
-            "key": "│ ├󰅐",
-            "keyColor": "green"
-        },
-        {
-            "type": "display",
-            "key": "│ └󰍹",
-            "keyColor": "green"
-        },
-        {
-            "type": "sound",
-            "key": " AUDIO",
-            "keyColor": "cyan"
-        },
-        {
-            "type": "player",
-            "key": "│ ├󰥠",
-            "keyColor": "cyan"
-        },
-        {
-            "type": "media",
-            "key": "│ └󰝚",
-            "keyColor": "cyan"
-        },
-        {
-            "type": "custom",
-            "format": "\u001b[90m└────────────────────────────────────────────────────────────┘"
-        },
-        {
-            "type": "custom",
-            "format": "\u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m  \u001b[38m  \u001b[39m        \u001b[38m  \u001b[37m  \u001b[36m  \u001b[35m  \u001b[34m  \u001b[33m  \u001b[32m  \u001b[31m  \u001b[90m "
-        },
-		"break",
+            "key": " ",
+            "type": "custom"
+        }
     ]
 }
