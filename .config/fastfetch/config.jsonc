@@ -34,7 +34,7 @@
             "type": "custom"
         },
         {
-            "key": "│ {#31} user     {#keys}│",
+            "key": "│ {#31} user     {#keys}│", //    
             "type": "title",
             "format": "{full-user-name}"
         },
@@ -44,7 +44,7 @@
             "format": "{host-name}"
         },
         {
-            "key": "│ {#33}󰅐 uptime   {#keys}│",
+            "key": "│ {#33} uptime   {#keys}│", //  󰅐 
             "type": "uptime" 
             // "format": "{days}d {hours}h {minutes}m"
         },
@@ -54,7 +54,7 @@
             "format": "{name} {arch}"
         },
         {
-            "key": "│ {#35} kernel   {#keys}│",
+            "key": "│ {#35} kernel   {#keys}│", //   
             "type": "kernel",
             "format": "{release}"
         },
@@ -76,7 +76,7 @@
         {
             "key": "│ {#35}󰏖 pkgs     {#keys}│",
             "type": "packages",
-            "format": "{#34}{pacman} 󰮯 {#keys}, {#36}{nix-all}  "
+            "format": "{?apk}{#34}{apk}   {?}{?brew-all}{#33}{brew-all} 󱄖  {?}{?rpm}{#31}{rpm}   {?}{?dpkg}{#31}{dpkg}   {?}{?pacman}{#34}{pacman} 󰮯  {?}{?nix-all}{#36}{nix-all}   {?}{?flatpak-all}{#39}{flatpak-all}  {?}"
         },
         // {
         //     "key": "├────────────┤",
