@@ -52,6 +52,8 @@ function fish_prompt --description 'Write out the prompt'
         set os ""
     case "Zorin OS"
         set os ""
+    case "Nobara Linux"
+        set os ""
     end
     set os $os " " # adds the spacer
 
