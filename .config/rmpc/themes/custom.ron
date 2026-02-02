@@ -41,7 +41,7 @@
         trace: (fg: "magenta", bg: "black"),
     ),
     progress_bar: (
-        symbols: ["[", "-", ">", " ", "]"],
+        symbols: ["", "█", "", "█", ""],
         track_style: (fg: "#1e2030"),
         elapsed_style: (fg: "blue"),
         thumb_style: (fg: "blue"),
@@ -73,12 +73,19 @@
         "volume": Split(
             direction: Horizontal,
             panes: [
-                (size: "100%", pane: Pane(Property(
-                    content: [
-                        (kind: Property(Widget(ScanStatus)), style: (fg: "blue")),
-                        (kind: Property(Widget(Volume)), style: (fg: "blue"))
-                    ], align: Right))
-                ),
+                (size: "3", pane: Pane(Property(content: [(kind: Text(" 󰕾 "), style: (fg: "blue"))]))),
+                (size: "100%", pane: Pane(Volume(kind: Slider(
+                    symbols: (
+                        filled: "─", 
+                        thumb: "●", 
+                        track: "─"
+                    ), 
+                    track_style: (fg: "black"), 
+                    filled_style: (fg: "blue"), 
+                    thumb_style: (fg: "blue"),
+                )))),
+                (size: "3", pane: Pane(Property(content: [(kind: Property(Status(Volume)), style: (fg: "blue"))], align: Right))),
+                (size: "2", pane: Pane(Property(content: [(kind: Text("%"), style: (fg: "blue"))]))),
             ]
         ),
         "elapsed_and_bitrate": Pane(Property(
@@ -138,45 +145,25 @@
                 (kind: Property(Status(QueueTimeRemaining(separator: " "))), style: (fg: "blue", modifiers: "Bold")),
             ], align: Right
         )),
-        "top_row": Split(
-            direction: Horizontal,
-            panes: [
-                (size: "23", pane: Component("state")),
-                (size: "100%", borders: "LEFT | RIGHT", pane: Component("title")),
-                (size: "23", pane: Component("volume")),
-            ],
-        ),
-        "bottom_row": Split(
-            direction: Horizontal,
-            panes: [
-                (
-                    size: "23",
-                    pane: Component("elapsed_and_bitrate"),
-                ),
-                (
-                    size: "100%",
-                    borders: "LEFT | RIGHT",
-                    pane: Component("artist_album"),
-                ),
-                (
-                    size: "23",
-                    pane: Component("states"),
-                ),
-            ],
-        ),
-        "header": Split(
+        "header_left": Split(
             direction: Vertical,
             panes: [
-                (
-                    size: "1",
-                    direction: Vertical,
-                    pane: Component("top_row"),
-                ),
-                (
-                    size: "1",
-                    direction: Vertical,
-                    pane: Component("bottom_row"),
-                ),
+                (size: "1", pane: Component("state")),
+                (size: "1", pane: Component("elapsed_and_bitrate")),
+            ]
+        ),
+        "header_center": Split(
+            direction: Vertical,
+            panes: [
+                (size: "1", pane: Component("title")),
+                (size: "1", pane: Component("artist_album")),
+            ]
+        ),
+        "header_right": Split(
+            direction: Vertical,
+            panes: [
+                (size: "1", pane: Component("volume")),
+                (size: "1", pane: Component("states")),
             ]
         ),
         "progress_bar": Split(
@@ -205,21 +192,47 @@
             ]
         ),
     },
+    border_symbol_sets: {
+        "rounded_collapsed_bottom": (
+            parent: Rounded,
+            bottom_left: "├",
+            bottom_right: "┤",
+        ),
+    },
     layout: Split(
         direction: Vertical,
         panes: [
             (
-                borders: "ALL",
-                border_symbols: Rounded,
-                border_title: [(kind: Text(" Status "), style: (fg: "blue"))],
                 size: "4",
-                pane: Component("header"),
+                pane: Split(
+            direction: Horizontal,
+            panes: [
+                (
+                    size: "23",
+                    borders: "LEFT | TOP | BOTTOM",
+                    border_title: [(kind: Text(" Status "), style: (fg: "blue"))],
+                    border_symbols: Inherited(parent: Rounded, bottom_left: "├"),
+                    pane: Component("header_left")
+                ),
+                (
+                    size: "100%",
+                    borders: "ALL",
+                    border_symbols: Inherited(parent: Rounded, top_left: "┬", top_right: "┬", bottom_left: "┴", bottom_right: "┴"),
+                    pane: Component("header_center")
+                ),
+                (
+                    size: "23",
+                    borders: "RIGHT | TOP | BOTTOM",
+                    border_symbols: Inherited(parent: Rounded, bottom_right: "┤"),
+                    pane: Component("header_right")
+                ),
+            ]
+        ),
             ),
             (
-                borders: "ALL",
+                borders: "LEFT | RIGHT | BOTTOM",
                 border_symbols: Rounded,
-                border_title: [(kind: Text(" Tabs "), style: (fg: "blue"))],
-                size: "3",
+                size: "2",
                 pane: Pane(Tabs),
             ),
             (
@@ -237,7 +250,6 @@
             ),
         ],
     ),
-    header: (rows: []),
     browser_song_format: [
         (
             kind: Group([
