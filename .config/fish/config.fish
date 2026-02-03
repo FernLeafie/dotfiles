@@ -34,8 +34,6 @@ if status is-interactive
 
     alias grep='grep --color=auto'
 
-    alias sysups='bash ~/Documents/scripts/update.sh'
-    
     # The stupid alias's
     alias vencord='sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"'
     if command -sq gamescope
