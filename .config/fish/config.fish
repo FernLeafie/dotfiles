@@ -42,27 +42,6 @@ if status is-interactive
         end
     end
     
-    function fastfetch
-        argparse -i 'd/distro=&' -- $argv
-        if set -ql _flag_d
-            set -l _flag_d (echo $_flag_d | tr '[:upper:]' '[:lower:]' | sed "s/linux\$//g; s/gnu\$//g; s/os\$//g;")
-            cat ~/.config/fastfetch/distros.json | jq (string join '' '.' $_flag_d '[]') -r | env fastfetch --file /dev/stdin $argv
-        else
-            cat ~/.config/fastfetch/distros.json | jq (string join '' '.' (grep -oP '(?<=^NAME=")[^"]+(?=")' /etc/os-release | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z]//g; s/linux$//g; s/gnu$//g; s/os$//g') '[]') -r | command fastfetch --file /dev/stdin $argv
-        end
-    end
-        # equivalent function in bash
-        # cat ~/.config/fastfetch/distros.json | jq ".$(grep "^NAME=" /etc/os-release | sed 's/\"//g; s/NAME=//g; s/ //g; s#\/##g')[]" -r | env fastfetch --file /dev/stdin  $argv
-    function hyfetch
-        argparse -i 'd/distro=&' -- $argv
-        if set -ql _flag_d
-            set -l _flag_d (echo $_flag_d | tr '[:upper:]' '[:lower:]' | sed "s/linux\$//g; s/gnu\$//g; s/os\$//g;")
-            cat ~/.config/fastfetch/distros.json | jq (string join '' '.' $_flag_d '[]') -r | sed "s/\$.//g" | command hyfetch --ascii-file=/dev/stdin $argv
-        else
-            cat ~/.config/fastfetch/distros.json | jq (string join '' '.' (grep -oP '(?<=^NAME=")[^"]+(?=")' /etc/os-release | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z]//g; s/linux$//g; s/gnu$//g; s/os$//g') '[]') -r | sed "s/\$.//g" | command hyfetch --ascii-file=/dev/stdin $argv
-        end
-    end
-
     alias ff='fastfetch'
     alias hf='hyfetch'
 
