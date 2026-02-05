@@ -1,0 +1,4 @@
+include catppuccin-mocha
+
+set font "Maple Mono NF CN normal 11"
+set selection-clipboard clipboard
