@@ -1,0 +1,98 @@
+{
+    "latte": {
+        "lesbian": [
+            "#fe640b",
+            "#df8e1d",
+            "#dce0e8",
+            "#e64553",
+            "#d20f39"
+        ],
+        "rainbow": [
+            "#d20f39",
+            "#fe640b",
+            "#df8e1d",
+            "#40a02b",
+            "#04a5e5",
+            "#8839ef"
+        ],
+        "transgender": [
+            "#209fb5",
+            "#e64553",
+            "#dce0e8",
+            "#e64553",
+            "#209fb5"
+        ]
+    },
+    "frappe": {
+        "lesbian": [
+            "#ef9f76",
+            "#e5c890",
+            "#c6d0f5",
+            "#ea999c",
+            "#e78284"
+        ],
+        "rainbow": [
+            "#e78284",
+            "#ef9f76",
+            "#e5c890",
+            "#a6d189",
+            "#99d1db",
+            "#ca9ee6"
+        ],
+        "transgender": [
+            "#85c1dc",
+            "#ea999c",
+            "#f2d5cf",
+            "#ea999c",
+            "#85c1dc"
+        ]
+    },
+    "macchiato": {
+        "lesbian": [
+            "#f5a97f",
+            "#eed49f",
+            "#cad3f5",
+            "#ee99a0",
+            "#ed8796"
+        ],
+        "rainbow": [
+            "#ed8796",
+            "#f5a97f",
+            "#eed49f",
+            "#a6da95",
+            "#91d7e3",
+            "#c6a0f6"
+        ],
+        "transgender": [
+            "#7dc4e4",
+            "#ee99a0",
+            "#f4dbd6",
+            "#ee99a0",
+            "#7dc4e4"
+        ]
+    },
+    "mocha": {
+        "lesbian": [
+            "#fab387",
+            "#f9e2af",
+            "#cdd6f4",
+            "#eba0ac",
+            "#f38ba8"
+        ],
+        "rainbow": [
+            "#f38ba8",
+            "#fab387",
+            "#f9e2af",
+            "#a6e3a1",
+            "#89dceb",
+            "#cba6f7"
+        ],
+        "transgender": [
+            "#74c7ec",
+            "#eba0ac",
+            "#f5e0dc",
+            "#eba0ac",
+            "#74c7ec"
+        ]
+    }
+}
