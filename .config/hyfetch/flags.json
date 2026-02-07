@@ -1,98 +1,230 @@
 {
-    "latte": {
-        "lesbian": [
-            "#fe640b",
-            "#df8e1d",
-            "#dce0e8",
-            "#e64553",
-            "#d20f39"
-        ],
-        "rainbow": [
-            "#d20f39",
-            "#fe640b",
-            "#df8e1d",
-            "#40a02b",
-            "#04a5e5",
-            "#8839ef"
-        ],
-        "transgender": [
-            "#209fb5",
-            "#e64553",
-            "#dce0e8",
-            "#e64553",
-            "#209fb5"
-        ]
-    },
-    "frappe": {
-        "lesbian": [
-            "#ef9f76",
-            "#e5c890",
-            "#c6d0f5",
-            "#ea999c",
-            "#e78284"
-        ],
-        "rainbow": [
-            "#e78284",
-            "#ef9f76",
-            "#e5c890",
-            "#a6d189",
-            "#99d1db",
-            "#ca9ee6"
-        ],
-        "transgender": [
-            "#85c1dc",
-            "#ea999c",
-            "#f2d5cf",
-            "#ea999c",
-            "#85c1dc"
-        ]
-    },
-    "macchiato": {
-        "lesbian": [
-            "#f5a97f",
-            "#eed49f",
-            "#cad3f5",
-            "#ee99a0",
-            "#ed8796"
-        ],
-        "rainbow": [
-            "#ed8796",
-            "#f5a97f",
-            "#eed49f",
-            "#a6da95",
-            "#91d7e3",
-            "#c6a0f6"
-        ],
-        "transgender": [
-            "#7dc4e4",
-            "#ee99a0",
-            "#f4dbd6",
-            "#ee99a0",
-            "#7dc4e4"
-        ]
-    },
-    "mocha": {
-        "lesbian": [
-            "#fab387",
-            "#f9e2af",
-            "#cdd6f4",
-            "#eba0ac",
-            "#f38ba8"
-        ],
-        "rainbow": [
-            "#f38ba8",
-            "#fab387",
-            "#f9e2af",
-            "#a6e3a1",
-            "#89dceb",
-            "#cba6f7"
-        ],
-        "transgender": [
-            "#74c7ec",
-            "#eba0ac",
-            "#f5e0dc",
-            "#eba0ac",
-            "#74c7ec"
-        ]
-    }
+  "latte": {
+    "aroace": [
+      "#fe640b",
+      "#df8e1d",
+      "#dce0e8",
+      "#04a5e5",
+      "#1e66f5"
+    ],
+    "aromantic": [
+      "#40a02b",
+      "#179299",
+      "#dce0e8",
+      "#9ca0b0",
+      "#4c4f69"
+    ],
+    "asexual": [
+      "#4c4f69",
+      "#9ca0b0",
+      "#dce0e8",
+      "#8839ef"
+    ],
+    "bisexual": [
+      "#ea76cb",
+      "#ea76cb",
+      "#8839ef",
+      "#1e66f5",
+      "#1e66f5"
+    ],
+    "lesbian": [
+      "#fe640b",
+      "#df8e1d",
+      "#dce0e8",
+      "#e64553",
+      "#d20f39"
+    ],
+    "nonbinary": [
+      "#df8e1d",
+      "#dce0e8",
+      "#8839ef",
+      "#4c4f69"
+    ],
+    "rainbow": [
+      "#d20f39",
+      "#fe640b",
+      "#df8e1d",
+      "#40a02b",
+      "#04a5e5",
+      "#1e66f5"
+    ],
+    "transgender": [
+      "#209fb5",
+      "#dc8a78",
+      "#dce0e8",
+      "#dc8a78",
+      "#209fb5"
+    ]
+  },
+  "frappe": {
+    "aroace": [
+      "#ef9f76",
+      "#e5c890",
+      "#c6d0f5",
+      "#99d1db",
+      "#8caaee"
+    ],
+    "aromantic": [
+      "#a6d189",
+      "#81c8be",
+      "#c6d0f5",
+      "#737994",
+      "#232634"
+    ],
+    "asexual": [
+      "#232634",
+      "#737994",
+      "#c6d0f5",
+      "#ca9ee6"
+    ],
+    "bisexual": [
+      "#f4b8e4",
+      "#f4b8e4",
+      "#ca9ee6",
+      "#8caaee",
+      "#8caaee"
+    ],
+    "lesbian": [
+      "#ef9f76",
+      "#e5c890",
+      "#c6d0f5",
+      "#ea999c",
+      "#e78284"
+    ],
+    "nonbinary": [
+      "#e5c890",
+      "#c6d0f5",
+      "#ca9ee6",
+      "#232634"
+    ],
+    "rainbow": [
+      "#e78284",
+      "#ef9f76",
+      "#e5c890",
+      "#a6d189",
+      "#99d1db",
+      "#8caaee"
+    ],
+    "transgender": [
+      "#85c1dc",
+      "#ea999c",
+      "#f2d5cf",
+      "#ea999c",
+      "#85c1dc"
+    ]
+  },
+  "macchiato": {
+    "aroace": [
+      "#f5a97f",
+      "#eed49f",
+      "#cad3f5",
+      "#91d7e3",
+      "#8aadf4"
+    ],
+    "aromantic": [
+      "#a6da95",
+      "#8bd5ca",
+      "#cad3f5",
+      "#6e738d",
+      "#181926"
+    ],
+    "asexual": [
+      "#181926",
+      "#6e738d",
+      "#cad3f5",
+      "#c6a0f6"
+    ],
+    "bisexual": [
+      "#f5bde6",
+      "#f5bde6",
+      "#c6a0f6",
+      "#8aadf4",
+      "#8aadf4"
+    ],
+    "lesbian": [
+      "#f5a97f",
+      "#eed49f",
+      "#cad3f5",
+      "#ee99a0",
+      "#ed8796"
+    ],
+    "nonbinary": [
+      "#eed49f",
+      "#cad3f5",
+      "#c6a0f6",
+      "#181926"
+    ],
+    "rainbow": [
+      "#ed8796",
+      "#f5a97f",
+      "#eed49f",
+      "#a6da95",
+      "#91d7e3",
+      "#8aadf4"
+    ],
+    "transgender": [
+      "#7dc4e4",
+      "#ee99a0",
+      "#f4dbd6",
+      "#ee99a0",
+      "#7dc4e4"
+    ]
+  },
+  "mocha": {
+    "aroace": [
+      "#fab387",
+      "#f9e2af",
+      "#cdd6f4",
+      "#89dceb",
+      "#89b4fa"
+    ],
+    "aromantic": [
+      "#a6e3a1",
+      "#94e2d5",
+      "#cdd6f4",
+      "#6c7086",
+      "#11111b"
+    ],
+    "asexual": [
+      "#11111b",
+      "#6c7086",
+      "#cdd6f4",
+      "#cba6f7"
+    ],
+    "bisexual": [
+      "#f5c2e7",
+      "#f5c2e7",
+      "#cba6f7",
+      "#89b4fa",
+      "#89b4fa"
+    ],
+    "lesbian": [
+      "#fab387",
+      "#f9e2af",
+      "#cdd6f4",
+      "#eba0ac",
+      "#f38ba8"
+    ],
+    "nonbinary": [
+      "#f9e2af",
+      "#cdd6f4",
+      "#cba6f7",
+      "#11111b"
+    ],
+    "rainbow": [
+      "#f38ba8",
+      "#fab387",
+      "#f9e2af",
+      "#a6e3a1",
+      "#89dceb",
+      "#89b4fa"
+    ],
+    "transgender": [
+      "#74c7ec",
+      "#eba0ac",
+      "#f5e0dc",
+      "#eba0ac",
+      "#74c7ec"
+    ]
+  }
 }
