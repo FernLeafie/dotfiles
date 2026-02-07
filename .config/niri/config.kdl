@@ -13,9 +13,9 @@ input {
             // For more information, see xkeyboard-config(7).
 
             // For example:
-            layout "se"
-            variant "nodeadkeys"
-            // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
+            layout "gb"
+            // variant ""
+            options "caps:escape_shifted_capslock"
         }
 
         // Enable numlock on startup, omitting this setting disables it.
@@ -280,6 +280,15 @@ layout {
     }
 }
 
+recent-windows {
+    highlight {
+        active-color "#cba6f7ff"
+        urgent-color "#f38ba8ff"
+        padding 20
+        corner-radius 10
+    }
+}
+
 overview {
     zoom 0.25
 }
@@ -380,6 +389,25 @@ window-rule {
 window-rule {
     match app-id="discord"
     open-on-output "DP-2"
+}
+window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+    open-focused false
+}
+window-rule {
+    match app-id="xwaylandvideobridge" title="Wayland to X Recording bridge — Xwayland Video Bridge"
+    default-column-width { fixed 0; }
+    default-window-height { fixed 0; }
+    max-width 0
+    max-height 0
+    open-focused false
+    open-floating true
+    opacity 0.0
+    default-floating-position x=0 y=0 relative-to="top-left"
+    border {
+        off
+    }
 }
 
 // Example: block out two password managers from screen capture.
