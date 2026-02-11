@@ -130,9 +130,9 @@ Not necessarily needed, but scripts that rely on them wont work as expected with
 | <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd> | Move window to special workspace |
 
 ## To-Do's
-- Get logout menu
-- Get idler
-- Configure my own nvim
+- Update readme to fit with current usage
+- Wait for wifey's quickshell configs, or write some together with her
+- Rewrite configs in nix?
 
 ## Credits
 - The waybar configuration is based on https://github.com/notdanna/hypr.dots
