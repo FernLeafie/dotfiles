@@ -29,11 +29,11 @@
             ".":       VolumeUp,
             "<Tab>":   NextTab,
             "<S-Tab>": PreviousTab,
-            "1":       SwitchToTab("Queue"),
-            "2":       SwitchToTab("Directories"),
-            "3":       SwitchToTab("Artists"),
-            "4":       SwitchToTab("Albums"),
-            "5":       SwitchToTab("Search"),
+            "1":       SwitchToTab(" Queue"),
+            "2":       SwitchToTab(" Directories"),
+            "3":       SwitchToTab(" Artists"),
+            "4":       SwitchToTab(" Albums"),
+            "5":       SwitchToTab(" Search"),
             // "4":       SwitchToTab("Album Artists"),
             // "6":       switchtotab("playlists"),
             "q":       Quit,
@@ -113,44 +113,84 @@
     ),
     tabs: [
         (
-            name: "Queue",
+            name: " Queue",
             pane: Split(
                 direction: Horizontal,
                 panes: [
-                    (size: "40%", pane: Pane(AlbumArt)),
-                    (size: "60%", borders: "LEFT", pane: Split(
+                    (size: "40%", borders: "LEFT | TOP | BOTTOM", border_symbols: Rounded, pane: Pane(AlbumArt)),
+                    (size: "60%", /* borders: "LEFT", */ pane: Split(
                         direction: Vertical,
                         panes: [
-                            (size: "60%", pane: Pane(Queue)),
-                            (size: "40%", borders: "TOP", pane: Pane(Cava)),
+                            (
+                                size: "3",
+                                // borders: "BOTTOM",
+                                borders: "ALL",
+                                border_symbols: Inherited(parent: Rounded, top_left: "┬", bottom_left: "├", bottom_right: "┤",),
+                                pane: Split(
+                                    direction: Horizontal,
+                                    panes: [
+                                        (
+                                            size: "1",
+                                            pane: Pane(Empty())
+                                        ),
+                                        (
+                                            size: "100%",
+                                            pane: Pane(QueueHeader())
+                                        ),
+                                    ]
+                                )
+                            ),
+                            (size: "60%", borders: "LEFT | RIGHT" ,pane: Pane(Queue)),
+                            (
+                                size: "40%", 
+                                borders: "ALL",
+                                border_symbols: Inherited(parent: Rounded, top_left: "├", top_right: "┤", bottom_left: "┴",),
+                                pane: Pane(Cava)
+                            ),
                         ]),
                     )
                 ],
             ),
         ),
         (
-            name: "Directories",
-            pane: Pane(Directories),
+            name: " Directories",
+            pane: Split(
+                size: "100%",
+                direction: Vertical,
+                panes: [(pane: Pane(Directories), size: "100%", borders: "ALL", border_symbols: Rounded)],
+            )
         ),
         (
-            name: "Artists",
-            pane: Pane(Artists),
+            name: " Artists",
+            pane: Split(
+                size: "100%",
+                direction: Vertical,
+                panes: [(pane: Pane(Artists), size: "100%", borders: "ALL", border_symbols: Rounded)],
+            )
         ),
         // (
         //     name: "Album Artists",
         //     pane: Pane(AlbumArtists),
         // ),
         (
-            name: "Albums",
-            pane: Pane(Albums),
+            name: " Albums",
+            pane: Split(
+                size: "100%",
+                direction: Vertical,
+                panes: [(pane: Pane(Albums), size: "100%", borders: "ALL", border_symbols: Rounded)],
+            )
         ),
         // (
         //     name: "Playlists",
         //     pane: Pane(Playlists),
         // ),
         (
-            name: "Search",
-            pane: Pane(Search),
+            name: " Search",
+            pane: Split(
+                size: "100%",
+                direction: Vertical,
+                panes: [(pane: Pane(Search), size: "100%", borders: "ALL", border_symbols: Rounded)],
+            )
         ),
     ],
     cava: (

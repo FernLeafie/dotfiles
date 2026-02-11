@@ -236,8 +236,6 @@
                 pane: Pane(Tabs),
             ),
             (
-                borders: "ALL",
-                border_symbols: Rounded,
                 size: "100%",
                 pane: Pane(TabContent),
             ),
