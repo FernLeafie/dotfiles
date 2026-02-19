@@ -19,14 +19,17 @@ if status is-interactive
     if command -sq lsd
         alias ls='lsd'
         alias l='ls -l'
-        alias la='ls -a'
-        alias lla='ls -la'
+        alias la='ls -A'
+        alias lla='ls -lA'
         alias lt='ls --tree'
     end
 
     if command -sq bat
         alias cat='bat'
-        alias fzf='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}" --style=full'
+        if command -sq fzf
+            alias fzf='fzf --style=full'
+            alias fzfp='fzf --preview "fzf-preview.sh {}"'
+        end
     end
     if command -sq batman
         alias man='batman'
@@ -55,8 +58,11 @@ if status is-interactive
     if command -sq zoxide
         zoxide init --cmd cd fish | source
     end
+    if command -sq fzf
+        fzf --fish | source
+    end
 
-    set -gx PATH $PATH "$HOME/.cargo/bin"
+    set -gx PATH $PATH "$HOME/.cargo/bin" "$HOME/.config/scripts"
 
     # if command -sq catnap
     #     catnap
