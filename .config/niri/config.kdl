@@ -713,7 +713,7 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
-    Print      { spawn "hyprshot" "-m" "region" "-z" "--clipboard-only"; }
+    Print      { spawn-sh r#"wayfreeze --enable-keyboard & PID=$!; sleep .1; grim -g "$(slurp -c '#cba6f7' -b '#11111b80' -w 2 -d -F 'Maple Mono NF CN')" - | wl-copy; kill $PID"#; }
     // Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print  { screenshot-window; }
