@@ -1,0 +1,3318 @@
+/* ==UserStyle==
+@name Ollama Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/ollama
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/ollama
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/ollama/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Aollama
+@description Soothing pastel theme for Ollama
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://unpkg.com/@catppuccin/highlightjs@1.0.0/css/catppuccin-variables.css");
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    /* Llama logos */
+    /* Tailwind */
+    /* Models page, color for non-weight pills/tags. Background color is solid from `.bg-indigo-50`. */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root img[src="/public/ollama.png"],
+  :root img[src="/public/shades.png"],
+  :root img[src="/public/glasses.png"] {
+    filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+  }
+  :root code,
+  :root pre {
+    background-color: #181825;
+    color: #cdd6f4 !important;
+  }
+  :root input {
+    background-color: #181825;
+  }
+  :root main,
+  :root section,
+  :root strong,
+  :root h3,
+  :root ul,
+  :root button,
+  :root li,
+  :root li::marker {
+    color: #cdd6f4;
+  }
+  :root blockquote {
+    color: #a6adc8;
+  }
+  :root a[class~=""] {
+    color: #89b4fa;
+  }
+  :root #query,
+  :root #filter,
+  :root #search {
+    background-color: #181825;
+    color: #cdd6f4;
+  }
+  :root #readme,
+  :root #display,
+  :root #file-explorer {
+    color: #cdd6f4;
+  }
+  :root .command {
+    color: #cdd6f4;
+  }
+  :root .truncate {
+    color: #cdd6f4;
+  }
+  :root * {
+    border-color: #45475a;
+  }
+  :root .prose {
+    --tw-prose-headings: #cdd6f4;
+    --tw-prose-links: #cba6f7;
+  }
+  :root .text-white,
+  :root .text-black {
+    color: #cdd6f4;
+  }
+  :root .text-gray-900 {
+    color: #bac2de;
+  }
+  :root .text-green-500,
+  :root .text-emerald-500,
+  :root .text-green-700 {
+    color: #a6e3a1;
+  }
+  :root .text-yellow-900 {
+    color: #f9e2af;
+  }
+  :root .text-neutral-300,
+  :root .text-neutral-400,
+  :root .text-neutral-500 {
+    color: #a6adc8;
+  }
+  :root .text-neutral-700,
+  :root .text-neutral-800,
+  :root .text-neutral-900 {
+    color: #bac2de !important;
+  }
+  :root .text-red-500 {
+    color: #f38ba8;
+  }
+  :root .text-blue-500,
+  :root .text-blue-600 {
+    color: #cba6f7;
+  }
+  :root .text-indigo-600 {
+    color: #11111b;
+  }
+  :root .bg-neutral-100 pre,
+  :root .bg-neutral-100 .command {
+    background-color: unset !important;
+  }
+  :root .bg-white {
+    background-color: #181825;
+  }
+  :root .bg-black,
+  :root .hover\:bg-black:hover {
+    background-color: #313244 !important;
+  }
+  :root .bg-neutral-50 {
+    background-color: #313244;
+  }
+  :root .bg-neutral-100,
+  :root .hover\:bg-neutral-100:hover {
+    background-color: #585b70 !important;
+  }
+  :root .bg-neutral-700,
+  :root .bg-neutral-800 {
+    background-color: #45475a;
+  }
+  :root .bg-green-50 {
+    background-color: rgba(166, 227, 161, 0.1);
+  }
+  :root .bg-yellow-50 {
+    background-color: rgba(249, 226, 175, 0.1);
+  }
+  :root .bg-indigo-50 {
+    background-color: #cba6f7;
+  }
+  :root .bg-\[\#ddf4ff\] {
+    background-color: rgba(203, 166, 247, 0.1);
+  }
+  :root .border {
+    border-color: #cba6f7;
+  }
+  :root .border-neutral-200,
+  :root .border-neutral-300,
+  :root .divide-gray-200 > :not([hidden]) ~ :not([hidden]),
+  :root .divide-neutral-200 > :not([hidden]) ~ :not([hidden]) {
+    border-color: #45475a;
+  }
+  :root .focus\:border-blue-400:focus {
+    border-color: #cba6f7;
+  }
+  :root .focus\:border-red-400:focus {
+    border-color: #f38ba8;
+  }
+  :root .ring-neutral-300 {
+    --tw-ring-color: #45475a !important;
+  }
+  :root .ring-green-600\/20 {
+    --tw-ring-color: #a6e3a1;
+  }
+  :root .ring-yellow-600\/20 {
+    --tw-ring-color: #f9e2af;
+  }
+  :root select:focus,
+  :root .ring-blue-300,
+  :root .focus\:ring-blue-300:focus {
+    --tw-ring-color: rgba(203, 166, 247, var(--tw-ring-opacity));
+  }
+  :root .focus\:ring-red-300:focus {
+    --tw-ring-color: rgba(243, 139, 168, var(--tw-ring-opacity));
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    /* Llama logos */
+    /* Tailwind */
+    /* Models page, color for non-weight pills/tags. Background color is solid from `.bg-indigo-50`. */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root img[src="/public/ollama.png"],
+  :root img[src="/public/shades.png"],
+  :root img[src="/public/glasses.png"] {
+    filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+  }
+  :root code,
+  :root pre {
+    background-color: #181825;
+    color: #cdd6f4 !important;
+  }
+  :root input {
+    background-color: #181825;
+  }
+  :root main,
+  :root section,
+  :root strong,
+  :root h3,
+  :root ul,
+  :root button,
+  :root li,
+  :root li::marker {
+    color: #cdd6f4;
+  }
+  :root blockquote {
+    color: #a6adc8;
+  }
+  :root a[class~=""] {
+    color: #89b4fa;
+  }
+  :root #query,
+  :root #filter,
+  :root #search {
+    background-color: #181825;
+    color: #cdd6f4;
+  }
+  :root #readme,
+  :root #display,
+  :root #file-explorer {
+    color: #cdd6f4;
+  }
+  :root .command {
+    color: #cdd6f4;
+  }
+  :root .truncate {
+    color: #cdd6f4;
+  }
+  :root * {
+    border-color: #45475a;
+  }
+  :root .prose {
+    --tw-prose-headings: #cdd6f4;
+    --tw-prose-links: #cba6f7;
+  }
+  :root .text-white,
+  :root .text-black {
+    color: #cdd6f4;
+  }
+  :root .text-gray-900 {
+    color: #bac2de;
+  }
+  :root .text-green-500,
+  :root .text-emerald-500,
+  :root .text-green-700 {
+    color: #a6e3a1;
+  }
+  :root .text-yellow-900 {
+    color: #f9e2af;
+  }
+  :root .text-neutral-300,
+  :root .text-neutral-400,
+  :root .text-neutral-500 {
+    color: #a6adc8;
+  }
+  :root .text-neutral-700,
+  :root .text-neutral-800,
+  :root .text-neutral-900 {
+    color: #bac2de !important;
+  }
+  :root .text-red-500 {
+    color: #f38ba8;
+  }
+  :root .text-blue-500,
+  :root .text-blue-600 {
+    color: #cba6f7;
+  }
+  :root .text-indigo-600 {
+    color: #11111b;
+  }
+  :root .bg-neutral-100 pre,
+  :root .bg-neutral-100 .command {
+    background-color: unset !important;
+  }
+  :root .bg-white {
+    background-color: #181825;
+  }
+  :root .bg-black,
+  :root .hover\:bg-black:hover {
+    background-color: #313244 !important;
+  }
+  :root .bg-neutral-50 {
+    background-color: #313244;
+  }
+  :root .bg-neutral-100,
+  :root .hover\:bg-neutral-100:hover {
+    background-color: #585b70 !important;
+  }
+  :root .bg-neutral-700,
+  :root .bg-neutral-800 {
+    background-color: #45475a;
+  }
+  :root .bg-green-50 {
+    background-color: rgba(166, 227, 161, 0.1);
+  }
+  :root .bg-yellow-50 {
+    background-color: rgba(249, 226, 175, 0.1);
+  }
+  :root .bg-indigo-50 {
+    background-color: #cba6f7;
+  }
+  :root .bg-\[\#ddf4ff\] {
+    background-color: rgba(203, 166, 247, 0.1);
+  }
+  :root .border {
+    border-color: #cba6f7;
+  }
+  :root .border-neutral-200,
+  :root .border-neutral-300,
+  :root .divide-gray-200 > :not([hidden]) ~ :not([hidden]),
+  :root .divide-neutral-200 > :not([hidden]) ~ :not([hidden]) {
+    border-color: #45475a;
+  }
+  :root .focus\:border-blue-400:focus {
+    border-color: #cba6f7;
+  }
+  :root .focus\:border-red-400:focus {
+    border-color: #f38ba8;
+  }
+  :root .ring-neutral-300 {
+    --tw-ring-color: #45475a !important;
+  }
+  :root .ring-green-600\/20 {
+    --tw-ring-color: #a6e3a1;
+  }
+  :root .ring-yellow-600\/20 {
+    --tw-ring-color: #f9e2af;
+  }
+  :root select:focus,
+  :root .ring-blue-300,
+  :root .focus\:ring-blue-300:focus {
+    --tw-ring-color: rgba(203, 166, 247, var(--tw-ring-opacity));
+  }
+  :root .focus\:ring-red-300:focus {
+    --tw-ring-color: rgba(243, 139, 168, var(--tw-ring-opacity));
+  }
+}
+
+/* ==UserStyle==
+@name Ollama Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/ollama
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/ollama
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/ollama/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Aollama
+@description Soothing pastel theme for Ollama
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://unpkg.com/@catppuccin/highlightjs@1.0.0/css/catppuccin-variables.css");
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    /* Llama logos */
+    /* Tailwind */
+    /* Models page, color for non-weight pills/tags. Background color is solid from `.bg-indigo-50`. */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root img[src="/public/ollama.png"],
+  :root img[src="/public/shades.png"],
+  :root img[src="/public/glasses.png"] {
+    filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+  }
+  :root code,
+  :root pre {
+    background-color: #181825;
+    color: #cdd6f4 !important;
+  }
+  :root input {
+    background-color: #181825;
+  }
+  :root main,
+  :root section,
+  :root strong,
+  :root h3,
+  :root ul,
+  :root button,
+  :root li,
+  :root li::marker {
+    color: #cdd6f4;
+  }
+  :root blockquote {
+    color: #a6adc8;
+  }
+  :root a[class~=""] {
+    color: #89b4fa;
+  }
+  :root #query,
+  :root #filter,
+  :root #search {
+    background-color: #181825;
+    color: #cdd6f4;
+  }
+  :root #readme,
+  :root #display,
+  :root #file-explorer {
+    color: #cdd6f4;
+  }
+  :root .command {
+    color: #cdd6f4;
+  }
+  :root .truncate {
+    color: #cdd6f4;
+  }
+  :root * {
+    border-color: #45475a;
+  }
+  :root .prose {
+    --tw-prose-headings: #cdd6f4;
+    --tw-prose-links: #cba6f7;
+  }
+  :root .text-white,
+  :root .text-black {
+    color: #cdd6f4;
+  }
+  :root .text-gray-900 {
+    color: #bac2de;
+  }
+  :root .text-green-500,
+  :root .text-emerald-500,
+  :root .text-green-700 {
+    color: #a6e3a1;
+  }
+  :root .text-yellow-900 {
+    color: #f9e2af;
+  }
+  :root .text-neutral-300,
+  :root .text-neutral-400,
+  :root .text-neutral-500 {
+    color: #a6adc8;
+  }
+  :root .text-neutral-700,
+  :root .text-neutral-800,
+  :root .text-neutral-900 {
+    color: #bac2de !important;
+  }
+  :root .text-red-500 {
+    color: #f38ba8;
+  }
+  :root .text-blue-500,
+  :root .text-blue-600 {
+    color: #cba6f7;
+  }
+  :root .text-indigo-600 {
+    color: #11111b;
+  }
+  :root .bg-neutral-100 pre,
+  :root .bg-neutral-100 .command {
+    background-color: unset !important;
+  }
+  :root .bg-white {
+    background-color: #181825;
+  }
+  :root .bg-black,
+  :root .hover\:bg-black:hover {
+    background-color: #313244 !important;
+  }
+  :root .bg-neutral-50 {
+    background-color: #313244;
+  }
+  :root .bg-neutral-100,
+  :root .hover\:bg-neutral-100:hover {
+    background-color: #585b70 !important;
+  }
+  :root .bg-neutral-700,
+  :root .bg-neutral-800 {
+    background-color: #45475a;
+  }
+  :root .bg-green-50 {
+    background-color: rgba(166, 227, 161, 0.1);
+  }
+  :root .bg-yellow-50 {
+    background-color: rgba(249, 226, 175, 0.1);
+  }
+  :root .bg-indigo-50 {
+    background-color: #cba6f7;
+  }
+  :root .bg-\[\#ddf4ff\] {
+    background-color: rgba(203, 166, 247, 0.1);
+  }
+  :root .border {
+    border-color: #cba6f7;
+  }
+  :root .border-neutral-200,
+  :root .border-neutral-300,
+  :root .divide-gray-200 > :not([hidden]) ~ :not([hidden]),
+  :root .divide-neutral-200 > :not([hidden]) ~ :not([hidden]) {
+    border-color: #45475a;
+  }
+  :root .focus\:border-blue-400:focus {
+    border-color: #cba6f7;
+  }
+  :root .focus\:border-red-400:focus {
+    border-color: #f38ba8;
+  }
+  :root .ring-neutral-300 {
+    --tw-ring-color: #45475a !important;
+  }
+  :root .ring-green-600\/20 {
+    --tw-ring-color: #a6e3a1;
+  }
+  :root .ring-yellow-600\/20 {
+    --tw-ring-color: #f9e2af;
+  }
+  :root select:focus,
+  :root .ring-blue-300,
+  :root .focus\:ring-blue-300:focus {
+    --tw-ring-color: rgba(203, 166, 247, var(--tw-ring-opacity));
+  }
+  :root .focus\:ring-red-300:focus {
+    --tw-ring-color: rgba(243, 139, 168, var(--tw-ring-opacity));
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    /* Llama logos */
+    /* Tailwind */
+    /* Models page, color for non-weight pills/tags. Background color is solid from `.bg-indigo-50`. */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root img[src="/public/ollama.png"],
+  :root img[src="/public/shades.png"],
+  :root img[src="/public/glasses.png"] {
+    filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+  }
+  :root code,
+  :root pre {
+    background-color: #181825;
+    color: #cdd6f4 !important;
+  }
+  :root input {
+    background-color: #181825;
+  }
+  :root main,
+  :root section,
+  :root strong,
+  :root h3,
+  :root ul,
+  :root button,
+  :root li,
+  :root li::marker {
+    color: #cdd6f4;
+  }
+  :root blockquote {
+    color: #a6adc8;
+  }
+  :root a[class~=""] {
+    color: #89b4fa;
+  }
+  :root #query,
+  :root #filter,
+  :root #search {
+    background-color: #181825;
+    color: #cdd6f4;
+  }
+  :root #readme,
+  :root #display,
+  :root #file-explorer {
+    color: #cdd6f4;
+  }
+  :root .command {
+    color: #cdd6f4;
+  }
+  :root .truncate {
+    color: #cdd6f4;
+  }
+  :root * {
+    border-color: #45475a;
+  }
+  :root .prose {
+    --tw-prose-headings: #cdd6f4;
+    --tw-prose-links: #cba6f7;
+  }
+  :root .text-white,
+  :root .text-black {
+    color: #cdd6f4;
+  }
+  :root .text-gray-900 {
+    color: #bac2de;
+  }
+  :root .text-green-500,
+  :root .text-emerald-500,
+  :root .text-green-700 {
+    color: #a6e3a1;
+  }
+  :root .text-yellow-900 {
+    color: #f9e2af;
+  }
+  :root .text-neutral-300,
+  :root .text-neutral-400,
+  :root .text-neutral-500 {
+    color: #a6adc8;
+  }
+  :root .text-neutral-700,
+  :root .text-neutral-800,
+  :root .text-neutral-900 {
+    color: #bac2de !important;
+  }
+  :root .text-red-500 {
+    color: #f38ba8;
+  }
+  :root .text-blue-500,
+  :root .text-blue-600 {
+    color: #cba6f7;
+  }
+  :root .text-indigo-600 {
+    color: #11111b;
+  }
+  :root .bg-neutral-100 pre,
+  :root .bg-neutral-100 .command {
+    background-color: unset !important;
+  }
+  :root .bg-white {
+    background-color: #181825;
+  }
+  :root .bg-black,
+  :root .hover\:bg-black:hover {
+    background-color: #313244 !important;
+  }
+  :root .bg-neutral-50 {
+    background-color: #313244;
+  }
+  :root .bg-neutral-100,
+  :root .hover\:bg-neutral-100:hover {
+    background-color: #585b70 !important;
+  }
+  :root .bg-neutral-700,
+  :root .bg-neutral-800 {
+    background-color: #45475a;
+  }
+  :root .bg-green-50 {
+    background-color: rgba(166, 227, 161, 0.1);
+  }
+  :root .bg-yellow-50 {
+    background-color: rgba(249, 226, 175, 0.1);
+  }
+  :root .bg-indigo-50 {
+    background-color: #cba6f7;
+  }
+  :root .bg-\[\#ddf4ff\] {
+    background-color: rgba(203, 166, 247, 0.1);
+  }
+  :root .border {
+    border-color: #cba6f7;
+  }
+  :root .border-neutral-200,
+  :root .border-neutral-300,
+  :root .divide-gray-200 > :not([hidden]) ~ :not([hidden]),
+  :root .divide-neutral-200 > :not([hidden]) ~ :not([hidden]) {
+    border-color: #45475a;
+  }
+  :root .focus\:border-blue-400:focus {
+    border-color: #cba6f7;
+  }
+  :root .focus\:border-red-400:focus {
+    border-color: #f38ba8;
+  }
+  :root .ring-neutral-300 {
+    --tw-ring-color: #45475a !important;
+  }
+  :root .ring-green-600\/20 {
+    --tw-ring-color: #a6e3a1;
+  }
+  :root .ring-yellow-600\/20 {
+    --tw-ring-color: #f9e2af;
+  }
+  :root select:focus,
+  :root .ring-blue-300,
+  :root .focus\:ring-blue-300:focus {
+    --tw-ring-color: rgba(203, 166, 247, var(--tw-ring-opacity));
+  }
+  :root .focus\:ring-red-300:focus {
+    --tw-ring-color: rgba(243, 139, 168, var(--tw-ring-opacity));
+  }
+}
+
+/* ==UserStyle==
+@name Ollama Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/ollama
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/ollama
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/ollama/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Aollama
+@description Soothing pastel theme for Ollama
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://unpkg.com/@catppuccin/highlightjs@1.0.0/css/catppuccin-variables.css");
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    /* Llama logos */
+    /* Tailwind */
+    /* Models page, color for non-weight pills/tags. Background color is solid from `.bg-indigo-50`. */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root img[src="/public/ollama.png"],
+  :root img[src="/public/shades.png"],
+  :root img[src="/public/glasses.png"] {
+    filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+  }
+  :root code,
+  :root pre {
+    background-color: #181825;
+    color: #cdd6f4 !important;
+  }
+  :root input {
+    background-color: #181825;
+  }
+  :root main,
+  :root section,
+  :root strong,
+  :root h3,
+  :root ul,
+  :root button,
+  :root li,
+  :root li::marker {
+    color: #cdd6f4;
+  }
+  :root blockquote {
+    color: #a6adc8;
+  }
+  :root a[class~=""] {
+    color: #89b4fa;
+  }
+  :root #query,
+  :root #filter,
+  :root #search {
+    background-color: #181825;
+    color: #cdd6f4;
+  }
+  :root #readme,
+  :root #display,
+  :root #file-explorer {
+    color: #cdd6f4;
+  }
+  :root .command {
+    color: #cdd6f4;
+  }
+  :root .truncate {
+    color: #cdd6f4;
+  }
+  :root * {
+    border-color: #45475a;
+  }
+  :root .prose {
+    --tw-prose-headings: #cdd6f4;
+    --tw-prose-links: #cba6f7;
+  }
+  :root .text-white,
+  :root .text-black {
+    color: #cdd6f4;
+  }
+  :root .text-gray-900 {
+    color: #bac2de;
+  }
+  :root .text-green-500,
+  :root .text-emerald-500,
+  :root .text-green-700 {
+    color: #a6e3a1;
+  }
+  :root .text-yellow-900 {
+    color: #f9e2af;
+  }
+  :root .text-neutral-300,
+  :root .text-neutral-400,
+  :root .text-neutral-500 {
+    color: #a6adc8;
+  }
+  :root .text-neutral-700,
+  :root .text-neutral-800,
+  :root .text-neutral-900 {
+    color: #bac2de !important;
+  }
+  :root .text-red-500 {
+    color: #f38ba8;
+  }
+  :root .text-blue-500,
+  :root .text-blue-600 {
+    color: #cba6f7;
+  }
+  :root .text-indigo-600 {
+    color: #11111b;
+  }
+  :root .bg-neutral-100 pre,
+  :root .bg-neutral-100 .command {
+    background-color: unset !important;
+  }
+  :root .bg-white {
+    background-color: #181825;
+  }
+  :root .bg-black,
+  :root .hover\:bg-black:hover {
+    background-color: #313244 !important;
+  }
+  :root .bg-neutral-50 {
+    background-color: #313244;
+  }
+  :root .bg-neutral-100,
+  :root .hover\:bg-neutral-100:hover {
+    background-color: #585b70 !important;
+  }
+  :root .bg-neutral-700,
+  :root .bg-neutral-800 {
+    background-color: #45475a;
+  }
+  :root .bg-green-50 {
+    background-color: rgba(166, 227, 161, 0.1);
+  }
+  :root .bg-yellow-50 {
+    background-color: rgba(249, 226, 175, 0.1);
+  }
+  :root .bg-indigo-50 {
+    background-color: #cba6f7;
+  }
+  :root .bg-\[\#ddf4ff\] {
+    background-color: rgba(203, 166, 247, 0.1);
+  }
+  :root .border {
+    border-color: #cba6f7;
+  }
+  :root .border-neutral-200,
+  :root .border-neutral-300,
+  :root .divide-gray-200 > :not([hidden]) ~ :not([hidden]),
+  :root .divide-neutral-200 > :not([hidden]) ~ :not([hidden]) {
+    border-color: #45475a;
+  }
+  :root .focus\:border-blue-400:focus {
+    border-color: #cba6f7;
+  }
+  :root .focus\:border-red-400:focus {
+    border-color: #f38ba8;
+  }
+  :root .ring-neutral-300 {
+    --tw-ring-color: #45475a !important;
+  }
+  :root .ring-green-600\/20 {
+    --tw-ring-color: #a6e3a1;
+  }
+  :root .ring-yellow-600\/20 {
+    --tw-ring-color: #f9e2af;
+  }
+  :root select:focus,
+  :root .ring-blue-300,
+  :root .focus\:ring-blue-300:focus {
+    --tw-ring-color: rgba(203, 166, 247, var(--tw-ring-opacity));
+  }
+  :root .focus\:ring-red-300:focus {
+    --tw-ring-color: rgba(243, 139, 168, var(--tw-ring-opacity));
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    /* Llama logos */
+    /* Tailwind */
+    /* Models page, color for non-weight pills/tags. Background color is solid from `.bg-indigo-50`. */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root img[src="/public/ollama.png"],
+  :root img[src="/public/shades.png"],
+  :root img[src="/public/glasses.png"] {
+    filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+  }
+  :root code,
+  :root pre {
+    background-color: #181825;
+    color: #cdd6f4 !important;
+  }
+  :root input {
+    background-color: #181825;
+  }
+  :root main,
+  :root section,
+  :root strong,
+  :root h3,
+  :root ul,
+  :root button,
+  :root li,
+  :root li::marker {
+    color: #cdd6f4;
+  }
+  :root blockquote {
+    color: #a6adc8;
+  }
+  :root a[class~=""] {
+    color: #89b4fa;
+  }
+  :root #query,
+  :root #filter,
+  :root #search {
+    background-color: #181825;
+    color: #cdd6f4;
+  }
+  :root #readme,
+  :root #display,
+  :root #file-explorer {
+    color: #cdd6f4;
+  }
+  :root .command {
+    color: #cdd6f4;
+  }
+  :root .truncate {
+    color: #cdd6f4;
+  }
+  :root * {
+    border-color: #45475a;
+  }
+  :root .prose {
+    --tw-prose-headings: #cdd6f4;
+    --tw-prose-links: #cba6f7;
+  }
+  :root .text-white,
+  :root .text-black {
+    color: #cdd6f4;
+  }
+  :root .text-gray-900 {
+    color: #bac2de;
+  }
+  :root .text-green-500,
+  :root .text-emerald-500,
+  :root .text-green-700 {
+    color: #a6e3a1;
+  }
+  :root .text-yellow-900 {
+    color: #f9e2af;
+  }
+  :root .text-neutral-300,
+  :root .text-neutral-400,
+  :root .text-neutral-500 {
+    color: #a6adc8;
+  }
+  :root .text-neutral-700,
+  :root .text-neutral-800,
+  :root .text-neutral-900 {
+    color: #bac2de !important;
+  }
+  :root .text-red-500 {
+    color: #f38ba8;
+  }
+  :root .text-blue-500,
+  :root .text-blue-600 {
+    color: #cba6f7;
+  }
+  :root .text-indigo-600 {
+    color: #11111b;
+  }
+  :root .bg-neutral-100 pre,
+  :root .bg-neutral-100 .command {
+    background-color: unset !important;
+  }
+  :root .bg-white {
+    background-color: #181825;
+  }
+  :root .bg-black,
+  :root .hover\:bg-black:hover {
+    background-color: #313244 !important;
+  }
+  :root .bg-neutral-50 {
+    background-color: #313244;
+  }
+  :root .bg-neutral-100,
+  :root .hover\:bg-neutral-100:hover {
+    background-color: #585b70 !important;
+  }
+  :root .bg-neutral-700,
+  :root .bg-neutral-800 {
+    background-color: #45475a;
+  }
+  :root .bg-green-50 {
+    background-color: rgba(166, 227, 161, 0.1);
+  }
+  :root .bg-yellow-50 {
+    background-color: rgba(249, 226, 175, 0.1);
+  }
+  :root .bg-indigo-50 {
+    background-color: #cba6f7;
+  }
+  :root .bg-\[\#ddf4ff\] {
+    background-color: rgba(203, 166, 247, 0.1);
+  }
+  :root .border {
+    border-color: #cba6f7;
+  }
+  :root .border-neutral-200,
+  :root .border-neutral-300,
+  :root .divide-gray-200 > :not([hidden]) ~ :not([hidden]),
+  :root .divide-neutral-200 > :not([hidden]) ~ :not([hidden]) {
+    border-color: #45475a;
+  }
+  :root .focus\:border-blue-400:focus {
+    border-color: #cba6f7;
+  }
+  :root .focus\:border-red-400:focus {
+    border-color: #f38ba8;
+  }
+  :root .ring-neutral-300 {
+    --tw-ring-color: #45475a !important;
+  }
+  :root .ring-green-600\/20 {
+    --tw-ring-color: #a6e3a1;
+  }
+  :root .ring-yellow-600\/20 {
+    --tw-ring-color: #f9e2af;
+  }
+  :root select:focus,
+  :root .ring-blue-300,
+  :root .focus\:ring-blue-300:focus {
+    --tw-ring-color: rgba(203, 166, 247, var(--tw-ring-opacity));
+  }
+  :root .focus\:ring-red-300:focus {
+    --tw-ring-color: rgba(243, 139, 168, var(--tw-ring-opacity));
+  }
+}
+
+/* ==UserStyle==
+@name Ollama Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/ollama
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/ollama
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/ollama/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Aollama
+@description Soothing pastel theme for Ollama
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://unpkg.com/@catppuccin/highlightjs@1.0.0/css/catppuccin-variables.css");
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    /* Llama logos */
+    /* Tailwind */
+    /* Models page, color for non-weight pills/tags. Background color is solid from `.bg-indigo-50`. */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root img[src="/public/ollama.png"],
+  :root img[src="/public/shades.png"],
+  :root img[src="/public/glasses.png"] {
+    filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+  }
+  :root code,
+  :root pre {
+    background-color: #181825;
+    color: #cdd6f4 !important;
+  }
+  :root input {
+    background-color: #181825;
+  }
+  :root main,
+  :root section,
+  :root strong,
+  :root h3,
+  :root ul,
+  :root button,
+  :root li,
+  :root li::marker {
+    color: #cdd6f4;
+  }
+  :root blockquote {
+    color: #a6adc8;
+  }
+  :root a[class~=""] {
+    color: #89b4fa;
+  }
+  :root #query,
+  :root #filter,
+  :root #search {
+    background-color: #181825;
+    color: #cdd6f4;
+  }
+  :root #readme,
+  :root #display,
+  :root #file-explorer {
+    color: #cdd6f4;
+  }
+  :root .command {
+    color: #cdd6f4;
+  }
+  :root .truncate {
+    color: #cdd6f4;
+  }
+  :root * {
+    border-color: #45475a;
+  }
+  :root .prose {
+    --tw-prose-headings: #cdd6f4;
+    --tw-prose-links: #cba6f7;
+  }
+  :root .text-white,
+  :root .text-black {
+    color: #cdd6f4;
+  }
+  :root .text-gray-900 {
+    color: #bac2de;
+  }
+  :root .text-green-500,
+  :root .text-emerald-500,
+  :root .text-green-700 {
+    color: #a6e3a1;
+  }
+  :root .text-yellow-900 {
+    color: #f9e2af;
+  }
+  :root .text-neutral-300,
+  :root .text-neutral-400,
+  :root .text-neutral-500 {
+    color: #a6adc8;
+  }
+  :root .text-neutral-700,
+  :root .text-neutral-800,
+  :root .text-neutral-900 {
+    color: #bac2de !important;
+  }
+  :root .text-red-500 {
+    color: #f38ba8;
+  }
+  :root .text-blue-500,
+  :root .text-blue-600 {
+    color: #cba6f7;
+  }
+  :root .text-indigo-600 {
+    color: #11111b;
+  }
+  :root .bg-neutral-100 pre,
+  :root .bg-neutral-100 .command {
+    background-color: unset !important;
+  }
+  :root .bg-white {
+    background-color: #181825;
+  }
+  :root .bg-black,
+  :root .hover\:bg-black:hover {
+    background-color: #313244 !important;
+  }
+  :root .bg-neutral-50 {
+    background-color: #313244;
+  }
+  :root .bg-neutral-100,
+  :root .hover\:bg-neutral-100:hover {
+    background-color: #585b70 !important;
+  }
+  :root .bg-neutral-700,
+  :root .bg-neutral-800 {
+    background-color: #45475a;
+  }
+  :root .bg-green-50 {
+    background-color: rgba(166, 227, 161, 0.1);
+  }
+  :root .bg-yellow-50 {
+    background-color: rgba(249, 226, 175, 0.1);
+  }
+  :root .bg-indigo-50 {
+    background-color: #cba6f7;
+  }
+  :root .bg-\[\#ddf4ff\] {
+    background-color: rgba(203, 166, 247, 0.1);
+  }
+  :root .border {
+    border-color: #cba6f7;
+  }
+  :root .border-neutral-200,
+  :root .border-neutral-300,
+  :root .divide-gray-200 > :not([hidden]) ~ :not([hidden]),
+  :root .divide-neutral-200 > :not([hidden]) ~ :not([hidden]) {
+    border-color: #45475a;
+  }
+  :root .focus\:border-blue-400:focus {
+    border-color: #cba6f7;
+  }
+  :root .focus\:border-red-400:focus {
+    border-color: #f38ba8;
+  }
+  :root .ring-neutral-300 {
+    --tw-ring-color: #45475a !important;
+  }
+  :root .ring-green-600\/20 {
+    --tw-ring-color: #a6e3a1;
+  }
+  :root .ring-yellow-600\/20 {
+    --tw-ring-color: #f9e2af;
+  }
+  :root select:focus,
+  :root .ring-blue-300,
+  :root .focus\:ring-blue-300:focus {
+    --tw-ring-color: rgba(203, 166, 247, var(--tw-ring-opacity));
+  }
+  :root .focus\:ring-red-300:focus {
+    --tw-ring-color: rgba(243, 139, 168, var(--tw-ring-opacity));
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    /* Llama logos */
+    /* Tailwind */
+    /* Models page, color for non-weight pills/tags. Background color is solid from `.bg-indigo-50`. */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root img[src="/public/ollama.png"],
+  :root img[src="/public/shades.png"],
+  :root img[src="/public/glasses.png"] {
+    filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+  }
+  :root code,
+  :root pre {
+    background-color: #181825;
+    color: #cdd6f4 !important;
+  }
+  :root input {
+    background-color: #181825;
+  }
+  :root main,
+  :root section,
+  :root strong,
+  :root h3,
+  :root ul,
+  :root button,
+  :root li,
+  :root li::marker {
+    color: #cdd6f4;
+  }
+  :root blockquote {
+    color: #a6adc8;
+  }
+  :root a[class~=""] {
+    color: #89b4fa;
+  }
+  :root #query,
+  :root #filter,
+  :root #search {
+    background-color: #181825;
+    color: #cdd6f4;
+  }
+  :root #readme,
+  :root #display,
+  :root #file-explorer {
+    color: #cdd6f4;
+  }
+  :root .command {
+    color: #cdd6f4;
+  }
+  :root .truncate {
+    color: #cdd6f4;
+  }
+  :root * {
+    border-color: #45475a;
+  }
+  :root .prose {
+    --tw-prose-headings: #cdd6f4;
+    --tw-prose-links: #cba6f7;
+  }
+  :root .text-white,
+  :root .text-black {
+    color: #cdd6f4;
+  }
+  :root .text-gray-900 {
+    color: #bac2de;
+  }
+  :root .text-green-500,
+  :root .text-emerald-500,
+  :root .text-green-700 {
+    color: #a6e3a1;
+  }
+  :root .text-yellow-900 {
+    color: #f9e2af;
+  }
+  :root .text-neutral-300,
+  :root .text-neutral-400,
+  :root .text-neutral-500 {
+    color: #a6adc8;
+  }
+  :root .text-neutral-700,
+  :root .text-neutral-800,
+  :root .text-neutral-900 {
+    color: #bac2de !important;
+  }
+  :root .text-red-500 {
+    color: #f38ba8;
+  }
+  :root .text-blue-500,
+  :root .text-blue-600 {
+    color: #cba6f7;
+  }
+  :root .text-indigo-600 {
+    color: #11111b;
+  }
+  :root .bg-neutral-100 pre,
+  :root .bg-neutral-100 .command {
+    background-color: unset !important;
+  }
+  :root .bg-white {
+    background-color: #181825;
+  }
+  :root .bg-black,
+  :root .hover\:bg-black:hover {
+    background-color: #313244 !important;
+  }
+  :root .bg-neutral-50 {
+    background-color: #313244;
+  }
+  :root .bg-neutral-100,
+  :root .hover\:bg-neutral-100:hover {
+    background-color: #585b70 !important;
+  }
+  :root .bg-neutral-700,
+  :root .bg-neutral-800 {
+    background-color: #45475a;
+  }
+  :root .bg-green-50 {
+    background-color: rgba(166, 227, 161, 0.1);
+  }
+  :root .bg-yellow-50 {
+    background-color: rgba(249, 226, 175, 0.1);
+  }
+  :root .bg-indigo-50 {
+    background-color: #cba6f7;
+  }
+  :root .bg-\[\#ddf4ff\] {
+    background-color: rgba(203, 166, 247, 0.1);
+  }
+  :root .border {
+    border-color: #cba6f7;
+  }
+  :root .border-neutral-200,
+  :root .border-neutral-300,
+  :root .divide-gray-200 > :not([hidden]) ~ :not([hidden]),
+  :root .divide-neutral-200 > :not([hidden]) ~ :not([hidden]) {
+    border-color: #45475a;
+  }
+  :root .focus\:border-blue-400:focus {
+    border-color: #cba6f7;
+  }
+  :root .focus\:border-red-400:focus {
+    border-color: #f38ba8;
+  }
+  :root .ring-neutral-300 {
+    --tw-ring-color: #45475a !important;
+  }
+  :root .ring-green-600\/20 {
+    --tw-ring-color: #a6e3a1;
+  }
+  :root .ring-yellow-600\/20 {
+    --tw-ring-color: #f9e2af;
+  }
+  :root select:focus,
+  :root .ring-blue-300,
+  :root .focus\:ring-blue-300:focus {
+    --tw-ring-color: rgba(203, 166, 247, var(--tw-ring-opacity));
+  }
+  :root .focus\:ring-red-300:focus {
+    --tw-ring-color: rgba(243, 139, 168, var(--tw-ring-opacity));
+  }
+}
+
+/* ==UserStyle==
+@name Ollama Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/ollama
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/ollama
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/ollama/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Aollama
+@description Soothing pastel theme for Ollama
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+
+@import url("https://unpkg.com/@catppuccin/highlightjs@1.0.0/css/catppuccin-variables.css");
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    /* Llama logos */
+    /* Tailwind */
+    /* Models page, color for non-weight pills/tags. Background color is solid from `.bg-indigo-50`. */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root img[src="/public/ollama.png"],
+  :root img[src="/public/shades.png"],
+  :root img[src="/public/glasses.png"] {
+    filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+  }
+  :root code,
+  :root pre {
+    background-color: #181825;
+    color: #cdd6f4 !important;
+  }
+  :root input {
+    background-color: #181825;
+  }
+  :root main,
+  :root section,
+  :root strong,
+  :root h3,
+  :root ul,
+  :root button,
+  :root li,
+  :root li::marker {
+    color: #cdd6f4;
+  }
+  :root blockquote {
+    color: #a6adc8;
+  }
+  :root a[class~=""] {
+    color: #89b4fa;
+  }
+  :root #query,
+  :root #filter,
+  :root #search {
+    background-color: #181825;
+    color: #cdd6f4;
+  }
+  :root #readme,
+  :root #display,
+  :root #file-explorer {
+    color: #cdd6f4;
+  }
+  :root .command {
+    color: #cdd6f4;
+  }
+  :root .truncate {
+    color: #cdd6f4;
+  }
+  :root * {
+    border-color: #45475a;
+  }
+  :root .prose {
+    --tw-prose-headings: #cdd6f4;
+    --tw-prose-links: #cba6f7;
+  }
+  :root .text-white,
+  :root .text-black {
+    color: #cdd6f4;
+  }
+  :root .text-gray-900 {
+    color: #bac2de;
+  }
+  :root .text-green-500,
+  :root .text-emerald-500,
+  :root .text-green-700 {
+    color: #a6e3a1;
+  }
+  :root .text-yellow-900 {
+    color: #f9e2af;
+  }
+  :root .text-neutral-300,
+  :root .text-neutral-400,
+  :root .text-neutral-500 {
+    color: #a6adc8;
+  }
+  :root .text-neutral-700,
+  :root .text-neutral-800,
+  :root .text-neutral-900 {
+    color: #bac2de !important;
+  }
+  :root .text-red-500 {
+    color: #f38ba8;
+  }
+  :root .text-blue-500,
+  :root .text-blue-600 {
+    color: #cba6f7;
+  }
+  :root .text-indigo-600 {
+    color: #11111b;
+  }
+  :root .bg-neutral-100 pre,
+  :root .bg-neutral-100 .command {
+    background-color: unset !important;
+  }
+  :root .bg-white {
+    background-color: #181825;
+  }
+  :root .bg-black,
+  :root .hover\:bg-black:hover {
+    background-color: #313244 !important;
+  }
+  :root .bg-neutral-50 {
+    background-color: #313244;
+  }
+  :root .bg-neutral-100,
+  :root .hover\:bg-neutral-100:hover {
+    background-color: #585b70 !important;
+  }
+  :root .bg-neutral-700,
+  :root .bg-neutral-800 {
+    background-color: #45475a;
+  }
+  :root .bg-green-50 {
+    background-color: rgba(166, 227, 161, 0.1);
+  }
+  :root .bg-yellow-50 {
+    background-color: rgba(249, 226, 175, 0.1);
+  }
+  :root .bg-indigo-50 {
+    background-color: #cba6f7;
+  }
+  :root .bg-\[\#ddf4ff\] {
+    background-color: rgba(203, 166, 247, 0.1);
+  }
+  :root .border {
+    border-color: #cba6f7;
+  }
+  :root .border-neutral-200,
+  :root .border-neutral-300,
+  :root .divide-gray-200 > :not([hidden]) ~ :not([hidden]),
+  :root .divide-neutral-200 > :not([hidden]) ~ :not([hidden]) {
+    border-color: #45475a;
+  }
+  :root .focus\:border-blue-400:focus {
+    border-color: #cba6f7;
+  }
+  :root .focus\:border-red-400:focus {
+    border-color: #f38ba8;
+  }
+  :root .ring-neutral-300 {
+    --tw-ring-color: #45475a !important;
+  }
+  :root .ring-green-600\/20 {
+    --tw-ring-color: #a6e3a1;
+  }
+  :root .ring-yellow-600\/20 {
+    --tw-ring-color: #f9e2af;
+  }
+  :root select:focus,
+  :root .ring-blue-300,
+  :root .focus\:ring-blue-300:focus {
+    --tw-ring-color: rgba(203, 166, 247, var(--tw-ring-opacity));
+  }
+  :root .focus\:ring-red-300:focus {
+    --tw-ring-color: rgba(243, 139, 168, var(--tw-ring-opacity));
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    /* Llama logos */
+    /* Tailwind */
+    /* Models page, color for non-weight pills/tags. Background color is solid from `.bg-indigo-50`. */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root img[src="/public/ollama.png"],
+  :root img[src="/public/shades.png"],
+  :root img[src="/public/glasses.png"] {
+    filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+  }
+  :root code,
+  :root pre {
+    background-color: #181825;
+    color: #cdd6f4 !important;
+  }
+  :root input {
+    background-color: #181825;
+  }
+  :root main,
+  :root section,
+  :root strong,
+  :root h3,
+  :root ul,
+  :root button,
+  :root li,
+  :root li::marker {
+    color: #cdd6f4;
+  }
+  :root blockquote {
+    color: #a6adc8;
+  }
+  :root a[class~=""] {
+    color: #89b4fa;
+  }
+  :root #query,
+  :root #filter,
+  :root #search {
+    background-color: #181825;
+    color: #cdd6f4;
+  }
+  :root #readme,
+  :root #display,
+  :root #file-explorer {
+    color: #cdd6f4;
+  }
+  :root .command {
+    color: #cdd6f4;
+  }
+  :root .truncate {
+    color: #cdd6f4;
+  }
+  :root * {
+    border-color: #45475a;
+  }
+  :root .prose {
+    --tw-prose-headings: #cdd6f4;
+    --tw-prose-links: #cba6f7;
+  }
+  :root .text-white,
+  :root .text-black {
+    color: #cdd6f4;
+  }
+  :root .text-gray-900 {
+    color: #bac2de;
+  }
+  :root .text-green-500,
+  :root .text-emerald-500,
+  :root .text-green-700 {
+    color: #a6e3a1;
+  }
+  :root .text-yellow-900 {
+    color: #f9e2af;
+  }
+  :root .text-neutral-300,
+  :root .text-neutral-400,
+  :root .text-neutral-500 {
+    color: #a6adc8;
+  }
+  :root .text-neutral-700,
+  :root .text-neutral-800,
+  :root .text-neutral-900 {
+    color: #bac2de !important;
+  }
+  :root .text-red-500 {
+    color: #f38ba8;
+  }
+  :root .text-blue-500,
+  :root .text-blue-600 {
+    color: #cba6f7;
+  }
+  :root .text-indigo-600 {
+    color: #11111b;
+  }
+  :root .bg-neutral-100 pre,
+  :root .bg-neutral-100 .command {
+    background-color: unset !important;
+  }
+  :root .bg-white {
+    background-color: #181825;
+  }
+  :root .bg-black,
+  :root .hover\:bg-black:hover {
+    background-color: #313244 !important;
+  }
+  :root .bg-neutral-50 {
+    background-color: #313244;
+  }
+  :root .bg-neutral-100,
+  :root .hover\:bg-neutral-100:hover {
+    background-color: #585b70 !important;
+  }
+  :root .bg-neutral-700,
+  :root .bg-neutral-800 {
+    background-color: #45475a;
+  }
+  :root .bg-green-50 {
+    background-color: rgba(166, 227, 161, 0.1);
+  }
+  :root .bg-yellow-50 {
+    background-color: rgba(249, 226, 175, 0.1);
+  }
+  :root .bg-indigo-50 {
+    background-color: #cba6f7;
+  }
+  :root .bg-\[\#ddf4ff\] {
+    background-color: rgba(203, 166, 247, 0.1);
+  }
+  :root .border {
+    border-color: #cba6f7;
+  }
+  :root .border-neutral-200,
+  :root .border-neutral-300,
+  :root .divide-gray-200 > :not([hidden]) ~ :not([hidden]),
+  :root .divide-neutral-200 > :not([hidden]) ~ :not([hidden]) {
+    border-color: #45475a;
+  }
+  :root .focus\:border-blue-400:focus {
+    border-color: #cba6f7;
+  }
+  :root .focus\:border-red-400:focus {
+    border-color: #f38ba8;
+  }
+  :root .ring-neutral-300 {
+    --tw-ring-color: #45475a !important;
+  }
+  :root .ring-green-600\/20 {
+    --tw-ring-color: #a6e3a1;
+  }
+  :root .ring-yellow-600\/20 {
+    --tw-ring-color: #f9e2af;
+  }
+  :root select:focus,
+  :root .ring-blue-300,
+  :root .focus\:ring-blue-300:focus {
+    --tw-ring-color: rgba(203, 166, 247, var(--tw-ring-opacity));
+  }
+  :root .focus\:ring-red-300:focus {
+    --tw-ring-color: rgba(243, 139, 168, var(--tw-ring-opacity));
+  }
+}
+
+/* ==UserStyle==
+@name Ollama Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/ollama
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/ollama
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/ollama/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Aollama
+@description Soothing pastel theme for Ollama
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://unpkg.com/@catppuccin/highlightjs@1.0.0/css/catppuccin-variables.css");
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    /* Llama logos */
+    /* Tailwind */
+    /* Models page, color for non-weight pills/tags. Background color is solid from `.bg-indigo-50`. */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root img[src="/public/ollama.png"],
+  :root img[src="/public/shades.png"],
+  :root img[src="/public/glasses.png"] {
+    filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+  }
+  :root code,
+  :root pre {
+    background-color: #181825;
+    color: #cdd6f4 !important;
+  }
+  :root input {
+    background-color: #181825;
+  }
+  :root main,
+  :root section,
+  :root strong,
+  :root h3,
+  :root ul,
+  :root button,
+  :root li,
+  :root li::marker {
+    color: #cdd6f4;
+  }
+  :root blockquote {
+    color: #a6adc8;
+  }
+  :root a[class~=""] {
+    color: #89b4fa;
+  }
+  :root #query,
+  :root #filter,
+  :root #search {
+    background-color: #181825;
+    color: #cdd6f4;
+  }
+  :root #readme,
+  :root #display,
+  :root #file-explorer {
+    color: #cdd6f4;
+  }
+  :root .command {
+    color: #cdd6f4;
+  }
+  :root .truncate {
+    color: #cdd6f4;
+  }
+  :root * {
+    border-color: #45475a;
+  }
+  :root .prose {
+    --tw-prose-headings: #cdd6f4;
+    --tw-prose-links: #cba6f7;
+  }
+  :root .text-white,
+  :root .text-black {
+    color: #cdd6f4;
+  }
+  :root .text-gray-900 {
+    color: #bac2de;
+  }
+  :root .text-green-500,
+  :root .text-emerald-500,
+  :root .text-green-700 {
+    color: #a6e3a1;
+  }
+  :root .text-yellow-900 {
+    color: #f9e2af;
+  }
+  :root .text-neutral-300,
+  :root .text-neutral-400,
+  :root .text-neutral-500 {
+    color: #a6adc8;
+  }
+  :root .text-neutral-700,
+  :root .text-neutral-800,
+  :root .text-neutral-900 {
+    color: #bac2de !important;
+  }
+  :root .text-red-500 {
+    color: #f38ba8;
+  }
+  :root .text-blue-500,
+  :root .text-blue-600 {
+    color: #cba6f7;
+  }
+  :root .text-indigo-600 {
+    color: #11111b;
+  }
+  :root .bg-neutral-100 pre,
+  :root .bg-neutral-100 .command {
+    background-color: unset !important;
+  }
+  :root .bg-white {
+    background-color: #181825;
+  }
+  :root .bg-black,
+  :root .hover\:bg-black:hover {
+    background-color: #313244 !important;
+  }
+  :root .bg-neutral-50 {
+    background-color: #313244;
+  }
+  :root .bg-neutral-100,
+  :root .hover\:bg-neutral-100:hover {
+    background-color: #585b70 !important;
+  }
+  :root .bg-neutral-700,
+  :root .bg-neutral-800 {
+    background-color: #45475a;
+  }
+  :root .bg-green-50 {
+    background-color: rgba(166, 227, 161, 0.1);
+  }
+  :root .bg-yellow-50 {
+    background-color: rgba(249, 226, 175, 0.1);
+  }
+  :root .bg-indigo-50 {
+    background-color: #cba6f7;
+  }
+  :root .bg-\[\#ddf4ff\] {
+    background-color: rgba(203, 166, 247, 0.1);
+  }
+  :root .border {
+    border-color: #cba6f7;
+  }
+  :root .border-neutral-200,
+  :root .border-neutral-300,
+  :root .divide-gray-200 > :not([hidden]) ~ :not([hidden]),
+  :root .divide-neutral-200 > :not([hidden]) ~ :not([hidden]) {
+    border-color: #45475a;
+  }
+  :root .focus\:border-blue-400:focus {
+    border-color: #cba6f7;
+  }
+  :root .focus\:border-red-400:focus {
+    border-color: #f38ba8;
+  }
+  :root .ring-neutral-300 {
+    --tw-ring-color: #45475a !important;
+  }
+  :root .ring-green-600\/20 {
+    --tw-ring-color: #a6e3a1;
+  }
+  :root .ring-yellow-600\/20 {
+    --tw-ring-color: #f9e2af;
+  }
+  :root select:focus,
+  :root .ring-blue-300,
+  :root .focus\:ring-blue-300:focus {
+    --tw-ring-color: rgba(203, 166, 247, var(--tw-ring-opacity));
+  }
+  :root .focus\:ring-red-300:focus {
+    --tw-ring-color: rgba(243, 139, 168, var(--tw-ring-opacity));
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    /* Llama logos */
+    /* Tailwind */
+    /* Models page, color for non-weight pills/tags. Background color is solid from `.bg-indigo-50`. */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root img[src="/public/ollama.png"],
+  :root img[src="/public/shades.png"],
+  :root img[src="/public/glasses.png"] {
+    filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+  }
+  :root code,
+  :root pre {
+    background-color: #181825;
+    color: #cdd6f4 !important;
+  }
+  :root input {
+    background-color: #181825;
+  }
+  :root main,
+  :root section,
+  :root strong,
+  :root h3,
+  :root ul,
+  :root button,
+  :root li,
+  :root li::marker {
+    color: #cdd6f4;
+  }
+  :root blockquote {
+    color: #a6adc8;
+  }
+  :root a[class~=""] {
+    color: #89b4fa;
+  }
+  :root #query,
+  :root #filter,
+  :root #search {
+    background-color: #181825;
+    color: #cdd6f4;
+  }
+  :root #readme,
+  :root #display,
+  :root #file-explorer {
+    color: #cdd6f4;
+  }
+  :root .command {
+    color: #cdd6f4;
+  }
+  :root .truncate {
+    color: #cdd6f4;
+  }
+  :root * {
+    border-color: #45475a;
+  }
+  :root .prose {
+    --tw-prose-headings: #cdd6f4;
+    --tw-prose-links: #cba6f7;
+  }
+  :root .text-white,
+  :root .text-black {
+    color: #cdd6f4;
+  }
+  :root .text-gray-900 {
+    color: #bac2de;
+  }
+  :root .text-green-500,
+  :root .text-emerald-500,
+  :root .text-green-700 {
+    color: #a6e3a1;
+  }
+  :root .text-yellow-900 {
+    color: #f9e2af;
+  }
+  :root .text-neutral-300,
+  :root .text-neutral-400,
+  :root .text-neutral-500 {
+    color: #a6adc8;
+  }
+  :root .text-neutral-700,
+  :root .text-neutral-800,
+  :root .text-neutral-900 {
+    color: #bac2de !important;
+  }
+  :root .text-red-500 {
+    color: #f38ba8;
+  }
+  :root .text-blue-500,
+  :root .text-blue-600 {
+    color: #cba6f7;
+  }
+  :root .text-indigo-600 {
+    color: #11111b;
+  }
+  :root .bg-neutral-100 pre,
+  :root .bg-neutral-100 .command {
+    background-color: unset !important;
+  }
+  :root .bg-white {
+    background-color: #181825;
+  }
+  :root .bg-black,
+  :root .hover\:bg-black:hover {
+    background-color: #313244 !important;
+  }
+  :root .bg-neutral-50 {
+    background-color: #313244;
+  }
+  :root .bg-neutral-100,
+  :root .hover\:bg-neutral-100:hover {
+    background-color: #585b70 !important;
+  }
+  :root .bg-neutral-700,
+  :root .bg-neutral-800 {
+    background-color: #45475a;
+  }
+  :root .bg-green-50 {
+    background-color: rgba(166, 227, 161, 0.1);
+  }
+  :root .bg-yellow-50 {
+    background-color: rgba(249, 226, 175, 0.1);
+  }
+  :root .bg-indigo-50 {
+    background-color: #cba6f7;
+  }
+  :root .bg-\[\#ddf4ff\] {
+    background-color: rgba(203, 166, 247, 0.1);
+  }
+  :root .border {
+    border-color: #cba6f7;
+  }
+  :root .border-neutral-200,
+  :root .border-neutral-300,
+  :root .divide-gray-200 > :not([hidden]) ~ :not([hidden]),
+  :root .divide-neutral-200 > :not([hidden]) ~ :not([hidden]) {
+    border-color: #45475a;
+  }
+  :root .focus\:border-blue-400:focus {
+    border-color: #cba6f7;
+  }
+  :root .focus\:border-red-400:focus {
+    border-color: #f38ba8;
+  }
+  :root .ring-neutral-300 {
+    --tw-ring-color: #45475a !important;
+  }
+  :root .ring-green-600\/20 {
+    --tw-ring-color: #a6e3a1;
+  }
+  :root .ring-yellow-600\/20 {
+    --tw-ring-color: #f9e2af;
+  }
+  :root select:focus,
+  :root .ring-blue-300,
+  :root .focus\:ring-blue-300:focus {
+    --tw-ring-color: rgba(203, 166, 247, var(--tw-ring-opacity));
+  }
+  :root .focus\:ring-red-300:focus {
+    --tw-ring-color: rgba(243, 139, 168, var(--tw-ring-opacity));
+  }
+}
+
+/* ==UserStyle==
+@name Ollama Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/ollama
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/ollama
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/ollama/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Aollama
+@description Soothing pastel theme for Ollama
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://unpkg.com/@catppuccin/highlightjs@1.0.0/css/catppuccin-variables.css");
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    /* Llama logos */
+    /* Tailwind */
+    /* Models page, color for non-weight pills/tags. Background color is solid from `.bg-indigo-50`. */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root img[src="/public/ollama.png"],
+  :root img[src="/public/shades.png"],
+  :root img[src="/public/glasses.png"] {
+    filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+  }
+  :root code,
+  :root pre {
+    background-color: #181825;
+    color: #cdd6f4 !important;
+  }
+  :root input {
+    background-color: #181825;
+  }
+  :root main,
+  :root section,
+  :root strong,
+  :root h3,
+  :root ul,
+  :root button,
+  :root li,
+  :root li::marker {
+    color: #cdd6f4;
+  }
+  :root blockquote {
+    color: #a6adc8;
+  }
+  :root a[class~=""] {
+    color: #89b4fa;
+  }
+  :root #query,
+  :root #filter,
+  :root #search {
+    background-color: #181825;
+    color: #cdd6f4;
+  }
+  :root #readme,
+  :root #display,
+  :root #file-explorer {
+    color: #cdd6f4;
+  }
+  :root .command {
+    color: #cdd6f4;
+  }
+  :root .truncate {
+    color: #cdd6f4;
+  }
+  :root * {
+    border-color: #45475a;
+  }
+  :root .prose {
+    --tw-prose-headings: #cdd6f4;
+    --tw-prose-links: #cba6f7;
+  }
+  :root .text-white,
+  :root .text-black {
+    color: #cdd6f4;
+  }
+  :root .text-gray-900 {
+    color: #bac2de;
+  }
+  :root .text-green-500,
+  :root .text-emerald-500,
+  :root .text-green-700 {
+    color: #a6e3a1;
+  }
+  :root .text-yellow-900 {
+    color: #f9e2af;
+  }
+  :root .text-neutral-300,
+  :root .text-neutral-400,
+  :root .text-neutral-500 {
+    color: #a6adc8;
+  }
+  :root .text-neutral-700,
+  :root .text-neutral-800,
+  :root .text-neutral-900 {
+    color: #bac2de !important;
+  }
+  :root .text-red-500 {
+    color: #f38ba8;
+  }
+  :root .text-blue-500,
+  :root .text-blue-600 {
+    color: #cba6f7;
+  }
+  :root .text-indigo-600 {
+    color: #11111b;
+  }
+  :root .bg-neutral-100 pre,
+  :root .bg-neutral-100 .command {
+    background-color: unset !important;
+  }
+  :root .bg-white {
+    background-color: #181825;
+  }
+  :root .bg-black,
+  :root .hover\:bg-black:hover {
+    background-color: #313244 !important;
+  }
+  :root .bg-neutral-50 {
+    background-color: #313244;
+  }
+  :root .bg-neutral-100,
+  :root .hover\:bg-neutral-100:hover {
+    background-color: #585b70 !important;
+  }
+  :root .bg-neutral-700,
+  :root .bg-neutral-800 {
+    background-color: #45475a;
+  }
+  :root .bg-green-50 {
+    background-color: rgba(166, 227, 161, 0.1);
+  }
+  :root .bg-yellow-50 {
+    background-color: rgba(249, 226, 175, 0.1);
+  }
+  :root .bg-indigo-50 {
+    background-color: #cba6f7;
+  }
+  :root .bg-\[\#ddf4ff\] {
+    background-color: rgba(203, 166, 247, 0.1);
+  }
+  :root .border {
+    border-color: #cba6f7;
+  }
+  :root .border-neutral-200,
+  :root .border-neutral-300,
+  :root .divide-gray-200 > :not([hidden]) ~ :not([hidden]),
+  :root .divide-neutral-200 > :not([hidden]) ~ :not([hidden]) {
+    border-color: #45475a;
+  }
+  :root .focus\:border-blue-400:focus {
+    border-color: #cba6f7;
+  }
+  :root .focus\:border-red-400:focus {
+    border-color: #f38ba8;
+  }
+  :root .ring-neutral-300 {
+    --tw-ring-color: #45475a !important;
+  }
+  :root .ring-green-600\/20 {
+    --tw-ring-color: #a6e3a1;
+  }
+  :root .ring-yellow-600\/20 {
+    --tw-ring-color: #f9e2af;
+  }
+  :root select:focus,
+  :root .ring-blue-300,
+  :root .focus\:ring-blue-300:focus {
+    --tw-ring-color: rgba(203, 166, 247, var(--tw-ring-opacity));
+  }
+  :root .focus\:ring-red-300:focus {
+    --tw-ring-color: rgba(243, 139, 168, var(--tw-ring-opacity));
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    /* Llama logos */
+    /* Tailwind */
+    /* Models page, color for non-weight pills/tags. Background color is solid from `.bg-indigo-50`. */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root img[src="/public/ollama.png"],
+  :root img[src="/public/shades.png"],
+  :root img[src="/public/glasses.png"] {
+    filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+  }
+  :root code,
+  :root pre {
+    background-color: #181825;
+    color: #cdd6f4 !important;
+  }
+  :root input {
+    background-color: #181825;
+  }
+  :root main,
+  :root section,
+  :root strong,
+  :root h3,
+  :root ul,
+  :root button,
+  :root li,
+  :root li::marker {
+    color: #cdd6f4;
+  }
+  :root blockquote {
+    color: #a6adc8;
+  }
+  :root a[class~=""] {
+    color: #89b4fa;
+  }
+  :root #query,
+  :root #filter,
+  :root #search {
+    background-color: #181825;
+    color: #cdd6f4;
+  }
+  :root #readme,
+  :root #display,
+  :root #file-explorer {
+    color: #cdd6f4;
+  }
+  :root .command {
+    color: #cdd6f4;
+  }
+  :root .truncate {
+    color: #cdd6f4;
+  }
+  :root * {
+    border-color: #45475a;
+  }
+  :root .prose {
+    --tw-prose-headings: #cdd6f4;
+    --tw-prose-links: #cba6f7;
+  }
+  :root .text-white,
+  :root .text-black {
+    color: #cdd6f4;
+  }
+  :root .text-gray-900 {
+    color: #bac2de;
+  }
+  :root .text-green-500,
+  :root .text-emerald-500,
+  :root .text-green-700 {
+    color: #a6e3a1;
+  }
+  :root .text-yellow-900 {
+    color: #f9e2af;
+  }
+  :root .text-neutral-300,
+  :root .text-neutral-400,
+  :root .text-neutral-500 {
+    color: #a6adc8;
+  }
+  :root .text-neutral-700,
+  :root .text-neutral-800,
+  :root .text-neutral-900 {
+    color: #bac2de !important;
+  }
+  :root .text-red-500 {
+    color: #f38ba8;
+  }
+  :root .text-blue-500,
+  :root .text-blue-600 {
+    color: #cba6f7;
+  }
+  :root .text-indigo-600 {
+    color: #11111b;
+  }
+  :root .bg-neutral-100 pre,
+  :root .bg-neutral-100 .command {
+    background-color: unset !important;
+  }
+  :root .bg-white {
+    background-color: #181825;
+  }
+  :root .bg-black,
+  :root .hover\:bg-black:hover {
+    background-color: #313244 !important;
+  }
+  :root .bg-neutral-50 {
+    background-color: #313244;
+  }
+  :root .bg-neutral-100,
+  :root .hover\:bg-neutral-100:hover {
+    background-color: #585b70 !important;
+  }
+  :root .bg-neutral-700,
+  :root .bg-neutral-800 {
+    background-color: #45475a;
+  }
+  :root .bg-green-50 {
+    background-color: rgba(166, 227, 161, 0.1);
+  }
+  :root .bg-yellow-50 {
+    background-color: rgba(249, 226, 175, 0.1);
+  }
+  :root .bg-indigo-50 {
+    background-color: #cba6f7;
+  }
+  :root .bg-\[\#ddf4ff\] {
+    background-color: rgba(203, 166, 247, 0.1);
+  }
+  :root .border {
+    border-color: #cba6f7;
+  }
+  :root .border-neutral-200,
+  :root .border-neutral-300,
+  :root .divide-gray-200 > :not([hidden]) ~ :not([hidden]),
+  :root .divide-neutral-200 > :not([hidden]) ~ :not([hidden]) {
+    border-color: #45475a;
+  }
+  :root .focus\:border-blue-400:focus {
+    border-color: #cba6f7;
+  }
+  :root .focus\:border-red-400:focus {
+    border-color: #f38ba8;
+  }
+  :root .ring-neutral-300 {
+    --tw-ring-color: #45475a !important;
+  }
+  :root .ring-green-600\/20 {
+    --tw-ring-color: #a6e3a1;
+  }
+  :root .ring-yellow-600\/20 {
+    --tw-ring-color: #f9e2af;
+  }
+  :root select:focus,
+  :root .ring-blue-300,
+  :root .focus\:ring-blue-300:focus {
+    --tw-ring-color: rgba(203, 166, 247, var(--tw-ring-opacity));
+  }
+  :root .focus\:ring-red-300:focus {
+    --tw-ring-color: rgba(243, 139, 168, var(--tw-ring-opacity));
+  }
+}
+
+/* ==UserStyle==
+@name Ollama Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/ollama
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/ollama
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/ollama/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Aollama
+@description Soothing pastel theme for Ollama
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://unpkg.com/@catppuccin/highlightjs@1.0.0/css/catppuccin-variables.css");
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    /* Llama logos */
+    /* Tailwind */
+    /* Models page, color for non-weight pills/tags. Background color is solid from `.bg-indigo-50`. */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root img[src="/public/ollama.png"],
+  :root img[src="/public/shades.png"],
+  :root img[src="/public/glasses.png"] {
+    filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+  }
+  :root code,
+  :root pre {
+    background-color: #181825;
+    color: #cdd6f4 !important;
+  }
+  :root input {
+    background-color: #181825;
+  }
+  :root main,
+  :root section,
+  :root strong,
+  :root h3,
+  :root ul,
+  :root button,
+  :root li,
+  :root li::marker {
+    color: #cdd6f4;
+  }
+  :root blockquote {
+    color: #a6adc8;
+  }
+  :root a[class~=""] {
+    color: #89b4fa;
+  }
+  :root #query,
+  :root #filter,
+  :root #search {
+    background-color: #181825;
+    color: #cdd6f4;
+  }
+  :root #readme,
+  :root #display,
+  :root #file-explorer {
+    color: #cdd6f4;
+  }
+  :root .command {
+    color: #cdd6f4;
+  }
+  :root .truncate {
+    color: #cdd6f4;
+  }
+  :root * {
+    border-color: #45475a;
+  }
+  :root .prose {
+    --tw-prose-headings: #cdd6f4;
+    --tw-prose-links: #cba6f7;
+  }
+  :root .text-white,
+  :root .text-black {
+    color: #cdd6f4;
+  }
+  :root .text-gray-900 {
+    color: #bac2de;
+  }
+  :root .text-green-500,
+  :root .text-emerald-500,
+  :root .text-green-700 {
+    color: #a6e3a1;
+  }
+  :root .text-yellow-900 {
+    color: #f9e2af;
+  }
+  :root .text-neutral-300,
+  :root .text-neutral-400,
+  :root .text-neutral-500 {
+    color: #a6adc8;
+  }
+  :root .text-neutral-700,
+  :root .text-neutral-800,
+  :root .text-neutral-900 {
+    color: #bac2de !important;
+  }
+  :root .text-red-500 {
+    color: #f38ba8;
+  }
+  :root .text-blue-500,
+  :root .text-blue-600 {
+    color: #cba6f7;
+  }
+  :root .text-indigo-600 {
+    color: #11111b;
+  }
+  :root .bg-neutral-100 pre,
+  :root .bg-neutral-100 .command {
+    background-color: unset !important;
+  }
+  :root .bg-white {
+    background-color: #181825;
+  }
+  :root .bg-black,
+  :root .hover\:bg-black:hover {
+    background-color: #313244 !important;
+  }
+  :root .bg-neutral-50 {
+    background-color: #313244;
+  }
+  :root .bg-neutral-100,
+  :root .hover\:bg-neutral-100:hover {
+    background-color: #585b70 !important;
+  }
+  :root .bg-neutral-700,
+  :root .bg-neutral-800 {
+    background-color: #45475a;
+  }
+  :root .bg-green-50 {
+    background-color: rgba(166, 227, 161, 0.1);
+  }
+  :root .bg-yellow-50 {
+    background-color: rgba(249, 226, 175, 0.1);
+  }
+  :root .bg-indigo-50 {
+    background-color: #cba6f7;
+  }
+  :root .bg-\[\#ddf4ff\] {
+    background-color: rgba(203, 166, 247, 0.1);
+  }
+  :root .border {
+    border-color: #cba6f7;
+  }
+  :root .border-neutral-200,
+  :root .border-neutral-300,
+  :root .divide-gray-200 > :not([hidden]) ~ :not([hidden]),
+  :root .divide-neutral-200 > :not([hidden]) ~ :not([hidden]) {
+    border-color: #45475a;
+  }
+  :root .focus\:border-blue-400:focus {
+    border-color: #cba6f7;
+  }
+  :root .focus\:border-red-400:focus {
+    border-color: #f38ba8;
+  }
+  :root .ring-neutral-300 {
+    --tw-ring-color: #45475a !important;
+  }
+  :root .ring-green-600\/20 {
+    --tw-ring-color: #a6e3a1;
+  }
+  :root .ring-yellow-600\/20 {
+    --tw-ring-color: #f9e2af;
+  }
+  :root select:focus,
+  :root .ring-blue-300,
+  :root .focus\:ring-blue-300:focus {
+    --tw-ring-color: rgba(203, 166, 247, var(--tw-ring-opacity));
+  }
+  :root .focus\:ring-red-300:focus {
+    --tw-ring-color: rgba(243, 139, 168, var(--tw-ring-opacity));
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    /* Llama logos */
+    /* Tailwind */
+    /* Models page, color for non-weight pills/tags. Background color is solid from `.bg-indigo-50`. */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root img[src="/public/ollama.png"],
+  :root img[src="/public/shades.png"],
+  :root img[src="/public/glasses.png"] {
+    filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+  }
+  :root code,
+  :root pre {
+    background-color: #181825;
+    color: #cdd6f4 !important;
+  }
+  :root input {
+    background-color: #181825;
+  }
+  :root main,
+  :root section,
+  :root strong,
+  :root h3,
+  :root ul,
+  :root button,
+  :root li,
+  :root li::marker {
+    color: #cdd6f4;
+  }
+  :root blockquote {
+    color: #a6adc8;
+  }
+  :root a[class~=""] {
+    color: #89b4fa;
+  }
+  :root #query,
+  :root #filter,
+  :root #search {
+    background-color: #181825;
+    color: #cdd6f4;
+  }
+  :root #readme,
+  :root #display,
+  :root #file-explorer {
+    color: #cdd6f4;
+  }
+  :root .command {
+    color: #cdd6f4;
+  }
+  :root .truncate {
+    color: #cdd6f4;
+  }
+  :root * {
+    border-color: #45475a;
+  }
+  :root .prose {
+    --tw-prose-headings: #cdd6f4;
+    --tw-prose-links: #cba6f7;
+  }
+  :root .text-white,
+  :root .text-black {
+    color: #cdd6f4;
+  }
+  :root .text-gray-900 {
+    color: #bac2de;
+  }
+  :root .text-green-500,
+  :root .text-emerald-500,
+  :root .text-green-700 {
+    color: #a6e3a1;
+  }
+  :root .text-yellow-900 {
+    color: #f9e2af;
+  }
+  :root .text-neutral-300,
+  :root .text-neutral-400,
+  :root .text-neutral-500 {
+    color: #a6adc8;
+  }
+  :root .text-neutral-700,
+  :root .text-neutral-800,
+  :root .text-neutral-900 {
+    color: #bac2de !important;
+  }
+  :root .text-red-500 {
+    color: #f38ba8;
+  }
+  :root .text-blue-500,
+  :root .text-blue-600 {
+    color: #cba6f7;
+  }
+  :root .text-indigo-600 {
+    color: #11111b;
+  }
+  :root .bg-neutral-100 pre,
+  :root .bg-neutral-100 .command {
+    background-color: unset !important;
+  }
+  :root .bg-white {
+    background-color: #181825;
+  }
+  :root .bg-black,
+  :root .hover\:bg-black:hover {
+    background-color: #313244 !important;
+  }
+  :root .bg-neutral-50 {
+    background-color: #313244;
+  }
+  :root .bg-neutral-100,
+  :root .hover\:bg-neutral-100:hover {
+    background-color: #585b70 !important;
+  }
+  :root .bg-neutral-700,
+  :root .bg-neutral-800 {
+    background-color: #45475a;
+  }
+  :root .bg-green-50 {
+    background-color: rgba(166, 227, 161, 0.1);
+  }
+  :root .bg-yellow-50 {
+    background-color: rgba(249, 226, 175, 0.1);
+  }
+  :root .bg-indigo-50 {
+    background-color: #cba6f7;
+  }
+  :root .bg-\[\#ddf4ff\] {
+    background-color: rgba(203, 166, 247, 0.1);
+  }
+  :root .border {
+    border-color: #cba6f7;
+  }
+  :root .border-neutral-200,
+  :root .border-neutral-300,
+  :root .divide-gray-200 > :not([hidden]) ~ :not([hidden]),
+  :root .divide-neutral-200 > :not([hidden]) ~ :not([hidden]) {
+    border-color: #45475a;
+  }
+  :root .focus\:border-blue-400:focus {
+    border-color: #cba6f7;
+  }
+  :root .focus\:border-red-400:focus {
+    border-color: #f38ba8;
+  }
+  :root .ring-neutral-300 {
+    --tw-ring-color: #45475a !important;
+  }
+  :root .ring-green-600\/20 {
+    --tw-ring-color: #a6e3a1;
+  }
+  :root .ring-yellow-600\/20 {
+    --tw-ring-color: #f9e2af;
+  }
+  :root select:focus,
+  :root .ring-blue-300,
+  :root .focus\:ring-blue-300:focus {
+    --tw-ring-color: rgba(203, 166, 247, var(--tw-ring-opacity));
+  }
+  :root .focus\:ring-red-300:focus {
+    --tw-ring-color: rgba(243, 139, 168, var(--tw-ring-opacity));
+  }
+}
+

@@ -1,0 +1,1643 @@
+// ==UserScript==
+// @name    Userstyle (neovim.io.css)
+// @include    *neovim.io*
+// ==/UserScript==
+GM_addStyle(`/* ==UserStyle==
+@name neovim.io Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/neovim.io
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/neovim.io
+@version 2025.09.19
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/neovim.io/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Aneovim.io
+@description Soothing pastel theme for neovim.io
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://unpkg.com/@catppuccin/highlightjs@1.0.0/css/catppuccin-variables.important.css");
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    --fg-color: #cdd6f4;
+    --inverse-fg-color: #313244;
+    --bg-color: #1e1e2e;
+    --accent-bg-color: #181825;
+    --link-color: #89b4fa;
+    --accent-color: #cba6f7;
+    --border-color: #cba6f7;
+    --code-color: #cba6f7;
+    --bs-btn-active-color: #1e1e2e;
+    --tag-color: #cba6f7;
+    --docsearch-container-background: rgba(30, 30, 46, 0.3);
+    --docsearch-modal-background: #181825;
+    --docsearch-highlight-color: #cba6f7;
+    --docsearch-logo-color: #cba6f7;
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root a:not([class]) {
+    text-decoration-color: var(--link-color);
+  }
+  :root a:not([class]):hover,
+  :root a:not([class]):focus {
+    color: var(--link-color);
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#a)"] {
+    fill: #89b4fa;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#b)"],
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#c)"] {
+    fill: #a6e3a1;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] g[fill="#444"] path {
+    fill: #89b4fa;
+  }
+  :root .btn {
+    color: #1e1e2e;
+    background: linear-gradient(#cba6f7 0% 95%, #b077f3 95% 100%);
+  }
+  :root .btn:hover,
+  :root .btn:focus {
+    box-shadow: 0 0 10px #cba6f7;
+    outline-color: #cdd6f4;
+  }
+  :root code,
+  :root code.hljs,
+  :root pre,
+  :root samp {
+    background-color: #181825 !important;
+    color: #cdd6f4;
+  }
+  :root .generator-stats {
+    color: #a6adc8;
+  }
+  :root .DocSearch-Logo .cls-1,
+  :root .DocSearch-Logo .cls-2 {
+    fill: var(--docsearch-logo-color);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    --fg-color: #cdd6f4;
+    --inverse-fg-color: #313244;
+    --bg-color: #1e1e2e;
+    --accent-bg-color: #181825;
+    --link-color: #89b4fa;
+    --accent-color: #cba6f7;
+    --border-color: #cba6f7;
+    --code-color: #cba6f7;
+    --bs-btn-active-color: #1e1e2e;
+    --tag-color: #cba6f7;
+    --docsearch-container-background: rgba(30, 30, 46, 0.3);
+    --docsearch-modal-background: #181825;
+    --docsearch-highlight-color: #cba6f7;
+    --docsearch-logo-color: #cba6f7;
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root a:not([class]) {
+    text-decoration-color: var(--link-color);
+  }
+  :root a:not([class]):hover,
+  :root a:not([class]):focus {
+    color: var(--link-color);
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#a)"] {
+    fill: #89b4fa;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#b)"],
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#c)"] {
+    fill: #a6e3a1;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] g[fill="#444"] path {
+    fill: #89b4fa;
+  }
+  :root .btn {
+    color: #1e1e2e;
+    background: linear-gradient(#cba6f7 0% 95%, #b077f3 95% 100%);
+  }
+  :root .btn:hover,
+  :root .btn:focus {
+    box-shadow: 0 0 10px #cba6f7;
+    outline-color: #cdd6f4;
+  }
+  :root code,
+  :root code.hljs,
+  :root pre,
+  :root samp {
+    background-color: #181825 !important;
+    color: #cdd6f4;
+  }
+  :root .generator-stats {
+    color: #a6adc8;
+  }
+  :root .DocSearch-Logo .cls-1,
+  :root .DocSearch-Logo .cls-2 {
+    fill: var(--docsearch-logo-color);
+  }
+}
+
+/* ==UserStyle==
+@name neovim.io Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/neovim.io
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/neovim.io
+@version 2025.09.19
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/neovim.io/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Aneovim.io
+@description Soothing pastel theme for neovim.io
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://unpkg.com/@catppuccin/highlightjs@1.0.0/css/catppuccin-variables.important.css");
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    --fg-color: #cdd6f4;
+    --inverse-fg-color: #313244;
+    --bg-color: #1e1e2e;
+    --accent-bg-color: #181825;
+    --link-color: #89b4fa;
+    --accent-color: #cba6f7;
+    --border-color: #cba6f7;
+    --code-color: #cba6f7;
+    --bs-btn-active-color: #1e1e2e;
+    --tag-color: #cba6f7;
+    --docsearch-container-background: rgba(30, 30, 46, 0.3);
+    --docsearch-modal-background: #181825;
+    --docsearch-highlight-color: #cba6f7;
+    --docsearch-logo-color: #cba6f7;
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root a:not([class]) {
+    text-decoration-color: var(--link-color);
+  }
+  :root a:not([class]):hover,
+  :root a:not([class]):focus {
+    color: var(--link-color);
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#a)"] {
+    fill: #89b4fa;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#b)"],
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#c)"] {
+    fill: #a6e3a1;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] g[fill="#444"] path {
+    fill: #89b4fa;
+  }
+  :root .btn {
+    color: #1e1e2e;
+    background: linear-gradient(#cba6f7 0% 95%, #b077f3 95% 100%);
+  }
+  :root .btn:hover,
+  :root .btn:focus {
+    box-shadow: 0 0 10px #cba6f7;
+    outline-color: #cdd6f4;
+  }
+  :root code,
+  :root code.hljs,
+  :root pre,
+  :root samp {
+    background-color: #181825 !important;
+    color: #cdd6f4;
+  }
+  :root .generator-stats {
+    color: #a6adc8;
+  }
+  :root .DocSearch-Logo .cls-1,
+  :root .DocSearch-Logo .cls-2 {
+    fill: var(--docsearch-logo-color);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    --fg-color: #cdd6f4;
+    --inverse-fg-color: #313244;
+    --bg-color: #1e1e2e;
+    --accent-bg-color: #181825;
+    --link-color: #89b4fa;
+    --accent-color: #cba6f7;
+    --border-color: #cba6f7;
+    --code-color: #cba6f7;
+    --bs-btn-active-color: #1e1e2e;
+    --tag-color: #cba6f7;
+    --docsearch-container-background: rgba(30, 30, 46, 0.3);
+    --docsearch-modal-background: #181825;
+    --docsearch-highlight-color: #cba6f7;
+    --docsearch-logo-color: #cba6f7;
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root a:not([class]) {
+    text-decoration-color: var(--link-color);
+  }
+  :root a:not([class]):hover,
+  :root a:not([class]):focus {
+    color: var(--link-color);
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#a)"] {
+    fill: #89b4fa;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#b)"],
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#c)"] {
+    fill: #a6e3a1;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] g[fill="#444"] path {
+    fill: #89b4fa;
+  }
+  :root .btn {
+    color: #1e1e2e;
+    background: linear-gradient(#cba6f7 0% 95%, #b077f3 95% 100%);
+  }
+  :root .btn:hover,
+  :root .btn:focus {
+    box-shadow: 0 0 10px #cba6f7;
+    outline-color: #cdd6f4;
+  }
+  :root code,
+  :root code.hljs,
+  :root pre,
+  :root samp {
+    background-color: #181825 !important;
+    color: #cdd6f4;
+  }
+  :root .generator-stats {
+    color: #a6adc8;
+  }
+  :root .DocSearch-Logo .cls-1,
+  :root .DocSearch-Logo .cls-2 {
+    fill: var(--docsearch-logo-color);
+  }
+}
+
+/* ==UserStyle==
+@name neovim.io Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/neovim.io
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/neovim.io
+@version 2025.09.19
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/neovim.io/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Aneovim.io
+@description Soothing pastel theme for neovim.io
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://unpkg.com/@catppuccin/highlightjs@1.0.0/css/catppuccin-variables.important.css");
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    --fg-color: #cdd6f4;
+    --inverse-fg-color: #313244;
+    --bg-color: #1e1e2e;
+    --accent-bg-color: #181825;
+    --link-color: #89b4fa;
+    --accent-color: #cba6f7;
+    --border-color: #cba6f7;
+    --code-color: #cba6f7;
+    --bs-btn-active-color: #1e1e2e;
+    --tag-color: #cba6f7;
+    --docsearch-container-background: rgba(30, 30, 46, 0.3);
+    --docsearch-modal-background: #181825;
+    --docsearch-highlight-color: #cba6f7;
+    --docsearch-logo-color: #cba6f7;
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root a:not([class]) {
+    text-decoration-color: var(--link-color);
+  }
+  :root a:not([class]):hover,
+  :root a:not([class]):focus {
+    color: var(--link-color);
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#a)"] {
+    fill: #89b4fa;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#b)"],
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#c)"] {
+    fill: #a6e3a1;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] g[fill="#444"] path {
+    fill: #89b4fa;
+  }
+  :root .btn {
+    color: #1e1e2e;
+    background: linear-gradient(#cba6f7 0% 95%, #b077f3 95% 100%);
+  }
+  :root .btn:hover,
+  :root .btn:focus {
+    box-shadow: 0 0 10px #cba6f7;
+    outline-color: #cdd6f4;
+  }
+  :root code,
+  :root code.hljs,
+  :root pre,
+  :root samp {
+    background-color: #181825 !important;
+    color: #cdd6f4;
+  }
+  :root .generator-stats {
+    color: #a6adc8;
+  }
+  :root .DocSearch-Logo .cls-1,
+  :root .DocSearch-Logo .cls-2 {
+    fill: var(--docsearch-logo-color);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    --fg-color: #cdd6f4;
+    --inverse-fg-color: #313244;
+    --bg-color: #1e1e2e;
+    --accent-bg-color: #181825;
+    --link-color: #89b4fa;
+    --accent-color: #cba6f7;
+    --border-color: #cba6f7;
+    --code-color: #cba6f7;
+    --bs-btn-active-color: #1e1e2e;
+    --tag-color: #cba6f7;
+    --docsearch-container-background: rgba(30, 30, 46, 0.3);
+    --docsearch-modal-background: #181825;
+    --docsearch-highlight-color: #cba6f7;
+    --docsearch-logo-color: #cba6f7;
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root a:not([class]) {
+    text-decoration-color: var(--link-color);
+  }
+  :root a:not([class]):hover,
+  :root a:not([class]):focus {
+    color: var(--link-color);
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#a)"] {
+    fill: #89b4fa;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#b)"],
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#c)"] {
+    fill: #a6e3a1;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] g[fill="#444"] path {
+    fill: #89b4fa;
+  }
+  :root .btn {
+    color: #1e1e2e;
+    background: linear-gradient(#cba6f7 0% 95%, #b077f3 95% 100%);
+  }
+  :root .btn:hover,
+  :root .btn:focus {
+    box-shadow: 0 0 10px #cba6f7;
+    outline-color: #cdd6f4;
+  }
+  :root code,
+  :root code.hljs,
+  :root pre,
+  :root samp {
+    background-color: #181825 !important;
+    color: #cdd6f4;
+  }
+  :root .generator-stats {
+    color: #a6adc8;
+  }
+  :root .DocSearch-Logo .cls-1,
+  :root .DocSearch-Logo .cls-2 {
+    fill: var(--docsearch-logo-color);
+  }
+}
+
+/* ==UserStyle==
+@name neovim.io Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/neovim.io
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/neovim.io
+@version 2025.09.19
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/neovim.io/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Aneovim.io
+@description Soothing pastel theme for neovim.io
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://unpkg.com/@catppuccin/highlightjs@1.0.0/css/catppuccin-variables.important.css");
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    --fg-color: #cdd6f4;
+    --inverse-fg-color: #313244;
+    --bg-color: #1e1e2e;
+    --accent-bg-color: #181825;
+    --link-color: #89b4fa;
+    --accent-color: #cba6f7;
+    --border-color: #cba6f7;
+    --code-color: #cba6f7;
+    --bs-btn-active-color: #1e1e2e;
+    --tag-color: #cba6f7;
+    --docsearch-container-background: rgba(30, 30, 46, 0.3);
+    --docsearch-modal-background: #181825;
+    --docsearch-highlight-color: #cba6f7;
+    --docsearch-logo-color: #cba6f7;
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root a:not([class]) {
+    text-decoration-color: var(--link-color);
+  }
+  :root a:not([class]):hover,
+  :root a:not([class]):focus {
+    color: var(--link-color);
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#a)"] {
+    fill: #89b4fa;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#b)"],
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#c)"] {
+    fill: #a6e3a1;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] g[fill="#444"] path {
+    fill: #89b4fa;
+  }
+  :root .btn {
+    color: #1e1e2e;
+    background: linear-gradient(#cba6f7 0% 95%, #b077f3 95% 100%);
+  }
+  :root .btn:hover,
+  :root .btn:focus {
+    box-shadow: 0 0 10px #cba6f7;
+    outline-color: #cdd6f4;
+  }
+  :root code,
+  :root code.hljs,
+  :root pre,
+  :root samp {
+    background-color: #181825 !important;
+    color: #cdd6f4;
+  }
+  :root .generator-stats {
+    color: #a6adc8;
+  }
+  :root .DocSearch-Logo .cls-1,
+  :root .DocSearch-Logo .cls-2 {
+    fill: var(--docsearch-logo-color);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    --fg-color: #cdd6f4;
+    --inverse-fg-color: #313244;
+    --bg-color: #1e1e2e;
+    --accent-bg-color: #181825;
+    --link-color: #89b4fa;
+    --accent-color: #cba6f7;
+    --border-color: #cba6f7;
+    --code-color: #cba6f7;
+    --bs-btn-active-color: #1e1e2e;
+    --tag-color: #cba6f7;
+    --docsearch-container-background: rgba(30, 30, 46, 0.3);
+    --docsearch-modal-background: #181825;
+    --docsearch-highlight-color: #cba6f7;
+    --docsearch-logo-color: #cba6f7;
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root a:not([class]) {
+    text-decoration-color: var(--link-color);
+  }
+  :root a:not([class]):hover,
+  :root a:not([class]):focus {
+    color: var(--link-color);
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#a)"] {
+    fill: #89b4fa;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#b)"],
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#c)"] {
+    fill: #a6e3a1;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] g[fill="#444"] path {
+    fill: #89b4fa;
+  }
+  :root .btn {
+    color: #1e1e2e;
+    background: linear-gradient(#cba6f7 0% 95%, #b077f3 95% 100%);
+  }
+  :root .btn:hover,
+  :root .btn:focus {
+    box-shadow: 0 0 10px #cba6f7;
+    outline-color: #cdd6f4;
+  }
+  :root code,
+  :root code.hljs,
+  :root pre,
+  :root samp {
+    background-color: #181825 !important;
+    color: #cdd6f4;
+  }
+  :root .generator-stats {
+    color: #a6adc8;
+  }
+  :root .DocSearch-Logo .cls-1,
+  :root .DocSearch-Logo .cls-2 {
+    fill: var(--docsearch-logo-color);
+  }
+}
+
+/* ==UserStyle==
+@name neovim.io Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/neovim.io
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/neovim.io
+@version 2025.09.19
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/neovim.io/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Aneovim.io
+@description Soothing pastel theme for neovim.io
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+
+@import url("https://unpkg.com/@catppuccin/highlightjs@1.0.0/css/catppuccin-variables.important.css");
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    --fg-color: #cdd6f4;
+    --inverse-fg-color: #313244;
+    --bg-color: #1e1e2e;
+    --accent-bg-color: #181825;
+    --link-color: #89b4fa;
+    --accent-color: #cba6f7;
+    --border-color: #cba6f7;
+    --code-color: #cba6f7;
+    --bs-btn-active-color: #1e1e2e;
+    --tag-color: #cba6f7;
+    --docsearch-container-background: rgba(30, 30, 46, 0.3);
+    --docsearch-modal-background: #181825;
+    --docsearch-highlight-color: #cba6f7;
+    --docsearch-logo-color: #cba6f7;
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root a:not([class]) {
+    text-decoration-color: var(--link-color);
+  }
+  :root a:not([class]):hover,
+  :root a:not([class]):focus {
+    color: var(--link-color);
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#a)"] {
+    fill: #89b4fa;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#b)"],
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#c)"] {
+    fill: #a6e3a1;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] g[fill="#444"] path {
+    fill: #89b4fa;
+  }
+  :root .btn {
+    color: #1e1e2e;
+    background: linear-gradient(#cba6f7 0% 95%, #b077f3 95% 100%);
+  }
+  :root .btn:hover,
+  :root .btn:focus {
+    box-shadow: 0 0 10px #cba6f7;
+    outline-color: #cdd6f4;
+  }
+  :root code,
+  :root code.hljs,
+  :root pre,
+  :root samp {
+    background-color: #181825 !important;
+    color: #cdd6f4;
+  }
+  :root .generator-stats {
+    color: #a6adc8;
+  }
+  :root .DocSearch-Logo .cls-1,
+  :root .DocSearch-Logo .cls-2 {
+    fill: var(--docsearch-logo-color);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    --fg-color: #cdd6f4;
+    --inverse-fg-color: #313244;
+    --bg-color: #1e1e2e;
+    --accent-bg-color: #181825;
+    --link-color: #89b4fa;
+    --accent-color: #cba6f7;
+    --border-color: #cba6f7;
+    --code-color: #cba6f7;
+    --bs-btn-active-color: #1e1e2e;
+    --tag-color: #cba6f7;
+    --docsearch-container-background: rgba(30, 30, 46, 0.3);
+    --docsearch-modal-background: #181825;
+    --docsearch-highlight-color: #cba6f7;
+    --docsearch-logo-color: #cba6f7;
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root a:not([class]) {
+    text-decoration-color: var(--link-color);
+  }
+  :root a:not([class]):hover,
+  :root a:not([class]):focus {
+    color: var(--link-color);
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#a)"] {
+    fill: #89b4fa;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#b)"],
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#c)"] {
+    fill: #a6e3a1;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] g[fill="#444"] path {
+    fill: #89b4fa;
+  }
+  :root .btn {
+    color: #1e1e2e;
+    background: linear-gradient(#cba6f7 0% 95%, #b077f3 95% 100%);
+  }
+  :root .btn:hover,
+  :root .btn:focus {
+    box-shadow: 0 0 10px #cba6f7;
+    outline-color: #cdd6f4;
+  }
+  :root code,
+  :root code.hljs,
+  :root pre,
+  :root samp {
+    background-color: #181825 !important;
+    color: #cdd6f4;
+  }
+  :root .generator-stats {
+    color: #a6adc8;
+  }
+  :root .DocSearch-Logo .cls-1,
+  :root .DocSearch-Logo .cls-2 {
+    fill: var(--docsearch-logo-color);
+  }
+}
+
+/* ==UserStyle==
+@name neovim.io Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/neovim.io
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/neovim.io
+@version 2025.09.19
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/neovim.io/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Aneovim.io
+@description Soothing pastel theme for neovim.io
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://unpkg.com/@catppuccin/highlightjs@1.0.0/css/catppuccin-variables.important.css");
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    --fg-color: #cdd6f4;
+    --inverse-fg-color: #313244;
+    --bg-color: #1e1e2e;
+    --accent-bg-color: #181825;
+    --link-color: #89b4fa;
+    --accent-color: #cba6f7;
+    --border-color: #cba6f7;
+    --code-color: #cba6f7;
+    --bs-btn-active-color: #1e1e2e;
+    --tag-color: #cba6f7;
+    --docsearch-container-background: rgba(30, 30, 46, 0.3);
+    --docsearch-modal-background: #181825;
+    --docsearch-highlight-color: #cba6f7;
+    --docsearch-logo-color: #cba6f7;
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root a:not([class]) {
+    text-decoration-color: var(--link-color);
+  }
+  :root a:not([class]):hover,
+  :root a:not([class]):focus {
+    color: var(--link-color);
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#a)"] {
+    fill: #89b4fa;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#b)"],
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#c)"] {
+    fill: #a6e3a1;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] g[fill="#444"] path {
+    fill: #89b4fa;
+  }
+  :root .btn {
+    color: #1e1e2e;
+    background: linear-gradient(#cba6f7 0% 95%, #b077f3 95% 100%);
+  }
+  :root .btn:hover,
+  :root .btn:focus {
+    box-shadow: 0 0 10px #cba6f7;
+    outline-color: #cdd6f4;
+  }
+  :root code,
+  :root code.hljs,
+  :root pre,
+  :root samp {
+    background-color: #181825 !important;
+    color: #cdd6f4;
+  }
+  :root .generator-stats {
+    color: #a6adc8;
+  }
+  :root .DocSearch-Logo .cls-1,
+  :root .DocSearch-Logo .cls-2 {
+    fill: var(--docsearch-logo-color);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    --fg-color: #cdd6f4;
+    --inverse-fg-color: #313244;
+    --bg-color: #1e1e2e;
+    --accent-bg-color: #181825;
+    --link-color: #89b4fa;
+    --accent-color: #cba6f7;
+    --border-color: #cba6f7;
+    --code-color: #cba6f7;
+    --bs-btn-active-color: #1e1e2e;
+    --tag-color: #cba6f7;
+    --docsearch-container-background: rgba(30, 30, 46, 0.3);
+    --docsearch-modal-background: #181825;
+    --docsearch-highlight-color: #cba6f7;
+    --docsearch-logo-color: #cba6f7;
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root a:not([class]) {
+    text-decoration-color: var(--link-color);
+  }
+  :root a:not([class]):hover,
+  :root a:not([class]):focus {
+    color: var(--link-color);
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#a)"] {
+    fill: #89b4fa;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#b)"],
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#c)"] {
+    fill: #a6e3a1;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] g[fill="#444"] path {
+    fill: #89b4fa;
+  }
+  :root .btn {
+    color: #1e1e2e;
+    background: linear-gradient(#cba6f7 0% 95%, #b077f3 95% 100%);
+  }
+  :root .btn:hover,
+  :root .btn:focus {
+    box-shadow: 0 0 10px #cba6f7;
+    outline-color: #cdd6f4;
+  }
+  :root code,
+  :root code.hljs,
+  :root pre,
+  :root samp {
+    background-color: #181825 !important;
+    color: #cdd6f4;
+  }
+  :root .generator-stats {
+    color: #a6adc8;
+  }
+  :root .DocSearch-Logo .cls-1,
+  :root .DocSearch-Logo .cls-2 {
+    fill: var(--docsearch-logo-color);
+  }
+}
+
+/* ==UserStyle==
+@name neovim.io Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/neovim.io
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/neovim.io
+@version 2025.09.19
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/neovim.io/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Aneovim.io
+@description Soothing pastel theme for neovim.io
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://unpkg.com/@catppuccin/highlightjs@1.0.0/css/catppuccin-variables.important.css");
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    --fg-color: #cdd6f4;
+    --inverse-fg-color: #313244;
+    --bg-color: #1e1e2e;
+    --accent-bg-color: #181825;
+    --link-color: #89b4fa;
+    --accent-color: #cba6f7;
+    --border-color: #cba6f7;
+    --code-color: #cba6f7;
+    --bs-btn-active-color: #1e1e2e;
+    --tag-color: #cba6f7;
+    --docsearch-container-background: rgba(30, 30, 46, 0.3);
+    --docsearch-modal-background: #181825;
+    --docsearch-highlight-color: #cba6f7;
+    --docsearch-logo-color: #cba6f7;
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root a:not([class]) {
+    text-decoration-color: var(--link-color);
+  }
+  :root a:not([class]):hover,
+  :root a:not([class]):focus {
+    color: var(--link-color);
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#a)"] {
+    fill: #89b4fa;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#b)"],
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#c)"] {
+    fill: #a6e3a1;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] g[fill="#444"] path {
+    fill: #89b4fa;
+  }
+  :root .btn {
+    color: #1e1e2e;
+    background: linear-gradient(#cba6f7 0% 95%, #b077f3 95% 100%);
+  }
+  :root .btn:hover,
+  :root .btn:focus {
+    box-shadow: 0 0 10px #cba6f7;
+    outline-color: #cdd6f4;
+  }
+  :root code,
+  :root code.hljs,
+  :root pre,
+  :root samp {
+    background-color: #181825 !important;
+    color: #cdd6f4;
+  }
+  :root .generator-stats {
+    color: #a6adc8;
+  }
+  :root .DocSearch-Logo .cls-1,
+  :root .DocSearch-Logo .cls-2 {
+    fill: var(--docsearch-logo-color);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    --fg-color: #cdd6f4;
+    --inverse-fg-color: #313244;
+    --bg-color: #1e1e2e;
+    --accent-bg-color: #181825;
+    --link-color: #89b4fa;
+    --accent-color: #cba6f7;
+    --border-color: #cba6f7;
+    --code-color: #cba6f7;
+    --bs-btn-active-color: #1e1e2e;
+    --tag-color: #cba6f7;
+    --docsearch-container-background: rgba(30, 30, 46, 0.3);
+    --docsearch-modal-background: #181825;
+    --docsearch-highlight-color: #cba6f7;
+    --docsearch-logo-color: #cba6f7;
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root a:not([class]) {
+    text-decoration-color: var(--link-color);
+  }
+  :root a:not([class]):hover,
+  :root a:not([class]):focus {
+    color: var(--link-color);
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#a)"] {
+    fill: #89b4fa;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#b)"],
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#c)"] {
+    fill: #a6e3a1;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] g[fill="#444"] path {
+    fill: #89b4fa;
+  }
+  :root .btn {
+    color: #1e1e2e;
+    background: linear-gradient(#cba6f7 0% 95%, #b077f3 95% 100%);
+  }
+  :root .btn:hover,
+  :root .btn:focus {
+    box-shadow: 0 0 10px #cba6f7;
+    outline-color: #cdd6f4;
+  }
+  :root code,
+  :root code.hljs,
+  :root pre,
+  :root samp {
+    background-color: #181825 !important;
+    color: #cdd6f4;
+  }
+  :root .generator-stats {
+    color: #a6adc8;
+  }
+  :root .DocSearch-Logo .cls-1,
+  :root .DocSearch-Logo .cls-2 {
+    fill: var(--docsearch-logo-color);
+  }
+}
+
+/* ==UserStyle==
+@name neovim.io Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/neovim.io
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/neovim.io
+@version 2025.09.19
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/neovim.io/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Aneovim.io
+@description Soothing pastel theme for neovim.io
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://unpkg.com/@catppuccin/highlightjs@1.0.0/css/catppuccin-variables.important.css");
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    --fg-color: #cdd6f4;
+    --inverse-fg-color: #313244;
+    --bg-color: #1e1e2e;
+    --accent-bg-color: #181825;
+    --link-color: #89b4fa;
+    --accent-color: #cba6f7;
+    --border-color: #cba6f7;
+    --code-color: #cba6f7;
+    --bs-btn-active-color: #1e1e2e;
+    --tag-color: #cba6f7;
+    --docsearch-container-background: rgba(30, 30, 46, 0.3);
+    --docsearch-modal-background: #181825;
+    --docsearch-highlight-color: #cba6f7;
+    --docsearch-logo-color: #cba6f7;
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root a:not([class]) {
+    text-decoration-color: var(--link-color);
+  }
+  :root a:not([class]):hover,
+  :root a:not([class]):focus {
+    color: var(--link-color);
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#a)"] {
+    fill: #89b4fa;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#b)"],
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#c)"] {
+    fill: #a6e3a1;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] g[fill="#444"] path {
+    fill: #89b4fa;
+  }
+  :root .btn {
+    color: #1e1e2e;
+    background: linear-gradient(#cba6f7 0% 95%, #b077f3 95% 100%);
+  }
+  :root .btn:hover,
+  :root .btn:focus {
+    box-shadow: 0 0 10px #cba6f7;
+    outline-color: #cdd6f4;
+  }
+  :root code,
+  :root code.hljs,
+  :root pre,
+  :root samp {
+    background-color: #181825 !important;
+    color: #cdd6f4;
+  }
+  :root .generator-stats {
+    color: #a6adc8;
+  }
+  :root .DocSearch-Logo .cls-1,
+  :root .DocSearch-Logo .cls-2 {
+    fill: var(--docsearch-logo-color);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    --fg-color: #cdd6f4;
+    --inverse-fg-color: #313244;
+    --bg-color: #1e1e2e;
+    --accent-bg-color: #181825;
+    --link-color: #89b4fa;
+    --accent-color: #cba6f7;
+    --border-color: #cba6f7;
+    --code-color: #cba6f7;
+    --bs-btn-active-color: #1e1e2e;
+    --tag-color: #cba6f7;
+    --docsearch-container-background: rgba(30, 30, 46, 0.3);
+    --docsearch-modal-background: #181825;
+    --docsearch-highlight-color: #cba6f7;
+    --docsearch-logo-color: #cba6f7;
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root a:not([class]) {
+    text-decoration-color: var(--link-color);
+  }
+  :root a:not([class]):hover,
+  :root a:not([class]):focus {
+    color: var(--link-color);
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#a)"] {
+    fill: #89b4fa;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#b)"],
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#c)"] {
+    fill: #a6e3a1;
+  }
+  :root a[aria-label="logo"] svg[aria-label="Neovim"] g[fill="#444"] path {
+    fill: #89b4fa;
+  }
+  :root .btn {
+    color: #1e1e2e;
+    background: linear-gradient(#cba6f7 0% 95%, #b077f3 95% 100%);
+  }
+  :root .btn:hover,
+  :root .btn:focus {
+    box-shadow: 0 0 10px #cba6f7;
+    outline-color: #cdd6f4;
+  }
+  :root code,
+  :root code.hljs,
+  :root pre,
+  :root samp {
+    background-color: #181825 !important;
+    color: #cdd6f4;
+  }
+  :root .generator-stats {
+    color: #a6adc8;
+  }
+  :root .DocSearch-Logo .cls-1,
+  :root .DocSearch-Logo .cls-2 {
+    fill: var(--docsearch-logo-color);
+  }
+}
+
+`)

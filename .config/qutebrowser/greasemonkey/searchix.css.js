@@ -1,0 +1,437 @@
+// ==UserScript==
+// @name    Userstyle (searchix.css)
+// @include    *searchix.ovh*
+// ==/UserScript==
+GM_addStyle(`/* ==UserStyle==
+@name Searchix Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/searchix
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/searchix
+@version 2025.12.05
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/searchix/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Asearchix
+@description Soothing pastel theme for Searchix
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    --bg: #1e1e2e;
+    --accent-bg: #181825;
+    --text: #cdd6f4;
+    --text-light: #a6adc8;
+    --accent: #cba6f7;
+    --accent-hover: #cba6f7;
+    --accent-error: rgba(243, 139, 168, 0.2);
+    --border: #6c7086;
+    --code: #b4befe;
+    --preformatted: #cdd6f4;
+    --disabled: #11111b;
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root dialog {
+    color: var(--text);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #1e1e2e;
+    --accent-bg: #181825;
+    --text: #cdd6f4;
+    --text-light: #a6adc8;
+    --accent: #cba6f7;
+    --accent-hover: #cba6f7;
+    --accent-error: rgba(243, 139, 168, 0.2);
+    --border: #6c7086;
+    --code: #b4befe;
+    --preformatted: #cdd6f4;
+    --disabled: #11111b;
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root dialog {
+    color: var(--text);
+  }
+}
+
+/* ==UserStyle==
+@name Searchix Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/searchix
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/searchix
+@version 2025.12.05
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/searchix/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Asearchix
+@description Soothing pastel theme for Searchix
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    --bg: #1e1e2e;
+    --accent-bg: #181825;
+    --text: #cdd6f4;
+    --text-light: #a6adc8;
+    --accent: #cba6f7;
+    --accent-hover: #cba6f7;
+    --accent-error: rgba(243, 139, 168, 0.2);
+    --border: #6c7086;
+    --code: #b4befe;
+    --preformatted: #cdd6f4;
+    --disabled: #11111b;
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root dialog {
+    color: var(--text);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #1e1e2e;
+    --accent-bg: #181825;
+    --text: #cdd6f4;
+    --text-light: #a6adc8;
+    --accent: #cba6f7;
+    --accent-hover: #cba6f7;
+    --accent-error: rgba(243, 139, 168, 0.2);
+    --border: #6c7086;
+    --code: #b4befe;
+    --preformatted: #cdd6f4;
+    --disabled: #11111b;
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root dialog {
+    color: var(--text);
+  }
+}
+
+/* ==UserStyle==
+@name Searchix Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/searchix
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/searchix
+@version 2025.12.05
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/searchix/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Asearchix
+@description Soothing pastel theme for Searchix
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    --bg: #1e1e2e;
+    --accent-bg: #181825;
+    --text: #cdd6f4;
+    --text-light: #a6adc8;
+    --accent: #cba6f7;
+    --accent-hover: #cba6f7;
+    --accent-error: rgba(243, 139, 168, 0.2);
+    --border: #6c7086;
+    --code: #b4befe;
+    --preformatted: #cdd6f4;
+    --disabled: #11111b;
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root dialog {
+    color: var(--text);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #1e1e2e;
+    --accent-bg: #181825;
+    --text: #cdd6f4;
+    --text-light: #a6adc8;
+    --accent: #cba6f7;
+    --accent-hover: #cba6f7;
+    --accent-error: rgba(243, 139, 168, 0.2);
+    --border: #6c7086;
+    --code: #b4befe;
+    --preformatted: #cdd6f4;
+    --disabled: #11111b;
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root dialog {
+    color: var(--text);
+  }
+}
+
+/* ==UserStyle==
+@name Searchix Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/searchix
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/searchix
+@version 2025.12.05
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/searchix/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Asearchix
+@description Soothing pastel theme for Searchix
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    --bg: #1e1e2e;
+    --accent-bg: #181825;
+    --text: #cdd6f4;
+    --text-light: #a6adc8;
+    --accent: #cba6f7;
+    --accent-hover: #cba6f7;
+    --accent-error: rgba(243, 139, 168, 0.2);
+    --border: #6c7086;
+    --code: #b4befe;
+    --preformatted: #cdd6f4;
+    --disabled: #11111b;
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root dialog {
+    color: var(--text);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #1e1e2e;
+    --accent-bg: #181825;
+    --text: #cdd6f4;
+    --text-light: #a6adc8;
+    --accent: #cba6f7;
+    --accent-hover: #cba6f7;
+    --accent-error: rgba(243, 139, 168, 0.2);
+    --border: #6c7086;
+    --code: #b4befe;
+    --preformatted: #cdd6f4;
+    --disabled: #11111b;
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root dialog {
+    color: var(--text);
+  }
+}
+
+/* ==UserStyle==
+@name Searchix Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/searchix
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/searchix
+@version 2025.12.05
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/searchix/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Asearchix
+@description Soothing pastel theme for Searchix
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    --bg: #1e1e2e;
+    --accent-bg: #181825;
+    --text: #cdd6f4;
+    --text-light: #a6adc8;
+    --accent: #cba6f7;
+    --accent-hover: #cba6f7;
+    --accent-error: rgba(243, 139, 168, 0.2);
+    --border: #6c7086;
+    --code: #b4befe;
+    --preformatted: #cdd6f4;
+    --disabled: #11111b;
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root dialog {
+    color: var(--text);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #1e1e2e;
+    --accent-bg: #181825;
+    --text: #cdd6f4;
+    --text-light: #a6adc8;
+    --accent: #cba6f7;
+    --accent-hover: #cba6f7;
+    --accent-error: rgba(243, 139, 168, 0.2);
+    --border: #6c7086;
+    --code: #b4befe;
+    --preformatted: #cdd6f4;
+    --disabled: #11111b;
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root dialog {
+    color: var(--text);
+  }
+}
+
+/* ==UserStyle==
+@name Searchix Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/searchix
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/searchix
+@version 2025.12.05
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/searchix/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Asearchix
+@description Soothing pastel theme for Searchix
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    --bg: #1e1e2e;
+    --accent-bg: #181825;
+    --text: #cdd6f4;
+    --text-light: #a6adc8;
+    --accent: #cba6f7;
+    --accent-hover: #cba6f7;
+    --accent-error: rgba(243, 139, 168, 0.2);
+    --border: #6c7086;
+    --code: #b4befe;
+    --preformatted: #cdd6f4;
+    --disabled: #11111b;
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root dialog {
+    color: var(--text);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #1e1e2e;
+    --accent-bg: #181825;
+    --text: #cdd6f4;
+    --text-light: #a6adc8;
+    --accent: #cba6f7;
+    --accent-hover: #cba6f7;
+    --accent-error: rgba(243, 139, 168, 0.2);
+    --border: #6c7086;
+    --code: #b4befe;
+    --preformatted: #cdd6f4;
+    --disabled: #11111b;
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root dialog {
+    color: var(--text);
+  }
+}
+
+`)

@@ -36,7 +36,6 @@ c.url.searchengines = {
     '!sgdb':    'https://www.steamgriddb.com/search/grids?term={}',
     '!yt':      'https://www.youtube.com/results?search_query={}',
 }
-c.colors.webpage.darkmode.enabled = True
 
 c.aliases = {
     'q': 'quit',
@@ -44,6 +43,7 @@ c.aliases = {
     'wq': 'quit --save',
 }
 
+c.colors.webpage.darkmode.enabled = False
 c.completion.open_categories = ["quickmarks", "bookmarks", "searchengines", "history", "filesystem"]
 c.statusbar.widgets = ["keypress", "search_match", "url", "scroll", "history", "tabs", "progress"]
 # c.tabs.position = top
@@ -55,4 +55,5 @@ c.content.blocking.enabled = True
 # c.colors.webpage.darkmode.enabled = True
 # c.colors.webpage.preferred_color_scheme = dark
 
+config.bind(',s', 'spawn --userscript rebuild-qutebrowser-grease-styles.py', mode='normal')
 config.bind('tT', 'config-cycle tabs.position top left')

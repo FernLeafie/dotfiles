@@ -1,0 +1,3153 @@
+/* ==UserStyle==
+@name DevDocs Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/devdocs
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/devdocs
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/devdocs/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Adevdocs
+@description Soothing pastel theme for DevDocs
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://prismjs.catppuccin.com/variables.important.css");
+html._theme-default {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-default ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-default input::placeholder,
+html._theme-default textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-default ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-default ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-default ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+html._theme-dark {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-dark ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-dark input::placeholder,
+html._theme-dark textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-dark ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-dark ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-dark ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+
+/* ==UserStyle==
+@name DevDocs Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/devdocs
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/devdocs
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/devdocs/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Adevdocs
+@description Soothing pastel theme for DevDocs
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://prismjs.catppuccin.com/variables.important.css");
+html._theme-default {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-default ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-default input::placeholder,
+html._theme-default textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-default ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-default ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-default ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+html._theme-dark {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-dark ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-dark input::placeholder,
+html._theme-dark textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-dark ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-dark ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-dark ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+
+/* ==UserStyle==
+@name DevDocs Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/devdocs
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/devdocs
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/devdocs/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Adevdocs
+@description Soothing pastel theme for DevDocs
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://prismjs.catppuccin.com/variables.important.css");
+html._theme-default {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-default ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-default input::placeholder,
+html._theme-default textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-default ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-default ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-default ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+html._theme-dark {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-dark ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-dark input::placeholder,
+html._theme-dark textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-dark ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-dark ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-dark ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+
+/* ==UserStyle==
+@name DevDocs Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/devdocs
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/devdocs
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/devdocs/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Adevdocs
+@description Soothing pastel theme for DevDocs
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://prismjs.catppuccin.com/variables.important.css");
+html._theme-default {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-default ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-default input::placeholder,
+html._theme-default textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-default ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-default ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-default ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+html._theme-dark {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-dark ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-dark input::placeholder,
+html._theme-dark textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-dark ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-dark ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-dark ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+
+/* ==UserStyle==
+@name DevDocs Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/devdocs
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/devdocs
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/devdocs/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Adevdocs
+@description Soothing pastel theme for DevDocs
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+
+@import url("https://prismjs.catppuccin.com/variables.important.css");
+html._theme-default {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-default ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-default input::placeholder,
+html._theme-default textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-default ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-default ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-default ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+html._theme-dark {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-dark ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-dark input::placeholder,
+html._theme-dark textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-dark ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-dark ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-dark ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+
+/* ==UserStyle==
+@name DevDocs Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/devdocs
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/devdocs
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/devdocs/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Adevdocs
+@description Soothing pastel theme for DevDocs
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://prismjs.catppuccin.com/variables.important.css");
+html._theme-default {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-default ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-default input::placeholder,
+html._theme-default textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-default ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-default ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-default ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+html._theme-dark {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-dark ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-dark input::placeholder,
+html._theme-dark textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-dark ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-dark ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-dark ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+
+/* ==UserStyle==
+@name DevDocs Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/devdocs
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/devdocs
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/devdocs/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Adevdocs
+@description Soothing pastel theme for DevDocs
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+
+@import url("https://prismjs.catppuccin.com/variables.important.css");
+html._theme-default {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-default ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-default input::placeholder,
+html._theme-default textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-default ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-default ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-default ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+html._theme-dark {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-dark ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-dark input::placeholder,
+html._theme-dark textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-dark ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-dark ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-dark ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+
+/* ==UserStyle==
+@name DevDocs Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/devdocs
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/devdocs
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/devdocs/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Adevdocs
+@description Soothing pastel theme for DevDocs
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+
+@import url("https://prismjs.catppuccin.com/variables.important.css");
+html._theme-default {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-default ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-default input::placeholder,
+html._theme-default textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-default ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-default ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-default ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+html._theme-dark {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-dark ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-dark input::placeholder,
+html._theme-dark textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-dark ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-dark ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-dark ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+
+/* ==UserStyle==
+@name DevDocs Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/devdocs
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/devdocs
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/devdocs/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Adevdocs
+@description Soothing pastel theme for DevDocs
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://prismjs.catppuccin.com/variables.important.css");
+html._theme-default {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-default ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-default input::placeholder,
+html._theme-default textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-default ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-default ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-default ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+html._theme-dark {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-dark ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-dark input::placeholder,
+html._theme-dark textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-dark ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-dark ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-dark ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+
+/* ==UserStyle==
+@name DevDocs Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/devdocs
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/devdocs
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/devdocs/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Adevdocs
+@description Soothing pastel theme for DevDocs
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+
+@import url("https://prismjs.catppuccin.com/variables.important.css");
+html._theme-default {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-default ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-default input::placeholder,
+html._theme-default textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-default ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-default ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-default ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+html._theme-dark {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-dark ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-dark input::placeholder,
+html._theme-dark textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-dark ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-dark ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-dark ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+
+/* ==UserStyle==
+@name DevDocs Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/devdocs
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/devdocs
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/devdocs/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Adevdocs
+@description Soothing pastel theme for DevDocs
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+
+@import url("https://prismjs.catppuccin.com/variables.important.css");
+html._theme-default {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-default ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-default input::placeholder,
+html._theme-default textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-default ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-default ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-default ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+html._theme-dark {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-dark ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-dark input::placeholder,
+html._theme-dark textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-dark ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-dark ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-dark ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+
+/* ==UserStyle==
+@name DevDocs Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/devdocs
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/devdocs
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/devdocs/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Adevdocs
+@description Soothing pastel theme for DevDocs
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+
+@import url("https://prismjs.catppuccin.com/variables.important.css");
+html._theme-default {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-default ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-default input::placeholder,
+html._theme-default textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-default ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-default ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-default ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+html._theme-dark {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-dark ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-dark input::placeholder,
+html._theme-dark textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-dark ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-dark ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-dark ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+
+/* ==UserStyle==
+@name DevDocs Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/devdocs
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/devdocs
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/devdocs/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Adevdocs
+@description Soothing pastel theme for DevDocs
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://prismjs.catppuccin.com/variables.important.css");
+html._theme-default {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-default ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-default input::placeholder,
+html._theme-default textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-default ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-default ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-default ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+html._theme-dark {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-dark ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-dark input::placeholder,
+html._theme-dark textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-dark ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-dark ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-dark ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+
+/* ==UserStyle==
+@name DevDocs Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/devdocs
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/devdocs
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/devdocs/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Adevdocs
+@description Soothing pastel theme for DevDocs
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://prismjs.catppuccin.com/variables.important.css");
+html._theme-default {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-default ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-default input::placeholder,
+html._theme-default textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-default ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-default ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-default ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+html._theme-dark {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-dark ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-dark input::placeholder,
+html._theme-dark textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-dark ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-dark ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-dark ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+
+/* ==UserStyle==
+@name DevDocs Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/devdocs
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/devdocs
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/devdocs/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Adevdocs
+@description Soothing pastel theme for DevDocs
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://prismjs.catppuccin.com/variables.important.css");
+html._theme-default {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-default ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-default input::placeholder,
+html._theme-default textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-default ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-default ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-default ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+html._theme-dark {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --documentBackground: #1e1e2e;
+  --contentBackground: #1e1e2e;
+  --textColor: #cdd6f4;
+  --textColorLight: #bac2de;
+  --textColorLighter: #a6adc8;
+  --textColorRed: #f38ba8;
+  --focusBackground: #313244;
+  --focusBorder: #45475a;
+  --focusText: #cdd6f4;
+  --selectionBackground: #cba6f7;
+  --selectionText: #1e1e2e;
+  --selectionBorder: #45475a;
+  --highlightBackground: #585b70;
+  --loadingText: #9399b2;
+  --linkColor: #89b4fa;
+  --linkColorHover: #89dceb;
+  --headerBackground: #11111b;
+  --headerBorder: #45475a;
+  --searchTagBackground: #11111b;
+  --searchBorder: #45475a;
+  --inputFocusBorder: #cba6f7;
+  --sidebarBackground: #181825;
+  --sidebarBorder: #45475a;
+  --scrollbarColor: #6c7086;
+  --scrollbarColorHover: #7f849c;
+  --boxHeaderBackground: #181825;
+  --boxHeaderColor: #cdd6f4;
+  --boxBackground: #181825;
+  --boxBorder: #45475a;
+  --boxBorderLight: #45475a;
+  --noteBackground: #313244;
+  --noteBorder: #45475a;
+  --noteGreenBackground: rgba(166, 227, 161, 0.3);
+  --noteGreenBorder: #45475a;
+  --noteBlueBackground: rgba(137, 180, 250, 0.3);
+  --noteBlueBorder: #45475a;
+  --noteOrangeBackground: rgba(250, 179, 135, 0.3);
+  --noteOrangeBorder: #45475a;
+  --noteRedBackground: rgba(243, 139, 168, 0.3);
+  --noteRedBorder: #45475a;
+  --notifBackground: #313244;
+  --notifBorder: 1px solid #45475a;
+  --notifColor: #cdd6f4;
+  --tipBackground: #313244;
+  --tipBorder: 1px solid #45475a;
+  --noticeBackground: #313244;
+  --noticeBorder: #45475a;
+  --labelBackground: #313244;
+}
+html._theme-dark ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+html._theme-dark input::placeholder,
+html._theme-dark textarea::placeholder {
+  color: #a6adc8 !important;
+}
+html._theme-dark ._list-arrow {
+  fill: #6c7086;
+  opacity: 1;
+}
+html._theme-dark ._list-arrow:hover {
+  fill: #7f849c;
+}
+html._theme-dark ._search > svg {
+  fill: #9399b2;
+  opacity: 1;
+}
+

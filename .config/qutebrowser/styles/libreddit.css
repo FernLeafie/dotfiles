@@ -1,0 +1,1046 @@
+/* ==UserStyle==
+@name Libreddit/Redlib Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/libreddit
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/libreddit
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/libreddit/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Alibreddit
+@description Soothing pastel theme for Libreddit and Redlib
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+.light,
+.gruvboxlight {
+  color-scheme: dark;
+  --accent: #cba6f7 !important;
+  --green: #a6e3a1 !important;
+  --text: #cdd6f4 !important;
+  --foreground: #11111b !important;
+  --background: #1e1e2e !important;
+  --outside: #181825 !important;
+  --post: #181825 !important;
+  --panel-border: none !important;
+  --highlighted: #313244 !important;
+  --visited: #6c7086 !important;
+  --shadow: 0 5px 15px 0 transparent !important;
+  --nsfw: #fab387 !important;
+  --admin: #eba0ac !important;
+  /* thumbnail titles */
+}
+.light ::selection,
+.gruvboxlight ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+.light input::placeholder,
+.gruvboxlight input::placeholder,
+.light textarea::placeholder,
+.gruvboxlight textarea::placeholder {
+  color: #a6adc8 !important;
+}
+.light .post_thumbnail span,
+.gruvboxlight .post_thumbnail span {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+.dark,
+.black,
+.doomone,
+.gruvboxdark,
+.dracula,
+.gold,
+.laserwave,
+.nord,
+.rosebox,
+.violet,
+:root {
+  color-scheme: dark;
+  --accent: #cba6f7 !important;
+  --green: #a6e3a1 !important;
+  --text: #cdd6f4 !important;
+  --foreground: #11111b !important;
+  --background: #1e1e2e !important;
+  --outside: #181825 !important;
+  --post: #181825 !important;
+  --panel-border: none !important;
+  --highlighted: #313244 !important;
+  --visited: #6c7086 !important;
+  --shadow: 0 5px 15px 0 transparent !important;
+  --nsfw: #fab387 !important;
+  --admin: #eba0ac !important;
+  /* thumbnail titles */
+}
+.dark ::selection,
+.black ::selection,
+.doomone ::selection,
+.gruvboxdark ::selection,
+.dracula ::selection,
+.gold ::selection,
+.laserwave ::selection,
+.nord ::selection,
+.rosebox ::selection,
+.violet ::selection,
+:root ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+.dark input::placeholder,
+.black input::placeholder,
+.doomone input::placeholder,
+.gruvboxdark input::placeholder,
+.dracula input::placeholder,
+.gold input::placeholder,
+.laserwave input::placeholder,
+.nord input::placeholder,
+.rosebox input::placeholder,
+.violet input::placeholder,
+:root input::placeholder,
+.dark textarea::placeholder,
+.black textarea::placeholder,
+.doomone textarea::placeholder,
+.gruvboxdark textarea::placeholder,
+.dracula textarea::placeholder,
+.gold textarea::placeholder,
+.laserwave textarea::placeholder,
+.nord textarea::placeholder,
+.rosebox textarea::placeholder,
+.violet textarea::placeholder,
+:root textarea::placeholder {
+  color: #a6adc8 !important;
+}
+.dark .post_thumbnail span,
+.black .post_thumbnail span,
+.doomone .post_thumbnail span,
+.gruvboxdark .post_thumbnail span,
+.dracula .post_thumbnail span,
+.gold .post_thumbnail span,
+.laserwave .post_thumbnail span,
+.nord .post_thumbnail span,
+.rosebox .post_thumbnail span,
+.violet .post_thumbnail span,
+:root .post_thumbnail span {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+
+/* ==UserStyle==
+@name Libreddit/Redlib Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/libreddit
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/libreddit
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/libreddit/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Alibreddit
+@description Soothing pastel theme for Libreddit and Redlib
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+.light,
+.gruvboxlight {
+  color-scheme: dark;
+  --accent: #cba6f7 !important;
+  --green: #a6e3a1 !important;
+  --text: #cdd6f4 !important;
+  --foreground: #11111b !important;
+  --background: #1e1e2e !important;
+  --outside: #181825 !important;
+  --post: #181825 !important;
+  --panel-border: none !important;
+  --highlighted: #313244 !important;
+  --visited: #6c7086 !important;
+  --shadow: 0 5px 15px 0 transparent !important;
+  --nsfw: #fab387 !important;
+  --admin: #eba0ac !important;
+  /* thumbnail titles */
+}
+.light ::selection,
+.gruvboxlight ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+.light input::placeholder,
+.gruvboxlight input::placeholder,
+.light textarea::placeholder,
+.gruvboxlight textarea::placeholder {
+  color: #a6adc8 !important;
+}
+.light .post_thumbnail span,
+.gruvboxlight .post_thumbnail span {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+.dark,
+.black,
+.doomone,
+.gruvboxdark,
+.dracula,
+.gold,
+.laserwave,
+.nord,
+.rosebox,
+.violet,
+:root {
+  color-scheme: dark;
+  --accent: #cba6f7 !important;
+  --green: #a6e3a1 !important;
+  --text: #cdd6f4 !important;
+  --foreground: #11111b !important;
+  --background: #1e1e2e !important;
+  --outside: #181825 !important;
+  --post: #181825 !important;
+  --panel-border: none !important;
+  --highlighted: #313244 !important;
+  --visited: #6c7086 !important;
+  --shadow: 0 5px 15px 0 transparent !important;
+  --nsfw: #fab387 !important;
+  --admin: #eba0ac !important;
+  /* thumbnail titles */
+}
+.dark ::selection,
+.black ::selection,
+.doomone ::selection,
+.gruvboxdark ::selection,
+.dracula ::selection,
+.gold ::selection,
+.laserwave ::selection,
+.nord ::selection,
+.rosebox ::selection,
+.violet ::selection,
+:root ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+.dark input::placeholder,
+.black input::placeholder,
+.doomone input::placeholder,
+.gruvboxdark input::placeholder,
+.dracula input::placeholder,
+.gold input::placeholder,
+.laserwave input::placeholder,
+.nord input::placeholder,
+.rosebox input::placeholder,
+.violet input::placeholder,
+:root input::placeholder,
+.dark textarea::placeholder,
+.black textarea::placeholder,
+.doomone textarea::placeholder,
+.gruvboxdark textarea::placeholder,
+.dracula textarea::placeholder,
+.gold textarea::placeholder,
+.laserwave textarea::placeholder,
+.nord textarea::placeholder,
+.rosebox textarea::placeholder,
+.violet textarea::placeholder,
+:root textarea::placeholder {
+  color: #a6adc8 !important;
+}
+.dark .post_thumbnail span,
+.black .post_thumbnail span,
+.doomone .post_thumbnail span,
+.gruvboxdark .post_thumbnail span,
+.dracula .post_thumbnail span,
+.gold .post_thumbnail span,
+.laserwave .post_thumbnail span,
+.nord .post_thumbnail span,
+.rosebox .post_thumbnail span,
+.violet .post_thumbnail span,
+:root .post_thumbnail span {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+
+/* ==UserStyle==
+@name Libreddit/Redlib Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/libreddit
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/libreddit
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/libreddit/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Alibreddit
+@description Soothing pastel theme for Libreddit and Redlib
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+.light,
+.gruvboxlight {
+  color-scheme: dark;
+  --accent: #cba6f7 !important;
+  --green: #a6e3a1 !important;
+  --text: #cdd6f4 !important;
+  --foreground: #11111b !important;
+  --background: #1e1e2e !important;
+  --outside: #181825 !important;
+  --post: #181825 !important;
+  --panel-border: none !important;
+  --highlighted: #313244 !important;
+  --visited: #6c7086 !important;
+  --shadow: 0 5px 15px 0 transparent !important;
+  --nsfw: #fab387 !important;
+  --admin: #eba0ac !important;
+  /* thumbnail titles */
+}
+.light ::selection,
+.gruvboxlight ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+.light input::placeholder,
+.gruvboxlight input::placeholder,
+.light textarea::placeholder,
+.gruvboxlight textarea::placeholder {
+  color: #a6adc8 !important;
+}
+.light .post_thumbnail span,
+.gruvboxlight .post_thumbnail span {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+.dark,
+.black,
+.doomone,
+.gruvboxdark,
+.dracula,
+.gold,
+.laserwave,
+.nord,
+.rosebox,
+.violet,
+:root {
+  color-scheme: dark;
+  --accent: #cba6f7 !important;
+  --green: #a6e3a1 !important;
+  --text: #cdd6f4 !important;
+  --foreground: #11111b !important;
+  --background: #1e1e2e !important;
+  --outside: #181825 !important;
+  --post: #181825 !important;
+  --panel-border: none !important;
+  --highlighted: #313244 !important;
+  --visited: #6c7086 !important;
+  --shadow: 0 5px 15px 0 transparent !important;
+  --nsfw: #fab387 !important;
+  --admin: #eba0ac !important;
+  /* thumbnail titles */
+}
+.dark ::selection,
+.black ::selection,
+.doomone ::selection,
+.gruvboxdark ::selection,
+.dracula ::selection,
+.gold ::selection,
+.laserwave ::selection,
+.nord ::selection,
+.rosebox ::selection,
+.violet ::selection,
+:root ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+.dark input::placeholder,
+.black input::placeholder,
+.doomone input::placeholder,
+.gruvboxdark input::placeholder,
+.dracula input::placeholder,
+.gold input::placeholder,
+.laserwave input::placeholder,
+.nord input::placeholder,
+.rosebox input::placeholder,
+.violet input::placeholder,
+:root input::placeholder,
+.dark textarea::placeholder,
+.black textarea::placeholder,
+.doomone textarea::placeholder,
+.gruvboxdark textarea::placeholder,
+.dracula textarea::placeholder,
+.gold textarea::placeholder,
+.laserwave textarea::placeholder,
+.nord textarea::placeholder,
+.rosebox textarea::placeholder,
+.violet textarea::placeholder,
+:root textarea::placeholder {
+  color: #a6adc8 !important;
+}
+.dark .post_thumbnail span,
+.black .post_thumbnail span,
+.doomone .post_thumbnail span,
+.gruvboxdark .post_thumbnail span,
+.dracula .post_thumbnail span,
+.gold .post_thumbnail span,
+.laserwave .post_thumbnail span,
+.nord .post_thumbnail span,
+.rosebox .post_thumbnail span,
+.violet .post_thumbnail span,
+:root .post_thumbnail span {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+
+/* ==UserStyle==
+@name Libreddit/Redlib Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/libreddit
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/libreddit
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/libreddit/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Alibreddit
+@description Soothing pastel theme for Libreddit and Redlib
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+.light,
+.gruvboxlight {
+  color-scheme: dark;
+  --accent: #cba6f7 !important;
+  --green: #a6e3a1 !important;
+  --text: #cdd6f4 !important;
+  --foreground: #11111b !important;
+  --background: #1e1e2e !important;
+  --outside: #181825 !important;
+  --post: #181825 !important;
+  --panel-border: none !important;
+  --highlighted: #313244 !important;
+  --visited: #6c7086 !important;
+  --shadow: 0 5px 15px 0 transparent !important;
+  --nsfw: #fab387 !important;
+  --admin: #eba0ac !important;
+  /* thumbnail titles */
+}
+.light ::selection,
+.gruvboxlight ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+.light input::placeholder,
+.gruvboxlight input::placeholder,
+.light textarea::placeholder,
+.gruvboxlight textarea::placeholder {
+  color: #a6adc8 !important;
+}
+.light .post_thumbnail span,
+.gruvboxlight .post_thumbnail span {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+.dark,
+.black,
+.doomone,
+.gruvboxdark,
+.dracula,
+.gold,
+.laserwave,
+.nord,
+.rosebox,
+.violet,
+:root {
+  color-scheme: dark;
+  --accent: #cba6f7 !important;
+  --green: #a6e3a1 !important;
+  --text: #cdd6f4 !important;
+  --foreground: #11111b !important;
+  --background: #1e1e2e !important;
+  --outside: #181825 !important;
+  --post: #181825 !important;
+  --panel-border: none !important;
+  --highlighted: #313244 !important;
+  --visited: #6c7086 !important;
+  --shadow: 0 5px 15px 0 transparent !important;
+  --nsfw: #fab387 !important;
+  --admin: #eba0ac !important;
+  /* thumbnail titles */
+}
+.dark ::selection,
+.black ::selection,
+.doomone ::selection,
+.gruvboxdark ::selection,
+.dracula ::selection,
+.gold ::selection,
+.laserwave ::selection,
+.nord ::selection,
+.rosebox ::selection,
+.violet ::selection,
+:root ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+.dark input::placeholder,
+.black input::placeholder,
+.doomone input::placeholder,
+.gruvboxdark input::placeholder,
+.dracula input::placeholder,
+.gold input::placeholder,
+.laserwave input::placeholder,
+.nord input::placeholder,
+.rosebox input::placeholder,
+.violet input::placeholder,
+:root input::placeholder,
+.dark textarea::placeholder,
+.black textarea::placeholder,
+.doomone textarea::placeholder,
+.gruvboxdark textarea::placeholder,
+.dracula textarea::placeholder,
+.gold textarea::placeholder,
+.laserwave textarea::placeholder,
+.nord textarea::placeholder,
+.rosebox textarea::placeholder,
+.violet textarea::placeholder,
+:root textarea::placeholder {
+  color: #a6adc8 !important;
+}
+.dark .post_thumbnail span,
+.black .post_thumbnail span,
+.doomone .post_thumbnail span,
+.gruvboxdark .post_thumbnail span,
+.dracula .post_thumbnail span,
+.gold .post_thumbnail span,
+.laserwave .post_thumbnail span,
+.nord .post_thumbnail span,
+.rosebox .post_thumbnail span,
+.violet .post_thumbnail span,
+:root .post_thumbnail span {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+
+/* ==UserStyle==
+@name Libreddit/Redlib Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/libreddit
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/libreddit
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/libreddit/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Alibreddit
+@description Soothing pastel theme for Libreddit and Redlib
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+
+.light,
+.gruvboxlight {
+  color-scheme: dark;
+  --accent: #cba6f7 !important;
+  --green: #a6e3a1 !important;
+  --text: #cdd6f4 !important;
+  --foreground: #11111b !important;
+  --background: #1e1e2e !important;
+  --outside: #181825 !important;
+  --post: #181825 !important;
+  --panel-border: none !important;
+  --highlighted: #313244 !important;
+  --visited: #6c7086 !important;
+  --shadow: 0 5px 15px 0 transparent !important;
+  --nsfw: #fab387 !important;
+  --admin: #eba0ac !important;
+  /* thumbnail titles */
+}
+.light ::selection,
+.gruvboxlight ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+.light input::placeholder,
+.gruvboxlight input::placeholder,
+.light textarea::placeholder,
+.gruvboxlight textarea::placeholder {
+  color: #a6adc8 !important;
+}
+.light .post_thumbnail span,
+.gruvboxlight .post_thumbnail span {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+.dark,
+.black,
+.doomone,
+.gruvboxdark,
+.dracula,
+.gold,
+.laserwave,
+.nord,
+.rosebox,
+.violet,
+:root {
+  color-scheme: dark;
+  --accent: #cba6f7 !important;
+  --green: #a6e3a1 !important;
+  --text: #cdd6f4 !important;
+  --foreground: #11111b !important;
+  --background: #1e1e2e !important;
+  --outside: #181825 !important;
+  --post: #181825 !important;
+  --panel-border: none !important;
+  --highlighted: #313244 !important;
+  --visited: #6c7086 !important;
+  --shadow: 0 5px 15px 0 transparent !important;
+  --nsfw: #fab387 !important;
+  --admin: #eba0ac !important;
+  /* thumbnail titles */
+}
+.dark ::selection,
+.black ::selection,
+.doomone ::selection,
+.gruvboxdark ::selection,
+.dracula ::selection,
+.gold ::selection,
+.laserwave ::selection,
+.nord ::selection,
+.rosebox ::selection,
+.violet ::selection,
+:root ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+.dark input::placeholder,
+.black input::placeholder,
+.doomone input::placeholder,
+.gruvboxdark input::placeholder,
+.dracula input::placeholder,
+.gold input::placeholder,
+.laserwave input::placeholder,
+.nord input::placeholder,
+.rosebox input::placeholder,
+.violet input::placeholder,
+:root input::placeholder,
+.dark textarea::placeholder,
+.black textarea::placeholder,
+.doomone textarea::placeholder,
+.gruvboxdark textarea::placeholder,
+.dracula textarea::placeholder,
+.gold textarea::placeholder,
+.laserwave textarea::placeholder,
+.nord textarea::placeholder,
+.rosebox textarea::placeholder,
+.violet textarea::placeholder,
+:root textarea::placeholder {
+  color: #a6adc8 !important;
+}
+.dark .post_thumbnail span,
+.black .post_thumbnail span,
+.doomone .post_thumbnail span,
+.gruvboxdark .post_thumbnail span,
+.dracula .post_thumbnail span,
+.gold .post_thumbnail span,
+.laserwave .post_thumbnail span,
+.nord .post_thumbnail span,
+.rosebox .post_thumbnail span,
+.violet .post_thumbnail span,
+:root .post_thumbnail span {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+
+/* ==UserStyle==
+@name Libreddit/Redlib Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/libreddit
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/libreddit
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/libreddit/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Alibreddit
+@description Soothing pastel theme for Libreddit and Redlib
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+.light,
+.gruvboxlight {
+  color-scheme: dark;
+  --accent: #cba6f7 !important;
+  --green: #a6e3a1 !important;
+  --text: #cdd6f4 !important;
+  --foreground: #11111b !important;
+  --background: #1e1e2e !important;
+  --outside: #181825 !important;
+  --post: #181825 !important;
+  --panel-border: none !important;
+  --highlighted: #313244 !important;
+  --visited: #6c7086 !important;
+  --shadow: 0 5px 15px 0 transparent !important;
+  --nsfw: #fab387 !important;
+  --admin: #eba0ac !important;
+  /* thumbnail titles */
+}
+.light ::selection,
+.gruvboxlight ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+.light input::placeholder,
+.gruvboxlight input::placeholder,
+.light textarea::placeholder,
+.gruvboxlight textarea::placeholder {
+  color: #a6adc8 !important;
+}
+.light .post_thumbnail span,
+.gruvboxlight .post_thumbnail span {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+.dark,
+.black,
+.doomone,
+.gruvboxdark,
+.dracula,
+.gold,
+.laserwave,
+.nord,
+.rosebox,
+.violet,
+:root {
+  color-scheme: dark;
+  --accent: #cba6f7 !important;
+  --green: #a6e3a1 !important;
+  --text: #cdd6f4 !important;
+  --foreground: #11111b !important;
+  --background: #1e1e2e !important;
+  --outside: #181825 !important;
+  --post: #181825 !important;
+  --panel-border: none !important;
+  --highlighted: #313244 !important;
+  --visited: #6c7086 !important;
+  --shadow: 0 5px 15px 0 transparent !important;
+  --nsfw: #fab387 !important;
+  --admin: #eba0ac !important;
+  /* thumbnail titles */
+}
+.dark ::selection,
+.black ::selection,
+.doomone ::selection,
+.gruvboxdark ::selection,
+.dracula ::selection,
+.gold ::selection,
+.laserwave ::selection,
+.nord ::selection,
+.rosebox ::selection,
+.violet ::selection,
+:root ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+.dark input::placeholder,
+.black input::placeholder,
+.doomone input::placeholder,
+.gruvboxdark input::placeholder,
+.dracula input::placeholder,
+.gold input::placeholder,
+.laserwave input::placeholder,
+.nord input::placeholder,
+.rosebox input::placeholder,
+.violet input::placeholder,
+:root input::placeholder,
+.dark textarea::placeholder,
+.black textarea::placeholder,
+.doomone textarea::placeholder,
+.gruvboxdark textarea::placeholder,
+.dracula textarea::placeholder,
+.gold textarea::placeholder,
+.laserwave textarea::placeholder,
+.nord textarea::placeholder,
+.rosebox textarea::placeholder,
+.violet textarea::placeholder,
+:root textarea::placeholder {
+  color: #a6adc8 !important;
+}
+.dark .post_thumbnail span,
+.black .post_thumbnail span,
+.doomone .post_thumbnail span,
+.gruvboxdark .post_thumbnail span,
+.dracula .post_thumbnail span,
+.gold .post_thumbnail span,
+.laserwave .post_thumbnail span,
+.nord .post_thumbnail span,
+.rosebox .post_thumbnail span,
+.violet .post_thumbnail span,
+:root .post_thumbnail span {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+
+/* ==UserStyle==
+@name Libreddit/Redlib Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/libreddit
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/libreddit
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/libreddit/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Alibreddit
+@description Soothing pastel theme for Libreddit and Redlib
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+.light,
+.gruvboxlight {
+  color-scheme: dark;
+  --accent: #cba6f7 !important;
+  --green: #a6e3a1 !important;
+  --text: #cdd6f4 !important;
+  --foreground: #11111b !important;
+  --background: #1e1e2e !important;
+  --outside: #181825 !important;
+  --post: #181825 !important;
+  --panel-border: none !important;
+  --highlighted: #313244 !important;
+  --visited: #6c7086 !important;
+  --shadow: 0 5px 15px 0 transparent !important;
+  --nsfw: #fab387 !important;
+  --admin: #eba0ac !important;
+  /* thumbnail titles */
+}
+.light ::selection,
+.gruvboxlight ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+.light input::placeholder,
+.gruvboxlight input::placeholder,
+.light textarea::placeholder,
+.gruvboxlight textarea::placeholder {
+  color: #a6adc8 !important;
+}
+.light .post_thumbnail span,
+.gruvboxlight .post_thumbnail span {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+.dark,
+.black,
+.doomone,
+.gruvboxdark,
+.dracula,
+.gold,
+.laserwave,
+.nord,
+.rosebox,
+.violet,
+:root {
+  color-scheme: dark;
+  --accent: #cba6f7 !important;
+  --green: #a6e3a1 !important;
+  --text: #cdd6f4 !important;
+  --foreground: #11111b !important;
+  --background: #1e1e2e !important;
+  --outside: #181825 !important;
+  --post: #181825 !important;
+  --panel-border: none !important;
+  --highlighted: #313244 !important;
+  --visited: #6c7086 !important;
+  --shadow: 0 5px 15px 0 transparent !important;
+  --nsfw: #fab387 !important;
+  --admin: #eba0ac !important;
+  /* thumbnail titles */
+}
+.dark ::selection,
+.black ::selection,
+.doomone ::selection,
+.gruvboxdark ::selection,
+.dracula ::selection,
+.gold ::selection,
+.laserwave ::selection,
+.nord ::selection,
+.rosebox ::selection,
+.violet ::selection,
+:root ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+.dark input::placeholder,
+.black input::placeholder,
+.doomone input::placeholder,
+.gruvboxdark input::placeholder,
+.dracula input::placeholder,
+.gold input::placeholder,
+.laserwave input::placeholder,
+.nord input::placeholder,
+.rosebox input::placeholder,
+.violet input::placeholder,
+:root input::placeholder,
+.dark textarea::placeholder,
+.black textarea::placeholder,
+.doomone textarea::placeholder,
+.gruvboxdark textarea::placeholder,
+.dracula textarea::placeholder,
+.gold textarea::placeholder,
+.laserwave textarea::placeholder,
+.nord textarea::placeholder,
+.rosebox textarea::placeholder,
+.violet textarea::placeholder,
+:root textarea::placeholder {
+  color: #a6adc8 !important;
+}
+.dark .post_thumbnail span,
+.black .post_thumbnail span,
+.doomone .post_thumbnail span,
+.gruvboxdark .post_thumbnail span,
+.dracula .post_thumbnail span,
+.gold .post_thumbnail span,
+.laserwave .post_thumbnail span,
+.nord .post_thumbnail span,
+.rosebox .post_thumbnail span,
+.violet .post_thumbnail span,
+:root .post_thumbnail span {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+
+/* ==UserStyle==
+@name Libreddit/Redlib Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/libreddit
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/libreddit
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/libreddit/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Alibreddit
+@description Soothing pastel theme for Libreddit and Redlib
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+.light,
+.gruvboxlight {
+  color-scheme: dark;
+  --accent: #cba6f7 !important;
+  --green: #a6e3a1 !important;
+  --text: #cdd6f4 !important;
+  --foreground: #11111b !important;
+  --background: #1e1e2e !important;
+  --outside: #181825 !important;
+  --post: #181825 !important;
+  --panel-border: none !important;
+  --highlighted: #313244 !important;
+  --visited: #6c7086 !important;
+  --shadow: 0 5px 15px 0 transparent !important;
+  --nsfw: #fab387 !important;
+  --admin: #eba0ac !important;
+  /* thumbnail titles */
+}
+.light ::selection,
+.gruvboxlight ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+.light input::placeholder,
+.gruvboxlight input::placeholder,
+.light textarea::placeholder,
+.gruvboxlight textarea::placeholder {
+  color: #a6adc8 !important;
+}
+.light .post_thumbnail span,
+.gruvboxlight .post_thumbnail span {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+.dark,
+.black,
+.doomone,
+.gruvboxdark,
+.dracula,
+.gold,
+.laserwave,
+.nord,
+.rosebox,
+.violet,
+:root {
+  color-scheme: dark;
+  --accent: #cba6f7 !important;
+  --green: #a6e3a1 !important;
+  --text: #cdd6f4 !important;
+  --foreground: #11111b !important;
+  --background: #1e1e2e !important;
+  --outside: #181825 !important;
+  --post: #181825 !important;
+  --panel-border: none !important;
+  --highlighted: #313244 !important;
+  --visited: #6c7086 !important;
+  --shadow: 0 5px 15px 0 transparent !important;
+  --nsfw: #fab387 !important;
+  --admin: #eba0ac !important;
+  /* thumbnail titles */
+}
+.dark ::selection,
+.black ::selection,
+.doomone ::selection,
+.gruvboxdark ::selection,
+.dracula ::selection,
+.gold ::selection,
+.laserwave ::selection,
+.nord ::selection,
+.rosebox ::selection,
+.violet ::selection,
+:root ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+.dark input::placeholder,
+.black input::placeholder,
+.doomone input::placeholder,
+.gruvboxdark input::placeholder,
+.dracula input::placeholder,
+.gold input::placeholder,
+.laserwave input::placeholder,
+.nord input::placeholder,
+.rosebox input::placeholder,
+.violet input::placeholder,
+:root input::placeholder,
+.dark textarea::placeholder,
+.black textarea::placeholder,
+.doomone textarea::placeholder,
+.gruvboxdark textarea::placeholder,
+.dracula textarea::placeholder,
+.gold textarea::placeholder,
+.laserwave textarea::placeholder,
+.nord textarea::placeholder,
+.rosebox textarea::placeholder,
+.violet textarea::placeholder,
+:root textarea::placeholder {
+  color: #a6adc8 !important;
+}
+.dark .post_thumbnail span,
+.black .post_thumbnail span,
+.doomone .post_thumbnail span,
+.gruvboxdark .post_thumbnail span,
+.dracula .post_thumbnail span,
+.gold .post_thumbnail span,
+.laserwave .post_thumbnail span,
+.nord .post_thumbnail span,
+.rosebox .post_thumbnail span,
+.violet .post_thumbnail span,
+:root .post_thumbnail span {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+

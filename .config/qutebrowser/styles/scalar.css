@@ -1,0 +1,1044 @@
+/* ==UserStyle==
+@name Scalar Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/scalar
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/scalar
+@version 2026.01.20
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/scalar/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Ascalar
+@description Soothing pastel theme for Scalar
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://unpkg.com/@catppuccin/highlightjs@1.0.0/css/catppuccin-variables.important.css");
+code.hljs {
+  background: none !important;
+}
+.light-mode {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --scalar-color-1: #cdd6f4;
+  --scalar-color-2: #bac2de;
+  --scalar-color-3: #a6adc8;
+  --scalar-color-accent: #cba6f7;
+  --scalar-background-1: #1e1e2e;
+  --scalar-background-2: #313244;
+  --scalar-background-3: #45475a;
+  --scalar-background-accent: rgba(203, 166, 247, 0.12);
+  --scalar-border-color: #45475a;
+  --scalar-color-green: #a6e3a1;
+  --scalar-color-red: #f38ba8;
+  --scalar-color-yellow: #f9e2af;
+  --scalar-color-blue: #89b4fa;
+  --scalar-color-orange: #fab387;
+  --scalar-color-purple: #cba6f7;
+  --scalar-selection-1: rgba(203, 166, 247, 0.3);
+  --scalar-button-1: #cba6f7;
+  --scalar-button-1-hover: #bd8ff5;
+  --scalar-button-1-color: #1e1e2e;
+  background-color: #1e1e2e;
+}
+.light-mode ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+.light-mode input::placeholder,
+.light-mode textarea::placeholder {
+  color: #a6adc8 !important;
+}
+.light-mode .sidebar {
+  --scalar-sidebar-background-1: #181825;
+  --scalar-sidebar-item-hover-background: #313244;
+  --scalar-sidebar-item-active-background: rgba(203, 166, 247, 0.1);
+  --scalar-sidebar-color-active: #cba6f7;
+}
+.light-mode .scalar-code-block,
+.light-mode .t-editor__code {
+  background-color: #181825;
+}
+.light-mode .brightness-lifted {
+  filter: none;
+}
+.light-mode .text-white {
+  color: #1e1e2e;
+}
+.light-mode .logo {
+  filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+}
+.dark-mode {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --scalar-color-1: #cdd6f4;
+  --scalar-color-2: #bac2de;
+  --scalar-color-3: #a6adc8;
+  --scalar-color-accent: #cba6f7;
+  --scalar-background-1: #1e1e2e;
+  --scalar-background-2: #313244;
+  --scalar-background-3: #45475a;
+  --scalar-background-accent: rgba(203, 166, 247, 0.12);
+  --scalar-border-color: #45475a;
+  --scalar-color-green: #a6e3a1;
+  --scalar-color-red: #f38ba8;
+  --scalar-color-yellow: #f9e2af;
+  --scalar-color-blue: #89b4fa;
+  --scalar-color-orange: #fab387;
+  --scalar-color-purple: #cba6f7;
+  --scalar-selection-1: rgba(203, 166, 247, 0.3);
+  --scalar-button-1: #cba6f7;
+  --scalar-button-1-hover: #bd8ff5;
+  --scalar-button-1-color: #1e1e2e;
+  background-color: #1e1e2e;
+}
+.dark-mode ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+  color: #a6adc8 !important;
+}
+.dark-mode .sidebar {
+  --scalar-sidebar-background-1: #181825;
+  --scalar-sidebar-item-hover-background: #313244;
+  --scalar-sidebar-item-active-background: rgba(203, 166, 247, 0.1);
+  --scalar-sidebar-color-active: #cba6f7;
+}
+.dark-mode .scalar-code-block,
+.dark-mode .t-editor__code {
+  background-color: #181825;
+}
+.dark-mode .brightness-lifted {
+  filter: none;
+}
+.dark-mode .text-white {
+  color: #1e1e2e;
+}
+.dark-mode .logo {
+  filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+}
+
+/* ==UserStyle==
+@name Scalar Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/scalar
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/scalar
+@version 2026.01.20
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/scalar/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Ascalar
+@description Soothing pastel theme for Scalar
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://unpkg.com/@catppuccin/highlightjs@1.0.0/css/catppuccin-variables.important.css");
+code.hljs {
+  background: none !important;
+}
+.light-mode {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --scalar-color-1: #cdd6f4;
+  --scalar-color-2: #bac2de;
+  --scalar-color-3: #a6adc8;
+  --scalar-color-accent: #cba6f7;
+  --scalar-background-1: #1e1e2e;
+  --scalar-background-2: #313244;
+  --scalar-background-3: #45475a;
+  --scalar-background-accent: rgba(203, 166, 247, 0.12);
+  --scalar-border-color: #45475a;
+  --scalar-color-green: #a6e3a1;
+  --scalar-color-red: #f38ba8;
+  --scalar-color-yellow: #f9e2af;
+  --scalar-color-blue: #89b4fa;
+  --scalar-color-orange: #fab387;
+  --scalar-color-purple: #cba6f7;
+  --scalar-selection-1: rgba(203, 166, 247, 0.3);
+  --scalar-button-1: #cba6f7;
+  --scalar-button-1-hover: #bd8ff5;
+  --scalar-button-1-color: #1e1e2e;
+  background-color: #1e1e2e;
+}
+.light-mode ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+.light-mode input::placeholder,
+.light-mode textarea::placeholder {
+  color: #a6adc8 !important;
+}
+.light-mode .sidebar {
+  --scalar-sidebar-background-1: #181825;
+  --scalar-sidebar-item-hover-background: #313244;
+  --scalar-sidebar-item-active-background: rgba(203, 166, 247, 0.1);
+  --scalar-sidebar-color-active: #cba6f7;
+}
+.light-mode .scalar-code-block,
+.light-mode .t-editor__code {
+  background-color: #181825;
+}
+.light-mode .brightness-lifted {
+  filter: none;
+}
+.light-mode .text-white {
+  color: #1e1e2e;
+}
+.light-mode .logo {
+  filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+}
+.dark-mode {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --scalar-color-1: #cdd6f4;
+  --scalar-color-2: #bac2de;
+  --scalar-color-3: #a6adc8;
+  --scalar-color-accent: #cba6f7;
+  --scalar-background-1: #1e1e2e;
+  --scalar-background-2: #313244;
+  --scalar-background-3: #45475a;
+  --scalar-background-accent: rgba(203, 166, 247, 0.12);
+  --scalar-border-color: #45475a;
+  --scalar-color-green: #a6e3a1;
+  --scalar-color-red: #f38ba8;
+  --scalar-color-yellow: #f9e2af;
+  --scalar-color-blue: #89b4fa;
+  --scalar-color-orange: #fab387;
+  --scalar-color-purple: #cba6f7;
+  --scalar-selection-1: rgba(203, 166, 247, 0.3);
+  --scalar-button-1: #cba6f7;
+  --scalar-button-1-hover: #bd8ff5;
+  --scalar-button-1-color: #1e1e2e;
+  background-color: #1e1e2e;
+}
+.dark-mode ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+  color: #a6adc8 !important;
+}
+.dark-mode .sidebar {
+  --scalar-sidebar-background-1: #181825;
+  --scalar-sidebar-item-hover-background: #313244;
+  --scalar-sidebar-item-active-background: rgba(203, 166, 247, 0.1);
+  --scalar-sidebar-color-active: #cba6f7;
+}
+.dark-mode .scalar-code-block,
+.dark-mode .t-editor__code {
+  background-color: #181825;
+}
+.dark-mode .brightness-lifted {
+  filter: none;
+}
+.dark-mode .text-white {
+  color: #1e1e2e;
+}
+.dark-mode .logo {
+  filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+}
+
+/* ==UserStyle==
+@name Scalar Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/scalar
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/scalar
+@version 2026.01.20
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/scalar/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Ascalar
+@description Soothing pastel theme for Scalar
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://unpkg.com/@catppuccin/highlightjs@1.0.0/css/catppuccin-variables.important.css");
+code.hljs {
+  background: none !important;
+}
+.light-mode {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --scalar-color-1: #cdd6f4;
+  --scalar-color-2: #bac2de;
+  --scalar-color-3: #a6adc8;
+  --scalar-color-accent: #cba6f7;
+  --scalar-background-1: #1e1e2e;
+  --scalar-background-2: #313244;
+  --scalar-background-3: #45475a;
+  --scalar-background-accent: rgba(203, 166, 247, 0.12);
+  --scalar-border-color: #45475a;
+  --scalar-color-green: #a6e3a1;
+  --scalar-color-red: #f38ba8;
+  --scalar-color-yellow: #f9e2af;
+  --scalar-color-blue: #89b4fa;
+  --scalar-color-orange: #fab387;
+  --scalar-color-purple: #cba6f7;
+  --scalar-selection-1: rgba(203, 166, 247, 0.3);
+  --scalar-button-1: #cba6f7;
+  --scalar-button-1-hover: #bd8ff5;
+  --scalar-button-1-color: #1e1e2e;
+  background-color: #1e1e2e;
+}
+.light-mode ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+.light-mode input::placeholder,
+.light-mode textarea::placeholder {
+  color: #a6adc8 !important;
+}
+.light-mode .sidebar {
+  --scalar-sidebar-background-1: #181825;
+  --scalar-sidebar-item-hover-background: #313244;
+  --scalar-sidebar-item-active-background: rgba(203, 166, 247, 0.1);
+  --scalar-sidebar-color-active: #cba6f7;
+}
+.light-mode .scalar-code-block,
+.light-mode .t-editor__code {
+  background-color: #181825;
+}
+.light-mode .brightness-lifted {
+  filter: none;
+}
+.light-mode .text-white {
+  color: #1e1e2e;
+}
+.light-mode .logo {
+  filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+}
+.dark-mode {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --scalar-color-1: #cdd6f4;
+  --scalar-color-2: #bac2de;
+  --scalar-color-3: #a6adc8;
+  --scalar-color-accent: #cba6f7;
+  --scalar-background-1: #1e1e2e;
+  --scalar-background-2: #313244;
+  --scalar-background-3: #45475a;
+  --scalar-background-accent: rgba(203, 166, 247, 0.12);
+  --scalar-border-color: #45475a;
+  --scalar-color-green: #a6e3a1;
+  --scalar-color-red: #f38ba8;
+  --scalar-color-yellow: #f9e2af;
+  --scalar-color-blue: #89b4fa;
+  --scalar-color-orange: #fab387;
+  --scalar-color-purple: #cba6f7;
+  --scalar-selection-1: rgba(203, 166, 247, 0.3);
+  --scalar-button-1: #cba6f7;
+  --scalar-button-1-hover: #bd8ff5;
+  --scalar-button-1-color: #1e1e2e;
+  background-color: #1e1e2e;
+}
+.dark-mode ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+  color: #a6adc8 !important;
+}
+.dark-mode .sidebar {
+  --scalar-sidebar-background-1: #181825;
+  --scalar-sidebar-item-hover-background: #313244;
+  --scalar-sidebar-item-active-background: rgba(203, 166, 247, 0.1);
+  --scalar-sidebar-color-active: #cba6f7;
+}
+.dark-mode .scalar-code-block,
+.dark-mode .t-editor__code {
+  background-color: #181825;
+}
+.dark-mode .brightness-lifted {
+  filter: none;
+}
+.dark-mode .text-white {
+  color: #1e1e2e;
+}
+.dark-mode .logo {
+  filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+}
+
+/* ==UserStyle==
+@name Scalar Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/scalar
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/scalar
+@version 2026.01.20
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/scalar/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Ascalar
+@description Soothing pastel theme for Scalar
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://unpkg.com/@catppuccin/highlightjs@1.0.0/css/catppuccin-variables.important.css");
+code.hljs {
+  background: none !important;
+}
+.light-mode {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --scalar-color-1: #cdd6f4;
+  --scalar-color-2: #bac2de;
+  --scalar-color-3: #a6adc8;
+  --scalar-color-accent: #cba6f7;
+  --scalar-background-1: #1e1e2e;
+  --scalar-background-2: #313244;
+  --scalar-background-3: #45475a;
+  --scalar-background-accent: rgba(203, 166, 247, 0.12);
+  --scalar-border-color: #45475a;
+  --scalar-color-green: #a6e3a1;
+  --scalar-color-red: #f38ba8;
+  --scalar-color-yellow: #f9e2af;
+  --scalar-color-blue: #89b4fa;
+  --scalar-color-orange: #fab387;
+  --scalar-color-purple: #cba6f7;
+  --scalar-selection-1: rgba(203, 166, 247, 0.3);
+  --scalar-button-1: #cba6f7;
+  --scalar-button-1-hover: #bd8ff5;
+  --scalar-button-1-color: #1e1e2e;
+  background-color: #1e1e2e;
+}
+.light-mode ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+.light-mode input::placeholder,
+.light-mode textarea::placeholder {
+  color: #a6adc8 !important;
+}
+.light-mode .sidebar {
+  --scalar-sidebar-background-1: #181825;
+  --scalar-sidebar-item-hover-background: #313244;
+  --scalar-sidebar-item-active-background: rgba(203, 166, 247, 0.1);
+  --scalar-sidebar-color-active: #cba6f7;
+}
+.light-mode .scalar-code-block,
+.light-mode .t-editor__code {
+  background-color: #181825;
+}
+.light-mode .brightness-lifted {
+  filter: none;
+}
+.light-mode .text-white {
+  color: #1e1e2e;
+}
+.light-mode .logo {
+  filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+}
+.dark-mode {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --scalar-color-1: #cdd6f4;
+  --scalar-color-2: #bac2de;
+  --scalar-color-3: #a6adc8;
+  --scalar-color-accent: #cba6f7;
+  --scalar-background-1: #1e1e2e;
+  --scalar-background-2: #313244;
+  --scalar-background-3: #45475a;
+  --scalar-background-accent: rgba(203, 166, 247, 0.12);
+  --scalar-border-color: #45475a;
+  --scalar-color-green: #a6e3a1;
+  --scalar-color-red: #f38ba8;
+  --scalar-color-yellow: #f9e2af;
+  --scalar-color-blue: #89b4fa;
+  --scalar-color-orange: #fab387;
+  --scalar-color-purple: #cba6f7;
+  --scalar-selection-1: rgba(203, 166, 247, 0.3);
+  --scalar-button-1: #cba6f7;
+  --scalar-button-1-hover: #bd8ff5;
+  --scalar-button-1-color: #1e1e2e;
+  background-color: #1e1e2e;
+}
+.dark-mode ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+  color: #a6adc8 !important;
+}
+.dark-mode .sidebar {
+  --scalar-sidebar-background-1: #181825;
+  --scalar-sidebar-item-hover-background: #313244;
+  --scalar-sidebar-item-active-background: rgba(203, 166, 247, 0.1);
+  --scalar-sidebar-color-active: #cba6f7;
+}
+.dark-mode .scalar-code-block,
+.dark-mode .t-editor__code {
+  background-color: #181825;
+}
+.dark-mode .brightness-lifted {
+  filter: none;
+}
+.dark-mode .text-white {
+  color: #1e1e2e;
+}
+.dark-mode .logo {
+  filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+}
+
+/* ==UserStyle==
+@name Scalar Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/scalar
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/scalar
+@version 2026.01.20
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/scalar/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Ascalar
+@description Soothing pastel theme for Scalar
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://unpkg.com/@catppuccin/highlightjs@1.0.0/css/catppuccin-variables.important.css");
+code.hljs {
+  background: none !important;
+}
+.light-mode {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --scalar-color-1: #cdd6f4;
+  --scalar-color-2: #bac2de;
+  --scalar-color-3: #a6adc8;
+  --scalar-color-accent: #cba6f7;
+  --scalar-background-1: #1e1e2e;
+  --scalar-background-2: #313244;
+  --scalar-background-3: #45475a;
+  --scalar-background-accent: rgba(203, 166, 247, 0.12);
+  --scalar-border-color: #45475a;
+  --scalar-color-green: #a6e3a1;
+  --scalar-color-red: #f38ba8;
+  --scalar-color-yellow: #f9e2af;
+  --scalar-color-blue: #89b4fa;
+  --scalar-color-orange: #fab387;
+  --scalar-color-purple: #cba6f7;
+  --scalar-selection-1: rgba(203, 166, 247, 0.3);
+  --scalar-button-1: #cba6f7;
+  --scalar-button-1-hover: #bd8ff5;
+  --scalar-button-1-color: #1e1e2e;
+  background-color: #1e1e2e;
+}
+.light-mode ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+.light-mode input::placeholder,
+.light-mode textarea::placeholder {
+  color: #a6adc8 !important;
+}
+.light-mode .sidebar {
+  --scalar-sidebar-background-1: #181825;
+  --scalar-sidebar-item-hover-background: #313244;
+  --scalar-sidebar-item-active-background: rgba(203, 166, 247, 0.1);
+  --scalar-sidebar-color-active: #cba6f7;
+}
+.light-mode .scalar-code-block,
+.light-mode .t-editor__code {
+  background-color: #181825;
+}
+.light-mode .brightness-lifted {
+  filter: none;
+}
+.light-mode .text-white {
+  color: #1e1e2e;
+}
+.light-mode .logo {
+  filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+}
+.dark-mode {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --scalar-color-1: #cdd6f4;
+  --scalar-color-2: #bac2de;
+  --scalar-color-3: #a6adc8;
+  --scalar-color-accent: #cba6f7;
+  --scalar-background-1: #1e1e2e;
+  --scalar-background-2: #313244;
+  --scalar-background-3: #45475a;
+  --scalar-background-accent: rgba(203, 166, 247, 0.12);
+  --scalar-border-color: #45475a;
+  --scalar-color-green: #a6e3a1;
+  --scalar-color-red: #f38ba8;
+  --scalar-color-yellow: #f9e2af;
+  --scalar-color-blue: #89b4fa;
+  --scalar-color-orange: #fab387;
+  --scalar-color-purple: #cba6f7;
+  --scalar-selection-1: rgba(203, 166, 247, 0.3);
+  --scalar-button-1: #cba6f7;
+  --scalar-button-1-hover: #bd8ff5;
+  --scalar-button-1-color: #1e1e2e;
+  background-color: #1e1e2e;
+}
+.dark-mode ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+  color: #a6adc8 !important;
+}
+.dark-mode .sidebar {
+  --scalar-sidebar-background-1: #181825;
+  --scalar-sidebar-item-hover-background: #313244;
+  --scalar-sidebar-item-active-background: rgba(203, 166, 247, 0.1);
+  --scalar-sidebar-color-active: #cba6f7;
+}
+.dark-mode .scalar-code-block,
+.dark-mode .t-editor__code {
+  background-color: #181825;
+}
+.dark-mode .brightness-lifted {
+  filter: none;
+}
+.dark-mode .text-white {
+  color: #1e1e2e;
+}
+.dark-mode .logo {
+  filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+}
+
+/* ==UserStyle==
+@name Scalar Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/scalar
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/scalar
+@version 2026.01.20
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/scalar/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Ascalar
+@description Soothing pastel theme for Scalar
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@import url("https://unpkg.com/@catppuccin/highlightjs@1.0.0/css/catppuccin-variables.important.css");
+code.hljs {
+  background: none !important;
+}
+.light-mode {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --scalar-color-1: #cdd6f4;
+  --scalar-color-2: #bac2de;
+  --scalar-color-3: #a6adc8;
+  --scalar-color-accent: #cba6f7;
+  --scalar-background-1: #1e1e2e;
+  --scalar-background-2: #313244;
+  --scalar-background-3: #45475a;
+  --scalar-background-accent: rgba(203, 166, 247, 0.12);
+  --scalar-border-color: #45475a;
+  --scalar-color-green: #a6e3a1;
+  --scalar-color-red: #f38ba8;
+  --scalar-color-yellow: #f9e2af;
+  --scalar-color-blue: #89b4fa;
+  --scalar-color-orange: #fab387;
+  --scalar-color-purple: #cba6f7;
+  --scalar-selection-1: rgba(203, 166, 247, 0.3);
+  --scalar-button-1: #cba6f7;
+  --scalar-button-1-hover: #bd8ff5;
+  --scalar-button-1-color: #1e1e2e;
+  background-color: #1e1e2e;
+}
+.light-mode ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+.light-mode input::placeholder,
+.light-mode textarea::placeholder {
+  color: #a6adc8 !important;
+}
+.light-mode .sidebar {
+  --scalar-sidebar-background-1: #181825;
+  --scalar-sidebar-item-hover-background: #313244;
+  --scalar-sidebar-item-active-background: rgba(203, 166, 247, 0.1);
+  --scalar-sidebar-color-active: #cba6f7;
+}
+.light-mode .scalar-code-block,
+.light-mode .t-editor__code {
+  background-color: #181825;
+}
+.light-mode .brightness-lifted {
+  filter: none;
+}
+.light-mode .text-white {
+  color: #1e1e2e;
+}
+.light-mode .logo {
+  filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+}
+.dark-mode {
+  color-scheme: dark;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --scalar-color-1: #cdd6f4;
+  --scalar-color-2: #bac2de;
+  --scalar-color-3: #a6adc8;
+  --scalar-color-accent: #cba6f7;
+  --scalar-background-1: #1e1e2e;
+  --scalar-background-2: #313244;
+  --scalar-background-3: #45475a;
+  --scalar-background-accent: rgba(203, 166, 247, 0.12);
+  --scalar-border-color: #45475a;
+  --scalar-color-green: #a6e3a1;
+  --scalar-color-red: #f38ba8;
+  --scalar-color-yellow: #f9e2af;
+  --scalar-color-blue: #89b4fa;
+  --scalar-color-orange: #fab387;
+  --scalar-color-purple: #cba6f7;
+  --scalar-selection-1: rgba(203, 166, 247, 0.3);
+  --scalar-button-1: #cba6f7;
+  --scalar-button-1-hover: #bd8ff5;
+  --scalar-button-1-color: #1e1e2e;
+  background-color: #1e1e2e;
+}
+.dark-mode ::selection {
+  background-color: rgba(203, 166, 247, 0.3);
+}
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+  color: #a6adc8 !important;
+}
+.dark-mode .sidebar {
+  --scalar-sidebar-background-1: #181825;
+  --scalar-sidebar-item-hover-background: #313244;
+  --scalar-sidebar-item-active-background: rgba(203, 166, 247, 0.1);
+  --scalar-sidebar-color-active: #cba6f7;
+}
+.dark-mode .scalar-code-block,
+.dark-mode .t-editor__code {
+  background-color: #181825;
+}
+.dark-mode .brightness-lifted {
+  filter: none;
+}
+.dark-mode .text-white {
+  color: #1e1e2e;
+}
+.dark-mode .logo {
+  filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+}
+

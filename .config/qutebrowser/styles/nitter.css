@@ -1,0 +1,1454 @@
+/* ==UserStyle==
+@name Nitter Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/nitter
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/nitter
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/nitter/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Anitter
+@description Soothing pastel theme for Nitter
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    /* logo */
+    /* Fix Poll Leader color */
+    /* xcancel "verifying your request" */
+    /* error text color contrast */
+    /* twitter blue verification checkmark contrast */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root body {
+    --bg_color: #181825;
+    --fg_color: #cdd6f4;
+    --fg_faded: #bac2de;
+    --fg_dark: #cba6f7;
+    --fg_nav: #cba6f7;
+    --bg_panel: #11111b;
+    --bg_elements: #1e1e2e;
+    --bg_overlays: #1e1e2e;
+    --bg_hover: #11111b;
+    --grey: #bac2de;
+    --dark_grey: #6c7086;
+    --darker_grey: #1e1e2e;
+    --darkest_grey: #181825;
+    --border_grey: #1e1e2e;
+    --accent: #cba6f7;
+    --accent_light: #e6d5fb;
+    --accent_dark: #b077f3;
+    --accent_border: #b077f3;
+    --play_button: #cba6f7;
+    --play_button_hover: #cba6f7;
+    --more_replies_dots: #b077f3;
+    --error_red: #f38ba8;
+    --verified_blue: #89b4fa;
+    --icon_text: #cdd6f4;
+    --tab: #cdd6f4;
+    --tab_selected: #cba6f7;
+    --profile_stat: #cdd6f4;
+    --verified_government: #a6adc8;
+    --verified_business: #f9e2af;
+    background-color: var(--bg_color);
+    color: var(--fg_color);
+    line-height: 1.3;
+    margin: 0;
+  }
+  :root img.site-logo {
+    content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22none%22%3E%3Cpath%20stroke%3D%22%23cba6f7%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2220%22%20d%3D%22M145%2041H81v418h78V183.5L355%20459h64V41h-78v275.5z%22/%3E%3C/svg%3E");
+  }
+  :root .poll-meter.leader {
+    color: var(--bg_color);
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] {
+    background: #1e1e2e !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h1,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h2,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] p,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] #status {
+    color: #cba6f7 !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] [style="width:auto;margin:16px auto;border:1px solid #FF6C60;background-color:#1f1f1f;border-radius:3px 3px 3px 3px;padding:10px;"] {
+    background: #1e1e2e !important;
+    border-color: #cba6f7 !important;
+  }
+  :root .error-panel {
+    color: #11111b;
+  }
+  :root .error-panel a {
+    color: #11111b;
+    text-decoration: underline;
+  }
+  :root .verified-icon.blue {
+    color: #11111b;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    /* logo */
+    /* Fix Poll Leader color */
+    /* xcancel "verifying your request" */
+    /* error text color contrast */
+    /* twitter blue verification checkmark contrast */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root body {
+    --bg_color: #181825;
+    --fg_color: #cdd6f4;
+    --fg_faded: #bac2de;
+    --fg_dark: #cba6f7;
+    --fg_nav: #cba6f7;
+    --bg_panel: #11111b;
+    --bg_elements: #1e1e2e;
+    --bg_overlays: #1e1e2e;
+    --bg_hover: #11111b;
+    --grey: #bac2de;
+    --dark_grey: #6c7086;
+    --darker_grey: #1e1e2e;
+    --darkest_grey: #181825;
+    --border_grey: #1e1e2e;
+    --accent: #cba6f7;
+    --accent_light: #e6d5fb;
+    --accent_dark: #b077f3;
+    --accent_border: #b077f3;
+    --play_button: #cba6f7;
+    --play_button_hover: #cba6f7;
+    --more_replies_dots: #b077f3;
+    --error_red: #f38ba8;
+    --verified_blue: #89b4fa;
+    --icon_text: #cdd6f4;
+    --tab: #cdd6f4;
+    --tab_selected: #cba6f7;
+    --profile_stat: #cdd6f4;
+    --verified_government: #a6adc8;
+    --verified_business: #f9e2af;
+    background-color: var(--bg_color);
+    color: var(--fg_color);
+    line-height: 1.3;
+    margin: 0;
+  }
+  :root img.site-logo {
+    content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22none%22%3E%3Cpath%20stroke%3D%22%23cba6f7%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2220%22%20d%3D%22M145%2041H81v418h78V183.5L355%20459h64V41h-78v275.5z%22/%3E%3C/svg%3E");
+  }
+  :root .poll-meter.leader {
+    color: var(--bg_color);
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] {
+    background: #1e1e2e !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h1,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h2,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] p,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] #status {
+    color: #cba6f7 !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] [style="width:auto;margin:16px auto;border:1px solid #FF6C60;background-color:#1f1f1f;border-radius:3px 3px 3px 3px;padding:10px;"] {
+    background: #1e1e2e !important;
+    border-color: #cba6f7 !important;
+  }
+  :root .error-panel {
+    color: #11111b;
+  }
+  :root .error-panel a {
+    color: #11111b;
+    text-decoration: underline;
+  }
+  :root .verified-icon.blue {
+    color: #11111b;
+  }
+}
+
+/* ==UserStyle==
+@name Nitter Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/nitter
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/nitter
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/nitter/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Anitter
+@description Soothing pastel theme for Nitter
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    /* logo */
+    /* Fix Poll Leader color */
+    /* xcancel "verifying your request" */
+    /* error text color contrast */
+    /* twitter blue verification checkmark contrast */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root body {
+    --bg_color: #181825;
+    --fg_color: #cdd6f4;
+    --fg_faded: #bac2de;
+    --fg_dark: #cba6f7;
+    --fg_nav: #cba6f7;
+    --bg_panel: #11111b;
+    --bg_elements: #1e1e2e;
+    --bg_overlays: #1e1e2e;
+    --bg_hover: #11111b;
+    --grey: #bac2de;
+    --dark_grey: #6c7086;
+    --darker_grey: #1e1e2e;
+    --darkest_grey: #181825;
+    --border_grey: #1e1e2e;
+    --accent: #cba6f7;
+    --accent_light: #e6d5fb;
+    --accent_dark: #b077f3;
+    --accent_border: #b077f3;
+    --play_button: #cba6f7;
+    --play_button_hover: #cba6f7;
+    --more_replies_dots: #b077f3;
+    --error_red: #f38ba8;
+    --verified_blue: #89b4fa;
+    --icon_text: #cdd6f4;
+    --tab: #cdd6f4;
+    --tab_selected: #cba6f7;
+    --profile_stat: #cdd6f4;
+    --verified_government: #a6adc8;
+    --verified_business: #f9e2af;
+    background-color: var(--bg_color);
+    color: var(--fg_color);
+    line-height: 1.3;
+    margin: 0;
+  }
+  :root img.site-logo {
+    content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22none%22%3E%3Cpath%20stroke%3D%22%23cba6f7%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2220%22%20d%3D%22M145%2041H81v418h78V183.5L355%20459h64V41h-78v275.5z%22/%3E%3C/svg%3E");
+  }
+  :root .poll-meter.leader {
+    color: var(--bg_color);
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] {
+    background: #1e1e2e !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h1,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h2,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] p,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] #status {
+    color: #cba6f7 !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] [style="width:auto;margin:16px auto;border:1px solid #FF6C60;background-color:#1f1f1f;border-radius:3px 3px 3px 3px;padding:10px;"] {
+    background: #1e1e2e !important;
+    border-color: #cba6f7 !important;
+  }
+  :root .error-panel {
+    color: #11111b;
+  }
+  :root .error-panel a {
+    color: #11111b;
+    text-decoration: underline;
+  }
+  :root .verified-icon.blue {
+    color: #11111b;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    /* logo */
+    /* Fix Poll Leader color */
+    /* xcancel "verifying your request" */
+    /* error text color contrast */
+    /* twitter blue verification checkmark contrast */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root body {
+    --bg_color: #181825;
+    --fg_color: #cdd6f4;
+    --fg_faded: #bac2de;
+    --fg_dark: #cba6f7;
+    --fg_nav: #cba6f7;
+    --bg_panel: #11111b;
+    --bg_elements: #1e1e2e;
+    --bg_overlays: #1e1e2e;
+    --bg_hover: #11111b;
+    --grey: #bac2de;
+    --dark_grey: #6c7086;
+    --darker_grey: #1e1e2e;
+    --darkest_grey: #181825;
+    --border_grey: #1e1e2e;
+    --accent: #cba6f7;
+    --accent_light: #e6d5fb;
+    --accent_dark: #b077f3;
+    --accent_border: #b077f3;
+    --play_button: #cba6f7;
+    --play_button_hover: #cba6f7;
+    --more_replies_dots: #b077f3;
+    --error_red: #f38ba8;
+    --verified_blue: #89b4fa;
+    --icon_text: #cdd6f4;
+    --tab: #cdd6f4;
+    --tab_selected: #cba6f7;
+    --profile_stat: #cdd6f4;
+    --verified_government: #a6adc8;
+    --verified_business: #f9e2af;
+    background-color: var(--bg_color);
+    color: var(--fg_color);
+    line-height: 1.3;
+    margin: 0;
+  }
+  :root img.site-logo {
+    content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22none%22%3E%3Cpath%20stroke%3D%22%23cba6f7%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2220%22%20d%3D%22M145%2041H81v418h78V183.5L355%20459h64V41h-78v275.5z%22/%3E%3C/svg%3E");
+  }
+  :root .poll-meter.leader {
+    color: var(--bg_color);
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] {
+    background: #1e1e2e !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h1,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h2,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] p,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] #status {
+    color: #cba6f7 !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] [style="width:auto;margin:16px auto;border:1px solid #FF6C60;background-color:#1f1f1f;border-radius:3px 3px 3px 3px;padding:10px;"] {
+    background: #1e1e2e !important;
+    border-color: #cba6f7 !important;
+  }
+  :root .error-panel {
+    color: #11111b;
+  }
+  :root .error-panel a {
+    color: #11111b;
+    text-decoration: underline;
+  }
+  :root .verified-icon.blue {
+    color: #11111b;
+  }
+}
+
+/* ==UserStyle==
+@name Nitter Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/nitter
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/nitter
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/nitter/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Anitter
+@description Soothing pastel theme for Nitter
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    /* logo */
+    /* Fix Poll Leader color */
+    /* xcancel "verifying your request" */
+    /* error text color contrast */
+    /* twitter blue verification checkmark contrast */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root body {
+    --bg_color: #181825;
+    --fg_color: #cdd6f4;
+    --fg_faded: #bac2de;
+    --fg_dark: #cba6f7;
+    --fg_nav: #cba6f7;
+    --bg_panel: #11111b;
+    --bg_elements: #1e1e2e;
+    --bg_overlays: #1e1e2e;
+    --bg_hover: #11111b;
+    --grey: #bac2de;
+    --dark_grey: #6c7086;
+    --darker_grey: #1e1e2e;
+    --darkest_grey: #181825;
+    --border_grey: #1e1e2e;
+    --accent: #cba6f7;
+    --accent_light: #e6d5fb;
+    --accent_dark: #b077f3;
+    --accent_border: #b077f3;
+    --play_button: #cba6f7;
+    --play_button_hover: #cba6f7;
+    --more_replies_dots: #b077f3;
+    --error_red: #f38ba8;
+    --verified_blue: #89b4fa;
+    --icon_text: #cdd6f4;
+    --tab: #cdd6f4;
+    --tab_selected: #cba6f7;
+    --profile_stat: #cdd6f4;
+    --verified_government: #a6adc8;
+    --verified_business: #f9e2af;
+    background-color: var(--bg_color);
+    color: var(--fg_color);
+    line-height: 1.3;
+    margin: 0;
+  }
+  :root img.site-logo {
+    content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22none%22%3E%3Cpath%20stroke%3D%22%23cba6f7%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2220%22%20d%3D%22M145%2041H81v418h78V183.5L355%20459h64V41h-78v275.5z%22/%3E%3C/svg%3E");
+  }
+  :root .poll-meter.leader {
+    color: var(--bg_color);
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] {
+    background: #1e1e2e !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h1,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h2,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] p,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] #status {
+    color: #cba6f7 !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] [style="width:auto;margin:16px auto;border:1px solid #FF6C60;background-color:#1f1f1f;border-radius:3px 3px 3px 3px;padding:10px;"] {
+    background: #1e1e2e !important;
+    border-color: #cba6f7 !important;
+  }
+  :root .error-panel {
+    color: #11111b;
+  }
+  :root .error-panel a {
+    color: #11111b;
+    text-decoration: underline;
+  }
+  :root .verified-icon.blue {
+    color: #11111b;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    /* logo */
+    /* Fix Poll Leader color */
+    /* xcancel "verifying your request" */
+    /* error text color contrast */
+    /* twitter blue verification checkmark contrast */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root body {
+    --bg_color: #181825;
+    --fg_color: #cdd6f4;
+    --fg_faded: #bac2de;
+    --fg_dark: #cba6f7;
+    --fg_nav: #cba6f7;
+    --bg_panel: #11111b;
+    --bg_elements: #1e1e2e;
+    --bg_overlays: #1e1e2e;
+    --bg_hover: #11111b;
+    --grey: #bac2de;
+    --dark_grey: #6c7086;
+    --darker_grey: #1e1e2e;
+    --darkest_grey: #181825;
+    --border_grey: #1e1e2e;
+    --accent: #cba6f7;
+    --accent_light: #e6d5fb;
+    --accent_dark: #b077f3;
+    --accent_border: #b077f3;
+    --play_button: #cba6f7;
+    --play_button_hover: #cba6f7;
+    --more_replies_dots: #b077f3;
+    --error_red: #f38ba8;
+    --verified_blue: #89b4fa;
+    --icon_text: #cdd6f4;
+    --tab: #cdd6f4;
+    --tab_selected: #cba6f7;
+    --profile_stat: #cdd6f4;
+    --verified_government: #a6adc8;
+    --verified_business: #f9e2af;
+    background-color: var(--bg_color);
+    color: var(--fg_color);
+    line-height: 1.3;
+    margin: 0;
+  }
+  :root img.site-logo {
+    content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22none%22%3E%3Cpath%20stroke%3D%22%23cba6f7%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2220%22%20d%3D%22M145%2041H81v418h78V183.5L355%20459h64V41h-78v275.5z%22/%3E%3C/svg%3E");
+  }
+  :root .poll-meter.leader {
+    color: var(--bg_color);
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] {
+    background: #1e1e2e !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h1,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h2,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] p,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] #status {
+    color: #cba6f7 !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] [style="width:auto;margin:16px auto;border:1px solid #FF6C60;background-color:#1f1f1f;border-radius:3px 3px 3px 3px;padding:10px;"] {
+    background: #1e1e2e !important;
+    border-color: #cba6f7 !important;
+  }
+  :root .error-panel {
+    color: #11111b;
+  }
+  :root .error-panel a {
+    color: #11111b;
+    text-decoration: underline;
+  }
+  :root .verified-icon.blue {
+    color: #11111b;
+  }
+}
+
+/* ==UserStyle==
+@name Nitter Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/nitter
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/nitter
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/nitter/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Anitter
+@description Soothing pastel theme for Nitter
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    /* logo */
+    /* Fix Poll Leader color */
+    /* xcancel "verifying your request" */
+    /* error text color contrast */
+    /* twitter blue verification checkmark contrast */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root body {
+    --bg_color: #181825;
+    --fg_color: #cdd6f4;
+    --fg_faded: #bac2de;
+    --fg_dark: #cba6f7;
+    --fg_nav: #cba6f7;
+    --bg_panel: #11111b;
+    --bg_elements: #1e1e2e;
+    --bg_overlays: #1e1e2e;
+    --bg_hover: #11111b;
+    --grey: #bac2de;
+    --dark_grey: #6c7086;
+    --darker_grey: #1e1e2e;
+    --darkest_grey: #181825;
+    --border_grey: #1e1e2e;
+    --accent: #cba6f7;
+    --accent_light: #e6d5fb;
+    --accent_dark: #b077f3;
+    --accent_border: #b077f3;
+    --play_button: #cba6f7;
+    --play_button_hover: #cba6f7;
+    --more_replies_dots: #b077f3;
+    --error_red: #f38ba8;
+    --verified_blue: #89b4fa;
+    --icon_text: #cdd6f4;
+    --tab: #cdd6f4;
+    --tab_selected: #cba6f7;
+    --profile_stat: #cdd6f4;
+    --verified_government: #a6adc8;
+    --verified_business: #f9e2af;
+    background-color: var(--bg_color);
+    color: var(--fg_color);
+    line-height: 1.3;
+    margin: 0;
+  }
+  :root img.site-logo {
+    content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22none%22%3E%3Cpath%20stroke%3D%22%23cba6f7%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2220%22%20d%3D%22M145%2041H81v418h78V183.5L355%20459h64V41h-78v275.5z%22/%3E%3C/svg%3E");
+  }
+  :root .poll-meter.leader {
+    color: var(--bg_color);
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] {
+    background: #1e1e2e !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h1,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h2,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] p,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] #status {
+    color: #cba6f7 !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] [style="width:auto;margin:16px auto;border:1px solid #FF6C60;background-color:#1f1f1f;border-radius:3px 3px 3px 3px;padding:10px;"] {
+    background: #1e1e2e !important;
+    border-color: #cba6f7 !important;
+  }
+  :root .error-panel {
+    color: #11111b;
+  }
+  :root .error-panel a {
+    color: #11111b;
+    text-decoration: underline;
+  }
+  :root .verified-icon.blue {
+    color: #11111b;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    /* logo */
+    /* Fix Poll Leader color */
+    /* xcancel "verifying your request" */
+    /* error text color contrast */
+    /* twitter blue verification checkmark contrast */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root body {
+    --bg_color: #181825;
+    --fg_color: #cdd6f4;
+    --fg_faded: #bac2de;
+    --fg_dark: #cba6f7;
+    --fg_nav: #cba6f7;
+    --bg_panel: #11111b;
+    --bg_elements: #1e1e2e;
+    --bg_overlays: #1e1e2e;
+    --bg_hover: #11111b;
+    --grey: #bac2de;
+    --dark_grey: #6c7086;
+    --darker_grey: #1e1e2e;
+    --darkest_grey: #181825;
+    --border_grey: #1e1e2e;
+    --accent: #cba6f7;
+    --accent_light: #e6d5fb;
+    --accent_dark: #b077f3;
+    --accent_border: #b077f3;
+    --play_button: #cba6f7;
+    --play_button_hover: #cba6f7;
+    --more_replies_dots: #b077f3;
+    --error_red: #f38ba8;
+    --verified_blue: #89b4fa;
+    --icon_text: #cdd6f4;
+    --tab: #cdd6f4;
+    --tab_selected: #cba6f7;
+    --profile_stat: #cdd6f4;
+    --verified_government: #a6adc8;
+    --verified_business: #f9e2af;
+    background-color: var(--bg_color);
+    color: var(--fg_color);
+    line-height: 1.3;
+    margin: 0;
+  }
+  :root img.site-logo {
+    content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22none%22%3E%3Cpath%20stroke%3D%22%23cba6f7%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2220%22%20d%3D%22M145%2041H81v418h78V183.5L355%20459h64V41h-78v275.5z%22/%3E%3C/svg%3E");
+  }
+  :root .poll-meter.leader {
+    color: var(--bg_color);
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] {
+    background: #1e1e2e !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h1,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h2,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] p,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] #status {
+    color: #cba6f7 !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] [style="width:auto;margin:16px auto;border:1px solid #FF6C60;background-color:#1f1f1f;border-radius:3px 3px 3px 3px;padding:10px;"] {
+    background: #1e1e2e !important;
+    border-color: #cba6f7 !important;
+  }
+  :root .error-panel {
+    color: #11111b;
+  }
+  :root .error-panel a {
+    color: #11111b;
+    text-decoration: underline;
+  }
+  :root .verified-icon.blue {
+    color: #11111b;
+  }
+}
+
+/* ==UserStyle==
+@name Nitter Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/nitter
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/nitter
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/nitter/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Anitter
+@description Soothing pastel theme for Nitter
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    /* logo */
+    /* Fix Poll Leader color */
+    /* xcancel "verifying your request" */
+    /* error text color contrast */
+    /* twitter blue verification checkmark contrast */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root body {
+    --bg_color: #181825;
+    --fg_color: #cdd6f4;
+    --fg_faded: #bac2de;
+    --fg_dark: #cba6f7;
+    --fg_nav: #cba6f7;
+    --bg_panel: #11111b;
+    --bg_elements: #1e1e2e;
+    --bg_overlays: #1e1e2e;
+    --bg_hover: #11111b;
+    --grey: #bac2de;
+    --dark_grey: #6c7086;
+    --darker_grey: #1e1e2e;
+    --darkest_grey: #181825;
+    --border_grey: #1e1e2e;
+    --accent: #cba6f7;
+    --accent_light: #e6d5fb;
+    --accent_dark: #b077f3;
+    --accent_border: #b077f3;
+    --play_button: #cba6f7;
+    --play_button_hover: #cba6f7;
+    --more_replies_dots: #b077f3;
+    --error_red: #f38ba8;
+    --verified_blue: #89b4fa;
+    --icon_text: #cdd6f4;
+    --tab: #cdd6f4;
+    --tab_selected: #cba6f7;
+    --profile_stat: #cdd6f4;
+    --verified_government: #a6adc8;
+    --verified_business: #f9e2af;
+    background-color: var(--bg_color);
+    color: var(--fg_color);
+    line-height: 1.3;
+    margin: 0;
+  }
+  :root img.site-logo {
+    content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22none%22%3E%3Cpath%20stroke%3D%22%23cba6f7%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2220%22%20d%3D%22M145%2041H81v418h78V183.5L355%20459h64V41h-78v275.5z%22/%3E%3C/svg%3E");
+  }
+  :root .poll-meter.leader {
+    color: var(--bg_color);
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] {
+    background: #1e1e2e !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h1,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h2,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] p,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] #status {
+    color: #cba6f7 !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] [style="width:auto;margin:16px auto;border:1px solid #FF6C60;background-color:#1f1f1f;border-radius:3px 3px 3px 3px;padding:10px;"] {
+    background: #1e1e2e !important;
+    border-color: #cba6f7 !important;
+  }
+  :root .error-panel {
+    color: #11111b;
+  }
+  :root .error-panel a {
+    color: #11111b;
+    text-decoration: underline;
+  }
+  :root .verified-icon.blue {
+    color: #11111b;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    /* logo */
+    /* Fix Poll Leader color */
+    /* xcancel "verifying your request" */
+    /* error text color contrast */
+    /* twitter blue verification checkmark contrast */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root body {
+    --bg_color: #181825;
+    --fg_color: #cdd6f4;
+    --fg_faded: #bac2de;
+    --fg_dark: #cba6f7;
+    --fg_nav: #cba6f7;
+    --bg_panel: #11111b;
+    --bg_elements: #1e1e2e;
+    --bg_overlays: #1e1e2e;
+    --bg_hover: #11111b;
+    --grey: #bac2de;
+    --dark_grey: #6c7086;
+    --darker_grey: #1e1e2e;
+    --darkest_grey: #181825;
+    --border_grey: #1e1e2e;
+    --accent: #cba6f7;
+    --accent_light: #e6d5fb;
+    --accent_dark: #b077f3;
+    --accent_border: #b077f3;
+    --play_button: #cba6f7;
+    --play_button_hover: #cba6f7;
+    --more_replies_dots: #b077f3;
+    --error_red: #f38ba8;
+    --verified_blue: #89b4fa;
+    --icon_text: #cdd6f4;
+    --tab: #cdd6f4;
+    --tab_selected: #cba6f7;
+    --profile_stat: #cdd6f4;
+    --verified_government: #a6adc8;
+    --verified_business: #f9e2af;
+    background-color: var(--bg_color);
+    color: var(--fg_color);
+    line-height: 1.3;
+    margin: 0;
+  }
+  :root img.site-logo {
+    content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22none%22%3E%3Cpath%20stroke%3D%22%23cba6f7%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2220%22%20d%3D%22M145%2041H81v418h78V183.5L355%20459h64V41h-78v275.5z%22/%3E%3C/svg%3E");
+  }
+  :root .poll-meter.leader {
+    color: var(--bg_color);
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] {
+    background: #1e1e2e !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h1,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h2,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] p,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] #status {
+    color: #cba6f7 !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] [style="width:auto;margin:16px auto;border:1px solid #FF6C60;background-color:#1f1f1f;border-radius:3px 3px 3px 3px;padding:10px;"] {
+    background: #1e1e2e !important;
+    border-color: #cba6f7 !important;
+  }
+  :root .error-panel {
+    color: #11111b;
+  }
+  :root .error-panel a {
+    color: #11111b;
+    text-decoration: underline;
+  }
+  :root .verified-icon.blue {
+    color: #11111b;
+  }
+}
+
+/* ==UserStyle==
+@name Nitter Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/nitter
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/nitter
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/nitter/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Anitter
+@description Soothing pastel theme for Nitter
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    /* logo */
+    /* Fix Poll Leader color */
+    /* xcancel "verifying your request" */
+    /* error text color contrast */
+    /* twitter blue verification checkmark contrast */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root body {
+    --bg_color: #181825;
+    --fg_color: #cdd6f4;
+    --fg_faded: #bac2de;
+    --fg_dark: #cba6f7;
+    --fg_nav: #cba6f7;
+    --bg_panel: #11111b;
+    --bg_elements: #1e1e2e;
+    --bg_overlays: #1e1e2e;
+    --bg_hover: #11111b;
+    --grey: #bac2de;
+    --dark_grey: #6c7086;
+    --darker_grey: #1e1e2e;
+    --darkest_grey: #181825;
+    --border_grey: #1e1e2e;
+    --accent: #cba6f7;
+    --accent_light: #e6d5fb;
+    --accent_dark: #b077f3;
+    --accent_border: #b077f3;
+    --play_button: #cba6f7;
+    --play_button_hover: #cba6f7;
+    --more_replies_dots: #b077f3;
+    --error_red: #f38ba8;
+    --verified_blue: #89b4fa;
+    --icon_text: #cdd6f4;
+    --tab: #cdd6f4;
+    --tab_selected: #cba6f7;
+    --profile_stat: #cdd6f4;
+    --verified_government: #a6adc8;
+    --verified_business: #f9e2af;
+    background-color: var(--bg_color);
+    color: var(--fg_color);
+    line-height: 1.3;
+    margin: 0;
+  }
+  :root img.site-logo {
+    content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22none%22%3E%3Cpath%20stroke%3D%22%23cba6f7%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2220%22%20d%3D%22M145%2041H81v418h78V183.5L355%20459h64V41h-78v275.5z%22/%3E%3C/svg%3E");
+  }
+  :root .poll-meter.leader {
+    color: var(--bg_color);
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] {
+    background: #1e1e2e !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h1,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h2,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] p,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] #status {
+    color: #cba6f7 !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] [style="width:auto;margin:16px auto;border:1px solid #FF6C60;background-color:#1f1f1f;border-radius:3px 3px 3px 3px;padding:10px;"] {
+    background: #1e1e2e !important;
+    border-color: #cba6f7 !important;
+  }
+  :root .error-panel {
+    color: #11111b;
+  }
+  :root .error-panel a {
+    color: #11111b;
+    text-decoration: underline;
+  }
+  :root .verified-icon.blue {
+    color: #11111b;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    /* logo */
+    /* Fix Poll Leader color */
+    /* xcancel "verifying your request" */
+    /* error text color contrast */
+    /* twitter blue verification checkmark contrast */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root body {
+    --bg_color: #181825;
+    --fg_color: #cdd6f4;
+    --fg_faded: #bac2de;
+    --fg_dark: #cba6f7;
+    --fg_nav: #cba6f7;
+    --bg_panel: #11111b;
+    --bg_elements: #1e1e2e;
+    --bg_overlays: #1e1e2e;
+    --bg_hover: #11111b;
+    --grey: #bac2de;
+    --dark_grey: #6c7086;
+    --darker_grey: #1e1e2e;
+    --darkest_grey: #181825;
+    --border_grey: #1e1e2e;
+    --accent: #cba6f7;
+    --accent_light: #e6d5fb;
+    --accent_dark: #b077f3;
+    --accent_border: #b077f3;
+    --play_button: #cba6f7;
+    --play_button_hover: #cba6f7;
+    --more_replies_dots: #b077f3;
+    --error_red: #f38ba8;
+    --verified_blue: #89b4fa;
+    --icon_text: #cdd6f4;
+    --tab: #cdd6f4;
+    --tab_selected: #cba6f7;
+    --profile_stat: #cdd6f4;
+    --verified_government: #a6adc8;
+    --verified_business: #f9e2af;
+    background-color: var(--bg_color);
+    color: var(--fg_color);
+    line-height: 1.3;
+    margin: 0;
+  }
+  :root img.site-logo {
+    content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22none%22%3E%3Cpath%20stroke%3D%22%23cba6f7%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2220%22%20d%3D%22M145%2041H81v418h78V183.5L355%20459h64V41h-78v275.5z%22/%3E%3C/svg%3E");
+  }
+  :root .poll-meter.leader {
+    color: var(--bg_color);
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] {
+    background: #1e1e2e !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h1,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h2,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] p,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] #status {
+    color: #cba6f7 !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] [style="width:auto;margin:16px auto;border:1px solid #FF6C60;background-color:#1f1f1f;border-radius:3px 3px 3px 3px;padding:10px;"] {
+    background: #1e1e2e !important;
+    border-color: #cba6f7 !important;
+  }
+  :root .error-panel {
+    color: #11111b;
+  }
+  :root .error-panel a {
+    color: #11111b;
+    text-decoration: underline;
+  }
+  :root .verified-icon.blue {
+    color: #11111b;
+  }
+}
+
+/* ==UserStyle==
+@name Nitter Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/nitter
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/nitter
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/nitter/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Anitter
+@description Soothing pastel theme for Nitter
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    /* logo */
+    /* Fix Poll Leader color */
+    /* xcancel "verifying your request" */
+    /* error text color contrast */
+    /* twitter blue verification checkmark contrast */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root body {
+    --bg_color: #181825;
+    --fg_color: #cdd6f4;
+    --fg_faded: #bac2de;
+    --fg_dark: #cba6f7;
+    --fg_nav: #cba6f7;
+    --bg_panel: #11111b;
+    --bg_elements: #1e1e2e;
+    --bg_overlays: #1e1e2e;
+    --bg_hover: #11111b;
+    --grey: #bac2de;
+    --dark_grey: #6c7086;
+    --darker_grey: #1e1e2e;
+    --darkest_grey: #181825;
+    --border_grey: #1e1e2e;
+    --accent: #cba6f7;
+    --accent_light: #e6d5fb;
+    --accent_dark: #b077f3;
+    --accent_border: #b077f3;
+    --play_button: #cba6f7;
+    --play_button_hover: #cba6f7;
+    --more_replies_dots: #b077f3;
+    --error_red: #f38ba8;
+    --verified_blue: #89b4fa;
+    --icon_text: #cdd6f4;
+    --tab: #cdd6f4;
+    --tab_selected: #cba6f7;
+    --profile_stat: #cdd6f4;
+    --verified_government: #a6adc8;
+    --verified_business: #f9e2af;
+    background-color: var(--bg_color);
+    color: var(--fg_color);
+    line-height: 1.3;
+    margin: 0;
+  }
+  :root img.site-logo {
+    content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22none%22%3E%3Cpath%20stroke%3D%22%23cba6f7%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2220%22%20d%3D%22M145%2041H81v418h78V183.5L355%20459h64V41h-78v275.5z%22/%3E%3C/svg%3E");
+  }
+  :root .poll-meter.leader {
+    color: var(--bg_color);
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] {
+    background: #1e1e2e !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h1,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h2,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] p,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] #status {
+    color: #cba6f7 !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] [style="width:auto;margin:16px auto;border:1px solid #FF6C60;background-color:#1f1f1f;border-radius:3px 3px 3px 3px;padding:10px;"] {
+    background: #1e1e2e !important;
+    border-color: #cba6f7 !important;
+  }
+  :root .error-panel {
+    color: #11111b;
+  }
+  :root .error-panel a {
+    color: #11111b;
+    text-decoration: underline;
+  }
+  :root .verified-icon.blue {
+    color: #11111b;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    /* logo */
+    /* Fix Poll Leader color */
+    /* xcancel "verifying your request" */
+    /* error text color contrast */
+    /* twitter blue verification checkmark contrast */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root body {
+    --bg_color: #181825;
+    --fg_color: #cdd6f4;
+    --fg_faded: #bac2de;
+    --fg_dark: #cba6f7;
+    --fg_nav: #cba6f7;
+    --bg_panel: #11111b;
+    --bg_elements: #1e1e2e;
+    --bg_overlays: #1e1e2e;
+    --bg_hover: #11111b;
+    --grey: #bac2de;
+    --dark_grey: #6c7086;
+    --darker_grey: #1e1e2e;
+    --darkest_grey: #181825;
+    --border_grey: #1e1e2e;
+    --accent: #cba6f7;
+    --accent_light: #e6d5fb;
+    --accent_dark: #b077f3;
+    --accent_border: #b077f3;
+    --play_button: #cba6f7;
+    --play_button_hover: #cba6f7;
+    --more_replies_dots: #b077f3;
+    --error_red: #f38ba8;
+    --verified_blue: #89b4fa;
+    --icon_text: #cdd6f4;
+    --tab: #cdd6f4;
+    --tab_selected: #cba6f7;
+    --profile_stat: #cdd6f4;
+    --verified_government: #a6adc8;
+    --verified_business: #f9e2af;
+    background-color: var(--bg_color);
+    color: var(--fg_color);
+    line-height: 1.3;
+    margin: 0;
+  }
+  :root img.site-logo {
+    content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22none%22%3E%3Cpath%20stroke%3D%22%23cba6f7%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2220%22%20d%3D%22M145%2041H81v418h78V183.5L355%20459h64V41h-78v275.5z%22/%3E%3C/svg%3E");
+  }
+  :root .poll-meter.leader {
+    color: var(--bg_color);
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] {
+    background: #1e1e2e !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h1,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h2,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] p,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] #status {
+    color: #cba6f7 !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] [style="width:auto;margin:16px auto;border:1px solid #FF6C60;background-color:#1f1f1f;border-radius:3px 3px 3px 3px;padding:10px;"] {
+    background: #1e1e2e !important;
+    border-color: #cba6f7 !important;
+  }
+  :root .error-panel {
+    color: #11111b;
+  }
+  :root .error-panel a {
+    color: #11111b;
+    text-decoration: underline;
+  }
+  :root .verified-icon.blue {
+    color: #11111b;
+  }
+}
+
+/* ==UserStyle==
+@name Nitter Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/nitter
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/nitter
+@version 2025.09.06
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/nitter/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Anitter
+@description Soothing pastel theme for Nitter
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    /* logo */
+    /* Fix Poll Leader color */
+    /* xcancel "verifying your request" */
+    /* error text color contrast */
+    /* twitter blue verification checkmark contrast */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root body {
+    --bg_color: #181825;
+    --fg_color: #cdd6f4;
+    --fg_faded: #bac2de;
+    --fg_dark: #cba6f7;
+    --fg_nav: #cba6f7;
+    --bg_panel: #11111b;
+    --bg_elements: #1e1e2e;
+    --bg_overlays: #1e1e2e;
+    --bg_hover: #11111b;
+    --grey: #bac2de;
+    --dark_grey: #6c7086;
+    --darker_grey: #1e1e2e;
+    --darkest_grey: #181825;
+    --border_grey: #1e1e2e;
+    --accent: #cba6f7;
+    --accent_light: #e6d5fb;
+    --accent_dark: #b077f3;
+    --accent_border: #b077f3;
+    --play_button: #cba6f7;
+    --play_button_hover: #cba6f7;
+    --more_replies_dots: #b077f3;
+    --error_red: #f38ba8;
+    --verified_blue: #89b4fa;
+    --icon_text: #cdd6f4;
+    --tab: #cdd6f4;
+    --tab_selected: #cba6f7;
+    --profile_stat: #cdd6f4;
+    --verified_government: #a6adc8;
+    --verified_business: #f9e2af;
+    background-color: var(--bg_color);
+    color: var(--fg_color);
+    line-height: 1.3;
+    margin: 0;
+  }
+  :root img.site-logo {
+    content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22none%22%3E%3Cpath%20stroke%3D%22%23cba6f7%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2220%22%20d%3D%22M145%2041H81v418h78V183.5L355%20459h64V41h-78v275.5z%22/%3E%3C/svg%3E");
+  }
+  :root .poll-meter.leader {
+    color: var(--bg_color);
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] {
+    background: #1e1e2e !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h1,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h2,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] p,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] #status {
+    color: #cba6f7 !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] [style="width:auto;margin:16px auto;border:1px solid #FF6C60;background-color:#1f1f1f;border-radius:3px 3px 3px 3px;padding:10px;"] {
+    background: #1e1e2e !important;
+    border-color: #cba6f7 !important;
+  }
+  :root .error-panel {
+    color: #11111b;
+  }
+  :root .error-panel a {
+    color: #11111b;
+    text-decoration: underline;
+  }
+  :root .verified-icon.blue {
+    color: #11111b;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    /* logo */
+    /* Fix Poll Leader color */
+    /* xcancel "verifying your request" */
+    /* error text color contrast */
+    /* twitter blue verification checkmark contrast */
+  }
+  :root ::selection {
+    background-color: rgba(203, 166, 247, 0.3);
+  }
+  :root input::placeholder,
+  :root textarea::placeholder {
+    color: #a6adc8 !important;
+  }
+  :root body {
+    --bg_color: #181825;
+    --fg_color: #cdd6f4;
+    --fg_faded: #bac2de;
+    --fg_dark: #cba6f7;
+    --fg_nav: #cba6f7;
+    --bg_panel: #11111b;
+    --bg_elements: #1e1e2e;
+    --bg_overlays: #1e1e2e;
+    --bg_hover: #11111b;
+    --grey: #bac2de;
+    --dark_grey: #6c7086;
+    --darker_grey: #1e1e2e;
+    --darkest_grey: #181825;
+    --border_grey: #1e1e2e;
+    --accent: #cba6f7;
+    --accent_light: #e6d5fb;
+    --accent_dark: #b077f3;
+    --accent_border: #b077f3;
+    --play_button: #cba6f7;
+    --play_button_hover: #cba6f7;
+    --more_replies_dots: #b077f3;
+    --error_red: #f38ba8;
+    --verified_blue: #89b4fa;
+    --icon_text: #cdd6f4;
+    --tab: #cdd6f4;
+    --tab_selected: #cba6f7;
+    --profile_stat: #cdd6f4;
+    --verified_government: #a6adc8;
+    --verified_business: #f9e2af;
+    background-color: var(--bg_color);
+    color: var(--fg_color);
+    line-height: 1.3;
+    margin: 0;
+  }
+  :root img.site-logo {
+    content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22none%22%3E%3Cpath%20stroke%3D%22%23cba6f7%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2220%22%20d%3D%22M145%2041H81v418h78V183.5L355%20459h64V41h-78v275.5z%22/%3E%3C/svg%3E");
+  }
+  :root .poll-meter.leader {
+    color: var(--bg_color);
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] {
+    background: #1e1e2e !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h1,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h2,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] p,
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] #status {
+    color: #cba6f7 !important;
+  }
+  :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] [style="width:auto;margin:16px auto;border:1px solid #FF6C60;background-color:#1f1f1f;border-radius:3px 3px 3px 3px;padding:10px;"] {
+    background: #1e1e2e !important;
+    border-color: #cba6f7 !important;
+  }
+  :root .error-panel {
+    color: #11111b;
+  }
+  :root .error-panel a {
+    color: #11111b;
+    text-decoration: underline;
+  }
+  :root .verified-icon.blue {
+    color: #11111b;
+  }
+}
+
