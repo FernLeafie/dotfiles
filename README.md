@@ -146,4 +146,5 @@ All amazing artists with lots of beautiful background material (if any of these 
 - Cogecha [Twitter](https://x.com/BARD713) [pixiv](https://www.pixiv.net/en/users/12845810) (Rest in peace)
 - Shapoko [Twitter](https://x.com/shapoco) [pixiv](https://www.pixiv.net/en/users/24431887) [Bluesky](https://bsky.app/profile/shapoco.net) [website](https://www.shapoco.net/)
 - Neko [Twitter](https://x.com/Neko_4cfantasy) [pixiv](https://www.pixiv.net/en/users/2600911)
-- inee [Twitter](https://x.com/inee) [pixiv](https://www.pixiv.net/en/users/45059236)
+- inee [twitter](https://x.com/inee) [pixiv](https://www.pixiv.net/en/users/45059236)
+- Datsha [twitter](https://x.com/S2_Datsha) [pixiv](https://www.pixiv.net/en/users/45015081)
