@@ -8,12 +8,12 @@ config.load_autoconfig()
 # last argument (optional, default is False): enable the plain look for the menu rows
 catppuccin.setup(c, 'mocha', True)
 
-c.fonts.default_family = "FiraCode Nerd Font Propo"
-c.fonts.default_size = '10pt'
-c.fonts.web.family.fixed = "FiraCode Nerd Font Propo"
-c.fonts.web.family.sans_serif = "FiraCode Nerd Font Propo"
-c.fonts.web.family.serif = "FiraCode Nerd Font Propo"
-c.fonts.web.family.standard = "FiraCode Nerd Font Propo"
+c.fonts.default_family = "Maple Mono NF CN"
+c.fonts.default_size = '11pt'
+c.fonts.web.family.fixed = "Maple Mono NF CN"
+c.fonts.web.family.sans_serif = "Maple Mono NF CN"
+c.fonts.web.family.serif = "Maple Mono NF CN"
+c.fonts.web.family.standard = "Maple Mono NF CN"
 
 c.auto_save.session = True
 
@@ -37,12 +37,22 @@ c.url.searchengines = {
     '!yt':      'https://www.youtube.com/results?search_query={}',
 }
 c.colors.webpage.darkmode.enabled = True
+
+c.aliases = {
+    'q': 'quit',
+    'w': 'session-save',
+    'wq': 'quit --save',
+}
+
 c.completion.open_categories = ["quickmarks", "bookmarks", "searchengines", "history", "filesystem"]
 c.statusbar.widgets = ["keypress", "search_match", "url", "scroll", "history", "tabs", "progress"]
 # c.tabs.position = top
-c.url.default_page = 'file:///home/fern-snow/Documents/Programs/catppuccin-startpage-main/index.html'
-c.url.start_pages = 'file:///home/fern-snow/Documents/Programs/catppuccin-startpage-main/index.html'
+c.url.default_page = 'file:///home/fern-snow/Applications/catppuccin-startpage-main/index.html'
+c.url.start_pages = 'file:///home/fern-snow/Applications/catppuccin-startpage-main/index.html'
 c.colors.webpage.preferred_color_scheme = 'dark'
+c.content.blocking.enabled = True
 
 # c.colors.webpage.darkmode.enabled = True
 # c.colors.webpage.preferred_color_scheme = dark
+
+config.bind('tT', 'config-cycle tabs.position top left')
