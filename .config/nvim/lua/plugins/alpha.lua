@@ -6,16 +6,15 @@ return {
         local alpha = require("alpha")
         local dashboard = require("alpha.themes.dashboard")
 
-        -- local function greeting()
-        --     local hour = tonumber(vim.fn.strftime("%H"))
-        --     -- [02:00, 10:00) - morning, [10:00, 18:00) - day, [18:00, 02:00) - evening
-        --     local part_id = math.floor((hour + 6) / 8) + 1
-        --     local day_part = ({ "evening", "morning", "afternoon", "evening" })[part_id]
-        --     local username = os.getenv("USER") or os.getenv("USERNAME") or "user"
-        --     return ("Good %s, %s"):format(day_part, username)
-        -- end
-
         local function greeting()
+            local platform = package.config:sub(1,1)
+            -- Sets username to a specific string if on windows, and pulls the username from the device if on linux
+            if platform == '\\' then
+                username = 'Fern Snowleafie'
+            elseif platform == '/' then
+                username = os.getenv("USER") or os.getenv("USERNAME") or "user"
+            end
+            
             local tableTime = os.date("*t")
             local hour = tableTime.hour
             local greetingsTable = {
@@ -40,27 +39,13 @@ return {
             elseif hour >= 21 then
                 greetingIndex = 6
             end
-            local username = os.getenv("USER") or os.getenv("USERNAME") or "user"
             return greetingsTable[greetingIndex] .. ", " .. username
         end
 
-        -- local greeting = greeting()
-
-        local greetHeading = {
-            type = "text",
-            val = greeting,
-            opts = {
-                position = "center",
-                hl = "String",
-            },
-        }
-        dashboard.section.terminal.command = "chafa --size=69x20 -f symbols " .. os.getenv("HOME") .. "/.config/nvim/lua/plugins/dashboard-img/NeovimLogo.png"
+        dashboard.section.terminal.command = "chafa --size=69x20 -f symbols " .. os.getenv("HOME") .. "/.config/nvim/lua/plugins/dashboard-img/NeovimLogo_catppuccin-mocha.png"
         dashboard.section.terminal.width = 69
-        dashboard.section.terminal.height = 19
+        dashboard.section.terminal.height = 18
 
-        -- dashboard.section.header.val = {
-        --     dashboard.section.terminal,
-        -- }
         dashboard.section.header.val = {
         --     "      ████ ██████           █████      ██                    ",
         --     "     ███████████             █████                            ",
@@ -72,9 +57,11 @@ return {
         --     "",
             greeting(),
         }
+
         dashboard.section.buttons.val = {
             dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"), -- 󰝒 
             dashboard.button("f", "  Find file", ":Telescope find_files<CR>"),
+            dashboard.button("r", "  Recently opened", ":Telescope oldfiles<CR>"),
             dashboard.button("t", "  Browse cwd", ":NvimTreeOpen<CR>"), --    
             -- dashboard.button("r", "  Browse src", ":e ~/.local/src/<CR>"),
             -- dashboard.button("s", "󰯂  Browse scripts", ":e ~/scripts/<CR>"),
@@ -84,17 +71,17 @@ return {
             dashboard.button("q", "  Quit", ":q!<CR>"), --    
         }
 
-          -- Layout
+        -- Layout
         dashboard.config.layout = {
             { type = "padding", val = 1 },
             dashboard.section.terminal,
-            -- { type = "padding", val = 1 },
+            { type = "padding", val = 1 },
             dashboard.section.header,
             { type = "padding", val = 1 },
             dashboard.section.buttons,
         }
         -- dashboard.section.footer.val =
         alpha.setup(dashboard.opts)
-        require'alpha.term'
+        require('alpha.term')
     end,
 }
