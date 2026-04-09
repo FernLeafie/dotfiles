@@ -3,6 +3,7 @@
 --   'https://github.com/rcarriga/nvim-dap-ui',
 --   'https://github.com/nvim-neotest/nvim-nio',
 -- }),
+-- -- concider switching from nvim-dap-ui to nvim-dap-view
 -- local dap = require("dap")
 --
 -- vim.keymap.set("n", "<Leader>dt", ":DapToggleBreakpoint<CR>")

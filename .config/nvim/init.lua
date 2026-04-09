@@ -4,8 +4,8 @@ local gh = require('gh')
 vim.pack.add({
 	gh('sitiom/nvim-numbertoggle'),
 	gh('numToStr/Comment.nvim'),
-  gh('lewis6991/gitsigns.nvim'),
-  gh('saghen/blink.indent')
+	gh('lewis6991/gitsigns.nvim'),
+	gh('saghen/blink.indent'),
 })
 
 require('Comment').setup()
@@ -22,11 +22,16 @@ local options = {
 
 	number = true, -- numbering lines
 	relativenumber = true,
+	cursorline = true,
 
 	expandtab = true,
 	tabstop = 2,
 	softtabstop = 2,
-	shiftwidth = 2
+	shiftwidth = 2,
+
+	autoindent = true,
+
+	completeopt = { 'menuone', 'noselect' },
 }
 
 for k, v in pairs(options) do

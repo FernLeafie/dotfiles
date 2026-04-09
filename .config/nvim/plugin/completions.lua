@@ -15,8 +15,12 @@ require('blink.cmp').setup({
     --   border = 'rounded'
     -- }
   },
+  keymap = {
+    preset = 'default',
+    ['<CR>'] = { 'accept', 'fallback' }
+  },
 	completion = {
-		documentation = { auto_show = true, auto_show_delay_ms = 500, window = { border = 'rounded' }, },
+		documentation = { auto_show = true, auto_show_delay_ms = 500,--[[  window = { border = 'rounded' }, ]] },
 		menu = {
 			auto_show = true,
 			draw = {
