@@ -30,6 +30,9 @@ return {
             vim.lsp.enable('ts_ls', {
                 capabilities = capabilities,
             })
+            -- vim.lsp.enable('qmlls', {
+            --     capabilities = capabilities,
+            -- })
             vim.lsp.enable('solargraph', {
                 capabilities = capabilities,
             })
