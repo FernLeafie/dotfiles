@@ -116,6 +116,10 @@
     "tiny-code-action.nvim": {
       "rev": "47ec77edf11db531b01d415688b87b1c63bc0aca",
       "src": "https://github.com/rachartier/tiny-code-action.nvim"
+    },
+    "which-key.nvim": {
+      "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",
+      "src": "https://github.com/folke/which-key.nvim"
     }
   }
 }
