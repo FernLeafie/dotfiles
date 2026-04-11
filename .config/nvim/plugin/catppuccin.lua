@@ -45,6 +45,7 @@ require('catppuccin').setup({
     cmp = true,
     fidget = true,
     gitsigns = true,
+    harpoon = true,
     indent_blankline = {
       enabled = true,
       scope_color = 'mauve', -- catppuccin color (eg. `lavender`) Default: text
