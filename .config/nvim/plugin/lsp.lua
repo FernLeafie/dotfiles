@@ -35,7 +35,7 @@ null_ls.setup({
 
 require('fidget').setup({});
 
-vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+vim.keymap.set('n', '<leader>gf', vim.lsp.buf.format, { desc = 'Format code'})
 
 -- vim.cmd('set completeopt+=noselect')
 --
@@ -54,10 +54,10 @@ vim.keymap.set('n', '<leader>de', function()
   vim.diagnostic.config({ virtual_text = new_config })
 end, { desc = 'Toggle diagnostic virtual_text' })
 
-vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, {desc = 'Show LSP hover information'})
 vim.keymap.set({ 'n', 'x' }, '<leader>ca', function()
   require('tiny-code-action').code_action()
-end, { noremap = true, silent = true })
+end, { noremap = true, silent = true, desc = 'View code actions' })
 
 vim.diagnostic.config({
   virtual_text = true,

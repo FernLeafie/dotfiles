@@ -16,14 +16,14 @@ require('telescope').setup({
 })
 
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<C-p>', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader><leader>', builtin.oldfiles, {})
+vim.keymap.set('n', '<C-p>', builtin.find_files, { desc = 'Find files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Find with grep' })
+vim.keymap.set('n', '<leader><leader>', builtin.oldfiles, { desc = 'Find old files' })
 
-vim.keymap.set('n', '<leader>gd', builtin.lsp_definitions, {})
-vim.keymap.set('n', '<leader>gr', builtin.lsp_references, {})
-vim.keymap.set('n', '<leader>ds', builtin.diagnostics, {})
 -- LSP thingies
+vim.keymap.set('n', '<leader>gd', builtin.lsp_definitions, { desc = 'Show LSP definitions' })
+vim.keymap.set('n', '<leader>gr', builtin.lsp_references, { desc = 'Show LSP references' })
+vim.keymap.set('n', '<leader>ds', builtin.diagnostics, { desc = 'Show LSP diagnostics' })
 require('telescope').load_extension('ui-select')
 
 require('tiny-code-action').setup({
