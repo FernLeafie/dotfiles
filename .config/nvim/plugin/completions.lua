@@ -19,19 +19,19 @@ require('blink.cmp').setup({
     preset = 'default',
     ['<CR>'] = { 'accept', 'fallback' }
   },
-	completion = {
-		documentation = { auto_show = true, auto_show_delay_ms = 500,--[[  window = { border = 'rounded' }, ]] },
-		menu = {
-			auto_show = true,
-			draw = {
-				treesitter = { 'lsp' },
-				columns = { { 'kind_icon', 'label', 'label_description', gap = 1 }, { 'kind' } },
-			},
-		},
+  completion = {
+    documentation = { auto_show = true, auto_show_delay_ms = 500, --[[ window = { border = 'rounded' }, ]] },
+    menu = {
+      auto_show = true,
+      draw = {
+        treesitter = { 'lsp' },
+        columns = { { 'kind_icon', 'label', 'label_description', gap = 1 }, { 'kind' } },
+      },
+    },
     ghost_text = {
       enabled = true,
     }
-	},
+  },
 })
 
 -- local cmp_autopairs = require('nvim-autopairs.completion.cmp')

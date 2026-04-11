@@ -26,7 +26,7 @@ require('mason-tool-installer').setup({
   }
 })
 
-local null_ls = require("null-ls")
+local null_ls = require('null-ls')
 null_ls.setup({
   sources = {
     null_ls.builtins.formatting.stylua,
@@ -82,7 +82,7 @@ vim.diagnostic.config({
 })
 
 
--- Global lsp settings
+-- Global LSP settings
 vim.lsp.config('harper_ls', {
   settings = {
     ['harper-ls'] = {
