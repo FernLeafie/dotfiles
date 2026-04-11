@@ -3,10 +3,7 @@ vim.pack.add({ 'https://github.com/windwp/nvim-autopairs' })
 local npairs = require('nvim-autopairs')
 
 npairs.setup({
-  ignored_next_char = '[%w%.]' -- will ignore alphanumeric and `.` symbol
-})
-
-npairs.setup({
+  ignored_next_char = '[%w%.]', -- will ignore alphanumeric and `.` symbol
     fast_wrap = {
       map = '<M-e>',
       chars = { '{', '[', '(', '"', "'" },
@@ -20,6 +17,5 @@ npairs.setup({
       highlight = 'Search',
       highlight_grey='Comment'
     },
+    map_cr = true,
 })
-
-npairs.setup({ map_cr = true })
