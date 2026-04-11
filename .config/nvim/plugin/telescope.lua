@@ -23,6 +23,7 @@ vim.keymap.set('n', '<leader><leader>', builtin.oldfiles, { desc = 'Find old fil
 -- LSP thingies
 vim.keymap.set('n', '<leader>gd', builtin.lsp_definitions, { desc = 'Show LSP definitions' })
 vim.keymap.set('n', '<leader>gr', builtin.lsp_references, { desc = 'Show LSP references' })
+vim.keymap.set('n', '<leader>gi', builtin.lsp_implementations, { desc = 'Go to implementation' })
 vim.keymap.set('n', '<leader>ds', builtin.diagnostics, { desc = 'Show LSP diagnostics' })
 require('telescope').load_extension('ui-select')
 
@@ -38,3 +39,8 @@ require('tiny-code-action').setup({
       },
     },
 })
+
+vim.keymap.set({ 'n', 'x' }, '<leader>ca', function()
+  require('tiny-code-action').code_action()
+end, { noremap = true, silent = true, desc = 'View code actions' })
+

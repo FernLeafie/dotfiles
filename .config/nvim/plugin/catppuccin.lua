@@ -51,16 +51,16 @@ require('catppuccin').setup({
       scope_color = 'mauve', -- catppuccin color (eg. `lavender`) Default: text
       colored_indent_levels = false,
     },
-    nvimtree = true,
-    treesitter_context = true,
-    treesitter = true,
-    notify = true,
     markview = true,
-    render_markdown = true,
     mini = {
       enabled = true,
       indentscope_color = '',
     },
+    notify = true,
+    nvimtree = true,
+    render_markdown = true,
+    treesitter = true,
+    treesitter_context = true,
     which_key = true,
     -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
   },

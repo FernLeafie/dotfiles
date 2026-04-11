@@ -55,9 +55,6 @@ vim.keymap.set('n', '<leader>de', function()
 end, { desc = 'Toggle diagnostic virtual_text' })
 
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, {desc = 'Show LSP hover information'})
-vim.keymap.set({ 'n', 'x' }, '<leader>ca', function()
-  require('tiny-code-action').code_action()
-end, { noremap = true, silent = true, desc = 'View code actions' })
 
 vim.diagnostic.config({
   virtual_text = true,
