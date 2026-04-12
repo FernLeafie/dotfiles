@@ -7,7 +7,7 @@ function wallpaper
     --color=border:#313244,label:#CDD6F4"
 
     set -l directory "Documents/Backgrounds"
-    set -l theme "catppuccin"
+    set -l theme (ls $directory | fzf)
     set -l location (string join '/' $HOME $directory $theme '')
     set wallpaper (ls $location | sed 's/\.[^.]*$//g; s#^([^/]*/)*##g; /.*-[0-9]$/d' | fzf --preview "~/.config/scripts/fzf-preview.sh (find $location -name '{}.*')" --preview-window up,70%:follow --layout=reverse)
     set -l multiScreenWallpaper (ls $location | sed 's/\.[^.]*$//g' | grep "$wallpaper-[0-9]")
