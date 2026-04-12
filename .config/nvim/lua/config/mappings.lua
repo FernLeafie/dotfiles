@@ -1,5 +1,10 @@
 -- creates a custom command for force restart since :restart! isn't a thing
-vim.api.nvim_create_user_command('Restart', '%bdelete! | restart', {desc = 'Force restart'} )
+vim.api.nvim_create_user_command('Restart', function()
+vim.cmd([[
+  bdelete!
+  restart
+]])
+end, {desc = 'Force restart'} )
 
 -- General keymaps
 -- Move block

@@ -23,7 +23,14 @@ local options = {
   foldenable = true,
   foldlevel = 99,
   foldlevelstart = 99,
-  fillchars = 'eob: ,fold: ,foldopen:,foldsep: ,foldinner: ,foldclose:',
+  fillchars = {
+    eob = ' ',
+    fold = ' ',
+    foldsep = ' ',
+    foldinner = ' ',
+    foldopen = '',
+    foldclose = ''
+  },
   foldcolumn = '1',
 
 	completeopt = { 'menuone', 'noselect' },
