@@ -6,7 +6,7 @@ vim.api.nvim_create_autocmd('PackChanged', { callback = function(ev)
   end
 end })
 
-vim.pack.add({ 
+vim.pack.add({
   'https://github.com/nvim-treesitter/nvim-treesitter',
   'https://github.com/nvim-treesitter/nvim-treesitter-context'
 })
@@ -33,8 +33,8 @@ vim.cmd('hi TreesitterContextBottom gui=underdouble guisp=#45475b')
 
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { '<filetype>' },
-  callback = function() 
-    vim.treesitter.start() 
+  callback = function()
+    vim.treesitter.start()
     vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
   end,
 })

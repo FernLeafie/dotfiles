@@ -40,15 +40,15 @@ require('lualine').setup({
     lualine_a = {{'mode', icon = ''}},
     lualine_b = {
       {
-        'filetype', 
-        coloured = true, 
-        icon_only = true, 
-        separator = '', 
+        'filetype',
+        coloured = true,
+        icon_only = true,
+        separator = '',
         padding = { left = 1, right = 0}
       },
       {
-        'filename', 
-        separator = nil, 
+        'filename',
+        separator = nil,
         padding = { left = 0, right = 1},
         symbols = { modified = ' ', readonly = ' ', unnamed = ' ', newfile = ' '}
       }
