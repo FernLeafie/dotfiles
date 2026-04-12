@@ -7,7 +7,10 @@ require('catppuccin').setup({
     dark = 'mocha',
   },
   transparent_background = true, -- disables setting the background color.
-  show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
+  float = {
+    transparent = true, -- enable transparent floating windows
+    solid = false, -- use solid styling for floating windows, see |winborder|
+  },
   term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
   dim_inactive = {
     enabled = false, -- dims the background color of inactive window
@@ -33,7 +36,14 @@ require('catppuccin').setup({
     -- miscs = {}, -- Uncomment to turn off hard-coded styles
   },
   color_overrides = {},
-  custom_highlights = {},
+  custom_highlights = function(colors)
+    return {
+      FloatBorder = { fg = colors.mauve },
+      NotifyINFOBorder = { fg = colors.mauve },
+      BlinkCmpMenuBorder = { fg = colors.mauve },
+      HarpoonBorder = { fg = colors.mauve },
+    }
+  end,
   default_integrations = true,
   integrations = {
     alpha = true,
@@ -56,12 +66,14 @@ require('catppuccin').setup({
       enabled = true,
       indentscope_color = '',
     },
+    noice = true,
     notify = true,
     nvimtree = true,
     render_markdown = true,
     treesitter = true,
     treesitter_context = true,
     which_key = true,
+    ufo = true,
     -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
   },
 })
