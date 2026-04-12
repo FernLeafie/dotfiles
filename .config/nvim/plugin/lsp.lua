@@ -54,7 +54,9 @@ vim.keymap.set('n', '<leader>de', function()
   vim.diagnostic.config({ virtual_text = new_config })
 end, { desc = 'Toggle diagnostic virtual_text' })
 
-vim.keymap.set('n', 'K', vim.lsp.buf.hover, {desc = 'Show LSP hover information'})
+vim.keymap.set('n', 'K', function()
+  vim.lsp.buf.hover({border = 'rounded'})
+end, {desc = 'Show LSP hover information'})
 
 vim.diagnostic.config({
   virtual_text = true,
