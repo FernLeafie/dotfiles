@@ -36,6 +36,12 @@ if status is-interactive
     if command -sq batman
         alias man='batman'
     end
+ 
+    if command -sq nvim
+      alias nv='nvim'
+      alias vim='nvim'
+      alias vi='nvim'
+    end
 
     alias grep='grep --color=auto'
 
