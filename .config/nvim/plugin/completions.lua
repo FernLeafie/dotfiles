@@ -20,8 +20,9 @@ require('blink.cmp').setup({
     ['<CR>'] = { 'accept', 'fallback' }
   },
   completion = {
-    documentation = { auto_show = true, auto_show_delay_ms = 500, --[[ window = { border = 'rounded' }, ]] },
+    documentation = { auto_show = true, auto_show_delay_ms = 500, window = { border = 'rounded' }, },
     menu = {
+      border = 'rounded',
       auto_show = true,
       draw = {
         treesitter = { 'lsp' },
