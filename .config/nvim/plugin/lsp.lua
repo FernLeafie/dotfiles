@@ -4,7 +4,7 @@ vim.pack.add({
   { src = gh('mason-org/mason.nvim') },
   { src = gh('mason-org/mason-lspconfig.nvim') },
   { src = gh('WhoIsSethDaniel/mason-tool-installer.nvim') },
-  gh('nvimtools/none-ls.nvim'),
+  gh('stevearc/conform.nvim'),
   gh('nvim-lua/plenary.nvim'),
   gh('j-hui/fidget.nvim')
 })
@@ -27,16 +27,43 @@ require('mason-tool-installer').setup({
   }
 })
 
-local null_ls = require('null-ls')
-null_ls.setup({
-  sources = {
-    null_ls.builtins.formatting.stylua,
+require('conform').setup({
+  formatters_by_ft = {
+    lua = { 'stylua' },
+    javascript = { 'prettierd', 'prettier', stop_after_first = true },
+    typescript = { 'prettierd', 'prettier', stop_after_first = true },
+    json = { 'prettierd', 'prettier', stop_after_first = true },
+    graphql = { 'prettierd', 'prettier', stop_after_first = true },
+    java = { 'google-java-format' },
+    kotlin = { 'ktlint' },
+    markdown = { 'prettierd', 'prettier', stop_after_first = true },
+    html = { 'htmlbeautifier' },
+    bash = { 'beautysh' },
+    rust = { 'rustfmt' },
+    yaml = { 'yamlfix' },
+    toml = { 'taplo' },
+    css = { 'prettierd', 'prettier', stop_after_first = true },
+    sh = { 'shellcheck' },
+    xml = { 'xmllint' },
+    fish = { 'fish_indent' },
   },
 })
 
-require('fidget').setup({});
+require('fidget').setup({
+  notification = {
+    window = {
+      avoid = { 'NvimTree' }
+    }
+  }
+});
 
-vim.keymap.set('n', '<leader>gf', vim.lsp.buf.format, { desc = 'Format code'})
+vim.keymap.set({ 'n', 'v' }, '<leader>gf', function()
+  require('conform').format({
+    lsp_format = 'fallback',
+    async = true,
+    timeout_ms = 1000,
+  })
+end, { desc = 'Format file or range' })
 
 -- vim.cmd('set completeopt+=noselect')
 --

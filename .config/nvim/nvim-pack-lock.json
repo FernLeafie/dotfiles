@@ -9,7 +9,7 @@
       "src": "https://github.com/L3MON4D3/LuaSnip"
     },
     "alpha-nvim": {
-      "rev": "f06e542277edd8f0e57c81b704558be00226f2ff",
+      "rev": "7563da4a861ee6b3ed674d0ee5c5c0bd19383a38",
       "src": "https://github.com/goolord/alpha-nvim"
     },
     "barbar.nvim": {
@@ -28,6 +28,10 @@
     "catppuccin": {
       "rev": "426dbebe06b5c69fd846ceb17b42e12f890aedf1",
       "src": "https://github.com/catppuccin/nvim"
+    },
+    "conform.nvim": {
+      "rev": "086a40dc7ed8242c03be9f47fbcee68699cc2395",
+      "src": "https://github.com/stevearc/conform.nvim"
     },
     "fidget.nvim": {
       "rev": "889e2e96edef4e144965571d46f7a77bcc4d0ddf",
@@ -61,10 +65,6 @@
     "mason.nvim": {
       "rev": "b03fb0f20bc1d43daf558cda981a2be22e73ac42",
       "src": "https://github.com/mason-org/mason.nvim"
-    },
-    "none-ls.nvim": {
-      "rev": "899e93f9f10251d7220b188eba1b837c0ba27927",
-      "src": "https://github.com/nvimtools/none-ls.nvim"
     },
     "nvim-autopairs": {
       "rev": "59bce2eef357189c3305e25bc6dd2d138c1683f5",
@@ -127,11 +127,11 @@
       "src": "https://github.com/nvim-telescope/telescope-ui-select.nvim"
     },
     "telescope.nvim": {
-      "rev": "f7c673b8e46e8f233ff581d3624a517d33a7e264",
+      "rev": "3ab376cfae65b921dda454df5967f8df673effc6",
       "src": "https://github.com/nvim-telescope/telescope.nvim"
     },
     "tiny-code-action.nvim": {
-      "rev": "1c75d7e121ea38bf362d939ddb9064ca9bb6884f",
+      "rev": "9f4b05c2f93f76a7bd517d9587ad0dc73cca0d0d",
       "src": "https://github.com/rachartier/tiny-code-action.nvim"
     },
     "which-key.nvim": {
