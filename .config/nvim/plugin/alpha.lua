@@ -39,7 +39,7 @@ local function greeting()
   return greetingsTable[greetingIndex] .. ', ' .. username
 end
 
-dashboard.section.terminal.command = 'chafa --size=69x20 -f symbols ' .. os.getenv('HOME') .. '/.config/nvim/resources/NeovimLogo_catppuccin-mocha.png'
+dashboard.section.terminal.command = 'chafa --size=69x20 -f symbols ' .. vim.fn.stdpath('config') .. '/resources/NeovimLogo_catppuccin-mocha.png'
 dashboard.section.terminal.width = 69
 dashboard.section.terminal.height = 18
 
@@ -62,7 +62,7 @@ dashboard.section.buttons.val = {
   dashboard.button('t', '  Browse cwd', ':NvimTreeOpen<CR>'), --    
   -- dashboard.button('r', '  Browse src', ':e ~/.local/src/<CR>'),
   -- dashboard.button('s', '󰯂  Browse scripts', ':e ~/scripts/<CR>'),
-  dashboard.button('c', '  Config', ':e ~/.config/nvim/<CR>'), --    
+  dashboard.button('c', '  Config', ':e ' .. vim.fn.stdpath('config') .. '<CR>'), --    
   -- dashboard.button('m', '  Mappings', ':e ~/.config/nvim/lua/config/mappings.lua<CR>'),
   -- dashboard.button('l', '󰒲  Lazy', ':Lazy<CR>'),
   dashboard.button('u', '  Update', ':lua vim.pack.update()<CR>'),
