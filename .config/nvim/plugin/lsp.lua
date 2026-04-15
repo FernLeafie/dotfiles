@@ -41,7 +41,6 @@ require('conform').setup({
 		typescript = { 'prettierd', 'prettier', stop_after_first = true },
 		json = { 'prettierd', 'prettier', stop_after_first = true },
 		graphql = { 'prettierd', 'prettier', stop_after_first = true },
-		java = { 'google-java-format' },
 		kotlin = { 'ktlint' },
 		markdown = { 'prettierd', 'prettier', stop_after_first = true },
 		html = { 'htmlbeautifier' },
