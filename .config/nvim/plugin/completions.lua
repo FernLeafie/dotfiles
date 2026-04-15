@@ -1,6 +1,6 @@
 local gh = require('gh')
 vim.pack.add({
-  { src = gh('L3MON4D3/LuaSnip') },
+	{ src = gh('L3MON4D3/LuaSnip') },
 	{ src = gh('rafamadriz/friendly-snippets') },
 	-- { src = gh('hrsh7th/nvim-cmp') },
 	-- { src = gh('hrsh7th/cmp-nvim-lsp') },
@@ -10,29 +10,29 @@ vim.pack.add({
 require('luasnip.loaders.from_vscode').lazy_load()
 require('blink.cmp').setup({
 	signature = {
-    enabled = true,
-    -- window = {
-    --   border = 'rounded'
-    -- }
-  },
-  keymap = {
-    preset = 'default',
-    ['<CR>'] = { 'accept', 'fallback' }
-  },
-  completion = {
-    documentation = { auto_show = true, auto_show_delay_ms = 500, window = { border = 'rounded' }, },
-    menu = {
-      border = 'rounded',
-      auto_show = true,
-      draw = {
-        treesitter = { 'lsp' },
-        columns = { { 'kind_icon', 'label', 'label_description', gap = 1 }, { 'kind' } },
-      },
-    },
-    ghost_text = {
-      enabled = true,
-    }
-  },
+		enabled = true,
+		-- window = {
+		--   border = 'rounded'
+		-- }
+	},
+	keymap = {
+		preset = 'default',
+		['<CR>'] = { 'accept', 'fallback' },
+	},
+	completion = {
+		documentation = { auto_show = true, auto_show_delay_ms = 500, window = { border = 'rounded' } },
+		menu = {
+			border = 'rounded',
+			auto_show = true,
+			draw = {
+				treesitter = { 'lsp' },
+				columns = { { 'kind_icon', 'label', 'label_description', gap = 1 }, { 'kind' } },
+			},
+		},
+		ghost_text = {
+			enabled = true,
+		},
+	},
 })
 
 -- local cmp_autopairs = require('nvim-autopairs.completion.cmp')

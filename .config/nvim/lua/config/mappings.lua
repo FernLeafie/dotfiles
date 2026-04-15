@@ -1,10 +1,10 @@
 -- creates a custom command for force restart since :restart! isn't a thing
 vim.api.nvim_create_user_command('Restart', function()
-vim.cmd([[
+	vim.cmd([[
   bdelete!
   restart
-]])
-end, {desc = 'Force restart'} )
+  ]])
+end, { desc = 'Force restart' })
 
 -- General keymaps
 -- Move block
@@ -17,4 +17,9 @@ vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Append following line' })
 vim.keymap.set('x', '<leader>p', [['_dP]], { desc = 'Paste while perserving clipboard' })
 
 -- Replace word under cursor across the entire buffer
-vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Replace word under cursor' })
+vim.keymap.set(
+	'n',
+	'<leader>s',
+	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+	{ desc = 'Replace word under cursor' }
+)

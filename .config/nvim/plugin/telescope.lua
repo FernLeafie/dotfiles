@@ -3,9 +3,8 @@ vim.pack.add({
 	gh('nvim-telescope/telescope-ui-select.nvim'),
 	gh('nvim-telescope/telescope.nvim'),
 	gh('nvim-lua/plenary.nvim'),
-  gh('rachartier/tiny-code-action.nvim')
+	gh('rachartier/tiny-code-action.nvim'),
 })
-
 
 require('telescope').setup({
 	extensions = {
@@ -28,19 +27,18 @@ vim.keymap.set('n', '<leader>ds', builtin.diagnostics, { desc = 'Show LSP diagno
 require('telescope').load_extension('ui-select')
 
 require('tiny-code-action').setup({
-  backend = 'delta',
-  picker = 'telescope',
-  backend_opts = {
-    delta = {
-      header_lines_to_remove = 4,
-        args = {
-          '--line-numbers',
-        },
-      },
-    },
+	backend = 'delta',
+	picker = 'telescope',
+	backend_opts = {
+		delta = {
+			header_lines_to_remove = 4,
+			args = {
+				'--line-numbers',
+			},
+		},
+	},
 })
 
 vim.keymap.set({ 'n', 'x' }, '<leader>ca', function()
-  require('tiny-code-action').code_action()
+	require('tiny-code-action').code_action()
 end, { noremap = true, silent = true, desc = 'View code actions' })
-
