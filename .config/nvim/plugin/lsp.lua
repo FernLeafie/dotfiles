@@ -19,9 +19,16 @@ require('mason').setup({
 		},
 	},
 })
-require('mason-lspconfig').setup()
+require('mason-lspconfig').setup({
+	automatic_enable = {
+		exclude = {
+			'jdtls',
+		},
+	},
+})
 require('mason-tool-installer').setup({
 	ensure_install = {
+		'jdtls',
 		'lua_ls',
 		'stylua',
 	},
