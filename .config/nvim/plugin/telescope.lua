@@ -15,9 +15,9 @@ require('telescope').setup({
 })
 
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<C-p>', builtin.find_files, { desc = 'Find files' })
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find files' })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Find with grep' })
-vim.keymap.set('n', '<leader><leader>', builtin.oldfiles, { desc = 'Find old files' })
+vim.keymap.set('n', '<leader>fo', builtin.oldfiles, { desc = 'Find old files' })
 
 -- LSP thingies
 vim.keymap.set('n', '<leader>gd', builtin.lsp_definitions, { desc = 'Show LSP definitions' })
