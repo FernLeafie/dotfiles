@@ -50,7 +50,7 @@ require('lualine').setup({
 				'filename',
 				separator = nil,
 				padding = { left = 0, right = 1 },
-				symbols = { modified = ' ', readonly = ' ', unnamed = ' ', newfile = ' ' },
+				symbols = { modified = ' ', readonly = ' ', unnamed = ' ', newfile = ' ' },
 			},
 		},
 		lualine_c = {
@@ -68,8 +68,18 @@ require('lualine').setup({
 			{
 				'diagnostics',
 				sources = { 'nvim_diagnostic' },
-				sections = { 'error', 'warn' },
-				symbols = { error = ' ', warn = ' ' },
+				sections = {
+					'error',
+					'warn',
+          -- 'info',
+          -- 'hint',
+				},
+				symbols = {
+					error = ' ',
+					warn = ' ',
+					-- info = ' ',
+					-- hint = ' ',
+				},
 				colored = true,
 				update_in_insert = false,
 				always_visible = true,
