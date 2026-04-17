@@ -99,13 +99,13 @@ require('nvim-tree').setup({
 					symlink_open = '', --   󱞫   󰾶
 				},
 				git = {
-					unstaged = '', --       
-					staged = '', --         
-					unmerged = '󰧾', --       󰧾
+					unstaged = '', --       
+					staged = '', --         
+					unmerged = '', --       󰧾
 					untracked = '', --     
-					renamed = '', --        
-					deleted = '', --        
-					ignored = '', --       ∅
+					renamed = '', --        
+					deleted = '', --        
+					ignored = '', --       ∅
 				},
 			},
 			show = {
