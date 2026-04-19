@@ -39,7 +39,7 @@
             "format": "{full-user-name}"
         },
         {
-            "key": "│ {#32} hostname {#keys}│",
+            "key": "│ {#32} hostname {#keys}│", //  
             "type": "title",
             "format": "{host-name}"
         },
@@ -74,38 +74,38 @@
             "format": "{pretty-name}"
         },
         {
-            "key": "│ {#35}󰏖 pkgs     {#keys}│",
+            "key": "│ {#35}󰏖 pkgs     {#keys}│", // 󰏖 󰏗   
             "type": "packages",
-            "format": "{?apk}{#34}{apk}   {?}{?brew-all}{#33}{brew-all} 󱄖  {?}{?rpm}{#31}{rpm}   {?}{?dpkg}{#31}{dpkg}   {?}{?pacman}{#34}{pacman} 󰮯  {?}{?nix-all}{#36}{nix-all}   {?}{?flatpak-all}{#39}{flatpak-all}  {?}"
+            "format": "{?apk}{#34}{apk}   {?}{?brew-all}{#33}{brew-all} 󱄖  {?}{?rpm}{#31}{rpm}   {?}{?dpkg}{#31}{dpkg}   {?}{?pacman}{#34}{pacman} 󰮯  {?}{?nix-all}{#36}{nix-all}   {?}{?flatpak-all}{#39}{flatpak-all}  {?}{?choco}{#34}{choco}   {?}{?scoop-user}{#35}{scoop-user}  {?}"
         },
         // {
         //     "key": "├────────────┤",
         //     "type": "custom"
         // },
         // {
-        //     "key": "│ {#33}󰍛 cpu      {#keys}│",
+        //     "key": "│ {#33} cpu      {#keys}│", // 󰍛 
         //     "type": "cpu",
         //     "showPeCoreCount": true
         // },
         // {
         //     "type": "gpu",
-        //     "key": "│ {#32}󰍛 gpu      {#keys}│",
+        //     "key": "│ {#32} gpu      {#keys}│", // 󰍛   
         // },
         // {
-        //     "key": "│ {#34} disk     {#keys}│",
+        //     "key": "│ {#34} disk     {#keys}│", //   
         //     "type": "disk",
         //     "folders": "/"
         // },
         // {
-        //     "key": "│ {#35} memory   {#keys}│",
+        //     "key": "│ {#35} memory   {#keys}│", //    
         //     "type": "memory"
         // },
         // {
-        //     "key": "│ {#36}󰓡 swap     {#keys}│",
+        //     "key": "│ {#36} swap     {#keys}│", // 󰓡   
         //     "type": "swap",
         // },
         // {
-        //     "key": "│ {#36}󰤨 network  {#keys}│",
+        //     "key": "│ {#36} network  {#keys}│", //   󰤨 
         //     "type": "localip",
         //     "format": "{ipv4} ({ifname})"
         // },
