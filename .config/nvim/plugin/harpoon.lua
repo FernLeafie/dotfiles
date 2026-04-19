@@ -21,8 +21,8 @@ local function toggle_telescope(harpoon_files)
 	end
 
 	require('telescope.pickers')
-		.new({}, {
-			layout_strategy = 'vertical',
+		.new(require('telescope.themes').get_dropdown({}), {
+			-- layout_strategy = 'vertical',
 			-- layout_config = { width = 0.5 },
 			prompt_title = 'Harpoon',
 			finder = require('telescope.finders').new_table({

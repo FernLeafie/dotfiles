@@ -15,9 +15,18 @@ require('telescope').setup({
 })
 
 local builtin = require('telescope.builtin')
+
+-- Files or finding
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find files' })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Find with grep' })
 vim.keymap.set('n', '<leader>fo', builtin.oldfiles, { desc = 'Find old files' })
+vim.keymap.set('n', '<leader>f/', function()
+	builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({
+		winblend = 10,
+		previewer = false,
+		layout_config = { width = 0.7 },
+	}))
+end, { desc = 'Fuzzy find in current buffer' })
 
 -- LSP thingies
 vim.keymap.set('n', '<leader>gd', builtin.lsp_definitions, { desc = 'Show LSP definitions' })
