@@ -39,7 +39,7 @@ local function greeting()
 	return greetingsTable[greetingIndex] .. ', ' .. username
 end
 
-dashboard.section.terminal.command = 'chafa --size=69x20 -f symbols '
+dashboard.section.terminal.command = 'chafa --size=69x20 -f symbols --symbols all '
 	.. vim.fn.stdpath('config')
 	.. '/resources/NeovimLogo_catppuccin-mocha.png'
 dashboard.section.terminal.width = 69
