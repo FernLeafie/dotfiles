@@ -1,11 +1,13 @@
 # Fern Snowleafie's Dotfiles
-Dotfiles made for both plasma and hyprland, with an amoled theme based on catppuccin mocha
+Dotfiles made for Niri and more, with an amoled theme based on catppuccin mocha.
+
+Also features an extensively configured Neovim configuration.
 ## Theme
-A customised version of catppuccin mocha focused on a more amoled aestetic, combined with the Fira Code font
+A customised version of catppuccin mocha focused on a more amoled aesthetic, combined with the Maple Mono font
 
 Generally just a mess
  - Colours - [Catppuccin mocha](https://catppuccin.com/)
- - Font - [Fira Code](https://github.com/tonsky/FiraCode)
+ - Font - [Maple Mono](https://github.com/subframe7536/maple-font)
  - Icons - [Papirus Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
  - Cursor - [Breeze](https://github.com/KDE/breeze/tree/master/cursors)
 
@@ -19,14 +21,14 @@ Generally just a mess
  - Swaync - Notification panel
  - Rofi - Application launcher
 
-### Soft Dependancies/Requirements
+### Soft Dependencies/Requirements
 Not necessarily needed, but scripts that rely on them wont work as expected without them
 #### General 
- - kbuildsyscoca6 - Required for the dolphin "open with" option to work under hyprland
- - qt5ct + qt6ct-kde - Required for QT theming under hyprland
+ - kbuildsyscoca6 - Required for the dolphin "open with" option to work under Niri (possibly not anymore, but I can't reproduce my solution)
+ - qt5ct + qt6ct-kde - Required for QT theming under Niri
 #### Waybar
  - playerctl - Media control
- - mpdris2-rs - Makes mpd work with mpris, required for playerctl
+ - mpdris2-rs - Makes mpd work with mpris, required for playerctl (getting replaced with rmpcd when that ships to repos)
  - pacman-contrib - Required for the waybar updates module
  - wttrbar - Waybars weather module (sourcing from wttr.in)
  - ddcutil - Waybars brightness control for external screens
@@ -35,28 +37,32 @@ Not necessarily needed, but scripts that rely on them wont work as expected with
  - rofimoji - Rofi emoji selector
  - rofi-calc - rofi calculator menu
 
-## User customisation
-### Hyprland
+## User Customisation
+### Niri
 - Change the display configuration to match your own
 - Change the keyboard layout and variant to match your own
 ### Waybar
 `.config/waybar/modules.jsonc`
 - Comment out unwanted modules
-- Edit the --bus <number> under custom/brightness to match the i2c busses your screens are mapped to 
+- Edit the `--bus <number>` under custom/brightness to match the i2c busses your screens are mapped to 
   - (easiest way to find out which are which is just to try `ddcutil --bus <number> getvcp 10` until you find the bus responding)
-  - for multiple screens, setup the command to run once per bus with `&&` between
+  - for multiple screens, set up the command to run once per bus with `&&` between
 
-## Hyprland Keybinds
-### Basic window management
+## Niri Keybinds
+### Basic Window Management
 | Key Combination | Action |
 |-----------------|--------|
 | <kbd>Super</kbd> + <kbd>LMB</kbd> | Move window |
 | <kbd>Super</kbd> + <kbd>RMB</kbd> | Resize window |
+| <kbd>Super</kbd> + <kbd>MMB</kbd> | Scroll window feed |
 | <kbd>Super</kbd> + <kbd>Q</kbd> | Kill active window |
 | <kbd>Super</kbd> + <kbd>D</kbd> | Toggle floating mode |
-| <kbd>Super</kbd> + <kbd>F</kbd> | Toggle fullscreen |
-| <kbd>Super</kbd> + <kbd>P</kbd> | Toggle pseudo mode |
-| <kbd>Super</kbd> + <kbd>N</kbd> | Toggle Split |
+| <kbd>Super</kbd> + <kbd>F</kbd> | Toggle full screen |
+| <kbd>Super</kbd> + <kbd>R</kbd> | Resize column width |
+| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd> | Resize column height  |
+| <kbd>Super</kbd> + <kbd>O</kbd> | Toggle overview |
+| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd> | Toggle keybind  |
+
 
 ### Applications
 | Key Combination | Action |
@@ -65,18 +71,18 @@ Not necessarily needed, but scripts that rely on them wont work as expected with
 | <kbd>Super</kbd> + <kbd>Space</kbd> | Open application launcher (`Rofi drun`) |
 | <kbd>Super</kbd> + <kbd>E</kbd> | Launch file manager (`Dolphin`) |
 | <kbd>Super</kbd> + <kbd>B</kbd> | Launch browser (`Firefox`) |
-| <kbd>PrtSc</kbd> | Take screenshot (`Hyprshot`)|
+| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd> | Launch browser (`qutebrowser`) |
+| <kbd>PrtSc</kbd> | Take screenshot (`Grim + Slurp`)|
+| <kbd>Super</kbd> + <kbd>N</kbd> | Launch wallpaper picker (`Custom`) |
 
-### Rofi scripts
+### Rofi Scripts
 | Key Combination | Action |
 |-----------------|--------|
-| <kbd>Super</kbd> + <kbd>Esc</kbd> | Open powermenu (`powermenu.sh`) |
-| <kbd>Super</kbd> + <kbd>Period</kbd> | Open emojipicker (`emoji.sh`) |
 | <kbd>Super</kbd> + <kbd>V</kbd> | Open clipboard manager (`cliphist.sh`) |
-| <kbd>Super</kbd> + <kbd>C</kbd> | Open Rofi calculator (`calc.sh`) |
+| <kbd>Super</kbd> + <kbd>X</kbd> | Open Rofi calculator (`calc.sh`) |
 
-### Window management
-#### Window navigation
+### Window Management
+#### Window Navigation
 | Key Combination | Action |
 |-----------------|--------|
 | <kbd>Super</kbd> + <kbd>H</kbd> | Move focus left |
@@ -84,25 +90,27 @@ Not necessarily needed, but scripts that rely on them wont work as expected with
 | <kbd>Super</kbd> + <kbd>K</kbd> | Move focus down |
 | <kbd>Super</kbd> + <kbd>L</kbd> | Move focus right |
 
-#### Window resizing
+#### Window Resizing
 | Key Combination | Action |
 |-----------------|--------|
-| <kbd>Super</kbd> + <kbd>Left</kbd> | Move border left |
-| <kbd>Super</kbd> + <kbd>Up</kbd> | Move border up |
-| <kbd>Super</kbd> + <kbd>Down</kbd> | Move border down |
-| <kbd>Super</kbd> + <kbd>Right</kbd> | Move border right |
+| <kbd>Super</kbd> + <kbd>Minus</kbd> | Decrease column width |
+| <kbd>Super</kbd> + <kbd>Plus</kbd> | Increase column width |
+| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>Minus</kbd> | Decrease window height |
+| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>Plus</kbd> | Increase window height |
 
-#### Window arrangement
+#### Window Arrangement
 | Key Combination | Action |
 |-----------------|--------|
-| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>H</kbd> | Move window left |
-| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>J</kbd> | Move window up |
-| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd> | Move window down |
-| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd> | Move window right |
+| <kbd>Super</kbd> + <kbd>Control</kbd> + <kbd>H</kbd> | Move window left |
+| <kbd>Super</kbd> + <kbd>Control</kbd> + <kbd>J</kbd> | Move window up |
+| <kbd>Super</kbd> + <kbd>Control</kbd> + <kbd>K</kbd> | Move window down |
+| <kbd>Super</kbd> + <kbd>Control</kbd> + <kbd>L</kbd> | Move window right |
 
 ### Workspaces
 | Key Combination | Action |
 |-----------------|--------|
+| <kbd>Super</kbd> + <kbd>U</kbd> | Switch to next workspace |
+| <kbd>Super</kbd> + <kbd>I</kbd> | Switch to previous workspace |
 | <kbd>Super</kbd> + <kbd>1</kbd> | Switch to workspace 1 |
 | <kbd>Super</kbd> + <kbd>2</kbd> | Switch to workspace 2 |
 | <kbd>Super</kbd> + <kbd>3</kbd> | Switch to workspace 3 |
@@ -112,25 +120,22 @@ Not necessarily needed, but scripts that rely on them wont work as expected with
 | <kbd>Super</kbd> + <kbd>7</kbd> | Switch to workspace 7 |
 | <kbd>Super</kbd> + <kbd>8</kbd> | Switch to workspace 8 |
 | <kbd>Super</kbd> + <kbd>9</kbd> | Switch to workspace 9 |
-| <kbd>Super</kbd> + <kbd>0</kbd> | Switch to workspace 10 |
-| <kbd>Super</kbd> + <kbd>S</kbd> | Switch to special workspace |
 
 | Key Combination | Action |
 |-----------------|--------|
-| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>1</kbd> | Move window to workspace 1 |
-| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>2</kbd> | Move window to workspace 2 |
-| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>3</kbd> | Move window to workspace 3 |
-| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>4</kbd> | Move window to workspace 4 |
-| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>5</kbd> | Move window to workspace 5 |
-| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>6</kbd> | Move window to workspace 6 |
-| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>7</kbd> | Move window to workspace 7 |
-| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>8</kbd> | Move window to workspace 8 |
-| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>9</kbd> | Move window to workspace 9 |
-| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>0</kbd> | Move window to workspace 10 |
-| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd> | Move window to special workspace |
+| <kbd>Super</kbd> + <kbd>Control</kbd> + <kbd>U</kbd> | Move window to next workspace |
+| <kbd>Super</kbd> + <kbd>Control</kbd> + <kbd>I</kbd> | Move window to previous workspace |
+| <kbd>Super</kbd> + <kbd>Control</kbd> + <kbd>1</kbd> | Move window to workspace 1 |
+| <kbd>Super</kbd> + <kbd>Control</kbd> + <kbd>2</kbd> | Move window to workspace 2 |
+| <kbd>Super</kbd> + <kbd>Control</kbd> + <kbd>3</kbd> | Move window to workspace 3 |
+| <kbd>Super</kbd> + <kbd>Control</kbd> + <kbd>4</kbd> | Move window to workspace 4 |
+| <kbd>Super</kbd> + <kbd>Control</kbd> + <kbd>5</kbd> | Move window to workspace 5 |
+| <kbd>Super</kbd> + <kbd>Control</kbd> + <kbd>6</kbd> | Move window to workspace 6 |
+| <kbd>Super</kbd> + <kbd>Control</kbd> + <kbd>7</kbd> | Move window to workspace 7 |
+| <kbd>Super</kbd> + <kbd>Control</kbd> + <kbd>8</kbd> | Move window to workspace 8 |
+| <kbd>Super</kbd> + <kbd>Control</kbd> + <kbd>9</kbd> | Move window to workspace 9 |
 
 ## To-Do's
-- Update readme to fit with current usage
 - Wait for wifey's quickshell configs, or write some together with her
 - Rewrite configs in nix?
 
