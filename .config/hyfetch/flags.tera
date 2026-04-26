@@ -1,6 +1,6 @@
 ---
 whiskers:
-  version: "^2.5.1"
+  version: "^2.9.0"
   filename: "flags.json"
   hex_format: "#{{r}}{{g}}{{b}}"
 ---
@@ -35,11 +35,11 @@ whiskers:
       "{{flavor.colors.blue.hex}}"
     ],
     "lesbian": [
+      "{{flavor.colors.red.hex}}",
       "{{flavor.colors.peach.hex}}",
-      "{{flavor.colors.yellow.hex}}",
       "{{if(cond=flavor.light, t=flavor.colors.crust.hex, f=flavor.colors.text.hex)}}",
-      "{{flavor.colors.maroon.hex}}",
-      "{{flavor.colors.red.hex}}"
+      "{{flavor.colors.mauve | mix(color=flavor.colors.red, amount=0.5) | get(key="hex")}}",
+      "{{flavor.colors.mauve | mix(color=flavor.colors.red, amount=0.5) | sub(lightness=10) | get(key="hex")}}"
     ],
     "nonbinary": [
       "{{flavor.colors.yellow.hex}}",
