@@ -41,9 +41,9 @@ end
 
 dashboard.section.terminal.command = 'chafa --size=69x20 -f symbols --symbols all '
 	.. vim.fn.stdpath('config')
-	.. '/resources/NeovimLogo_catppuccin-mocha.png'
+	.. '/resources/NeovimShadowed_catppuccin-all.png'
 dashboard.section.terminal.width = 69
-dashboard.section.terminal.height = 18
+dashboard.section.terminal.height = 19
 
 dashboard.section.header.val = {
 	--     '      ████ ██████           █████      ██                    ',
