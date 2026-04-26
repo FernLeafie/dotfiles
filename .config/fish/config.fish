@@ -9,7 +9,7 @@ if status is-interactive
     --color=selected-bg:#45475A \
     --color=border:#313244,label:#CDD6F4"
 
-    set -gx EDITOR "nvim"
+    set -gx EDITOR nvim
 
     # Fish setting variables
     set -g fish_greeting
@@ -36,11 +36,11 @@ if status is-interactive
     if command -sq batman
         alias man='batman'
     end
- 
+
     if command -sq nvim
-      alias nv='nvim'
-      alias vim='nvim'
-      alias vi='nvim'
+        alias nv='nvim'
+        alias vim='nvim'
+        alias vi='nvim'
     end
 
     alias grep='grep --color=auto'
@@ -52,7 +52,7 @@ if status is-interactive
             alias bigpicture='gamescope -W 1920 -H 1080 -w 1920 -h 1080 -f -- steam steam://open/bigpicture'
         end
     end
-    
+
     alias ff='fastfetch'
     alias hf='hyfetch'
 
@@ -61,7 +61,7 @@ if status is-interactive
         abbr -a --position anywhere -- --help '--help | bat -Pplhelp'
         abbr -a --position anywhere -- -h '-h | bat -Pplhelp'
     end
-    
+
     # Initialisations
     if command -sq zoxide
         zoxide init --cmd cd fish | source

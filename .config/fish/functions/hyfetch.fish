@@ -1,7 +1,7 @@
 function hyfetch
     argparse -i 'd/distro=&' 't/theme=&' 'f/flag=&' -- $argv
     if set -ql _flag_f; and set -ql _flag_t
-        set color (string join '' -- '-p ' (cat ~/.config/hyfetch/flags.json | jq (string join '' '.' $_flag_t '.' $_flag_f '[]')  -r | paste -sd ',')) 
+        set color (string join '' -- '-p ' (cat ~/.config/hyfetch/flags.json | jq (string join '' '.' $_flag_t '.' $_flag_f '[]')  -r | paste -sd ','))
     end
     if set -ql _flag_d
         set -l _flag_d (echo $_flag_d | tr '[:upper:]' '[:lower:]' | sed "s/linux\$//g; s/gnu\$//g; s/os\$//g;")

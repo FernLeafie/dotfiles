@@ -27,72 +27,72 @@ function fish_prompt --description 'Write out the prompt'
     set -l status_color (set_color $fish_color_status)
     set -l statusb_color (set_color $bold_flag $fish_color_status)
     set -l prompt_status (__fish_print_pipestatus "[exit: " "]" "|" "$status_color" "$statusb_color" $last_pipestatus)
-    
+
     # os icon
     switch (string split '=' (grep "^NAME=" /etc/os-release) | sed 's/"//g')[2]
-    case "Arch Linux"
-        set os ""
-    case "NixOS"
-        set os ""
-    case "Debian GNU/Linux"
-        set os ""
-    case "Fedora Linux"
-        set os ""
-    case "Gentoo"
-        set os ""
-    case "Pop!_OS"
-        set os ""
-    case "postmarketOS"
-        set os ""
-    case "SteamOS"
-        set os ""
-    case "Ubuntu"
-        set os ""
-    case "Void"
-        set os ""
-    case "Zorin OS"
-        set os ""
-    case "Nobara Linux"
-        set os ""
+        case "Arch Linux"
+            set os ""
+        case NixOS
+            set os ""
+        case "Debian GNU/Linux"
+            set os ""
+        case "Fedora Linux"
+            set os ""
+        case Gentoo
+            set os ""
+        case "Pop!_OS"
+            set os ""
+        case postmarketOS
+            set os ""
+        case SteamOS
+            set os ""
+        case Ubuntu
+            set os ""
+        case Void
+            set os ""
+        case "Zorin OS"
+            set os ""
+        case "Nobara Linux"
+            set os ""
     end
     set os $os " " # adds the spacer
 
     # version control system, sed to remove parenthesis
     set -l vcs " "(fish_vcs_prompt | sed 's/(//g;s/)//g')
-    
+
     # rewriting pwd
     set -l pwd
     set -l base (path basename $PWD)
     set -l parent (string split / $PWD)[2]
-    if string match -q '~*' (prompt_pwd)                        # all paths beginning in ~
-        if  string match -q '~' (prompt_pwd)                                # paths only ~
+    if string match -q '~*' (prompt_pwd) # all paths beginning in ~
+        if string match -q '~' (prompt_pwd) # paths only ~
             set pwd '~'
-        else if string match -q (string join '' '~/' $base) (prompt_pwd)    # paths ~/base
+        else if string match -q (string join '' '~/' $base) (prompt_pwd) # paths ~/base
             set pwd '~/' $base
-        else                                                                # paths ~/../base
+        else # paths ~/../base
             set pwd '~/.. ../' $base
         end
-    else                                                        # all system paths
-        if  string match -q '/' (prompt_pwd)                                # paths only /
-            set pwd '/'
-        else if string match -q (string join '' '/' $base) (prompt_pwd)     # paths /base
+    else # all system paths
+        if string match -q / (prompt_pwd) # paths only /
+            set pwd /
+        else if string match -q (string join '' '/' $base) (prompt_pwd) # paths /base
             set pwd $base
         else if string match -q (string join '' '/' $parent '/' $base) $PWD # paths /parent/base
-            set pwd $parent '/' $base
-        else                                                                # paths /parent/../base
+            set pwd $parent / $base
+        else # paths /parent/../base
             set pwd $parent '/..  ../' $base
         end
     end
-    
-    set -l prompt_time  
+
+    set -l prompt_time
     set -l duration $CMD_DURATION
     # convert command duration to human readable time
     if test $duration -lt 60000 # 1 min
-        set prompt_time (math $duration / 1000) 's'
+        set prompt_time (math $duration / 1000) s
     else if test $duration -lt 3600000 # 1 hour
-        set prompt_time (math floor\($duration / 60000\)) 'm ' (math \($duration % 60000\) / 1000) 's'
+        set prompt_time (math floor\($duration / 60000\)) 'm ' (math \($duration % 60000\) / 1000) s
     else # more than 1h
-        set prompt_time (math floor\($duration / 3600000\)) 'h ' (math floor\(\($duration % 3600000\) / 60000\)) 'm ' (math \(\($duration % 3600000\) % 60000\) / 1000) 's'
+        set prompt_time (math floor\($duration / 3600000\)) 'h ' (math floor\(\($duration % 3600000\) / 60000\)) 'm ' (math \(\($duration % 3600000\) % 60000\) / 1000) s
     end
 
     set -l prompt
