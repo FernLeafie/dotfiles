@@ -43,6 +43,10 @@ if status is-interactive
         alias vi='nvim'
     end
 
+    if command -sq lazygit
+        alias lazygit='lazygit --use-config-file="/home/fern-snow/.config/lazygit/config.yml,/home/fern-snow/.config/lazygit/catppuccin.yml"'
+    end
+
     alias grep='grep --color=auto'
 
     # The stupid alias's
