@@ -51,6 +51,10 @@ if status is-interactive
         alias lazygit='lazygit --use-config-file="/home/fern-snow/.config/lazygit/config.yml,/home/fern-snow/.config/lazygit/catppuccin.yml"'
     end
 
+    if command -sq lazygit
+        alias lg='lazygit'
+    end
+
     alias grep='grep --color=auto'
 
     # The stupid alias's
