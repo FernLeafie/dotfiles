@@ -10,10 +10,11 @@
 -- 	end,
 -- })
 
+local gh = require('gh')
 vim.pack.add({
-	-- 'https://github.com/nvim-treesitter/nvim-treesitter',
-	'https://github.com/nvim-treesitter/nvim-treesitter-context',
-	'https://github.com/romus204/tree-sitter-manager.nvim',
+	-- gh('nvim-treesitter/nvim-treesitter'),
+	gh('nvim-treesitter/nvim-treesitter-context'),
+	gh('romus204/tree-sitter-manager.nvim'),
 })
 
 require('tree-sitter-manager').setup({
