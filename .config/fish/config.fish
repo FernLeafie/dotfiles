@@ -43,6 +43,10 @@ if status is-interactive
         alias vi='nvim'
     end
 
+    if command -sq yazi
+        alias yz='yazi'
+    end
+
     if command -sq lazygit
         alias lazygit='lazygit --use-config-file="/home/fern-snow/.config/lazygit/config.yml,/home/fern-snow/.config/lazygit/catppuccin.yml"'
     end
@@ -50,7 +54,7 @@ if status is-interactive
     alias grep='grep --color=auto'
 
     # The stupid alias's
-    alias vencord='sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"'
+    alias vencord='sh -c "$(curl -sS https://vencord.dev/install.sh)"'
     if command -sq gamescope
         if command -sq steam
             alias bigpicture='gamescope -W 1920 -H 1080 -w 1920 -h 1080 -f -- steam steam://open/bigpicture'
