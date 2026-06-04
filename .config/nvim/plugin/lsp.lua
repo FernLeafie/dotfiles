@@ -50,7 +50,7 @@ require('conform').setup({
 		toml = { 'taplo' },
 		css = { 'prettierd', 'prettier', stop_after_first = true },
 		sh = { 'shellcheck' },
-		xml = { 'xmllint' },
+		xml = { 'xmlformatter' },
 		fish = { 'fish_indent' },
 	},
 })
