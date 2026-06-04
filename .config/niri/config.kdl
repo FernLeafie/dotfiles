@@ -306,9 +306,10 @@ spawn-at-startup "awww-daemon" // background with awww
 spawn-at-startup "playerctld daemon"
 spawn-at-startup "waybar"
 // for some goddesses forsaken reason the service fails the first time around
-spawn-sh-at-startup "systemctl --user restart mpdris-rs.service"
+// spawn-sh-at-startup "systemctl --user restart mpdris-rs.service"
+spawn-at-startup "/home/fern-snow/Projects/rmpc/target/release/rmpcd"
 spawn-at-startup "fcitx5"
-spawn-at-startup "kbuildsycoca6"
+// spawn-at-startup "kbuildsycoca6"
 spawn-at-startup "kwalletd6"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
@@ -321,7 +322,7 @@ environment {
     XCURSOR_THEME "breeze_cursors"
     XDG_MENU_PREFIX "arch-"
     QT_QPA_PLATFORM "wayland"
-    QT_QPA_PLATFORMTHEME "qt5ct"
+    QT_QPA_PLATFORMTHEME "qt6ct"
     GTK_USE_PORTAL "1"
     ELECTRON_OZONE_PLATFORM_HINT "auto" // should cause electron 28 applications and above to prefer wayland
     AWWW_TRANSITION "wipe" // sets swww transition type
@@ -397,6 +398,11 @@ window-rule {
     open-focused false
 }
 window-rule {
+    match app-id="waydroid"
+    open-floating true
+    draw-border-with-background false
+}
+window-rule {
     match app-id="kitty" title="Wallpaper picker"
     open-floating true
     // default-floating-position x=0 y=0 relative-to="center"
@@ -445,7 +451,7 @@ layer-rule {
 }
 
 layer-rule {
-    match namespace="^swww-daemon$"
+    match namespace="^awww-daemon$"
     place-within-backdrop true
 }
 
