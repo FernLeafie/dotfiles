@@ -202,7 +202,6 @@
       "8":  "󰊠", 
       "9":  "󰊠", 
       "10": "󰊠"
-      */
       
       "1":  "1",  
       "2":  "2", 
@@ -214,8 +213,8 @@
       "8":  "8", 
       "9":  "9", 
       "10": "0"
+      */     
       
-      /*
       "1":  "一",  
       "2":  "二", 
       "3":  "三", 
@@ -226,7 +225,6 @@
       "8":  "八", 
       "9":  "九",
       "10": "十"
-      */
     }
   },
 
@@ -408,7 +406,7 @@
 
   "group/connection": {
     "orientation": "inherit",
-    "modules": ["group/network"] // "group/bluetooth"
+    "modules": ["group/network", "group/bluetooth"] // "group/bluetooth"
   },
 
   "group/network": {
@@ -459,7 +457,7 @@
     "format": "{icon} {volume}%",
     "scroll-step": 5,
     "max-volume": 100,
-    "format-bluetooth": "{icon}",
+    "format-bluetooth": "{icon} {volume}%",
     "format-muted": "󰖁",
     "tooltip": false,
     "format-icons": {
