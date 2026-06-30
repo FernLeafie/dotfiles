@@ -1,0 +1,71 @@
+[audio]
+enable_sounds = true
+
+[bar.default]
+border = "surface_variant"
+border_width = 2.0
+center = ["workspaces"]
+end = ["media", "tray", "notifications", "network", "bluetooth", "brightness", "volume", "battery", "clock", "control-center"]
+margin_edge = 8
+margin_ends = 8
+panel_overlap = 2
+start = ["cpu", "temp", "ram", "taskbar"]
+thickness = 30
+widget_spacing = 10
+
+[brightness]
+enable_ddcutil = true
+
+[idle]
+behavior_order = ["lock", "screen-off", "lock-and-suspend"]
+
+[idle.behavior.lock]
+action = "lock"
+enabled = true
+timeout = 600
+
+[idle.behavior.lock-and-suspend]
+action = "lock_and_suspend"
+enabled = true
+timeout = 900
+
+[idle.behavior.screen-off]
+action = "screen_off"
+enabled = true
+timeout = 660
+
+[nightlight]
+enabled = true
+temperature_night = 2700
+
+[shell]
+font_family = "Maple Mono NF CN"
+
+[shell.screenshot]
+save_to_file = false
+
+[theme]
+builtin = "Catppuccin"
+custom_palette = "catppuccin-mocha-mauve"
+mode = "dark"
+source = "custom"
+
+[theme.templates]
+enable_builtin_templates = false
+enable_community_templates = false
+
+[wallpaper]
+directory = "/home/fern-snowleafie/dotfiles/Pictures/Wallpapers/"
+enabled = true
+fill_color = "#000000"
+fill_mode = "fit"
+
+[widget.control-center]
+glyph = "apps"
+
+[widget.media]
+hide_when_no_media = true
+
+[widget.workspaces]
+capsule = true
+display = "none"
