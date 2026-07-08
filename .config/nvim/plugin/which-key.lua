@@ -15,4 +15,5 @@ wk.add({
 	{ '<leader>d', group = 'Debug and diagnostics' },
 	{ '<leader>f', group = 'Find files' },
 	{ '<leader>g', group = 'Lsp actions', icon = { icon = '', color = 'green'} },
+	{ '<leader>t', group = 'Tabs', icon = { icon = '󰓩', color = 'purple'} },
 })

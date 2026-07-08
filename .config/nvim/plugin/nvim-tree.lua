@@ -83,6 +83,9 @@ require('nvim-tree').setup({
 		vim.keymap.set('n', 'l', righty, opts('Open'))
 		-- remove default keybinds
 		vim.keymap.del('n', '<C-t>', { buffer = bufnr })
+    vim.keymap.del('n', '<CR>', { buffer = bufnr })
+    vim.keymap.set('n', '<CR>', api.node.open.edit, opts('Open'))
+    vim.keymap.set('n', '<S-CR>', api.node.open.tab, opts('Open in a new tab'))
 		-- overwrite default keybinds
 		vim.keymap.set('n', '<C-¨>', api.tree.change_root_to_node, opts(' CD'))
 	end,
