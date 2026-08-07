@@ -2,6 +2,7 @@ local gh = require('gh')
 vim.pack.add({
 	gh('kevinhwang91/promise-async'),
 	gh('kevinhwang91/nvim-ufo'),
+	gh('luukvbaal/statuscol.nvim'),
 })
 
 local handler = function(virtText, lnum, endLnum, width, truncate)

@@ -1,6 +1,11 @@
 vim.pack.add({
 	'https://github.com/nvim-tree/nvim-tree.lua',
 	'https://github.com/nvim-tree/nvim-web-devicons',
+	'https://github.com/rachartier/tiny-devicons-auto-colors.nvim',
+})
+
+require('tiny-devicons-auto-colors').setup({
+    colors = require("catppuccin.palettes").get_palette("mocha"),
 })
 
 -- natural sort
@@ -53,7 +58,7 @@ require('nvim-tree').setup({
 			return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
 		end
 		-- get all default keybinds
-		api.config.mappings.default_on_attach(bufnr)
+		api.map.on_attach.default(bufnr)
 		-- function for left to assign to keybindings
 		local lefty = function()
 			local node_at_cursor = api.tree.get_node_under_cursor()
@@ -83,9 +88,9 @@ require('nvim-tree').setup({
 		vim.keymap.set('n', 'l', righty, opts('Open'))
 		-- remove default keybinds
 		vim.keymap.del('n', '<C-t>', { buffer = bufnr })
-    vim.keymap.del('n', '<CR>', { buffer = bufnr })
-    vim.keymap.set('n', '<CR>', api.node.open.edit, opts('Open'))
-    vim.keymap.set('n', '<S-CR>', api.node.open.tab, opts('Open in a new tab'))
+		vim.keymap.del('n', '<CR>', { buffer = bufnr })
+		vim.keymap.set('n', '<CR>', api.node.open.edit, opts('Open'))
+		vim.keymap.set('n', '<S-CR>', api.node.open.tab, opts('Open in a new tab'))
 		-- overwrite default keybinds
 		vim.keymap.set('n', '<C-¨>', api.tree.change_root_to_node, opts(' CD'))
 	end,
